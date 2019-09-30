@@ -1,44 +1,44 @@
-# An Introduction to JavaScript
+# Ներածություն
 
-Let's see what's so special about JavaScript, what we can achieve with it, and which other technologies play well with it.
+Եկեք տեսնենք, թե ինչ հատկություններ ունի ՋավաՍքրիփթը, ինչի կարող ենք հասնել նրանով, և ուրիշ ինչ տեխնոլոգիաներ են դրա հետ լավ աշխատում։
 
-## What is JavaScript?
+## Ի՞նչ է ՋավաՍքրիփթը
 
-*JavaScript* was initially created to *"make web pages alive"*.
+*ՋավաՍքրիփթը* սկզբից ստեղծվել է, որպեսզի *«կյանք տա կայքերին»*։
 
-The programs in this language are called *scripts*. They can be written right in a web page's HTML and run automatically as the page loads.
+Այս լեզվում ծրագրերը կոչվում են *սքրիփթներ*. Նրանք կարող են գրվել ուղղակիորեն կայքի HTML-ի մեջ և աշխատել ավտոմատ կերպով, երբ էջը բեռնվի։
 
-Scripts are provided and executed as plain text. They don't need special preparation or compilation to run.
+Սքրիփթները ներկայացվում և աշխատում են ինչպես հասարակ տեքստ։ Նրանք կարիք չունեն հատուկ նախապատրաստության աշխատելուց առաջ։
 
-In this aspect, JavaScript is very different from another language called [Java](https://en.wikipedia.org/wiki/Java_(programming_language)).
+Այս առումով ՋավաՍքրիփթը շատ է տարբերվում մեկ այլ լեզվից, որը կոչվում է [Java](https://en.wikipedia.org/wiki/Java_(programming_language)):
 
-```smart header="Why <u>Java</u>Script?"
-When JavaScript was created, it initially had another name: "LiveScript". But Java was very popular at that time, so it was decided that positioning a new language as a "younger brother" of Java would help.
+```smart header="Ինչու՞ <u>Ջավա</u>Սքրիփթ"
+Երբ ՋավաՍքրիփթը ստեղծվել էր, այն սկզբում ուրիշ անուն ուներ՝ «ԼայվՍքրիփթ» (LiveScript)։ Սակայն Ջավան շատ տարածված էր այդ ժամանակ, և որոշվեց, որ լեզվի տարածմանը կօգնի ներկայացնել նոր լեզուն ինչպես Ջավայի «կրտսեր եղբայր»։
 
-But as it evolved, JavaScript became a fully independent language with its own specification called [ECMAScript](http://en.wikipedia.org/wiki/ECMAScript), and now it has no relation to Java at all.
+Բայց երբ այն զարգացավ, ՋավաՍքրիփթը դարձավ լիովին անկախ լեզու՝ իր հատկանշական մասերով, որոնք անվանվեցին [ECMAScript](http://en.wikipedia.org/wiki/ECMAScript), և հիմա այն ընդհանրապես ոչ մի կապ չունի Ջավայի հետ։
 ```
 
-Today, JavaScript can execute not only in the browser, but also on the server, or actually on any device that has a special program called [the JavaScript engine](https://en.wikipedia.org/wiki/JavaScript_engine).
+Այսօր, ՋավաՍքրիփթը կարող է աշխատել ոչ միայն բրաուզերներում, այլ նաև սերվերներում, կամ ցանկացած այլ սարքերում, որոնք ունեն մի հատուկ ծրագիր, որը կոչվում է [JavaScript engine](https://en.wikipedia.org/wiki/JavaScript_engine).
 
-The browser has an embedded engine sometimes called a "JavaScript virtual machine".
+Բրաուզերն ունի իր մեջ ներառված engine, որը նաև անվանում են «JavaScript virtual machine»։ 
 
-Different engines have different "codenames". For example:
+Տարբեր engin-ներ ունեն տարբեր «կեղծանուններ»՝
 
-- [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- in Chrome and Opera.
-- [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- in Firefox.
-- ...There are other codenames like "Trident" and "Chakra" for different versions of IE, "ChakraCore" for Microsoft Edge, "Nitro" and "SquirrelFish" for Safari, etc.
+- [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- Chrome-ում և Opera-ում։
+- [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- Firefox-ում։
+- ...Կան այլ կեղծանուններ, ինչպես «Trident» և «Chakra», IE-ի տարբերակների համար, «ChakraCore»-ը Microsoft Edge-ի համար, «Nitro» և  «SquirrelFish»՝ Safari-ի, և այլն։
 
-The terms above are good to remember because they are used in developer articles on the internet. We'll use them too. For instance, if "a feature X is supported by V8", then it probably works in Chrome and Opera.
+Նշված տերմինները պետք է հիշել, քանի որ նրանք շատ են օգտագործվում համացանցի հոդվածներում։ Մենք նույնպես կօգտագործենք։ Օրինակ, եթե նշված է, որ «Ա հատկությունը օգտագործվում է V8-ում», ապա այն հավանաբար կաշխատի Chrome-ում և Opera-ում։
 
-```smart header="How do engines work?"
+```smart header="Ինչպե՞ս են աշխատում engine-ները"
 
-Engines are complicated. But the basics are easy.
+Engine-ները բարդ են, բայց հիմունքները այդքան էլ դժվար չէ հասկանալ։
 
-1. The engine (embedded if it's a browser) reads ("parses") the script.
-2. Then it converts ("compiles") the script to the machine language.
-3. And then the machine code runs, pretty fast.
+1. Engine-ը (ներառվածը, եթե browser-ի մասին է խոսքը) կարդում է (parse) սքրիփթը։
+2. Ապա այն փոխում է (compiles) սքրիփթը մեքենայական կոդի։
+3. Վերջապես մեքենան աշխատեցնում է կոդը, բավականին արագ։
 
-The engine applies optimizations at each step of the process. It even watches the compiled script as it runs, analyzes the data that flows through it, and applies optimizations to the machine code based on that knowledge. When it's done, scripts run quite fast.
+Engine-ը բարեփոխումներ (optimization) է անում ամեն քայլին։ Այն նույնիսկ հետևում է պատրաստ սքրիփթի աշխատանքի ընթացքին, վերլուծում տվյալների հոսքը և կրկին բարեփոխումներ կատարում այդ գիտելիքների օգնությամբ։ Երբ դա արված է, սքրիփթը շատ արագ է աշխատում։
 ```
 
 ## What can in-browser JavaScript do?
