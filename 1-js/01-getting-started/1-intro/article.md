@@ -41,39 +41,39 @@ Engine-ները բարդ են, բայց հիմունքները այդքան էլ
 Engine-ը բարեփոխումներ (optimization) է անում ամեն քայլին։ Այն նույնիսկ հետևում է պատրաստ սքրիփթի աշխատանքի ընթացքին, վերլուծում տվյալների հոսքը և կրկին բարեփոխումներ կատարում այդ գիտելիքների օգնությամբ։ Երբ դա արված է, սքրիփթը շատ արագ է աշխատում։
 ```
 
-## What can in-browser JavaScript do?
+## Ի՞նչ է կարող browser-ի միջի JavaScript-ը անել
 
-Modern JavaScript is a "safe" programming language. It does not provide low-level access to memory or CPU, because it was initially created for browsers which do not require it.
+Ժամանակակից JavaScript-ը «ապահով» ծրագրավորման լեզու է։ Այն չի տրամադրում low-level հասանելիություն հիշողությանը կան CPU-ին, քանի որ սկզբնապես ստեղծված է եղել browser-ների համար, որոնք դրա կարիքը չունեն
 
-JavaScript's capabilities greatly depend on the environment it's running in. For instance, [Node.js](https://wikipedia.org/wiki/Node.js) supports functions that allow JavaScript to read/write arbitrary files, perform network requests, etc.
+JavaScript-ի հնարավորությունները մեծ մասով կախված են միջավայրից, որում այն աշխատում է։ Օրինակ՝ [Node.js](https://wikipedia.org/wiki/Node.js)-ը ունի ֆունկցիաներ, որոնք թույլատրում են JavaScript-ին կարդալ կամ գրել որևէ ֆայլի մեջ, կատարել ցանցային հարցումներ և այլն։
 
-In-browser JavaScript can do everything related to webpage manipulation, interaction with the user, and the webserver.
+Browser-ի միջի JavaScript-ը կարող է անել ամեն ինչ կապված կայքերի կառավարման հետ և օգտագործողի և server-ի կապի հետ։ver.
 
-For instance, in-browser JavaScript is able to:
+Օրինակ՝ browser-ի միջի JavaScript-ը կարող է՝to:
 
-- Add new HTML to the page, change the existing content, modify styles.
-- React to user actions, run on mouse clicks, pointer movements, key presses.
-- Send requests over the network to remote servers, download and upload files (so-called [AJAX](https://en.wikipedia.org/wiki/Ajax_(programming)) and [COMET](https://en.wikipedia.org/wiki/Comet_(programming)) technologies).
-- Get and set cookies, ask questions to the visitor, show messages.
-- Remember the data on the client-side ("local storage").
+- Ավելացնել նոր HTML էջ, փոխել ներկա պարունակությունը, փոխել ոճը։
+- Պատասխանել օգտագործողի գործողություններին, աշխատել մկնիկի սեղման, շարժման ժամանակ։
+- Ուղարկել հարցումներ համացանցով server-ների, ներբեռնել և վերբեռնել ֆայլեր (այսպես կոչված [AJAX](https://en.wikipedia.org/wiki/Ajax_(programming)) և [COMET](https://en.wikipedia.org/wiki/Comet_(programming)) տեխնոլոգիաներ)։
+- Ստանալ և փոխել cookie-ներ, հարցեր տալ հաճախորդին, ցույց տալ նամակներ։
+- Հիշել օգտատերի տվյալները («local storage»).
 
-## What CAN'T in-browser JavaScript do?
+## Ի՞նչ չի կարող JavaScript-ը անել
 
-JavaScript's abilities in the browser are limited for the sake of the user's safety. The aim is to prevent an evil webpage from accessing private information or harming the user's data.
+JavaScript-ի հնարավորությունները browser-ում սահմանափակ են ապահովության նկատառումներով։ Նպատակն է կանխել չար կայքերի հասանելիությունը օգտագործողի անձնական տվյալներին։
 
-Examples of such restrictions include:
+Այսպիսի սահմանափակումների օրինակներ են՝
 
-- JavaScript on a webpage may not read/write arbitrary files on the hard disk, copy them or execute programs. It has no direct access to OS system functions.
+- JavaScript-ը էջում չի կարող կարդալ գամ գրել որևը կոշտ սկավառակը ֆայլի մեջ, պատճենել դրանք կամ աշխատեցնել ծրագրեր։ Այն չունի ուղիղ հասանելիություն օպերացիոն համակարգի ֆունկցիաներին։
 
-    Modern browsers allow it to work with files, but the access is limited and only provided if the user does certain actions, like "dropping" a file into a browser window or selecting it via an `<input>` tag.
+    Ժամանակակից browser-ները թույլ են տալիս աշխատել ֆայլերի հետ, բայց հասանելիությունը տրամադրվում է միայն որոշակի դեպքերում, օրինակ՝ երբ օգտագործողը «նետում» է ֆայլերը պատուհանի մեջ կամ ընտրում `<input>` tag-ի միջոցով։
 
-    There are ways to interact with camera/microphone and other devices, but they require a user's explicit permission. So a JavaScript-enabled page may not sneakily enable a web-camera, observe the surroundings and send the information to the [NSA](https://en.wikipedia.org/wiki/National_Security_Agency).
-- Different tabs/windows generally do not know about each other. Sometimes they do, for example when one window uses JavaScript to open the other one. But even in this case, JavaScript from one page may not access the other if they come from different sites (from a different domain, protocol or port).
+    Գոյություն ունեն մեթոդներ տեսախցիկի կամ խոսափողի հասանելիություն տրամադրելու, բայց նրանք պահանջում են օգտագործողի կողմից կատարված կամավոր գործողություն, որպեսզի էջը գաղտիաբար չօգտագործի տեսախցիկը և տվյալներ ուղարկի [NSA](https://en.wikipedia.org/wiki/National_Security_Agency)-ին։
+- Տարբեր պատուհաններ հիմնականում չգիտեն իրար մասին։ Որոշ դեպքերում, սակայն, գիտեն, օրինակ՝ երբ մի էջը օգտագործում է JavaScript, որ բացի մյուսը։ Սակայն նույնիսկ այս դեպքում, մի էջի JavaScript-ը չի կարող կառավարել մյուսը, եթե նրանք տարբեր աղբյուրներից են։ 
 
-    This is called the "Same Origin Policy". To work around that, *both pages* must agree for data exchange and contain a special JavaScript code that handles it. We'll cover that in the tutorial.
+    Սա կոչվում է «Նույն աղբյուրի կանոն»։ Երկու էջերն էլ պետք է պայմանավորվեն տվյալների փոխանակման համար և պարունակեն հատուկ JavaScript կոդ, որը կառավարում է դա։ Մենք կխոսենք դրա մասին դասընթացի մեջ։
 
-    This limitation is, again, for the user's safety. A page from `http://anysite.com` which a user has opened must not be able to access another browser tab with the URL `http://gmail.com` and steal information from there.
-- JavaScript can easily communicate over the net to the server where the current page came from. But its ability to receive data from other sites/domains is crippled. Though possible, it requires explicit agreement (expressed in HTTP headers) from the remote side. Once again, that's a safety limitation.
+    Այս սահմանափակումը, նույնպես, օգտագործողի ապահովության համար է։ `http://anysite.com`-ից էջը, որը օգտագործողը բացել է, չպետք է հասանելիություն ունենա ուրիշ պատուհանի `http://gmail.com`-ին ու գողանա տվյալներ։
+- JavaScript-ը կարող է հեշտորեն կապվել ցանցով server-ի հետ, որտեղից որ կայքը գալիս է։ Բայց նրա հնարավորությունը, տվյալներ ստանալ այլ աղբյուրներից, սահմանափակ է։ Չնայած, որ հնարավոր է, սակայն այն պահանջում է հատուկ համաձայնություն server-ից։
 
 ![](limitations.svg)
 
