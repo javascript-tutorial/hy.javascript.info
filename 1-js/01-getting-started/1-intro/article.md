@@ -1,26 +1,26 @@
 # Ներածություն
 
-Եկեք տեսնենք, թե ինչ հատկություններ ունի ՋավաՍքրիփթը, ինչի կարող ենք հասնել նրանով, և ուրիշ ինչ տեխնոլոգիաներ են դրա հետ լավ աշխատում։
+Եկեք տեսնենք, թե ինչ հատկություններ ունի JavaScript-ը, ինչի կարող ենք հասնել նրանով, և ուրիշ ինչ տեխնոլոգիաներ են դրա հետ լավ աշխատում։
 
-## Ի՞նչ է ՋավաՍքրիփթը
+## Ի՞նչ է JavaScript-ը (ՋավաՍքրիփթ)
 
-*ՋավաՍքրիփթը* սկզբից ստեղծվել է, որպեսզի *«կյանք տա կայքերին»*։
+*JavaScript-ը* սկզբից ստեղծվել է, որպեսզի *«կյանք տա կայքերին»*։
 
-Այս լեզվում ծրագրերը կոչվում են *սքրիփթներ*. Նրանք կարող են գրվել ուղղակիորեն կայքի HTML-ի մեջ և աշխատել ավտոմատ կերպով, երբ էջը բեռնվի։
+Այս լեզվում ծրագրերը կոչվում են *script-ներ* (սքրիփթ). Նրանք կարող են գրվել ուղղակիորեն կայքի HTML-ի (Էյչ-Թի-Էմ-Էլ) մեջ և աշխատել ավտոմատ կերպով, երբ էջը բեռնվի։
 
-Սքրիփթները ներկայացվում և աշխատում են ինչպես հասարակ տեքստ։ Նրանք կարիք չունեն հատուկ նախապատրաստության աշխատելուց առաջ։
+Script-ների ներկայացվում և աշխատում են ինչպես հասարակ տեքստ։ Նրանք կարիք չունեն հատուկ նախապատրաստության աշխատելուց առաջ։
 
-Այս առումով ՋավաՍքրիփթը շատ է տարբերվում մեկ այլ լեզվից, որը կոչվում է [Java](https://en.wikipedia.org/wiki/Java_(programming_language)):
+Այս առումով JavaScript-ը շատ է տարբերվում մեկ այլ լեզվից, որը կոչվում է [Java](https://en.wikipedia.org/wiki/Java_(programming_language)):
 
-```smart header="Ինչու՞ <u>Ջավա</u>Սքրիփթ"
-Երբ ՋավաՍքրիփթը ստեղծվել էր, այն սկզբում ուրիշ անուն ուներ՝ «ԼայվՍքրիփթ» (LiveScript)։ Սակայն Ջավան շատ տարածված էր այդ ժամանակ, և որոշվեց, որ լեզվի տարածմանը կօգնի ներկայացնել նոր լեզուն ինչպես Ջավայի «կրտսեր եղբայր»։
+```smart header="Ինչու՞ <u>Java</u>Script"
+Երբ JavaScript ստեղծվել էր, այն սկզբում ուրիշ անուն ուներ՝ «LiveScript» (ԼայվՍքրիփթ)։ Սակայն Java-ն շատ տարածված էր այդ ժամանակ, և որոշվեց, որ լեզվի տարածմանը կօգնի ներկայացնել նոր լեզուն ինչպես Java-ի «կրտսեր եղբայր»։
 
-Բայց երբ այն զարգացավ, ՋավաՍքրիփթը դարձավ լիովին անկախ լեզու՝ իր հատկանշական մասերով, որոնք անվանվեցին [ECMAScript](http://en.wikipedia.org/wiki/ECMAScript), և հիմա այն ընդհանրապես ոչ մի կապ չունի Ջավայի հետ։
+Բայց երբ այն զարգացավ, JavaScript-ը դարձավ լիովին անկախ լեզու՝ իր հատկանշական մասերով, որոնք անվանվեցին [ECMAScript](http://en.wikipedia.org/wiki/ECMAScript) (ԷՔՄԱՍքրիփթ), և հիմա այն ընդհանրապես ոչ մի կապ չունի Java-ի հետ։
 ```
 
-Այսօր, ՋավաՍքրիփթը կարող է աշխատել ոչ միայն բրաուզերներում, այլ նաև սերվերներում, կամ ցանկացած այլ սարքերում, որոնք ունեն մի հատուկ ծրագիր, որը կոչվում է [JavaScript engine](https://en.wikipedia.org/wiki/JavaScript_engine).
+Այսօր, JavaScript-ը կարող է աշխատել ոչ միայն browser-ներում (բրաուզեր), այլ նաև server-ներում (սերվեր), կամ ցանկացած սարքերում, որոնք ունեն մի հատուկ ծրագիր, որը կոչվում է [JavaScript engine](https://en.wikipedia.org/wiki/JavaScript_engine) (ՋավաՍքրիթփ էնջըն).
 
-Բրաուզերն ունի իր մեջ ներառված engine, որը նաև անվանում են «JavaScript virtual machine»։ 
+Browser-ն ունի իր մեջ ներառված engine, որը նաև անվանում են «JavaScript virtual machine» (ՋավաՍքրիփթ վըրչուըլ մըշին)։ 
 
 Տարբեր engin-ներ ունեն տարբեր «կեղծանուններ»՝
 
@@ -34,87 +34,87 @@
 
 Engine-ները բարդ են, բայց հիմունքները այդքան էլ դժվար չէ հասկանալ։
 
-1. Engine-ը (ներառվածը, եթե browser-ի մասին է խոսքը) կարդում է (parse) սքրիփթը։
-2. Ապա այն փոխում է (compiles) սքրիփթը մեքենայական կոդի։
+1. Engine-ը (ներառվածը, եթե browser-ի մասին է խոսքը) կարդում է (parse) script-ը։
+2. Ապա այն փոխում է (compile) script-ը մեքենայական կոդի։
 3. Վերջապես մեքենան աշխատեցնում է կոդը, բավականին արագ։
 
-Engine-ը բարեփոխումներ (optimization) է անում ամեն քայլին։ Այն նույնիսկ հետևում է պատրաստ սքրիփթի աշխատանքի ընթացքին, վերլուծում տվյալների հոսքը և կրկին բարեփոխումներ կատարում այդ գիտելիքների օգնությամբ։ Երբ դա արված է, սքրիփթը շատ արագ է աշխատում։
+Engine-ը բարեփոխումներ (optimization) է անում ամեն քայլին։ Այն նույնիսկ հետևում է պատրաստ script-ի աշխատանքի ընթացքին, վերլուծում տվյալների հոսքը և կրկին բարեփոխումներ կատարում այդ գիտելիքների օգնությամբ։ Երբ դա արված է, script-ը շատ արագ է աշխատում։
 ```
 
-## What can in-browser JavaScript do?
+## Ի՞նչ է կարող browser-ի միջի JavaScript-ը անել
 
-Modern JavaScript is a "safe" programming language. It does not provide low-level access to memory or CPU, because it was initially created for browsers which do not require it.
+Ժամանակակից JavaScript-ը «ապահով» ծրագրավորման լեզու է։ Այն չի տրամադրում low-level հասանելիություն հիշողությանը կան CPU-ին, քանի որ սկզբնապես ստեղծված է եղել browser-ների համար, որոնք դրա կարիքը չունեն
 
-JavaScript's capabilities greatly depend on the environment it's running in. For instance, [Node.js](https://wikipedia.org/wiki/Node.js) supports functions that allow JavaScript to read/write arbitrary files, perform network requests, etc.
+JavaScript-ի հնարավորությունները մեծ մասով կախված են միջավայրից, որում այն աշխատում է։ Օրինակ՝ [Node.js](https://wikipedia.org/wiki/Node.js)-ը ունի ֆունկցիաներ, որոնք թույլատրում են JavaScript-ին կարդալ կամ գրել որևէ ֆայլի մեջ, կատարել ցանցային հարցումներ և այլն։
 
-In-browser JavaScript can do everything related to webpage manipulation, interaction with the user, and the webserver.
+Browser-ի միջի JavaScript-ը կարող է անել ամեն ինչ կապված կայքերի կառավարման հետ և օգտագործողի և server-ի կապի հետ։ver.
 
-For instance, in-browser JavaScript is able to:
+Օրինակ՝ browser-ի միջի JavaScript-ը կարող է՝to:
 
-- Add new HTML to the page, change the existing content, modify styles.
-- React to user actions, run on mouse clicks, pointer movements, key presses.
-- Send requests over the network to remote servers, download and upload files (so-called [AJAX](https://en.wikipedia.org/wiki/Ajax_(programming)) and [COMET](https://en.wikipedia.org/wiki/Comet_(programming)) technologies).
-- Get and set cookies, ask questions to the visitor, show messages.
-- Remember the data on the client-side ("local storage").
+- Ավելացնել նոր HTML էջ, փոխել ներկա պարունակությունը, փոխել ոճը։
+- Պատասխանել օգտագործողի գործողություններին, աշխատել մկնիկի սեղման, շարժման ժամանակ։
+- Ուղարկել հարցումներ համացանցով server-ների, ներբեռնել և վերբեռնել ֆայլեր (այսպես կոչված [AJAX](https://en.wikipedia.org/wiki/Ajax_(programming)) և [COMET](https://en.wikipedia.org/wiki/Comet_(programming)) տեխնոլոգիաներ)։
+- Ստանալ և փոխել cookie-ներ, հարցեր տալ հաճախորդին, ցույց տալ նամակներ։
+- Հիշել օգտատերի տվյալները («local storage»).
 
-## What CAN'T in-browser JavaScript do?
+## Ի՞նչ չի կարող JavaScript-ը անել
 
-JavaScript's abilities in the browser are limited for the sake of the user's safety. The aim is to prevent an evil webpage from accessing private information or harming the user's data.
+JavaScript-ի հնարավորությունները browser-ում սահմանափակ են ապահովության նկատառումներով։ Նպատակն է կանխել չար կայքերի հասանելիությունը օգտագործողի անձնական տվյալներին։
 
-Examples of such restrictions include:
+Այսպիսի սահմանափակումների օրինակներ են՝
 
-- JavaScript on a webpage may not read/write arbitrary files on the hard disk, copy them or execute programs. It has no direct access to OS system functions.
+- JavaScript-ը էջում չի կարող կարդալ գամ գրել որևը կոշտ սկավառակը ֆայլի մեջ, պատճենել դրանք կամ աշխատեցնել ծրագրեր։ Այն չունի ուղիղ հասանելիություն օպերացիոն համակարգի ֆունկցիաներին։
 
-    Modern browsers allow it to work with files, but the access is limited and only provided if the user does certain actions, like "dropping" a file into a browser window or selecting it via an `<input>` tag.
+    Ժամանակակից browser-ները թույլ են տալիս աշխատել ֆայլերի հետ, բայց հասանելիությունը տրամադրվում է միայն որոշակի դեպքերում, օրինակ՝ երբ օգտագործողը «նետում» է ֆայլերը պատուհանի մեջ կամ ընտրում `<input>` tag-ի միջոցով։
 
-    There are ways to interact with camera/microphone and other devices, but they require a user's explicit permission. So a JavaScript-enabled page may not sneakily enable a web-camera, observe the surroundings and send the information to the [NSA](https://en.wikipedia.org/wiki/National_Security_Agency).
-- Different tabs/windows generally do not know about each other. Sometimes they do, for example when one window uses JavaScript to open the other one. But even in this case, JavaScript from one page may not access the other if they come from different sites (from a different domain, protocol or port).
+    Գոյություն ունեն մեթոդներ տեսախցիկի կամ խոսափողի հասանելիություն տրամադրելու, բայց նրանք պահանջում են օգտագործողի կողմից կատարված կամավոր գործողություն, որպեսզի էջը գաղտիաբար չօգտագործի տեսախցիկը և տվյալներ ուղարկի [NSA](https://en.wikipedia.org/wiki/National_Security_Agency)-ին։
+- Տարբեր պատուհաններ հիմնականում չգիտեն իրար մասին։ Որոշ դեպքերում, սակայն, գիտեն, օրինակ՝ երբ մի էջը օգտագործում է JavaScript, որ բացի մյուսը։ Սակայն նույնիսկ այս դեպքում, մի էջի JavaScript-ը չի կարող կառավարել մյուսը, եթե նրանք տարբեր աղբյուրներից են։ 
 
-    This is called the "Same Origin Policy". To work around that, *both pages* must agree for data exchange and contain a special JavaScript code that handles it. We'll cover that in the tutorial.
+    Սա կոչվում է «Նույն աղբյուրի կանոն»։ Երկու էջերն էլ պետք է պայմանավորվեն տվյալների փոխանակման համար և պարունակեն հատուկ JavaScript կոդ, որը կառավարում է դա։ Մենք կխոսենք դրա մասին դասընթացի մեջ։
 
-    This limitation is, again, for the user's safety. A page from `http://anysite.com` which a user has opened must not be able to access another browser tab with the URL `http://gmail.com` and steal information from there.
-- JavaScript can easily communicate over the net to the server where the current page came from. But its ability to receive data from other sites/domains is crippled. Though possible, it requires explicit agreement (expressed in HTTP headers) from the remote side. Once again, that's a safety limitation.
+    Այս սահմանափակումը, նույնպես, օգտագործողի ապահովության համար է։ `http://anysite.com`-ից էջը, որը օգտագործողը բացել է, չպետք է հասանելիություն ունենա ուրիշ պատուհանի `http://gmail.com`-ին ու գողանա տվյալներ։
+- JavaScript-ը կարող է հեշտորեն կապվել ցանցով server-ի հետ, որտեղից որ կայքը գալիս է։ Բայց նրա հնարավորությունը, տվյալներ ստանալ այլ աղբյուրներից, սահմանափակ է։ Չնայած, որ հնարավոր է, սակայն այն պահանջում է հատուկ համաձայնություն server-ից։
 
 ![](limitations.svg)
 
-Such limits do not exist if JavaScript is used outside of the browser, for example on a server. Modern browsers also allow plugin/extensions which may ask for extended permissions.
+Այսպիսի սահմանափակումներ չկան, երբ JavaScript-ը օգտագործվում է browser-ից դուրս, օրինակ՝ server-ներում։ Ժամանակակից browser-ները նույնպես ունեն plug-in-ներ, որոնք կարող են հարցնել հավելյալ  թույլտվություններ։
 
-## What makes JavaScript unique?
+## Ի՞նչն է սարքում JavaScript-ը յուրօրինակ
 
-There are at least *three* great things about JavaScript:
+Կան գոնե *երեք* լավ բաներ JavaScript-ի մասին՝
 
 ```compare
-+ Full integration with HTML/CSS.
-+ Simple things are done simply.
-+ Support by all major browsers and enabled by default.
++ HTML/CSS-ի հետ ներառում։
++ Հասարակ բաները արվում են հասարակ կերպով։
++ Բոլոր մեծ browser-ները աշխատում են JavaScript—ի հետ։
 ```
-JavaScript is the only browser technology that combines these three things.
+JavaScript-ը միակ borwser-ային տեխնոլոգիան է, որը ներառում է այս 3 կետերը։
 
-That's what makes JavaScript unique. That's why it's the most widespread tool for creating browser interfaces.
+Ահա, թե ինչն է սարքում դրան այսքան տարբերվող։ Ահա, թե ինչու է ամենատարածված գործիքը browser-ային ինտերֆեյսեր սարքելու համար։
 
-That said, JavaScript also allows to create servers, mobile applications, etc.
+Այսպիսով, JavaScript-ը թույլ է տալիս ստեղծել server-ներ, mobile ծրագրեր և այլն։
 
-## Languages "over" JavaScript
+## Լեզուներ՝ JavaScript-ի «վրա»
 
-The syntax of JavaScript does not suit everyone's needs. Different people want different features.
+JavaScript-ի գրելաձևը բոլորին չի բավարարում։ Տարբեր մարդիկ ցանկանում են տարբեր հատկություններ։
 
-That's to be expected, because projects and requirements are different for everyone.
+Դա սպասելի է, քանի որ ծրագրերն ու պահանջները տարբեր են բոլորի մոտ։
 
-So recently a plethora of new languages appeared, which are *transpiled* (converted) to JavaScript before they run in the browser.
+Վերջերս բազում նոր լեզուներ են առաջացել, որոնք *transpile* են լինում (փոխվում) JavaScript-ի մինչև աշխատելը։
 
-Modern tools make the transpilation very fast and transparent, actually allowing developers to code in another language and auto-converting it "under the hood".
+Ժամանակակից գործիքները դարձնում են փոփոխվելը շատ արագ և թափանցիկ, թույլատրելով ծրագրավորողներին աշխատել այլ լեզվով, և ավտո-փոխակերպում են այն JavaScript-ի աննկատ կերպով։
 
-Examples of such languages:
+Այսպիսի լեզուների օրինակներ են՝
 
-- [CoffeeScript](http://coffeescript.org/) is a "syntactic sugar" for JavaScript. It introduces shorter syntax, allowing us to write clearer and more precise code. Usually, Ruby devs like it.
-- [TypeScript](http://www.typescriptlang.org/) is concentrated on adding "strict data typing" to simplify the development and support of complex systems. It is developed by Microsoft.
-- [Flow](http://flow.org/) also adds data typing, but in a different way. Developed by Facebook.
-- [Dart](https://www.dartlang.org/) is a standalone language that has its own engine that runs in non-browser environments (like mobile apps), but also can be transpiled to JavaScript. Developed by Google.
+- [CoffeeScript](http://coffeescript.org/)-ը ունի կարճ գրելաձև, թույլատրելով ծրագրավորողին գրելկ ավելի մաքուր և ճշգրիտ կոդ։ Հիմնականում Ruby-ի ծրագրավորողներն են հավանում այն։
+- [TypeScript](http://www.typescriptlang.org/)-ը կենտրոնացած է խիստ տիպերի ներմուծման վրա, հեշտացնելով դժվար համակարգերի ծրագրավորումն ու հետագա ապահովումը։ Այն ստեղծվել է Microsoft-ի կողմից։
+- [Flow](http://flow.org/)-ը նույնպես ավելացնում է տվյալների տիպեր, սակայն այլ կերպով է աշխատում։ Ստեղծված է Facebook-ի կողմից։
+- [Dart](https://www.dartlang.org/)-ը առանձին լեզու է, որը ունի իր սեփական engine-ը և աշխատում է ոչ-browser-ային միջավայրներում, ինչպես mobile ծրագրերում, սակայն կարող է թարգմանվել JavaScript-ի։ Ստեղծվել է Google-ի կողմից։
 
-There are more. Of course, even if we use one of transpiled languages, we should also know JavaScript to really understand what we're doing.
+Կան ուրիշներ։ Իհարկե, եթե նույնիսկ օգտագործենք թարգմանված լեզուները, պետք է իմանանք JavaScript, որպեսզի հասկանանք՝ ինչ ենք անում։
 
-## Summary
+## Ամփոփում
 
-- JavaScript was initially created as a browser-only language, but is now used in many other environments as well.
-- Today, JavaScript has a unique position as the most widely-adopted browser language with full integration with HTML/CSS.
-- There are many languages that get "transpiled" to JavaScript and provide certain features. It is recommended to take a look at them, at least briefly, after mastering JavaScript.
+- JavaScript-ը սկզբում ստեղծվել է միայն browser-ների համար, սակայն այն հիմա օգտագործվում է շատ այլ միջավայրներում նույնպես։
+- Այսօր JavaScript-ը ունի իր ուրույն տեղը ամենաընդունված browser-ի լեզուն, HTML/CSS-ի հետ լրիվ ներառմամբ։ 
+- Կան շատ լեզուներ, որոնք «թարգմանվում» են JavaScript-ի և տրամադրում որոշ հատկություններ։ Խորհուրդ է տրվում աչքի անց կացնել դրանք, գոնե մակերեսային, JavaScript-ում խորանալուց առաց։
