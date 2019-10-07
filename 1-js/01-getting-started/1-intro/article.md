@@ -77,44 +77,44 @@ JavaScript-ի հնարավորությունները browser-ում սահման
 
 ![](limitations.svg)
 
-Such limits do not exist if JavaScript is used outside of the browser, for example on a server. Modern browsers also allow plugin/extensions which may ask for extended permissions.
+Այսպիսի սահմանափակումներ չկան, երբ JavaScript-ը օգտագործվում է browser-ից դուրս, օրինակ՝ server-ներում։ Ժամանակակից browser-ները նույնպես ունեն plug-in-ներ, որոնք կարող են հարցնել հավելյալ  թույլտվություններ։
 
-## What makes JavaScript unique?
+## Ի՞նչն է սարքում JavaScript-ը յուրօրինակ
 
-There are at least *three* great things about JavaScript:
+Կան գոնե *երեք* լավ բաներ JavaScript-ի մասին՝
 
 ```compare
-+ Full integration with HTML/CSS.
-+ Simple things are done simply.
-+ Support by all major browsers and enabled by default.
++ HTML/CSS-ի հետ ներառում։
++ Հասարակ բաները արվում են հասարակ կերպով։
++ Բոլոր մեծ browser-ները աշխատում են JavaScript—ի հետ։
 ```
-JavaScript is the only browser technology that combines these three things.
+JavaScript-ը միակ borwser-ային տեխնոլոգիան է, որը ներառում է այս 3 կետերը։
 
-That's what makes JavaScript unique. That's why it's the most widespread tool for creating browser interfaces.
+Ահա, թե ինչն է սարքում դրան այսքան տարբերվող։ Ահա, թե ինչու է ամենատարածված գործիքը browser-ային ինտերֆեյսեր սարքելու համար։
 
-That said, JavaScript also allows to create servers, mobile applications, etc.
+Այսպիսով, JavaScript-ը թույլ է տալիս ստեղծել server-ներ, mobile ծրագրեր և այլն։
 
-## Languages "over" JavaScript
+## Լեզուներ՝ JavaScript-ի «վրա»
 
-The syntax of JavaScript does not suit everyone's needs. Different people want different features.
+JavaScript-ի գրելաձևը բոլորին չի բավարարում։ Տարբեր մարդիկ ցանկանում են տարբեր հատկություններ։
 
-That's to be expected, because projects and requirements are different for everyone.
+Դա սպասելի է, քանի որ ծրագրերն ու պահանջները տարբեր են բոլորի մոտ։
 
-So recently a plethora of new languages appeared, which are *transpiled* (converted) to JavaScript before they run in the browser.
+Վերջերս բազում նոր լեզուներ են առաջացել, որոնք *transpile* են լինում (փոխվում) JavaScript-ի մինչև աշխատելը։
 
-Modern tools make the transpilation very fast and transparent, actually allowing developers to code in another language and auto-converting it "under the hood".
+Ժամանակակից գործիքները դարձնում են փոփոխվելը շատ արագ և թափանցիկ, թույլատրելով ծրագրավորողներին աշխատել այլ լեզվով, և ավտո-փոխակերպում են այն JavaScript-ի աննկատ կերպով։
 
-Examples of such languages:
+Այսպիսի լեզուների օրինակներ են՝
 
-- [CoffeeScript](http://coffeescript.org/) is a "syntactic sugar" for JavaScript. It introduces shorter syntax, allowing us to write clearer and more precise code. Usually, Ruby devs like it.
-- [TypeScript](http://www.typescriptlang.org/) is concentrated on adding "strict data typing" to simplify the development and support of complex systems. It is developed by Microsoft.
-- [Flow](http://flow.org/) also adds data typing, but in a different way. Developed by Facebook.
-- [Dart](https://www.dartlang.org/) is a standalone language that has its own engine that runs in non-browser environments (like mobile apps), but also can be transpiled to JavaScript. Developed by Google.
+- [CoffeeScript](http://coffeescript.org/)-ը ունի կարճ գրելաձև, թույլատրելով ծրագրավորողին գրելկ ավելի մաքուր և ճշգրիտ կոդ։ Հիմնականում Ruby-ի ծրագրավորողներն են հավանում այն։
+- [TypeScript](http://www.typescriptlang.org/)-ը կենտրոնացած է խիստ տիպերի ներմուծման վրա, հեշտացնելով դժվար համակարգերի ծրագրավորումն ու հետագա ապահովումը։ Այն ստեղծվել է Microsoft-ի կողմից։
+- [Flow](http://flow.org/)-ը նույնպես ավելացնում է տվյալների տիպեր, սակայն այլ կերպով է աշխատում։ Ստեղծված է Facebook-ի կողմից։
+- [Dart](https://www.dartlang.org/)-ը առանձին լեզու է, որը ունի իր սեփական engine-ը և աշխատում է ոչ-browser-ային միջավայրներում, ինչպես mobile ծրագրերում, սակայն կարող է թարգմանվել JavaScript-ի։ Ստեղծվել է Google-ի կողմից։
 
-There are more. Of course, even if we use one of transpiled languages, we should also know JavaScript to really understand what we're doing.
+Կան ուրիշներ։ Իհարկե, եթե նույնիսկ օգտագործենք թարգմանված լեզուները, պետք է իմանանք JavaScript, որպեսզի հասկանանք՝ ինչ ենք անում։
 
-## Summary
+## Ամփոփում
 
-- JavaScript was initially created as a browser-only language, but is now used in many other environments as well.
-- Today, JavaScript has a unique position as the most widely-adopted browser language with full integration with HTML/CSS.
-- There are many languages that get "transpiled" to JavaScript and provide certain features. It is recommended to take a look at them, at least briefly, after mastering JavaScript.
+- JavaScript-ը սկզբում ստեղծվել է միայն browser-ների համար, սակայն այն հիմա օգտագործվում է շատ այլ միջավայրներում նույնպես։
+- Այսօր JavaScript-ը ունի իր ուրույն տեղը ամենաընդունված browser-ի լեզուն, HTML/CSS-ի հետ լրիվ ներառմամբ։ 
+- Կան շատ լեզուներ, որոնք «թարգմանվում» են JavaScript-ի և տրամադրում որոշ հատկություններ։ Խորհուրդ է տրվում աչքի անց կացնել դրանք, գոնե մակերեսային, JavaScript-ում խորանալուց առաց։
