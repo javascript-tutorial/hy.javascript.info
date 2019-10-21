@@ -12,8 +12,13 @@ Script-ների ներկայացվում և աշխատում են ինչպես �
 
 Այս առումով JavaScript-ը շատ է տարբերվում մեկ այլ լեզվից, որը կոչվում է [Java](https://en.wikipedia.org/wiki/Java_(programming_language)):
 
+<<<<<<< HEAD
 ```smart header="Ինչու՞ <u>Java</u>Script"
 Երբ JavaScript ստեղծվել էր, այն սկզբում ուրիշ անուն ուներ՝ «LiveScript» (ԼայվՍքրիփթ)։ Սակայն Java-ն շատ տարածված էր այդ ժամանակ, և որոշվեց, որ լեզվի տարածմանը կօգնի ներկայացնել նոր լեզուն ինչպես Java-ի «կրտսեր եղբայր»։
+=======
+```smart header="Why is it called <u>Java</u>Script?"
+When JavaScript was created, it initially had another name: "LiveScript". But Java was very popular at that time, so it was decided that positioning a new language as a "younger brother" of Java would help.
+>>>>>>> 30e3fa723721909ee25115562e676db2452cf8d1
 
 Բայց երբ այն զարգացավ, JavaScript-ը դարձավ լիովին անկախ լեզու՝ իր հատկանշական մասերով, որոնք անվանվեցին [ECMAScript](http://en.wikipedia.org/wiki/ECMAScript) (ԷՔՄԱՍքրիփթ), և հիմա այն ընդհանրապես ոչ մի կապ չունի Java-ի հետ։
 ```
