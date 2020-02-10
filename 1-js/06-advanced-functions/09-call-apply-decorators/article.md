@@ -75,7 +75,7 @@ let worker = {
   },
 
   slow(x) {
-    // actually, there can be a scary CPU-heavy task here  
+    // scary CPU-heavy task here  
     alert("Called with " + x);
     return x * this.someMethod(); // (*)
   }
@@ -149,8 +149,8 @@ let user = { name: "John" };
 let admin = { name: "Admin" };
 
 // use call to pass different objects as "this"
-sayHi.call( user ); // this = John
-sayHi.call( admin ); // this = Admin
+sayHi.call( user ); // John
+sayHi.call( admin ); // Admin
 ```
 
 And here we use `call` to call `say` with the given context and phrase:
@@ -299,13 +299,13 @@ The only syntax difference between `call` and `apply` is that `call` expects a l
 So these two calls are almost equivalent:
 
 ```js
-func.call(context, ...args); // pass an array as list with spread operator
+func.call(context, ...args); // pass an array as list with spread syntax
 func.apply(context, args);   // is same as using apply
 ```
 
 There's only a minor difference:
 
-- The spread operator `...` allows to pass *iterable* `args` as the list to `call`.
+- The spread syntax `...` allows to pass *iterable* `args` as the list to `call`.
 - The `apply` accepts only *array-like* `args`.
 
 So, these calls complement each other. Where we expect an iterable, `call` works, where we expect an array-like, `apply` works.
@@ -372,7 +372,7 @@ hash(1, 2);
 
 The trick is called *method borrowing*.
 
-We take (borrow) a join method from a regular array `[].join`. And use `[].join.call` to run it in the context of `arguments`.
+We take (borrow) a join method from a regular array (`[].join`) and use `[].join.call` to run it in the context of `arguments`.
 
 Why does it work?
 
