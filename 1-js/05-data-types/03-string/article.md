@@ -394,7 +394,7 @@ There are 3 methods in JavaScript to get a substring: `substring`, `substr` and 
 
     ```js run
     let str = "st*!*ringify*/!*";
-    alert( str.slice(2) ); // ringify, from the 2nd position till the end
+    alert( str.slice(2) ); // 'ringify', from the 2nd position till the end
     ```
 
     Negative values for `start/end` are also possible. They mean the position is counted from the string end:
@@ -403,7 +403,7 @@ There are 3 methods in JavaScript to get a substring: `substring`, `substr` and 
     let str = "strin*!*gif*/!*y";
 
     // start at the 4th position from the right, end at the 1st from the right
-    alert( str.slice(-4, -1) ); // gif
+    alert( str.slice(-4, -1) ); // 'gif'
     ```
 
 `str.substring(start [, end])`
@@ -435,14 +435,14 @@ There are 3 methods in JavaScript to get a substring: `substring`, `substr` and 
 
     ```js run
     let str = "st*!*ring*/!*ify";
-    alert( str.substr(2, 4) ); // ring, from the 2nd position get 4 characters
+    alert( str.substr(2, 4) ); // 'ring', from the 2nd position get 4 characters
     ```
 
     The first argument may be negative, to count from the end:
 
     ```js run
     let str = "strin*!*gi*/!*fy";
-    alert( str.substr(-4, 2) ); // gi, from the 4th position get 2 characters
+    alert( str.substr(-4, 2) ); // 'gi', from the 4th position get 2 characters
     ```
 
 Let's recap these methods to avoid any confusion:
@@ -534,7 +534,7 @@ The "right" algorithm to do string comparisons is more complex than it may seem,
 
 So, the browser needs to know the language to compare.
 
-Luckily, all modern browsers (IE10- requires the additional library [Intl.JS](https://github.com/andyearnshaw/Intl.js/)) support the internationalization standard [ECMA 402](http://www.ecma-international.org/ecma-402/1.0/ECMA-402.pdf).
+Luckily, all modern browsers (IE10- requires the additional library [Intl.js](https://github.com/andyearnshaw/Intl.js/)) support the internationalization standard [ECMA-402](http://www.ecma-international.org/ecma-402/1.0/ECMA-402.pdf).
 
 It provides a special method to compare strings in different languages, following their rules.
 
