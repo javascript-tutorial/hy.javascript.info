@@ -81,9 +81,10 @@ let x = 5;
 x = "John";
 ```
 
-There are 7 data types:
+There are 8 data types:
 
 - `number` for both floating-point and integer numbers,
+- `bigint` for integer numbers of arbitrary length,
 - `string` for strings,
 - `boolean` for logical values: `true/false`,
 - `null` -- a type with a single value `null`, meaning "empty" or "does not exist",
@@ -272,7 +273,7 @@ We covered three ways to create a function in JavaScript:
 - Parameters can have default values: `function sum(a = 1, b = 2) {...}`.
 - Functions always return something. If there's no `return` statement, then the result is `undefined`.
 
-Details: see <info:function-basics>, <info:function-expressions-arrows>.
+Details: see <info:function-basics>, <info:arrow-functions-basics>.
 
 ## More to come
 
