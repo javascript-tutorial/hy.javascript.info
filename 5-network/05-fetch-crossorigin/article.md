@@ -20,7 +20,7 @@ Cross-origin requests -- those sent to another domain (even a subdomain) or prot
 
 That policy is called "CORS": Cross-Origin Resource Sharing.
 
-## Why CORS is needed? A brief history
+## Why is CORS needed? A brief history
 
 CORS exists to protect the internet from evil hackers.
 
@@ -95,7 +95,7 @@ That works, and doesn't violate security, because both sides agreed to pass the 
 
 After a while, networking methods appeared in browser JavaScript.
 
-At first, cross-origin requests were forbidden. But as a result of long discussions, cross-origin requests were allowed, but any new capabilities unless require an explicit allowance by the server, expressed in special headers.
+At first, cross-origin requests were forbidden. But as a result of long discussions, cross-origin requests were allowed, but with any new capabilities requiring an explicit allowance by the server, expressed in special headers.
 
 ## Simple requests
 
@@ -226,7 +226,7 @@ Let's see how it works step-by-step on example, for a cross-origin `PATCH` reque
 let response = await fetch('https://site.com/service.json', {
   method: 'PATCH',
   headers: {
-    'Content-Type': 'application/json'  
+    'Content-Type': 'application/json',
     'API-Key': 'secret'
   }
 });
@@ -309,7 +309,7 @@ JavaScript only gets the response to the main request or an error if there's no 
 
 ## Credentials
 
-A cross-origin request by default does not bring any credentials (cookies or HTTP authentication).
+A cross-origin request initiated by JavaScript code by default does not bring any credentials (cookies or HTTP authentication).
 
 That's uncommon for HTTP-requests. Usually, a request to `http://site.com` is accompanied by all cookies from that domain. But cross-origin requests made by JavaScript methods are an exception.
 
@@ -341,7 +341,7 @@ Access-Control-Allow-Origin: https://javascript.info
 Access-Control-Allow-Credentials: true
 ```
 
-Please note: `Access-Control-Allow-Origin` is prohibited from using a star `*` for requests with credentials. Like shown above, there must be exactly the origin there. That's an additional safety measure, to ensure that the server really knows who it trusts to make such requests.
+Please note: `Access-Control-Allow-Origin` is prohibited from using a star `*` for requests with credentials. Like shown above, it must provide the exact origin there. That's an additional safety measure, to ensure that the server really knows who it trusts to make such requests.
 
 ## Summary
 
