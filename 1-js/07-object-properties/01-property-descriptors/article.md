@@ -3,7 +3,7 @@
 
 As we know, objects can store properties.
 
-Till now, a property was a simple "key-value" pair to us. But an object property is actually a more flexible and powerful thing.
+Until now, a property was a simple "key-value" pair to us. But an object property is actually a more flexible and powerful thing.
 
 In this chapter we'll study additional configuration options, and in the next we'll see how to invisibly turn them into getter/setter functions.
 
@@ -66,7 +66,7 @@ Object.defineProperty(obj, propertyName, descriptor)
 : The object and its property to apply the descriptor.
 
 `descriptor`
-: Property descriptor to apply.
+: Property descriptor object to apply.
 
 If the property exists, `defineProperty` updates its flags. Otherwise, it creates the property with the given value and flags; in that case, if a flag is not supplied, it is assumed `false`.
 
@@ -134,7 +134,7 @@ let user = { };
 Object.defineProperty(user, "name", {
 *!*
   value: "John",
-  // for new properties need to explicitly list what's true
+  // for new properties we need to explicitly list what's true
   enumerable: true,
   configurable: true
 */!*
@@ -148,7 +148,7 @@ user.name = "Pete"; // Error
 
 Now let's add a custom `toString` to `user`.
 
-Normally, a built-in `toString` for objects is non-enumerable, it does not show up in `for..in`. But if we add `toString` of our own, then by default it shows up in `for..in`, like this:
+Normally, a built-in `toString` for objects is non-enumerable, it does not show up in `for..in`. But if we add a `toString` of our own, then by default it shows up in `for..in`, like this:
 
 ```js run
 let user = {
@@ -162,7 +162,7 @@ let user = {
 for (let key in user) alert(key); // name, toString
 ```
 
-If we don't like it, then we can set `enumerable:false`. Then it won't appear in `for..in` loop, just like the built-in one:
+If we don't like it, then we can set `enumerable:false`. Then it won't appear in a `for..in` loop, just like the built-in one:
 
 ```js run
 let user = {
@@ -243,7 +243,7 @@ Object.defineProperty(user, "name", {
 // all this won't work:
 //   user.name = "Pete"
 //   delete user.name
-//   defineProperty(user, "name", { value: "Pete" })
+//   Object.defineProperty(user, "name", { value: "Pete" })
 Object.defineProperty(user, "name", {writable: true}); // Error
 */!*
 ```
