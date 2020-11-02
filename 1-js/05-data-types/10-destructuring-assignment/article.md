@@ -121,6 +121,25 @@ for (let [key, value] of user) {
 }
 ```
 ````
+
+```smart header="Swap variables trick"
+A well-known trick for swapping values of two variables:
+
+```js run
+let guest = "Jane";
+let admin = "Pete";
+
+// Swap values: make guest=Pete, admin=Jane
+[guest, admin] = [admin, guest];
+
+alert(`${guest} ${admin}`); // Pete Jane (successfully swapped!)
+```
+
+Here we create a temporary array of two variables and immediately destructure it in swapped order.
+
+We can swap more than two variables this way.
+
+
 ### The rest '...'
 
 If we want not just to get first values, but also to gather all that follows -- we can add one more parameter that gets "the rest" using three dots `"..."`:
@@ -187,7 +206,7 @@ The destructuring assignment also works with objects.
 The basic syntax is:
 
 ```js
-let {var1, var2} = {var1:…, var2…}
+let {var1, var2} = {var1:…, var2:…}
 ```
 
 We have an existing object at the right side, that we want to split into variables. The left side contains a "pattern" for corresponding properties. In the simple case, that's a list of variable names in `{...}`.

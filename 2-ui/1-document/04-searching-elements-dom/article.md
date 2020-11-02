@@ -103,7 +103,7 @@ Here we look for all `<li>` elements that are last children:
 This method is indeed powerful, because any CSS selector can be used.
 
 ```smart header="Can use pseudo-classes as well"
-Pseudo-classes in the CSS selector like `:hover` and `:active` are also supported. For instance, `document.querySelectorAll(':hover')` will return the collection with elements that the pointer is  over now (in nesting order: from the outermost `<html>` to the most nested one).
+Pseudo-classes in the CSS selector like `:hover` and `:active` are also supported. For instance, `document.querySelectorAll(':hover')` will return the collection with elements that the pointer is over now (in nesting order: from the outermost `<html>` to the most nested one).
 ```
 
 ## querySelector [#querySelector]
@@ -118,7 +118,7 @@ Previous methods were searching the DOM.
 
 The [elem.matches(css)](http://dom.spec.whatwg.org/#dom-element-matches) does not look for anything, it merely checks if `elem` matches the given CSS-selector. It returns `true` or `false`.
 
-The method comes in handy when we are iterating over elements (like in array or something) and trying to filter those that interest us.
+The method comes in handy when we are iterating over elements (like in an array or something) and trying to filter out those that interest us.
 
 For instance:
 
@@ -178,7 +178,7 @@ So here we cover them mainly for completeness, while you can still find them in 
 
 - `elem.getElementsByTagName(tag)` looks for elements with the given tag and returns the collection of them. The `tag` parameter can also be a star `"*"` for "any tags".
 - `elem.getElementsByClassName(className)` returns elements that have the given CSS class.
-- `document.getElementsByName(name)` returns elements with the given `name` attribute, document-wide. very rarely used.
+- `document.getElementsByName(name)` returns elements with the given `name` attribute, document-wide. Very rarely used.
 
 For instance:
 ```js
