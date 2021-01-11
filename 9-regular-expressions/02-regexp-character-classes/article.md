@@ -1,6 +1,6 @@
 # Character classes
 
-Consider a practical task -- we have a phone number like `"+7(903)-123-45-67"`, and we need to turn it into pure numbers: `79035419441`.
+Consider a practical task -- we have a phone number like `"+7(903)-123-45-67"`, and we need to turn it into pure numbers: `79031234567`.
 
 To do so, we can find and remove anything that's not a number. Character classes can help with that.
 
@@ -8,7 +8,7 @@ A *character class* is a special notation that matches any symbol from a certain
 
 For the start, let's explore the "digit" class. It's written as `pattern:\d` and corresponds to "any single digit".
 
-For instance, the let's find the first digit in the phone number:
+For instance, let's find the first digit in the phone number:
 
 ```js run
 let str = "+7(903)-123-45-67";
@@ -30,7 +30,7 @@ let regexp = /\d/g;
 alert( str.match(regexp) ); // array of matches: 7,9,0,3,1,2,3,4,5,6,7
 
 // let's make the digits-only phone number of them:
-alert( str.match(regexp).join('') ); // 79035419441
+alert( str.match(regexp).join('') ); // 79031234567
 ```
 
 That was a character class for digits. There are other character classes as well.
@@ -100,7 +100,7 @@ let str = "+7(903)-123-45-67";
 alert( str.replace(/\D/g, "") ); // 79031234567
 ```
 
-## A dot is any character
+## A dot is "any character"
 
 A dot `pattern:.` is a special character class that matches "any character except a newline".
 
@@ -120,7 +120,7 @@ alert( "CS-4".match(regexp) ); // CS-4
 alert( "CS 4".match(regexp) ); // CS 4 (space is also a character)
 ```
 
-Please note that a dot means "any character", but not the "absense of a character". There must be a character to match it:
+Please note that a dot means "any character", but not the "absence of a character". There must be a character to match it:
 
 ```js run
 alert( "CS4".match(/CS.4/) ); // null, no match because there's no character for the dot
@@ -128,7 +128,7 @@ alert( "CS4".match(/CS.4/) ); // null, no match because there's no character for
 
 ### Dot as literally any character with "s" flag
 
-Usually a dot doesn't match a newline character `\n`.
+By default, a dot doesn't match the newline character `\n`.
 
 For instance, the regexp `pattern:A.B` matches `match:A`, and then `match:B` with any character between them, except a newline `\n`:
 
@@ -143,6 +143,20 @@ That's what flag `pattern:s` does. If a regexp has it, then a dot `pattern:.` ma
 ```js run
 alert( "A\nB".match(/A.B/s) ); // A\nB (match!)
 ```
+
+````warn header="Not supported in IE"
+The `pattern:s` flag is not supported in IE.
+
+Luckily, there's an alternative, that works everywhere. We can use a regexp like `pattern:[\s\S]` to match "any character" (this pattern will be covered in the article <info:regexp-character-sets-and-ranges>).
+
+```js run
+alert( "A\nB".match(/A[\s\S]B/) ); // A\nB (match!)
+```
+
+The pattern `pattern:[\s\S]` literally says: "a space character OR not a space character". In other words, "anything". We could use another pair of complementary classes, such as `pattern:[\d\D]`, that doesn't matter. Or even the `pattern:[^]` -- as it means match any character except nothing.
+
+Also we can use this trick if we want both kind of "dots" in the same pattern: the actual dot `pattern:.` behaving the regular way ("not including a newline"), and also a way to match "any character" with `pattern:[\s\S]` or alike.
+````
 
 ````warn header="Pay attention to spaces"
 Usually we pay little attention to spaces. For us strings `subject:1-5` and `subject:1 - 5` are nearly identical.
@@ -165,7 +179,7 @@ alert( "1 - 5".match(/\d\s-\s\d/) ); // 1 - 5, also works
 
 **A space is a character. Equal in importance with any other character.**
 
-We can't add or remove spaces from a regular expression and expect to work the same.
+We can't add or remove spaces from a regular expression and expect it to work the same.
 
 In other words, in a regular expression all characters matter, spaces too.
 ````
@@ -184,6 +198,6 @@ There exist following character classes:
 
 ...But that's not all!
 
-Unicode encoding, used by JavaScript for strings, provides many properties for characters, like: which language the letter belongs to (if it's a letter) it is it a punctuation sign, etc.
+Unicode encoding, used by JavaScript for strings, provides many properties for characters, like: which language the letter belongs to (if it's a letter), is it a punctuation sign, etc.
 
 We can search by these properties as well. That requires flag `pattern:u`, covered in the next article.
