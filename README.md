@@ -1,6 +1,6 @@
 # The Modern JavaScript Tutorial in Armenian
 
-This repository hosts the translation of <https://javascript.info> in Armenian.
+This repository hosts Armenian translation of the Modern JavaScript Tutorial, published in [https://javascript.info](https://javascript.info).
 
 
 **That's how you can contribute:**
