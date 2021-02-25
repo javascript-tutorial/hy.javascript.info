@@ -1,46 +1,42 @@
-# Code editors
+# Խմբագրիչներ
 
-A code editor is the place where programmers spend most of their time.
+Ծրագրավորողները ժամանակի մեծ մասն անցկացում են խմբագրիչներում:
 
-There are two main types of code editors: IDEs and lightweight editors. Many people use one tool of each type.
+Կան երկու հիմնական տիպի խմբագրիչներ. IDE-ներ (ամբողջացված մշակման միջավայրեր) և թեթև խմբագրիչներ: Շատերն օգտագործում են դրանցից որևէ մեկը:
 
 ## IDE
 
-The term [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment) (Integrated Development Environment) refers to a powerful editor with many features that usually operates on a "whole project." As the name suggests, it's not just an editor, but a full-scale "development environment."
+[IDE](https://en.wikipedia.org/wiki/Integrated_development_environment)-ն (ամբողջացված մշակման միջավայր) հզոր խմբագրիչ է բազմաթիվ հնարավորություններով, որում կարելի է մշակել և կառավարել ամբողջական նախագծեր: Ինչպես անունն է հուշում՝ այն ուղղակի խմբագրիչ չէ, այլ մշակման ամփոփ միջավայր:
 
-An IDE loads the project (which can be many files), allows navigation between files, provides autocompletion based on the whole project (not just the open file), and integrates with a version management system (like [git](https://git-scm.com/)), a testing environment, and other "project-level" stuff.
+IDE-ն բեռնում է նախագիծը (որը կարող է պարունակել բազմաթիվ ֆայլեր), թույլ է տալիս նավարկել ֆայլերի միջև, տրամադրում է ինքնալրացում (autocompletion), ինտեգրվում է տարբերակների կառավարման համակարգերի (VCS) հետ (օրինակ՝ [git](https://git-scm.com/)), ունի փորձարկման միջավայր և այլն:
 
-If you haven't selected an IDE yet, consider the following options:
+IDE-ների օրնակներ են.
 
-- [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, free).
-- [WebStorm](http://www.jetbrains.com/webstorm/) (cross-platform, paid).
+- [Visual Studio Code](https://code.visualstudio.com/) (հասանելի է տարբեր հարթակների համար, անվճար է):
+- [WebStorm](http://www.jetbrains.com/webstorm/) (հասանելի է տարբեր հարթակների համար, վճարովի է):
 
-For Windows, there's also "Visual Studio", not to be confused with "Visual Studio Code". "Visual Studio" is a paid and mighty Windows-only editor, well-suited for the .NET platform. It's also good at JavaScript. There's also a free version [Visual Studio Community](https://www.visualstudio.com/vs/community/).
+Windows-ի համար կա նաև «Visual Studio»-ն, որը տարբերվում է «Visual Studio Code»-ից. «Visual Studio»-ն վճարովի և բազմաֆունկցիոնալ խմբագրիչ է, ստեղծված միայն Windows-ի համար և հարմարեցված .NET հարթակի համար: Ունի նաև [Visual Studio Community](https://www.visualstudio.com/vs/community/) անվճար տարբերակը:
 
-Many IDEs are paid, but have a trial period. Their cost is usually negligible compared to a qualified developer's salary, so just choose the best one for you.
+Շատ IDE-ներ վճարովի են, բայց ունեն փորձարկման շրջան: Նրանց գինը սովորաբար աննշան է փորձառու ծրագրավորողի աշխատավարձի հետ համեմատած, այնպես որ ուղղակի ընտրեք այն, որը Ձեր կարիքներին առավել լավ է համապատասխանում:
 
-## Lightweight editors
+## Թեթև խմբագրիչներ
 
-"Lightweight editors" are not as powerful as IDEs, but they're fast, elegant and simple.
+«Թեթև խմբագրիչներ»-ը IDE-ների նման հզոր չեն, բայց արագագործ են և պարզ:
 
-They are mainly used to open and edit a file instantly.
+Հիմնականում օգտագործվում են ֆայլերը արագ խմբագրելու համար:
 
-The main difference between a "lightweight editor" and an "IDE" is that an IDE works on a project-level, so it loads much more data on start, analyzes the project structure if needed and so on. A lightweight editor is much faster if we need only one file.
+IDE-ների և «թեթև խմբագրիչներ»-ի հիմնական տարբերությունն այն է, որ IDE-ն աշխատում է նախագծի մակարդակով, բեռնում է շատ ավելի տվայլներ, անհրաժեշտության դեպքում վերլուծում է նախագծի կառուցվածը և այլն: Թեթև խմբագրիչը շատ ավելի արագ է աշխատում, եթե միայն մեկ ֆայլի հետ գործ ունենք:
 
-In practice, lightweight editors may have a lot of plugins including directory-level syntax analyzers and autocompleters, so there's no strict border between a lightweight editor and an IDE.
+Գործնականում թեթև խմբագրիչները կարող են ունենալ բազմաթիվ հավելումներ (plugins), որոնք կարող են խմբագրիչի հնարավորություններ մեծացնել, այնպես որ թեթև խմբագրիչների և IDE-ների մեջ խիստ տարանջատում չկա:
 
-The following options deserve your attention:
+Հետևյալ խնբագրիչներն արժանի են Ձեր ուշադրությանը.
 
-- [Atom](https://atom.io/) (cross-platform, free).
-- [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, free).
-- [Sublime Text](http://www.sublimetext.com) (cross-platform, shareware).
-- [Notepad++](https://notepad-plus-plus.org/) (Windows, free).
-- [Vim](http://www.vim.org/) and [Emacs](https://www.gnu.org/software/emacs/) are also cool if you know how to use them.
+- [Atom](https://atom.io/) (հասանելի է տարբեր հարթակների համար, անվճար է).
+- [Visual Studio Code](https://code.visualstudio.com/) (հասանելի է տարբեր հարթակների համար, անվճար է).
+- [Sublime Text](http://www.sublimetext.com) (հասանելի է տարբեր հարթակների համար, վճարովի է).
+- [Notepad++](https://notepad-plus-plus.org/) (Windows, անվճար է).
+- [Vim](http://www.vim.org/), [Emacs](https://www.gnu.org/software/emacs/).
 
-## Let's not argue
+## Այլ խմբագրիչներ
 
-The editors in the lists above are those that either I or my friends whom I consider good developers have been using for a long time and are happy with.
-
-There are other great editors in our big world. Please choose the one you like the most.
-
-The choice of an editor, like any other tool, is individual and depends on your projects, habits, and personal preferences.
+Վերոնշյալ խմբագրիչները առավել հաճախ կիրառվողներից են: Գոյություն ունեն նաև այլ խմբագրիչներ: Խմբագրիչի (ինչպես մնացած գործիքների) ընտրությունը Ձեր անձնական գործն է և կարող է կախված լինել նախագծից, սովորություններից, կամ անձնական նախընտրություններից:
