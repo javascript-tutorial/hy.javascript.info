@@ -1,37 +1,37 @@
 
-# Manuals and specifications
+# Ձեռնարկներ և բնութագրեր
 
-This book is a *tutorial*. It aims to help you gradually learn the language. But once you're familiar with the basics, you'll need other sources.
+Այս գիրքը *ուսուցողական ձեռնարկ* է, որի նպատակն է օգնել Ձեզ աստիճանաբար յուրացնել լեզուն: Երբ ծանոթանաք հիմնական հասկացություններին, ուսուցումը շարունակելու համար այլ աղբյուրների կարիք կլինի:
 
-## Specification
+## Բնութագիր (Specification)
 
-[The ECMA-262 specification](https://www.ecma-international.org/publications/standards/Ecma-262.htm) contains the most in-depth, detailed and formalized information about JavaScript. It defines the language.
+[ECMA-262 ստանդարտը](https://www.ecma-international.org/publications/standards/Ecma-262.htm) պարունակում է ամենախորը, մանրամասն և պատշոնապես ձևակերպված տեղեկատվությունը JavaScript-ի մասին: Այն սահմանում է լեզուն:
 
-But being that formalized, it's difficult to understand at first. So if you need the most trustworthy source of information about the language details, the specification is the right place. But it's not for everyday use.
+Բայց լեզվի նման ձևակերպումը դժվար է հասկանալ սկզբում: Եթե Ձեզ պետք է լեզվի մանրամասների մասին տեղեկատվության ամենավստահելի աղբյուրը, ապա այս պաշտոնական փաստաթուղթն է հենց այդ աղբյուրը: Սակայն այն նախատեսված չէ ամենօրյա օգտագործման համար:
 
-A new specification version is released every year. In-between these releases, the latest specification draft is at <https://tc39.es/ecma262/>.
+Ամեն տարի թողարկվում է բնութագրի նոր տարբերակ: Ամենաթարմ սևագիրը գտնվում է <https://tc39.es/ecma262/> հասցեում:
 
-To read about new bleeding-edge features, including those that are "almost standard" (so-called "stage 3"), see proposals at <https://github.com/tc39/proposals>.
+Լեզվի նորագույն հնարավորությունների մասին կարդալու համար (ներառյալ «գրեթե ստանդարտ»՝ այսպես կոչված «stage 3» հնարավորությունները) այցելեք առաջարկությունների կայքը՝ <https://github.com/tc39/proposals> հասցեով:
 
-Also, if you're developing for the browser, then there are other specifications covered in the [second part](info:browser-environment) of the tutorial.
+Ինչպես նաև, եթե Դուք լուծում եք մշակում վեբ զննիչների համար, ապա ձեռնարկի [երկրորդ մասում](info:browser-environment) ունենք տեղեկատվություն այլ բնութագրերի մասին:
 
-## Manuals
+## Ձեռնարկներ
 
-- **MDN (Mozilla) JavaScript Reference** is the main manual with examples and other information. It's great to get in-depth information about individual language functions, methods etc.
+- **MDN (Mozilla) JavaScript Reference**-ը հիմնական ձեռնարկ է՝ հագեցած օրինակներով և այլ տեղեկություններով: Այն օգտակար է լեզվի առանձին հնարավորությունների, մեթոդների և այլնի մասին խորացած տեղեկություններ ստանալու համար.
 
-    One can find it at <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference>.
+    Այն կարելի է գտնել <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference> հասցեով:
 
-Although, it's often best to use an internet search instead. Just use "MDN [term]" in the query, e.g. <https://google.com/search?q=MDN+parseInt> to search for `parseInt` function.
+Հաճախ ավելի լավ է կատարել որոնում համացանցում: Ուղղակի օգտագործեք "MDN [տերմին]"-ը որոնման մեջ, օրինակ՝ <https://google.com/search?q=MDN+parseInt> `parseInt`-ը որոնելու համար.
 
-## Compatibility tables
+## Համատեղելիության աղյուսակներ
 
-JavaScript is a developing language, new features get added regularly.
+JavaScript-ը զարգացող լեզու է, և պարբերաբար նոր հնարավորություններ են ավելացվում:
 
-To see their support among browser-based and other engines, see:
+Օգտվեք հետևյալ կայքերից՝ տարբեր վեբ զննիչներում և շարժիչներում դրանց հասանելիությունը ստուգելու համար.
 
-- <http://caniuse.com> - per-feature tables of support, e.g. to see which engines support modern cryptography functions: <http://caniuse.com/#feat=cryptography>.
-- <https://kangax.github.io/compat-table> - a table with language features and engines that support those or don't support.
+- <http://caniuse.com> - հասանելիություն ըստ հնարավորթյունների, օրինակ՝ ցույց  է տալիս այն շարժիչները, որոնցում հասանելի են գաղտնագրման ժամանակակից ֆուկցիաները: <http://caniuse.com/#feat=cryptography>:
+- <https://kangax.github.io/compat-table> - աղյուսակ է, կազմված լեզվի հնարավորություններից և շարժիչներից, որոնցում այդ հնարավորությունները հասանելի են, կամ հասանելի չեն:
 
-All these resources are useful in real-life development, as they contain valuable information about language details, their support etc.
+Բոլոր այս կայքերն օգտակար են առօրյա աշխատանքում, քանի որ տրամադրում են արժեքավոր տեղեկություններ լեզվի հնարավորությունների և դրանց հասանելիության մասին:
 
-Please remember them (or this page) for the cases when you need in-depth information about a particular feature.
+Խնդրում ենք մտապահել այդ կայքերը (կամ այս էջը) այն դեպքերի համար, երբ անհրաժեշտ կլինի մանրամասն տեղեկություններ ստանալ որևէ հնարավորության մասին:
