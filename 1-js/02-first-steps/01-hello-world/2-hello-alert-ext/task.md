@@ -2,8 +2,8 @@ importance: 5
 
 ---
 
-# Show an alert with an external script
+# Ցուցադրել հաղորդագրություն արտաքին սկրիպտի միջոցով
 
-Take the solution of the previous task <info:task/hello-alert>. Modify it by extracting the script content into an external file `alert.js`, residing in the same folder.
+Վերցրեք նախորդ խնդրի լուծումը <info:task/hello-alert>։ Տեղափոխեք script պիտակի պարունակությունը `alert.js` ֆայլի մեջ, որը պետք է գտնվի նույն պանակում։
 
-Open the page, ensure that the alert works.
+Բացեք էջը և համոզվեք, որ լուծումն աշխատում է։

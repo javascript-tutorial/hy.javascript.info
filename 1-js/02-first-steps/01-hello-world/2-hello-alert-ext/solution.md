@@ -1,8 +1,8 @@
-The HTML code:
+HTML կոդը՝
 
 [html src="index.html"]
 
-For the file `alert.js` in the same folder:
+`alert.js` ֆայլը՝
 
 [js src="alert.js"]
 
