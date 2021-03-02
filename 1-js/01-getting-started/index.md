@@ -1,3 +1,3 @@
-# An introduction
+# Ներածություն
 
-About the JavaScript language and the environment to develop with it.
+JavaScript լեզվի և այն միջավայրի մասին, որով ծրագրավորելու ենք:
