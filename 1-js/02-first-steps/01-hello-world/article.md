@@ -1,17 +1,17 @@
 # Hello, world!
 
-This part of the tutorial is about core JavaScript, the language itself.
+Ձեռնարկի այս մասը վերաբերում է բուն JavaScript լեզվին։
 
-But we need a working environment to run our scripts and, since this book is online, the browser is a good choice. We'll keep the amount of browser-specific commands (like `alert`) to a minimum so that you don't spend time on them if you plan to concentrate on another environment (like Node.js). We'll focus on JavaScript in the browser in the [next part](/ui) of the tutorial.
+Մեզ հարկավոր է աշխատանքային միջավայր, որտեղ գործարկելու ենք մեր սկրիպտերը։ Քանի որ այս ձեռնարկը առցանց է, ապա զննիչը լավ ընտրություն է։ Զննիչներին հատուկ հրամանները (օրինակ՝ `alert`) կօգտագործենք հնարավորինս քիչ, որպեսզի դրանց վրա շատ ժամանակ չծախսեք, եթե պլանավորում եք այլ միջավայրում աշխատել (օրինակ՝ Node.js)։ Մենք կկենտրոնանանք զննիչներում JavaScript–ի աշխատանքին ձեռնարկի [հաջորդ բաժնում](/ui)։
 
-So first, let's see how we attach a script to a webpage. For server-side environments (like Node.js), you can execute the script with a command like `"node my.js"`.
+Սկզբում տեսնենք, թե ինչպես էջին կցել որևէ սկրիպտ։ Սերվերային միջավայրերում (օրինակ՝ Node.js) սկրիպտը կարելի է գործարկել հետևյալ կամ նմանատիպ հրամանով՝ `"node my.js"`։
 
 
-## The "script" tag
+## «script» պիտակը (tag)
 
-JavaScript programs can be inserted almost anywhere into an HTML document using the `<script>` tag.
+JavaScript ծրագրերը կարելի է ներդնել HTML փաստաթղթի գրեթե ցանկացած մասում՝ օգտագործելով `<script>` պիտակը։
 
-For instance:
+Օրինակ՝
 
 ```html run height=100
 <!DOCTYPE HTML>
@@ -19,7 +19,7 @@ For instance:
 
 <body>
 
-  <p>Before the script...</p>
+  <p>Սկրիպտից առաջ...</p>
 
 *!*
   <script>
@@ -27,7 +27,7 @@ For instance:
   </script>
 */!*
 
-  <p>...After the script.</p>
+  <p>...սկրիպտից հետո։</p>
 
 </body>
 
@@ -35,24 +35,24 @@ For instance:
 ```
 
 ```online
-You can run the example by clicking the "Play" button in the right-top corner of the box above.
+Կարող եք գործարկել օրինակը սեղմելով «Play» կոճակը։
 ```
 
-The `<script>` tag contains JavaScript code which is automatically executed when the browser processes the tag.
+`<script>` պիտակը պարունակում է JavaScript կոդ, որն ավտոմատ գործարկվում է, երբ զննիչը մշակում է պիտակը։
 
 
-## Modern markup
+## Ժամանակակից նշարկում (markup)
 
-The `<script>` tag has a few attributes that are rarely used nowadays but can still be found in old code:
+`<script>` պիտակը ունի մի քանի հատկանիշներ (attributes), որոնք ներկայումս այնքան էլ հաճախ չեն օգտագործվում, բայց հին կոդերում դեռ կարելի է դրանց հանդիպել։
 
-The `type` attribute: <code>&lt;script <u>type</u>=...&gt;</code>
-: The old HTML standard, HTML4, required a script to have a `type`. Usually it was `type="text/javascript"`. It's not required anymore. Also, the modern HTML standard totally changed the meaning of this attribute. Now, it can be used for JavaScript modules. But that's an advanced topic, we'll talk about modules in another part of the tutorial.
+`type` հատկանիշը՝ <code>&lt;script <u>type</u>=...&gt;</code>
+:  Հին HTML ստանդարտը՝ HTML4–ը, պահանջում էր, որ script–ն ունենա `type` հատկանիշը։ Սովորաբար այն ընդունում էր `type="text/javascript"` տեսքը։ Սա այլևս պարտադիր չէ։ Ինչպես նաև, ժամանակակից HTML ստանդարտը ամբողջովին փոխել է այս հատկանիշի նշանակությունը։ Այժմ այն կարող է օգտագործվել JavaScript մոդուլների համար։ Բայց դա ավելի բարդ թեմա է, որին կանդրադառնանք ձեռնարկի ուրիշ բաժնում։
 
-The `language` attribute: <code>&lt;script <u>language</u>=...&gt;</code>
-: This attribute was meant to show the language of the script. This attribute no longer makes sense because JavaScript is the default language. There is no need to use it.
+`language` հատկանիշը՝ <code>&lt;script <u>language</u>=...&gt;</code>
+: Այս հատկանիշը նպատակ ուներ նշել այն լեզուն, որով գրված էր սկրիպտը։ Այժմ այն անիմաստ է, քանի որ JavaScript–ն է այդ լեզուն, և այս հատկանիշն օգտագործելու կարիք չկա։
 
-Comments before and after scripts.
-: In really ancient books and guides, you may find comments inside `<script>` tags, like this:
+Մեկնաբանություններ սկրիպերից առաջ և հետո։
+: Շատ հին գրքերում և ձեռնարկներում `<script>` պիտակների մեջ կարելի է հանդիպել հետևյալ տիպի մեկնաբանությունների՝
 
     ```html no-beautify
     <script type="text/javascript"><!--
@@ -60,28 +60,28 @@ Comments before and after scripts.
     //--></script>
     ```
 
-    This trick isn't used in modern JavaScript. These comments hide JavaScript code from old browsers that didn't know how to process the `<script>` tag. Since browsers released in the last 15 years don't have this issue, this kind of comment can help you identify really old code.
+    Սա ժամանակակից JavaScript–ում այլևս չի օգտագործվում։ Այս մեկնաբանությունները թաքցնում են JavaScript կոդը հին զննիչներում, որոնք չգիտեն, թե ինչպես մշակել `<script>` պիտակը։ Քանի որ վեջին 15 տարիների ընթացքում թողարկված զննիչներն այս խնդիրը չունեն, ապա նման մեկնաբանություններն օգտագործելու իմաստ չկա։
 
 
-## External scripts
+## Արտաքին սկրիպտեր
 
-If we have a lot of JavaScript code, we can put it into a separate file.
+Եթե JavaScript կոդը շատ է, ապա կարելի է այն առանձին ֆայլի մեջ տեղադրել։
 
-Script files are attached to HTML with the `src` attribute:
+Նման ֆայլերը HTML–ին կցվում են `src` հատկանիշի միջոցով՝
 
 ```html
 <script src="/path/to/script.js"></script>
 ```
 
-Here, `/path/to/script.js` is an absolute path to the script from the site root. One can also provide a relative path from the current page. For instance, `src="script.js"` would mean a file `"script.js"` in the current folder.
+Այստեղ, `/path/to/script.js`–ը կայքի արմատից (root) սկրիպտի բացարձակ ուղին է (absolute path)։ Կարելի է տրամադրել նաև հարաբերական ուղի տվյալ էջից։ Օրինակ՝ `src="script.js"`–ը նշանակում է, որ `"script.js"` ֆայլը գտնվում է տվյալ պանակում (folder)։
 
-We can give a full URL as well. For instance:
+Կարելի է նաև նշել ամբողջական URL։ Օրինակ՝
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js"></script>
 ```
 
-To attach several scripts, use multiple tags:
+Մի քանի սկրիպտեր կցելու համար կարելի է օգտագործել մի քանի պիտակներ՝
 
 ```html
 <script src="/js/script1.js"></script>
@@ -90,29 +90,29 @@ To attach several scripts, use multiple tags:
 ```
 
 ```smart
-As a rule, only the simplest scripts are put into HTML. More complex ones reside in separate files.
+Սովորաբար միայն պարզ սկրիպտերն են ներդնում HTML–ում։ Առավել բարդերը տեղակայվում են առանձին ֆայլերում։
 
-The benefit of a separate file is that the browser will download it and store it in its [cache](https://en.wikipedia.org/wiki/Web_cache).
+Առանձին ֆայլի առավելությունն այն է, որ զննիչը ներբեռնում է այն և պահում իր [cache](https://en.wikipedia.org/wiki/Web_cache)–ում։
 
-Other pages that reference the same script will take it from the cache instead of downloading it, so the file is actually downloaded only once.
+Մյուս էջերը, որոնք հղում ունեն այդ նույն սկրիպտին, նորից ներբեռնելու փոխարեն կվերցնեն այն cache–ից։
 
-That reduces traffic and makes pages faster.
+Սա էջերը դարձնոմ է ավելի արագ և նվազեցնում է traffic–ը։
 ```
 
-````warn header="If `src` is set, the script content is ignored."
-A single `<script>` tag can't have both the `src` attribute and code inside.
+````warn header="Եթե `src` հատկանիշը դրված է, ապա սկիպտի պարունակությունն արհամարհվում է։"
+`<script>` պիտակը չի կարող միաժամանակ `src` հատկանիշն ունենալ և պարունակել կոդ։
 
-This won't work:
+Սա չի աշխատի՝
 
 ```html
 <script *!*src*/!*="file.js">
-  alert(1); // the content is ignored, because src is set
+  alert(1); // այս պարունակությունը արհամարհվում է, քանի որ դրված է src հատկանիշը
 </script>
 ```
 
-We must choose either an external `<script src="…">` or a regular `<script>` with code.
+Այսինքն՝ պետք է ընտրություն կատարենք արտաքին `<script src="…">` պիտակի և սովորական `<script>` պիտակի միջև, որը կոդ է պարունակում։
 
-The example above can be split into two scripts to work:
+Վերևում բերված օրինակը աշխատեցնելու համար այն կարելի է բաժանել երկու սկրիպտերի միջև․
 
 ```html
 <script src="file.js"></script>
@@ -122,11 +122,11 @@ The example above can be split into two scripts to work:
 ```
 ````
 
-## Summary
+## Ամփոփում
 
-- We can use a `<script>` tag to add JavaScript code to a page.
-- The `type` and `language` attributes are not required.
-- A script in an external file can be inserted with `<script src="path/to/script.js"></script>`.
+- Կարող ենք օգտագործել `<script>` պիտակը՝ էջում JavaScript կոդ ավելացնելու համար։
+- `type` և `language` հատկանիշները պարտադիր չեն։
+- Արտաքին ֆայլում պահվող սկրիպտը կարելի է կցել էջին հետևյալ կերպ՝ `<script src="path/to/script.js"></script>`։
 
 
-There is much more to learn about browser scripts and their interaction with the webpage. But let's keep in mind that this part of the tutorial is devoted to the JavaScript language, so we shouldn't distract ourselves with browser-specific implementations of it. We'll be using the browser as a way to run JavaScript, which is very convenient for online reading, but only one of many.
+Այնքա՜ն բան կա սովորելու զննիչներում սկրիպտերի աշխատանքի և էջերի հետ դրանց փոխազդեցության մասին։ Հիշենք, որ ձեռնարկի այս բաժինը նվիրված է JavaScript լեզվին, այնպես որ պետք չէ ինքներս մեզ շեղենք զննիչներին հատուկ առանձնահատկություններով։ Մենք կօգտագործենք զննիչը JavaScript կոդը գործարկելու համար, ինչը հարմար է առցանց ընթերցանության համար։
