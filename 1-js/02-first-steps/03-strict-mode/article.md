@@ -1,58 +1,58 @@
-# The modern mode, "use strict"
+# "use strict"
 
-For a long time, JavaScript evolved without compatibility issues. New features were added to the language while old functionality didn't change.
+Երկար ժամանակ JavaScript–ը զարգանում էր առանց համատեղելիության խնդիրների։ Լեզվում նոր հնարավորթյուններ էին ավելացվում, իսկ հները փոփոխության չէին ենթարկվում։
 
-That had the benefit of never breaking existing code. But the downside was that any mistake or an imperfect decision made by JavaScript's creators got stuck in the language forever.
+Այս մոտեցման առավելությունն այն էր, որ գոյություն ունեցող կոդը միշտ աշխատում էր առանց փոփոխության։ Մյուս կողմից, JavaScript–ը նախագծողների ցանկացած սխալը, կամ թերի որոշումը դատապարտված էր մնալ լեզվում ընդմիշտ։
 
-This was the case until 2009 when ECMAScript 5 (ES5) appeared. It added new features to the language and modified some of the existing ones. To keep the old code working, most such modifications are off by default. You need to explicitly enable them with a special directive: `"use strict"`.
+Սա ճիշտ էր մինչև 2009 թ․, երբ հայտնվեց ECMAScript 5–ը (ES5)։ Այն լեզվում ավելացրեց նոր հնարավորություններ և փոփոխեց որոշ արդեն գոյություն ունեցողները։ Որպեսզի հին կոդն աշխատի, այդ փոփոխությունները անջատած են լռելյայն։ Դրանք պետք է բացահայտ միացնել, օգատգործելով հատուկ հրահանգ՝ `"use strict"`։
 
-## "use strict"
+## "use strict" հրահանգը
 
-The directive looks like a string: `"use strict"` or `'use strict'`. When it is located at the top of a script, the whole script works the "modern" way.
+Այս հրահանգն իրաենից ներկայացնում է սովորական տող՝ `"use strict"`, կամ `'use strict'`։ Երբ այն գտնվում է սկրիպտի վերևում, ապա սկրիպն աշխատում է ժամանակակից ձևով։
 
-For example:
+Օրինակ՝
 
 ```js
 "use strict";
 
-// this code works the modern way
+// այս կոդն աշխատում է ժամանակակից ձևով
 ...
 ```
 
-Quite soon we're going to learn functions (a way to group commands), so let's note in advance that `"use strict"` can be put at the beginning of a function. Doing that enables strict mode in that function only. But usually people use it for the whole script.
+Շուտով սովորելու ենք ֆունկցիաների մասին, այնպես որ նախօրոք ասենք, որ `"use strict"`–ը կարելի է տեղադրել ֆունկցիայի սկզբում։ Դա միացնում է ժամանակակից ռեժիմը միայն այդ ֆունկցիայում։ Սովորաբար `"use strict"`–ն օգտագործվում է ողջ սկրիպտի համար։
 
-````warn header="Ensure that \"use strict\" is at the top"
-Please make sure that `"use strict"` is at the top of your scripts, otherwise strict mode may not be enabled.
+````warn header="Համոզվեք, որ \"use strict\"–ը գտվում է վերևում"
+Համոզվեք, որ `"use strict"`–ը գտվում է սկրիպտի վերևում, հակառակ դեպքում այն կարող է չաշխատել։
 
-Strict mode isn't enabled here:
+Այս օրինակում այն չի աշխատում՝
 
 ```js no-strict
 alert("some code");
-// "use strict" below is ignored--it must be at the top
+// "use strict"–ն այստեղ արհամարհվում է՝ այն պետք է գտնվի ամենավերևում
 
 "use strict";
 
-// strict mode is not activated
+// ժամանակակից ռեժիմը միացված չէ
 ```
 
-Only comments may appear above `"use strict"`.
+`"use strict"`–ից առաջ կարող են լինել միայն մեկնաբանություններ՝
 ````
 
-```warn header="There's no way to cancel `use strict`"
-There is no directive like `"no use strict"` that reverts the engine to old behavior.
+```warn header="Հնարավոր չէ չեղարկել `use strict`–ի գործողությունը"
+Գոյություն չունի `"no use strict"` հրահանգ, որը չեղարկում է շարժիչի պահվածքը։
 
-Once we enter strict mode, there's no going back.
+Այսպիսով `use strict`–ի գործողությունը չի կարելի չեղարկել։
 ```
 
-## Browser console
+## Զննիչի բարձակը (browser console)
 
-When you use a [developer console](info:devtools) to run code, please note that it doesn't `use strict` by default.
+[Ծրագրավորման բարձակ](info:devtools)–ում `use strict`–ը լռելյայն չի օգտագործում։
 
-Sometimes, when `use strict` makes a difference, you'll get incorrect results.
+Երբեմն `use strict`–ի կիրառումը կարող է հանգեցնել սխալ արդյունքների։
 
-So, how to actually `use strict` in the console?
+Ունեմն ինչպե՞ս օգտագործել `use strict`–ը բարձակում։
 
-First, you can try to press `key:Shift+Enter` to input multiple lines, and put `use strict` on top, like this:
+Կարող եք սեղմել `key:Shift+Enter` ստեղները մի քանի տող ներմուծելու համար և գրեք `use strict` վերևում՝
 
 ```js
 'use strict'; <Shift+Enter for a newline>
@@ -60,30 +60,26 @@ First, you can try to press `key:Shift+Enter` to input multiple lines, and put `
 <Enter to run>
 ```
 
-It works in most browsers, namely Firefox and Chrome.
+Սա կաշխատի հիմնական զննիչներում (Firefox, Chrome)։
 
-If it doesn't, e.g. in an old browser, there's an ugly, but reliable way to ensure `use strict`. Put it inside this kind of wrapper:
+Եթե օգտագործում եք շատ հին զննիչ, ապա կարելի է `use strict`–ը դնել ֆունկցիայի մեջ՝
 
 ```js
 (function() {
   'use strict';
 
-  // ...your code here...
+  // ...ձեր կոդն այստեղ...
 })()
 ```
 
-## Should we "use strict"?
+## Արդյոք պե՞տք է օգտագործել "use strict"–ը
 
-The question may sound obvious, but it's not so.
+Պատասխանը կարող է ակնհայտ թվալ, բայց դա այդպես չէ։
 
-One could recommend to start scripts with `"use strict"`... But you know what's cool?
+Գուցե ինչ–որ մեկը խորդուրդ տա սկսել բոլոր սկրիպտերը `"use strict"`–ով։ Սակայն, ժամանակակից JavaScript–ի «class»–երը և «module»–ները (որոնք մենք հետո կուսումնասիրենք), օգտագործում են `use strict`–ը լռելյայն։ Այնպես որ կարիք չկա օգտագործել `"use strict"` հրահանգը այս դեպքերում։
 
-Modern JavaScript supports "classes" and "modules" - advanced language structures (we'll surely get to them), that enable `use strict` automatically. So we don't need to add the `"use strict"` directive, if we use them.
+**Այսպիսով՝ մենք կօգտագործենք `"use strict";`–ի մեր սկրիպտերում։ Հետո, երբ ձեր կոդն ամբողջովին կգտնվի «class»–երում և «module»–ներում՝ կարող եք այն բաց թողել։**
 
-**So, for now `"use strict";` is a welcome guest at the top of your scripts. Later, when your code is all in classes and modules, you may omit it.**
+Հաջորդ բաժիններում, որտեղ կսովորենք լեզվի այլ հնարավորությունների մասին, կտեսնենք տարբերությունը `"use strict"`–ով և առանց դրա։
 
-As of now, we've got to know about `use strict` in general.
-
-In the next chapters, as we learn language features, we'll see the differences between the strict and old modes. Luckily, there aren't many and they actually make our lives better.
-
-All examples in this tutorial assume strict mode unless (very rarely) specified otherwise.
+Այս ձեռնարկի բոլոր օրինակները երթադրում են `"use strict"`–ի կիրառում, եթե հակառակը նշված չէ (խիստ հազվադեպ դեպքերում)։
