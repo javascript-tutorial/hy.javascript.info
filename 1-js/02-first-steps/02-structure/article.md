@@ -1,44 +1,44 @@
-# Code structure
+# Կոդի կառուցվածքը
 
-The first thing we'll study is the building blocks of code.
+Առաջին հերթին ուսումնասիրենք կոդի կառուցման տարրական էլեմենտները։
 
-## Statements
+## Դրույթներ (statements)
 
-Statements are syntax constructs and commands that perform actions.
+Դրույթները շարահյուսական (syntax) կառույցներ և հրամաններ են, որոնք իրականացնում են գործողություններ։
 
-We've already seen a statement, `alert('Hello, world!')`, which shows the message "Hello, world!".
+Մենք արդեն հանդիպել են դրույթի օրինակի՝ `alert('Hello, world!')`, որի գործողությունն է ցույց տալ «Hello, world!» հաղորդագրությունը։
 
-We can have as many statements in our code as we want. Statements can be separated with a semicolon.
+Կոդում կարող ենք ունենալ այնքան դրույթներ, որքան կամենանք։ Դրույթներն իրարից բաժանվում են կետ-ստորակետով (semicolon)։
 
-For example, here we split "Hello World" into two alerts:
+Օրինակ՝ բաժանենք «Hello, world!»–ը երկու alert դրույթների․
 
 ```js run no-beautify
 alert('Hello'); alert('World');
 ```
 
-Usually, statements are written on separate lines to make the code more readable:
+Դրույթները սովորաբար տեղադրում են առանձին տողերում՝ կոդն ավելի ընթեռնելի դարձնելու համար։
 
 ```js run no-beautify
 alert('Hello');
 alert('World');
 ```
 
-## Semicolons [#semicolon]
+## Կետ-ստորակետ [#semicolon]
 
-A semicolon may be omitted in most cases when a line break exists.
+Կետ-ստորակետը դեպքերի մեծամասնությունում կարելի է բաց թողել, եթե առակա է նոր տողին անցում․
 
-This would also work:
+Հետևյալ օրինակը կաշխատի՝
 
 ```js run no-beautify
 alert('Hello')
 alert('World')
 ```
 
-Here, JavaScript interprets the line break as an "implicit" semicolon. This is called an [automatic semicolon insertion](https://tc39.github.io/ecma262/#sec-automatic-semicolon-insertion).
+Այստեղ JavaScript–ն ընկալում է նոր տողին անցումը որպես կետ-ստորակետ։ Սա կոչվում է [կետ-ստորակետի ինքաշխատ ավելացում](https://tc39.github.io/ecma262/#sec-automatic-semicolon-insertion) (automatic semicolon insertion)։
 
-**In most cases, a newline implies a semicolon. But "in most cases" does not mean "always"!**
+**Դեպքերի մեծամասնությունում նոր տողին անցումը դիտարկվում է որպես կետ-ստորակետ։ Կան դեպքեր, երբ այս պնդումը ճիշտ չէ։**
 
-There are cases when a newline does not mean a semicolon. For example:
+Որոշ դեպքերում նոր տողին անցումը չի դիտվում որպես կետ-ստորակետ։ Օրինակ՝
 
 ```js run no-beautify
 alert(3 +
@@ -46,114 +46,114 @@ alert(3 +
 + 2);
 ```
 
-The code outputs `6` because JavaScript does not insert semicolons here. It is intuitively obvious that if the line ends with a plus `"+"`, then it is an "incomplete expression", so the semicolon is not required. And in this case that works as intended.
+Կոդն արտածում է `6`, քանի որ JavaScript–ն այստեղ կետ-ստորակետ չի ավելացնում։ Ակնհայտ է․ քանի որ տողն ավարտվում է `"+"`–ով, ապա այն անավարտ արտահայտություն է և կետ–ստորակերի կարիք չկա։
 
-**But there are situations where JavaScript "fails" to assume a semicolon where it is really needed.**
+**Կան դեպքեր, երբ JavaScript–ը կետ–ստորակետ չի դնում, բայց իրականում այն անհրաժեշտ է։**
 
-Errors which occur in such cases are quite hard to find and fix.
+Այս դեպքերում առաջացող սխալները բավական դժվար է գտնել և ուղղել։
 
-````smart header="An example of an error"
-If you're curious to see a concrete example of such an error, check this code out:
+````smart header="Սխալի օրինակ"
+Ահա կոդ, որի միջոցով կհանգենք նման սխալի՝
 
 ```js run
 [1, 2].forEach(alert)
 ```
 
-No need to think about the meaning of the brackets `[]` and `forEach` yet. We'll study them later. For now, just remember the result of the code: it shows `1` then `2`.
+Այժմ չմտածենք այն մասին, թե ինչ են նշանակում `[]` փակագծերը և `forEach`–ը։ Դրանց մասին սովորելու ենք հետագայում։ Այս պահին հիշենք այս կոդի արդյունքը՝ այն արտածում է `1`, հետո `2`։
 
-Now, let's add an `alert` before the code and *not* finish it with a semicolon:
+Հիմա եկեք այս կոդից առաջ ավելացնենք `alert` և կետ–ստորակետ չդնենք դրանից հետո՝
 
 ```js run no-beautify
-alert("There will be an error")
+alert("Սրանից հետո սխալ է լինելու")
 
 [1, 2].forEach(alert)
 ```
 
-Now if we run the code, only the first `alert` is shown and then we have an error!
+Եթե գործարկենք այս կոդը, ապա կտեսնենք միայն առաջին `alert`–ի հաղորդագրությունը, որից հետո սխալ կառաջանա։
 
-But everything is fine again if we add a semicolon after `alert`:
+Սխալը կաելի է վերացնել `alert`–ից հետո կետ–ստորակետ դնելով՝
 ```js run
-alert("All fine now");
+alert("Հիմա ամեն ինչ նորմալ է");
 
 [1, 2].forEach(alert)  
 ```
 
-Now we have the "All fine now" message followed by `1` and `2`.
+Այժմ կտեսնենք «Հիմա ամեն ինչ նորմալ է» հաղորդագրությունը, որին կհաջորդեն `1`–ը և `2`–ը։
 
 
-The error in the no-semicolon variant occurs because JavaScript does not assume a semicolon before square brackets `[...]`.
+Սխալն առաջանում է այն պատճառով, որ JavaScript–ը `[...]`–ից առաջ կետ–ստորակետ չի դնում։
 
-So, because the semicolon is not auto-inserted, the code in the first example is treated as a single statement. Here's how the engine sees it:
+Քանի որ կետ–ստորակետն ինքնաշխատ չի ավելացվում, այս օրինակում ողջ կոդը դիտվում է որպես մեկ դրույթ։ Ահա, թե ինչպես է JavaScript շարժիչը տեսնում այն՝
 
 ```js run no-beautify
-alert("There will be an error")[1, 2].forEach(alert)
+alert("Սրանից հետո սխալ է լինելու")[1, 2].forEach(alert)
 ```
 
-But it should be two separate statements, not one. Such a merging in this case is just wrong, hence the error. This can happen in other situations.
+Պարզ է, որ այստեղ երկու դրույթ պետք է լինի՝ ոչ թե մեկ։ Դրույթների նման միաձուլումն էլ հանգեցնում է սխալին։ Սա կարող է տեղի ունենալ նաև այլ իրավիճակներում։
 ````
 
-We recommend putting semicolons between statements even if they are separated by newlines. This rule is widely adopted by the community. Let's note once again -- *it is possible* to leave out semicolons most of the time. But it's safer -- especially for a beginner -- to use them.
+Խորհուրդ ենք տալիս դրույթներից հետո դնել կետ–ստորակետ, նույնիսկ եթե դրույթներն առաձին տողերում են։ Սա տարածված կանոն է։ Եվս մեկ անգամ կրկնենք․ դեպքերի մեծամասնությունում *հնարավոր է* բաց թողել կետ–ստորակետը, բայց ավելի ապահով է (հատկապես սկսնակների համար) օգտագործել այն։
 
-## Comments [#code-comments]
+## Մեկնաբանություններ [#code-comments]
 
-As time goes on, programs become more and more complex. It becomes necessary to add *comments* which describe what the code does and why.
+Ժամանակի ընթացքում ծրագրերի բարդությունն աճում է։ Անհրաժեշտ է լինում հաճախ *մեկնաբանությունների* միջոցով նկարագրել, թե ինչ է անում տվյալ կոդը և ինչու։
 
-Comments can be put into any place of a script. They don't affect its execution because the engine simply ignores them.
+Մեկնաբանությունները կարող են զետեղվել սկրիպտի կամայական հատվածում։ Դրանք չեն ազդում կոդի աշխատանքի վրա, քանի որ արհամարհվում են շարժիչի կողմից։
 
-**One-line comments start with two forward slash characters `//`.**
+**Միատող մեկնաբանությունները սկսվում են կրկնակի շեղ գծերով՝ `//`։**
 
-The rest of the line is a comment. It may occupy a full line of its own or follow a statement.
+Տողի մնացած մասը դառնում է մեկնաբանություն։ Այն կարող է զբաղեցնել ամբողջ տողը, կամ գտնվել դրույթից հետո։
 
-Like here:
+Ինչպես հետևյալ օրինակում՝
 ```js run
-// This comment occupies a line of its own
+// Այս մեկնաբանությունը գտնվում է առանձին տողում և զբաղեցնում է ամբողջ տողը
 alert('Hello');
 
-alert('World'); // This comment follows the statement
+alert('World'); // Այս մեկնաբանությունը գտնվում է դրույթից հետո
 ```
 
-**Multiline comments start with a forward slash and an asterisk <code>/&#42;</code> and end with an asterisk and a forward slash <code>&#42;/</code>.**
+**Բազմատող մեկնաբանությունները սկսվում են շեղ գծով և աստղանիշով՝ <code>/&#42;</code>, վերջանում աստղանիշով և շեղ գծով՝ <code>&#42;/</code>։**
 
-Like this:
+Ինչպես այս օրինակում՝
 
 ```js run
-/* An example with two messages.
-This is a multiline comment.
+/* Այս օրինակն արտածում է երկու հաղորդագրություն։
+Սա բազմատող մեկնաբանություն է։
 */
 alert('Hello');
 alert('World');
 ```
 
-The content of comments is ignored, so if we put code inside <code>/&#42; ... &#42;/</code>, it won't execute.
+Մեկնաբանության պարունակությունն արհամարհվում է, այնպես որ, եթե կոդ տեղադրենք <code>/&#42; ... &#42;/</code>–ի մեջ, ապա այն չի գործարկվի։
 
-Sometimes it can be handy to temporarily disable a part of code:
+Սովորաբար օգտակար է ժամանակավորապես անջատել կոդի մի մասը՝
 
 ```js run
-/* Commenting out the code
+/* Այս կոդը գտնվում է մեկնաբանության մեջ և չի գործարկվի
 alert('Hello');
 */
 alert('World');
 ```
 
-```smart header="Use hotkeys!"
-In most editors, a line of code can be commented out by pressing the `key:Ctrl+/` hotkey for a single-line comment and something like `key:Ctrl+Shift+/` -- for multiline comments (select a piece of code and press the hotkey). For Mac, try `key:Cmd` instead of `key:Ctrl` and `key:Option` instead of `key:Shift`.
+```smart header="Օգտագործեք ստեղների համադրություններ"
+Բազմաթիվ խմբագրիչներում տողը կարելի է զետեղել մեկնաբանության մեջ, սեղմելով `key:Ctrl+/` ստեղները՝ միատող մեկնաբանության համար, և `key:Ctrl+Shift+/` ստեղները (կամ նմանատիպ այլ համադրություն)՝ բազմատող մեկնաբանությունների համար։ Mac–ում `key:Ctrl`–ի փոխարեն օգտագործեք `key:Cmd`, իսկ `key:Shift`–ի փոխարեն՝ `key:Option`։
 ```
 
-````warn header="Nested comments are not supported!"
-There may not be `/*...*/` inside another `/*...*/`.
+````warn header="Մեկնաբանությունները չեն ներդրվում"
+Չի կարելի ներդնել `/*...*/`–ը այլ բազմատող մեկնաբանության մեջ։
 
-Such code will die with an error:
+Այս կոդը սխալ կառաջացնի՝
 
 ```js run no-beautify
 /*
-  /* nested comment ?!? */
+  /* ներդրված մեկնաբանություն ?!? */
 */
 alert( 'World' );
 ```
 ````
 
-Please, don't hesitate to comment your code.
+Աշխատեք թողնել մեկնաբանություններ ձեր կոդում։
 
-Comments increase the overall code footprint, but that's not a problem at all. There are many tools which minify code before publishing to a production server. They remove comments, so they don't appear in the working scripts. Therefore, comments do not have negative effects on production at all.
+Մեկնաբանությունները մեծացնում են սկրիպտի ծավալը, սակայն դա ընդհանրապես խնդիր չէ։ Կան բազմաթիվ գործիքներ, որոնք հնարավորինս փոքրացնում են կոդը և բերում վերջնական տեսքի՝ միչև այն սերվեր վերբեռնելը։ Դրանք ջնջում են մեկնաբանությունները, այնպես որ վերջնական սկրիպտում դրանք բացակայում են։
 
-Later in the tutorial there will be a chapter <info:code-quality> that also explains how to write better comments.
+Այս ձեռնարկի <info:code-quality> բաժնում կանդրադառնանք այն հարցին, թե ինչպես գրել լավ մեկնաբանություններ։
