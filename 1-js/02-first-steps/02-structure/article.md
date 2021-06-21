@@ -46,7 +46,11 @@ alert(3 +
 + 2);
 ```
 
+<<<<<<< HEAD
 Կոդն արտածում է `6`, քանի որ JavaScript–ն այստեղ կետ-ստորակետ չի ավելացնում։ Ակնհայտ է․ քանի որ տողն ավարտվում է `"+"`–ով, ապա այն անավարտ արտահայտություն է և կետ–ստորակերի կարիք չկա։
+=======
+The code outputs `6` because JavaScript does not insert semicolons here. It is intuitively obvious that if the line ends with a plus `"+"`, then it is an "incomplete expression", so a semicolon there would be incorrect. And in this case, that works as intended.
+>>>>>>> 8558fa8f5cfb16ef62aa537d323e34d9bef6b4de
 
 **Կան դեպքեր, երբ JavaScript–ը կետ–ստորակետ չի դնում, բայց իրականում այն անհրաժեշտ է։**
 
