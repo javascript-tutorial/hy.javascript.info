@@ -2,12 +2,12 @@ importance: 5
 
 ---
 
-# String quotes
+# Տողի չակերտները
 
-What is the output of the script?
+Ինչպիսի՞ն կլինի սկրիպտի արտաբերած արդյունքը։
 
 ```js
-let name = "Ilya";
+let name = "David";
 
 alert( `hello ${1}` ); // ?
 
