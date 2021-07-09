@@ -1,226 +1,250 @@
-# Data types
+# Տվյալների տիպերը
 
-A value in JavaScript is always of a certain type. For example, a string or a number.
+JavaScript-ում արժեքը միշտ պատկանում է տվյալների որոշակի տիպի։ Օրինակ՝ տող (string) կամ թիվ (number)։
 
-There are eight basic data types in JavaScript. Here, we'll cover them in general and in the next chapters we'll talk about each of them in detail.
+JavaScript-ում կան տվյալների ութ հիմնական տիպեր։ Այս գլխում մենք կանրադառնանք դրանց մասնակիորեն, իսկ հաջորդ գլուխներում կխոսենք դրանցից 
+յուրաքանչյուրի մասին ավելի մանրամասն։
 
-We can put any type in a variable. For example, a variable can at one moment be a string and then store a number:
+Փոփոխականը կարող է պարունակել ցանկացած տիպի տվյալ։ Օրինակ՝ սկզբում այն կարող է պարունակել տող (string), իսկ հետո՝ փոխարինվել թվով (number)․
 
 ```js
-// no error
-let message = "hello";
+// Սխալ չկա
+let message = "բարև";
 message = 123456;
 ```
 
-Programming languages that allow such things, such as JavaScript, are called "dynamically typed", meaning that there exist data types, but variables are not bound to any of them.
+Այն լեզուները, որոնք թույլ են տալիս նման պահվածք, կոչվում են «դինամիկ տիպավորված»։ Դա նշանակում է, որ տիպերը գոյություն ունեն, բայց 
+փոփոխականները կապված չեն դրանցից ոչ մեկի հետ։
 
-## Number
+## Թիվ (Number)
 
 ```js
 let n = 123;
 n = 12.345;
 ```
 
-The *number* type represents both integer and floating point numbers.
+*number* տիպը ներկայացնում է ինչպես ամբողջ թվերը, այնպես էլ լողացող կետով թվերը։
 
-There are many operations for numbers, e.g. multiplication `*`, division `/`, addition `+`, subtraction `-`, and so on.
+Թվերի համար գոյություն ունեն բազմաթիվ գործողություններ, օրինակ՝ բազմապատկում `*`, բաժանաում `/`, գումարում `+`, հանում `-` և այլն.
 
-Besides regular numbers, there are so-called "special numeric values" which also belong to this data type: `Infinity`, `-Infinity` and `NaN`.
+Բացի սովորական թվերից կան նաև այսպես կոչված «հատուկ թվային արժեքներ», որոնք նույնպես պատկանում են այս տվյալների տիպին․ `Infinity`, 
+`-Infinity` 
+և `NaN`։
 
-- `Infinity` represents the mathematical [Infinity](https://en.wikipedia.org/wiki/Infinity) ∞. It is a special value that's greater than any number.
+- `Infinity`-ն ներկայացնում է մաթեմատիկական [անվերջությունը](https://en.wikipedia.org/wiki/Infinity) ∞։ Այն հատուկ արժեք է, որը մեծ է 
+  ցանկացած թվից։
 
-    We can get it as a result of division by zero:
+    Մենք կարող ենք ստանալ այն որպես զրոի վրա բաժանման արդյունք,
 
     ```js run
     alert( 1 / 0 ); // Infinity
     ```
 
-    Or just reference it directly:
+    կամ վերցնելով այն ակնհայտ կերպով։
 
     ```js run
     alert( Infinity ); // Infinity
     ```
-- `NaN` represents a computational error. It is a result of an incorrect or an undefined mathematical operation, for instance:
+- `NaN`-ը նշանակում է հաշվողական սխալ։ Այն սխալ կամ անորոշ մաթեմատիկական գործողույան արդյունք է, օրինակ․
 
     ```js run
-    alert( "not a number" / 2 ); // NaN, such division is erroneous
+    alert( "ոչ թվային արժեք" / 2 ); // NaN, բաժանումը հնարավոր չէ
     ```
 
-    `NaN` is sticky. Any further operation on `NaN` returns `NaN`:
+    `NaN`-ը անփոփոխ արժեք է։ Ցանկացած գործողություն `NaN`-ի հետ վերադարձնում է `NaN`:
 
     ```js run
-    alert( "not a number" / 2 + 5 ); // NaN
+    alert( "ոչ թվային արժեք" / 2 + 5 ); // NaN
     ```
 
-    So, if there's a `NaN` somewhere in a mathematical expression, it propagates to the whole result.
+    Եթե մաթեմատիկական արտահայտության որևէ անդամ `NaN` է, ապա ամբողջ արտահայտության արդյունքը կլինի `NaN`։
 
-```smart header="Mathematical operations are safe"
-Doing maths is "safe" in JavaScript. We can do anything: divide by zero, treat non-numeric strings as numbers, etc.
+```smart header="Մաթեմատիկական գործողությունները անվտանգ են"
+Մաթեմատիկական գործողությունները JavaScript-ում «անվտանգ» են։ Մենք կարող ենք կատարել ցանկացած գործողություն՝ բաժանել զրոի, ոչ թվային տողերի 
+հետ վարվել ինչպես թվերի հետ։
 
-The script will never stop with a fatal error ("die"). At worst, we'll get `NaN` as the result.
+Սկրիպտը երբեք կանգ չի առնի՝ շպրտելով սխալ։ Վատագույն դեպքում, որպես արդյունք, մենք կստանանք `NaN`։
 ```
 
-Special numeric values formally belong to the "number" type. Of course they are not numbers in the common sense of this word.
+Հատուկ թվային արժեքները պատկանում են «թիվ» (number) տիպին։ Իրականում դրանք թվեր չեն բառի ուղիղ իմաստով:
 
-We'll see more about working with numbers in the chapter <info:number>.
+Թվերի հետ աշխատանքին ավելի մանրամասն կծանոթանանք <info:number> գլխում։
 
 ## BigInt
 
-In JavaScript, the "number" type cannot represent integer values larger than <code>(2<sup>53</sup>-1)</code> (that's `9007199254740991`), or less than <code>-(2<sup>53</sup>-1)</code> for negatives. It's a technical limitation caused by their internal representation.
+JavaScript-ում թվային (number) տիպը չի կարող ներկայացնել թվային արժեքներ, 
+որոնք մեծ են <code>(2<sup>53</sup>-1)</code>-ից (նույնն է, ինչ 
+`9007199254740991`), 
+կամ փոքր են <code>-(2<sup>53</sup>-1)</code>-ից՝ բացասական թվերի դեպքում։ Այս տեխիկական սահմանափակումը պայմանավորված է թվերի ներքին 
+ներկայացման յուրահատկություններով։
 
-For most purposes that's quite enough, but sometimes we need really big numbers, e.g. for cryptography or microsecond-precision timestamps.
+Հիմնական դեպքերում սա ավելին քան բավական է, բայց երբեմն մենք կարիք ենք ունենում օգտագործելու իսկապես մեծ թվեր, օրինակ՝ գախտնագրման կամ 
+ժամանականիշի (timestamp) միկրովարկյաններով ներկայացման դեպքում։
 
-`BigInt` type was recently added to the language to represent integers of arbitrary length.
+`BigInt`-ը վերջերս ավելացվել է լեզվում՝ կամայական մեծության թվեր նեկայացնելու նպատակով։
 
-A `BigInt` value is created by appending `n` to the end of an integer:
+`BigInt` արժեք ստեղծվում է թվին վերջից կցելով `n`․
 
 ```js
-// the "n" at the end means it's a BigInt
+// «n»-ը վերջում նշանակում է, որ արժեքը BigInt տիպի է
 const bigInt = 1234567890123456789012345678901234567890n;
 ```
 
-As `BigInt` numbers are rarely needed, we don't cover them here, but devoted them a separate chapter <info:bigint>. Read it when you need such big numbers.
+Քանի որ `BigInt` թվերը հազվադեպ են օգտագործվում, դրանց այստեղ չենք անրադառնա, այլ կդիտարկենք առանձին՝ <info:bigint> գլխում։ Կարդացե՛ք այն,
+եթե նման մեծ թվերի օգտագոծման կարիք կունենաք։
 
 
-```smart header="Compatibility issues"
-Right now, `BigInt` is supported in Firefox/Chrome/Edge/Safari, but not in IE.
+```smart header="Համատեղելիության խնդիրներ"
+Այս պահին `BigInt`-ը համատեղելի է Firefox/Chrome/Edge/Safari զննիչների հետ, բայց ոչ IE-ի։
 ```
 
-You can check [*MDN* BigInt compatibility table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt#Browser_compatibility) to know which versions of a browser are supported.
+Կարող եք ստուգել [*MDN* BigInt compatibility table](https://developer.mozilla.
+org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt#Browser_compatibility) հոդվածը, հասկանալու համար, թե զննիչների որ 
+տարբերակների հետ է այն համատեղելի։
 
-## String
+## Տող (String)
 
-A string in JavaScript must be surrounded by quotes.
+JavaScript-ում տողը պետք է շրջապատված լինի չակերտներով։
 
 ```js
-let str = "Hello";
-let str2 = 'Single quotes are ok too';
-let phrase = `can embed another ${str}`;
+let str = "Բարև";
+let str2 = 'Եզակի չակերտները նույպես թույլատրելի են';
+let phrase = `թեք չակերտները կարող են ներառել փոփոխականներ ${str}`;
 ```
 
-In JavaScript, there are 3 types of quotes.
+JavaScript-ում գոյություն ոնեն 3 տեսակի չակերտներ.
 
-1. Double quotes: `"Hello"`.
-2. Single quotes: `'Hello'`.
-3. Backticks: <code>&#96;Hello&#96;</code>.
+1. Կրկնակի չակերտներ․ `"Բարև"`։
+2. Եզակի չակերտներ․ `'Բարև'`։
+3. Թեք չակերտներ․ <code>&#96;Բարև&#96;</code>։
 
-Double and single quotes are "simple" quotes. There's practically no difference between them in JavaScript.
+Կրկնակի և միակի չակերտները «պարզ» չակերտներ են։ JavaScript-ում դրանց միջև տարբերություններ չկան։
 
-Backticks are "extended functionality" quotes. They allow us to embed variables and expressions into a string by wrapping them in `${…}`, for example:
+Թեք չակերտները ունեն «ընդլայնված ֆունկցիոնալություն»։ Դրանք թույլ են տալիս ներդնել փոփոխականներ և արտահայտություններ տողի մեջ՝ դրանք 
+`${…}`-ի մեջ պարփակելու միջոցով, օրինակ․
 
 ```js run
-let name = "John";
+let name = "Դավիթ";
 
-// embed a variable
-alert( `Hello, *!*${name}*/!*!` ); // Hello, John!
+// ներդնենք փոփոխականը
+alert( `Բարև, *!*${name}*/!*!` ); // Բարև, Դավիթ!
 
-// embed an expression
-alert( `the result is *!*${1 + 2}*/!*` ); // the result is 3
+// ներդնենք արտահայտություն
+alert( `արդյունքը կլինի *!*${1 + 2}*/!*` ); // արդյունքը կլինի 3
 ```
 
-The expression inside `${…}` is evaluated and the result becomes a part of the string. We can put anything in there: a variable like `name` or an arithmetical expression like `1 + 2` or something more complex.
+`${…}`-ի մեջ ներդրված արտահայտությունը գնահատվում է, և արդյունքը դառնում է տողի մի մասը։ Մենք կարող ենք տեղադրել այնեղ ամեն ինչ՝ 
+փոփոխական (`name`) կամ թվաբանական արտահայտություն՝ `1 + 2`-ի նման կամ ավելի բարդ։
 
-Please note that this can only be done in backticks. Other quotes don't have this embedding functionality!
+Ուշադրություն դարձրեք այն փաստին, որ սա հնարավոր է միյայն թեք չակերտների դեպքում։ Մյուս չակերտները չունեն այսպիսի ներդրման 
+ֆունկցիոնալություն։
+
 ```js run
-alert( "the result is ${1 + 2}" ); // the result is ${1 + 2} (double quotes do nothing)
+alert( "արդյունքը կլինի ${1 + 2}" ); // արդյունքը կլինի ${1 + 2} (կրկնակի չակերտները ոչինչ չեն անում)
 ```
 
-We'll cover strings more thoroughly in the chapter <info:string>.
+Մենք կանրադառնանք տողերին ավելի խորացված կերպեվ <info:string> գլխում։
 
-```smart header="There is no *character* type."
-In some languages, there is a special "character" type for a single character. For example, in the C language and in Java it is called "char".
+```smart header="Գոյություն չունի *character* տիպ։"
+Որոշ լեզուներում գոյություն ունի հատուկ "character" տիպ եզակի սիմվոլների համար։ Օրինակ՝ C և Java լեզուներում այն կոչվում է «char»։
 
-In JavaScript, there is no such type. There's only one type: `string`. A string may consist of zero characters (be empty), one character or many of them.
+JavaScript-ում չկա նման տիպ։ Կա միայն մեկ տիպ՝ `string`։ string-ը կարող է լինել դատարկ, ունենալ մեկ կամ բազմաթիվ նիշեր։
 ```
 
-## Boolean (logical type)
+## Բուլյան (տրամաբանական տիպ)
 
-The boolean type has only two values: `true` and `false`.
+Բուլյան տիպը ունի երկու արժեք․ `true` և `false`։
 
-This type is commonly used to store yes/no values: `true` means "yes, correct", and `false` means "no, incorrect".
+Այս տիպը հիմնականում օգտագործվում է այո/ոչ արժեքներ պահելու համար․ `true` նշանակում է «այո, ճիշտ է», իսկ `false` նշանակում է «ոչ, 
+սխալ է»։
 
-For instance:
+Օրինակ՝
 
 ```js
-let nameFieldChecked = true; // yes, name field is checked
-let ageFieldChecked = false; // no, age field is not checked
+let nameFieldChecked = true; // այո, անվանական դաշտը ստուգված է
+let ageFieldChecked = false; // ոչ, տարիքային դաշտը ստուգված չէ
 ```
 
-Boolean values also come as a result of comparisons:
+Բուլյան արժեքները ստացվում են նաև որպես համեմատությունների արդյունք․
 
 ```js run
 let isGreater = 4 > 1;
 
-alert( isGreater ); // true (the comparison result is "yes")
+alert( isGreater ); // true (համեմատության արդյունքն է «այո»)
 ```
 
-We'll cover booleans more deeply in the chapter <info:logical-operators>.
+Մենք կանրադառնանք բուլյան տիպին ավելի խորացված կերպով <info:logical-operators> գլխում։
 
-## The "null" value
+## «null» արժեքը
 
-The special `null` value does not belong to any of the types described above.
+`null` հատուկ արժեքը չի պատկանում վերոնշյալ տիպերից ոչ մեկին։
 
-It forms a separate type of its own which contains only the `null` value:
+Այն ձևավորում է առանձին տիպ, որը պարունակում է `null` արժեքը:
 
 ```js
 let age = null;
 ```
 
-In JavaScript, `null` is not a "reference to a non-existing object" or a "null pointer" like in some other languages.
+JavaScript-ում `null`-ը «գոյություն չունեցող օբեկտի հղում» կամ «զրոյական ցուցիչ» չէ, ինչպես որոշ այլ լեզուներում։
 
-It's just a special value which represents "nothing", "empty" or "value unknown".
+Այն պարզապես հատուկ արժեք է, որը նշանակում է «ոչինչ», «դատարկություն» կամ «անհայտ արժեք»։
 
-The code above states that `age` is unknown.
+Վերոնշյալ կոդը պնդում է, որ `age` փոփոխականի արժեքը անհայտ է։
 
-## The "undefined" value
+## «undefined» արժեքը
 
-The special value `undefined` also stands apart. It makes a type of its own, just like `null`.
+`undefined` հատուկ արժեքը նույնպես ուրույն է։ Այն ձևավորում է իր սեփական տիպը, ճիշտ ինչպես `null`-ը։
 
-The meaning of `undefined` is "value is not assigned".
+`undefined` նշանակում է, որ «արժեք չի վերագրվել»։
 
-If a variable is declared, but not assigned, then its value is `undefined`:
+Եթե փոփոխականը հայտարարված է, բայց նրան արժեք չի վերագրվել, ապա նրա արժեքը կլինի `undefined`․
 
 ```js run
 let age;
 
-alert(age); // shows "undefined"
+alert(age); // ցույց կտա «undefined»
 ```
 
-Technically, it is possible to explicitly assign `undefined` to a variable:
+Տեխնիկապես փոփոխականին հնարավոր է ակնհայտ կերպով վերագրել `undefined` արժեքը․
 
 ```js run
 let age = 100;
 
-// change the value to undefined
+// արժեքը դարձնել «undefined»
 age = undefined;
 
-alert(age); // "undefined"
+alert(age); // «undefined»
 ```
 
-...But we don't recommend doing that. Normally, one uses `null` to assign an "empty" or "unknown" value to a variable, while `undefined` is reserved as a default initial value for unassigned things.
+...Բայց խորհուրդ չի տրվում այդպես անել։ Սովորաբար `null`-ը օգտագործվում է փոփոխականին «դատարկ» կամ «անհայտ» արժեք վերագրելու համար, 
+մինչդեռ `undefined`-ը  իրենից ենթադրում է նախնական լռելյայն արժեք՝ չվերագրված փոփոխականների համար։
 
-## Objects and Symbols
+## Օբյեկտներ և սիմվոլներ
 
-The `object` type is special.
+`object` տիպը յուրահատուկ է։
 
-All other types are called "primitive" because their values can contain only a single thing (be it a string or a number or whatever). In contrast, objects are used to store collections of data and more complex entities.
+Մնացած բոլոր տիպերը կոչվում են «պրիմիտիվ» տիպեր, քանի որ նրանց արժեքները պարզ արժեքներ են (լինի այն տող, թիվ կամ այլ արժեք)։ Օբյեկտները, 
+իրենց հերթին, օգտագործվում են տվյալների համախումբ և ավելի բարդ կառուցվածքներ պահեստավորելու նպատակով։
 
-Being that important, objects deserve a special treatment. We'll deal with them later in the chapter <info:object>, after we learn more about primitives.
+Օբյեկտները լեզվում կարևոր տեղ են զբաղեցնում և հատուկ ուշադրության են արժանի։ Մենք կզբաղվենք դրանցով ավելի ուշ՝ <info:object> գլխում՝ 
+պրիմիտիվ տիպերը ավելի խորը ուսումնասիրելուց հետո։
 
-The `symbol` type is used to create unique identifiers for objects. We have to mention it here for the sake of completeness, but also postpone the details till we know objects.
+`symbol` տիպը օգտագործվում է օբյեկտներում չկրկնվող նույնացուցիչներ ստեղծելու համար։ Մենք այստեղ նշում ենք դրա գոյության փաստը՝ տիպերի 
+նկարագիրը լիարժեք դարձնելու համար, բայց թողնում ենք դրա ուսումնասիրությունը հետագայի համար, երբ արդեն ուսումնասիրած կլինենք օբյեկտները։
 
-## The typeof operator [#type-typeof]
+## typeof օպերատորը [#type-typeof]
 
-The `typeof` operator returns the type of the argument. It's useful when we want to process values of different types differently or just want to do a quick check.
+`typeof` օպերատորը վերադարձնում է իր արգումենտի տիպը։ Այն օգտակար է, երբ մենք ուզում ենք մշակել տարբեր տիպերի արժեքները տարբեր կերպով, կամ 
+պարզեպես արագ ստուգման կարիք կա։
 
-It supports two forms of syntax:
+Այն ունի օգտագործման երկու սինտաքս․
 
-1. As an operator: `typeof x`.
-2. As a function: `typeof(x)`.
+1. Որպես օպերատոր՝ `typeof x`։
+2. Որպես ֆունկցիա `typeof(x)`։
 
-In other words, it works with parentheses or without them. The result is the same.
+Այլ կերպ ասած, այն աշխատում է և՛ փակագծերով, և՛ առանց դրանց։ Արդյունքը նույնն է։
 
-The call to `typeof x` returns a string with the type name:
+`typeof x`-ի կանչը վերադարձնում է տող, որը պարունակում է տիպի անվանումը․
 
 ```js
 typeof undefined // "undefined"
@@ -248,29 +272,34 @@ typeof alert // "function"  (3)
 */!*
 ```
 
-The last three lines may need additional explanation:
+Վերջին երեք տողերը ունեն հավելյալ պարզաբանման կարիք․
 
-1. `Math` is a built-in object that provides mathematical operations. We will learn it in the chapter <info:number>. Here, it serves just as an example of an object.
-2. The result of `typeof null` is `"object"`. That's an officially recognized error in `typeof` behavior, coming from the early days of JavaScript and kept for compatibility. Definitely, `null` is not an object. It is a special value with a separate type of its own.
-3. The result of `typeof alert` is `"function"`, because `alert` is a function. We'll study functions in the next chapters where we'll also see that there's no special "function" type in JavaScript. Functions belong to the object type. But `typeof` treats them differently, returning `"function"`. That also comes from the early days of JavaScript. Technically, such behavior isn't correct, but can be convenient in practice.
+1. `Math`-ը ներկառուցված օբեկտ է, որը տրամադրում է մաթեմատիկական տարբեր գործողություններ և հաստատուններ։ Մենք կուսումնասիրենք այն 
+   <info:number> գլխում։ Այստեղ այն պարզապես ծառայում է որպես օբյեկտի օրինակ։
+2. `typeof null`-ի արդյունքը `"object"` է։ Այն `typeof` օպերատորի վարքագծի պաշտոնապես ընդունված սխալ է, որը եկել է JavaScript-ի ստեղծման 
+   վաղ ժամանակներից և մնացել է լեզվում համատեղելիության նպատակով։ Անշուշտ, `null`-ը օբյեկտ չէ։ Այն հատուկ արժեք է, որը ունի իր սեփական տիպը։
+3. `typeof alert`-ի արդյունքը `"function"` է, քանի որ `alert`-ը ֆունկցիա է։ Մենք կուսումնասիրենք ֆունկցիաները հաջորդ գլուխներում, որտեղ 
+   կիմանանք, որ JavaScript-ը չունի առանձին «ֆունկցիա» տիպ։ Ֆունկցիաները պատկանում են օբյեկտ տիպին։ Բայց `typeof`-ը մշակում է դրանք 
+   հատուկ ձևով՝ վերադարձնելով `"function"` արժեքը։ Դա նույնպես գալիս է JavaScript-ի պատմության վաղ ժամանակներից։ Տեխնիկապես վարքագիծը 
+   ճիշտ չէ, բայց պրակտիկայում կարող է հարմար լինել։
 
-## Summary
+## Ամփոփում
 
-There are 8 basic data types in JavaScript.
+JavaScript-ում գոյություն ունեն տվյալների 8 տիպեր։
 
-- `number` for numbers of any kind: integer or floating-point, integers are limited by <code>±(2<sup>53</sup>-1)</code>.
-- `bigint` is for integer numbers of arbitrary length.
-- `string` for strings. A string may have zero or more characters, there's no separate single-character type.
-- `boolean` for `true`/`false`.
-- `null` for unknown values -- a standalone type that has a single value `null`.
-- `undefined` for unassigned values -- a standalone type that has a single value `undefined`.
-- `object` for more complex data structures.
-- `symbol` for unique identifiers.
+- `number` բոլոր տեսակի թվերի համար․ ամբողջ և լողացող կետով, ամբողջ թվերը սահմանափակված են <code>±(2<sup>53</sup>-1)</code> միջակայքում։
+- `bigint` կամայական մեծության ամբողջ թվերի համար։
+- `string` տողերի համար։ Տողը կարող է պարունակել զրո կամ ավել նիշեր, չկա նիշի համար նախատեսված առանձին տիպ։
+- `boolean` `true`/`false` արժեքների համար։
+- `null` անհայտ արժեքների համար․ առանձին տիպ է, որը ունի մեկ արժեք՝ `null`։
+- `undefined` չվերագրված արժեքների համար․ առանձին տիպ է, որը ունի մեկ արժեք՝ `undefined`։
+- `object` ավելի բարդ տվյալների կառուցվածքների համար։
+- `symbol` չկրկնվող նույնացուցիչների համար։
 
-The `typeof` operator allows us to see which type is stored in a variable.
+`typeof`-ը թույլ է տալիս ստուգել, թե ինչ տիպի արժեք է պահված փոփոխականում։
 
-- Two forms: `typeof x` or `typeof(x)`.
-- Returns a string with the name of the type, like `"string"`.
-- For `null` returns `"object"` -- this is an error in the language, it's not actually an object.
+- Ունի երկու ձև․ `typeof x` կամ `typeof(x)`։
+- Վերադարձնում է տող, որը պարունակում է տիպի անվանումը, օրինակ՝ `"string"`։
+- `null`-ի դեպքում վերադարձնում է `"object"`․ սա լեզվի սխալ է, այն իրականում օբյեկտ չէ։
 
-In the next chapters, we'll concentrate on primitive values and once we're familiar with them, we'll move on to objects.
+Հաջորդ գլուխներում մենք կկենտրոնանանք պրիմիտիվ արժեքների վրա և երբ ծանոթանանք դրանց հետ, կանցնենք օբյեկտների ուսումնասիրությանը։
