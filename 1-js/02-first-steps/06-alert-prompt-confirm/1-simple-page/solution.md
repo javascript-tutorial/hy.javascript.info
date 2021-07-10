@@ -1,11 +1,11 @@
-JavaScript-code:
+JavaScript կոդը․
 
 ```js demo run
-let name = prompt("What is your name?", "");
+let name = prompt("Ի՞նչ է Ձեր անունը։", "");
 alert(name);
 ```
 
-The full page:
+Ամբողջական էջը․
 
 ```html
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ The full page:
   <script>
     'use strict';
 
-    let name = prompt("What is your name?", "");
+    let name = prompt("Ի՞նչ է Ձեր անունը։", "");
     alert(name);
   </script>
 
