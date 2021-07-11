@@ -2,8 +2,8 @@ importance: 4
 
 ---
 
-# A simple page
+# Պարզ էջ
 
-Create a web-page that asks for a name and outputs it.
+Կառուցե՛ք էջ, որը օգտատիրոջից կհարցնի իր անունը և կպատկերի այն։
 
 [demo]

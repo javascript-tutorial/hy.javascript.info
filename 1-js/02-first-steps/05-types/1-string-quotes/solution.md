@@ -1,15 +1,15 @@
 
-Backticks embed the expression inside `${...}` into the string.
+Թեք չակերտները ներառում են `${...}`-ի մեջ գրված արտահայտության արդյունքը տողի մեջ։
 
 ```js run
-let name = "Ilya";
+let name = "David";
 
-// the expression is a number 1
+// արտահայտությունը 1 թիվն է
 alert( `hello ${1}` ); // hello 1
 
-// the expression is a string "name"
+// արտահայտությունը "name" տողն է
 alert( `hello ${"name"}` ); // hello name
 
-// the expression is a variable, embed it
-alert( `hello ${name}` ); // hello Ilya
+// արտահայտությունը փոփոխական, ներդնենք այն
+alert( `hello ${name}` ); // hello David
 ```

@@ -1,105 +1,105 @@
-# Interaction: alert, prompt, confirm
+# Փոխազդեցություն: alert, prompt, confirm
 
-As we'll be using the browser as our demo environment, let's see a couple of functions to interact with the user: `alert`, `prompt` and `confirm`.
+Քանի որ մենք օգտագործելու ենք զննիչները որպես ներկայացման տիրույթ, եկեք ուսումնասիրենք մի քանի ֆունկցիաներ՝ նախատեսված օգտատիրոջ հետ փոխազդեցության համար․ `alert`, `prompt` և `confirm`։
 
 ## alert
 
-This one we've seen already. It shows a message and waits for the user to press "OK".
+Այս ֆունկցիայի հետ մենք արդեն առնչվել ենք։ Այն ցույց է տալիս հաղորդագրություն և սպասում է օգտատիրոջ՝ «OK» կոճակը սեղմելուն։
 
-For example:
+Օրինակ․
 
 ```js run
-alert("Hello");
+alert("Բարև");
 ```
 
-The mini-window with the message is called a *modal window*. The word "modal" means that the visitor can't interact with the rest of the page, press other buttons, etc, until they have dealt with the window. In this case -- until they press "OK".
+Հաղորդագրությունը պարունակող փոքր պատուհանը կոչվում է *մոդալ պատուհան* (modal window)։ «Մոդալը» նշանակում է, որ օգտատերը չի կարող փոխազդել էջի մնացած մասի հետ, սեղմել այլ կոճակներ և այլն, քանի դեռ նա փոխազդում է պատուհանի հետ։ Այս պարագայում՝ քանի դեռ չի սեղմել «OK» կոճակը։
 
 ## prompt
 
-The function `prompt` accepts two arguments:
+`prompt` ֆունկցիան ընդունում է երկու արգումենտ․
 
 ```js no-beautify
 result = prompt(title, [default]);
 ```
 
-It shows a modal window with a text message, an input field for the visitor, and the buttons OK/Cancel.
+Այն կպատկերի տեքստային հաղորդագրություն պարունակող մոդալ պատուհան, տեքստի մուտքագրման դաշտ և OK/Cancel կոճակներ։
 
 `title`
-: The text to show the visitor.
+։ Տեքստը, որը կպատկերվի պատուհանում։
 
 `default`
-: An optional second parameter, the initial value for the input field.
+: Ոչ պարտադիր երկրորդ արգումենտ՝ մուտքագրման դաշտի նախնական արժեքի համար։
 
-```smart header="The square brackets in syntax `[...]`"
-The square brackets around `default` in the syntax above denote that the parameter is optional, not required.
+```smart header="Քառակուսի փակագծերը `[...]` շարահյուսությունում"
+Վերոնշյալ շարահյուսությունում `default`-ը շրջապատող քառակուսի փակագծերը նշանակում են, որ պարամետրի առկայությունը պարտադիր չէ։
 ```
 
-The visitor can type something in the prompt input field and press OK. Then we get that text in the `result`. Or they can cancel the input by pressing Cancel or hitting the `key:Esc` key, then we get `null` as the `result`.
+Օգտատերը կարող է մուտքագրման դաշտում լրացնել ինչ-որ բան և սեղմել OK։ Մուտքագրված տեքստը կվերագրվի `result` փոփոխականին։ Օգտատերը նաև կարող է չեղարկել մուտքագրումը՝ սեղմելով Cancel կամ ստեղնաշարի `key:Esc` կոճակները։ Այդ դեպքում `result`-ին կվերագրվի `null` արժեքը։
 
-The call to `prompt` returns the text from the input field or `null` if the input was canceled.
+`prompt`-ի կանչը վերադարձնում է մուտքագրման դաշտում նշված տեքստը կամ `null`, եթե մուտքագրումը չեղարկվել է։
 
-For instance:
+Օրինակ․
 
 ```js run
-let age = prompt('How old are you?', 100);
+let age = prompt('Քանի՞ տարեկան ես։', 100);
 
-alert(`You are ${age} years old!`); // You are 100 years old!
+alert(`Դու ${age} տարեկան ես։`); // Դու 100 տարեկան ես։
 ```
 
-````warn header="In IE: always supply a `default`"
-The second parameter is optional, but if we don't supply it, Internet Explorer will insert the text `"undefined"` into the prompt.
+````warn header="IE-ի համար միշտ սահմանեք լռելյայն (`default`) արժեք"
+Երկրորդ պարամետրը պարտադիր չէ, բայց, եթե չսահմանենք այն, Internet Explorer-ը կտեղադրի `"undefined"` տեքստը prompt-ի մուտքագրման դաշտում։
 
-Run this code in Internet Explorer to see:
+Աշխատեցրեք կոդը Internet Explorer-ում՝ արդյունքը տեսնելու համար․
 
 ```js run
-let test = prompt("Test");
+let test = prompt("Թեստ");
 ```
 
-So, for prompts to look good in IE, we recommend always providing the second argument:
+Այսպիսով, որպեսզի prompt-ը ունենա նորմալ տեսք IE-ում, խորհուրդ է տրվում միշտ սահմանել երկրորդ արգումենտը․
 
 ```js run
-let test = prompt("Test", ''); // <-- for IE
+let test = prompt("Թեստ", ''); // <-- IE-ի համար
 ```
 ````
 
 ## confirm
 
-The syntax:
+Շարահյուսությունը (syntax)․
 
 ```js
 result = confirm(question);
 ```
 
-The function `confirm` shows a modal window with a `question` and two buttons: OK and Cancel.
+`confirm` ֆունկցիան պատկերում է մոդալ պատուհան `question` հարցման տեքստով և երկու կոճակով՝ OK և Cancel։
 
-The result is `true` if OK is pressed and `false` otherwise.
+Արդյունքը կլինի `true`, եթե սեղմվի OK կոճակը, և `false`՝ հակառակ դեպքում։
 
-For example:
+Օրինակ․
 
 ```js run
-let isBoss = confirm("Are you the boss?");
+let isBoss = confirm("Դու՞ք եք այստեղ գլխավորը։");
 
-alert( isBoss ); // true if OK is pressed
+alert( isBoss ); // true, եթե սեղմվի OK կոճակը
 ```
 
-## Summary
+## Ամփոփում
 
-We covered 3 browser-specific functions to interact with visitors:
+Մենք ուսումնասիրեցինք 3 զննիչային (browser-specific) ֆունկցիաներ, որոնք փոխազդում են օգտատիրոջ հետ․
 
 `alert`
-: shows a message.
+: պատկերում է հաղորդագրություն։
 
 `prompt`
-: shows a message asking the user to input text. It returns the text or, if Cancel button or `key:Esc` is clicked, `null`.
+: պատկերում է հաղորդագրություն, սպասելով օգտատիրոջ կողմից տեքստի մուտքագրմանը։ Այն վերադարձնում է տեքստը, կամ, եթե սեղմվել է Cancel կամ `key:Esc` կոճակը, ապա վերադարձնում է `null`։
 
 `confirm`
-: shows a message and waits for the user to press "OK" or "Cancel". It returns `true` for OK and `false` for Cancel/`key:Esc`.
+: պատկերում է հաղորդագրություն և սպասում է օգտատիրոջ «OK» կամ «Cancel» սեղմելուն։ OK-ի դեպքում վերադարձնում է `true`, իսկ Cancel/`key:Esc`-ի դեպքում՝ `false`։
 
-All these methods are modal: they pause script execution and don't allow the visitor to interact with the rest of the page until the window has been dismissed.
+Այս բոլոր մեթոդները մոդալային են․ դրանք կանգնեցնում են սկրիպտի իրականցումը և թույլ չեն տալիս օգտատիրոջը փոխազդել էջի մնացած մասի հետ, քանի դեռ պատուհանը չի փակվել։
 
-There are two limitations shared by all the methods above:
+Վերոնշյալ մեթոդները ունեն երկու սահմանափակում․
 
-1. The exact location of the modal window is determined by the browser. Usually, it's in the center.
-2. The exact look of the window also depends on the browser. We can't modify it.
+1. Մոդալ պատուհանի դիրքը որոշվում է զննիչի կողմից։ Սովորաբար այն լինում է կենտրոնում։
+2. Պատուհանի տեսքը նույնպես որոշվում է զննիչի կողմից։ Մենք չենք կարող այն փոփոխել։
 
-That is the price for simplicity. There are other ways to show nicer windows and richer interaction with the visitor, but if "bells and whistles" do not matter much, these methods work just fine.
+Այսպիսին է պարզության գինը։ Կան շատ այլ եղանակներ՝ ավելի գեղեցիկ պատուհաններ պատկերելու և օգտատիրոջ հետ ավելի լայն փոխազդեցություն ապահովելու համար, բայց եթե «ճոխությունը» կարևոր չէ, այս մեթոդները հիանալի լուծում են։
