@@ -1,150 +1,150 @@
-# Type Conversions
+# Տիպերի փոխարկումներ (Type Conversions)
 
-Most of the time, operators and functions automatically convert the values given to them to the right type.
+Հաճախ օպերատորները և ֆունկցիաները ինքնաբերաբար փոխարկում են իրենց տրված արժեքները անհրաժեշտ տիպի։
 
-For example, `alert` automatically converts any value to a string to show it. Mathematical operations convert values to numbers.
+Օրինակ՝ `alert`-ը ինքնաբերաբար փոխարկում է ցանկացած արժեք տողի (string)՝ այն պատկերելու համար։ Մաթեմատիկական գործողությունները փոխարկում են արժեքները թվերի։
 
-There are also cases when we need to explicitly convert a value to the expected type.
+Նաև լինում են դեպքեր, երբ մենք կարիք ենք ունենում բացահայտորեն փոխարկել արժեքը անհրաժեշ տիպի։
 
-```smart header="Not talking about objects yet"
-In this chapter, we won't cover objects. For now we'll just be talking about primitives.
+```smart header="Դեռևս չենք խոսում օբյեկտների մասին"
+Այս գլխում մենք չենք դիտարկի օբյեկտները։ Առայժմ կխոսենք միայն պրիմիտիվ տիպերի մասին։
 
-Later, after we learn about objects, in the chapter <info:object-toprimitive> we'll see how objects fit in.
+Հետագայում, երբ կծանոթանանք օբյեկտների հետ <info:object-toprimitive> գլխում, կտեսնենք, թե ինչպես են փոխարկվում օբյեկտները։
 ```
 
-## String Conversion
+## Տողային փոխարկում (String Conversion)
 
-String conversion happens when we need the string form of a value.
+Տողի փոխարկումը տեղի է ունենում, երբ կարիք է լինում ներկայացնել արժեքի տողային տեսքը։
 
-For example, `alert(value)` does it to show the value.
+Օրինակ՝ `alert(value)`-ն կատարում է փոխարկում՝ արժեքը պատկերելու համար։ 
 
-We can also call the `String(value)` function to convert a value to a string:
+Մենք կարող ենք կանչել `String(value)` ֆունկցիան՝ արժեքը տողի փոխարկելու համար․
 
 ```js run
 let value = true;
 alert(typeof value); // boolean
 
 *!*
-value = String(value); // now value is a string "true"
+value = String(value); // այստեղ value-ին վերագրվեց "true" տողը
 alert(typeof value); // string
 */!*
 ```
 
-String conversion is mostly obvious. A `false` becomes `"false"`, `null` becomes `"null"`, etc.
+Տողի փոխարկման արդյունքը հիմնականում ակնհայտ է։ `false`-ը դառնում է `"false"`, `null`-ը դառնում է `"null"` և այլն։
 
-## Numeric Conversion
+## Թվային փոխարկում (Numeric Conversion)
 
-Numeric conversion happens in mathematical functions and expressions automatically.
+Այլ արժեքից թվի ինքնաբերաբար փոխարկումը տեղի է ունենում մաթեմատիկական ֆունկցիաներում և արտահայտություններում։
 
-For example, when division `/` is applied to non-numbers:
+Օրինակ՝ երբ բաժանումը `/` կիրառվում է ոչ թվային արժեքների վրա․
 
 ```js run
-alert( "6" / "2" ); // 3, strings are converted to numbers
+alert( "6" / "2" ); // 3, տողերը փոխարկվում են թվերի
 ```
 
-We can use the `Number(value)` function to explicitly convert a `value` to a number:
+Մենք կարող ենք կիրառել `Number(value)` ֆունկցիան՝ `value`-ն բացահայտ կերպով թվի փոխարկելու համար․
 
 ```js run
 let str = "123";
 alert(typeof str); // string
 
-let num = Number(str); // becomes a number 123
+let num = Number(str); // դառնում է թիվ 123
 
 alert(typeof num); // number
 ```
 
-Explicit conversion is usually required when we read a value from a string-based source like a text form but expect a number to be entered.
+Բացահայտ փոխարկումը հաճախ նախընտրելի է, երբ որևէ թվի մուտքագրում ակնկալող տեքստային դաշտից արժեք վերցնելու կարիք կա։
 
-If the string is not a valid number, the result of such a conversion is `NaN`. For instance:
+Երբ տողից թվի փոխարկումը վավեր չէ, այդ փոխարկման արդյունքը կլինի `NaN`։ Օրինակ․
 
 ```js run
-let age = Number("an arbitrary string instead of a number");
+let age = Number("կամայակն տող, թվի փոխարեն");
 
-alert(age); // NaN, conversion failed
+alert(age); // NaN, փոխարկումը ձախողվել է
 ```
 
-Numeric conversion rules:
+Թվային փոխարկումների կանոնները․
 
-| Value |  Becomes... |
+| Արժեքը |  Փոխարկվում է... |
 |-------|-------------|
 |`undefined`|`NaN`|
 |`null`|`0`|
-|<code>true&nbsp;and&nbsp;false</code> | `1` and `0` |
-| `string` | Whitespaces from the start and end are removed. If the remaining string is empty, the result is `0`. Otherwise, the number is "read" from the string. An error gives `NaN`. |
+|<code>true&nbsp;/&nbsp;false</code> | `1` / `0` |
+| `string` | Սկզբում և վերջում եղած բացատները հեռացվում են։ Եթե ստացված տողը դատարկ է, արդյունքը դառնում է `0`։ Հակառակ դեպքում, ոչ դատարկ տողից «կարդացվում է» թիվը. Ձախողման դեպքում արդյունքը դառնում է `NaN`։ |
 
-Examples:
+Օրինակներ․
 
 ```js run
 alert( Number("   123   ") ); // 123
-alert( Number("123z") );      // NaN (error reading a number at "z")
+alert( Number("123z") );      // NaN (փոխարկումը ձախողվել է "z"-ի առկայության պատճառով)
 alert( Number(true) );        // 1
 alert( Number(false) );       // 0
 ```
 
-Please note that `null` and `undefined` behave differently here: `null` becomes zero while `undefined` becomes `NaN`.
+Նշենք, որ `null`-ը և `undefined`-ը իրենց տարբեր կերպ են դրսևորում՝ `null`-ը դառնում է զրո, մինչդեռ `undefined`-ը դառնում է `NaN`։
 
-Most mathematical operators also perform such conversion, we'll see that in the next chapter.
+Մաթեմատիկական օպերատորների գերակշիռ մասը նույնպես իրականացնում է նման փոխարկում։ Մենք կուսումնասիրենք դրանք հաջորդ գլխում։
 
-## Boolean Conversion
+## Տրամաբանական փոխարկում (Boolean Conversion)
 
-Boolean conversion is the simplest one.
+Տրամաբանական փոխարկումը ամենապարզն է։
 
-It happens in logical operations (later we'll meet condition tests and other similar things) but can also be performed explicitly with a call to `Boolean(value)`.
+Այն տեղի է ունենում տրամաբանական գործողություններում (ավելի ուշ կծանոթանանք պայմանական ստուգումների և նման այլ կառուցվածքների հետ), բայց նաև կարող է իրականացվել բացահայտ կերպով՝ `Boolean(value)` ֆունկցիայի միջոցով։
 
-The conversion rule:
+Փոխարկման կանոնները․
 
-- Values that are intuitively "empty", like `0`, an empty string, `null`, `undefined`, and `NaN`, become `false`.
-- Other values become `true`.
+- Արժեքները, որոնք ենթադրում են «դատարկություն», ինչպես `0`-ն, դատարկ տողը, `null`-ը, `undefined`-ը և `NaN`-ը, դառնում են `false`։
+- Մնացած արժեքները դառնում են `true`։
 
-For instance:
+Օրինակ՝
 
 ```js run
 alert( Boolean(1) ); // true
 alert( Boolean(0) ); // false
 
-alert( Boolean("hello") ); // true
+alert( Boolean("բարև") ); // true
 alert( Boolean("") ); // false
 ```
 
-````warn header="Please note: the string with zero `\"0\"` is `true`"
-Some languages (namely PHP) treat `"0"` as `false`. But in JavaScript, a non-empty string is always `true`.
+````warn header="Հիշե՛ք, զրո պարունակող տողը `\"0\"` `true` է"
+Որոշ լեզուներ (օրինակ՝ PHP-ն) ընկալում են `"0"` տողը որպես `false`։ Բայց JavaScript-ում ոչ դատարկ տողը միշտ `true` է։
 
 ```js run
 alert( Boolean("0") ); // true
-alert( Boolean(" ") ); // spaces, also true (any non-empty string is true)
+alert( Boolean(" ") ); // բացատը նույնպես true է (ցանկացած ոչ դատարկ տող true է)
 ```
 ````
 
-## Summary
+## Ամփոփում
 
-The three most widely used type conversions are to string, to number, and to boolean.
+Առավել հաճախ կիրառվող տիպային փոխարկումները տողային, թվային և տրամաբանական փոխարկումներն են։
 
-**`String Conversion`** -- Occurs when we output something. Can be performed with `String(value)`. The conversion to string is usually obvious for primitive values.
+**`Տողային փոխարկում`** -- Տեղի է ունենում ինչ-որ բանի պատկերման դեպքում։ Կարող է իրականացվել `String(value)`-ի միջոցով։ Տողային փոխարկումը պրիմիտիվ արժեքների դեպքում կանխատեսելի է։
 
-**`Numeric Conversion`** -- Occurs in math operations. Can be performed with `Number(value)`.
+**`Թվային փոխարկում`** -- Տեղի է ունենում մաթեմատիկական գործողություններում։ Կարող է իրականացվել `Number(value)`-ի միջոցով։
 
-The conversion follows the rules:
+Փոխարկումը ենթարկվուվ է հետևյալ կանոններին․
 
-| Value |  Becomes... |
+| Արժեքը |  Փոխարկվում է... |
 |-------|-------------|
 |`undefined`|`NaN`|
 |`null`|`0`|
 |<code>true&nbsp;/&nbsp;false</code> | `1 / 0` |
-| `string` | The string is read "as is", whitespaces from both sides are ignored. An empty string becomes `0`. An error gives `NaN`. |
+| `string` | Եզրերում եղած բացատները անտեսվում են։ Դատարկ տողը դառնում է `0`։ Ձախողման դեպքում ստացվում է `NaN`։ |
 
-**`Boolean Conversion`** -- Occurs in logical operations. Can be performed with `Boolean(value)`.
+**`Տրամաբանական փոխարկում`** -- Տեղի է ունենում տրամաբանական գործողություններում։ Կարող է իրականացվել `Boolean(value)`-ի միջոցով։
 
-Follows the rules:
+Ենթարկվուվ է հետևյալ կանուններին․
 
-| Value |  Becomes... |
+| Արժեքը |  Փոխարկվում է... |
 |-------|-------------|
 |`0`, `null`, `undefined`, `NaN`, `""` |`false`|
-|any other value| `true` |
+|ցանկացած այլ արժեք| `true` |
 
 
-Most of these rules are easy to understand and memorize. The notable exceptions where people usually make mistakes are:
+Այս կանոնների մեծ մասը հեշտ է հասկանալ և հիշել։ Բացառություն են կազմում հետևյալ դեպքերը, որտեղ մարդիկ հաճախակի են սխալվում․
 
-- `undefined` is `NaN` as a number, not `0`.
-- `"0"` and space-only strings like `"   "` are true as a boolean.
+- `undefined`-ը որպես թիվ `NaN` է, ոչ թե `0`։
+- `"0"`-ն և միայն բացատներից կազմված տողը՝ ինչպես `"   "`, true են։
 
-Objects aren't covered here. We'll return to them later in the chapter <info:object-toprimitive> that is devoted exclusively to objects after we learn more basic things about JavaScript.
+Այս գլխում չխոսվեց օբյեկտների մասին։ Մենք կվերադառնանք դրանց ավելի ուշ՝ ամբողջությամբ օբյեկտներին նվիրված <info:object-toprimitive> գլխում, JavaScript-ի տարրական գաղափարները ավելի հիմնովին ուսումնասիրելուց հետո։
