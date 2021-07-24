@@ -1,7 +1,7 @@
-In the code below, each line corresponds to the item in the task list.
+Ստորև բերված կոդում յուրաքանչյուր տող համապատասխանում է հանձնարարության ամեն մի կետի:
 
 ```js run
-let admin, name; // can declare two variables at once
+let admin, name; // կարող ենք հայտարարել միանգամից երկու փոփոխական
 
 name = "John";
 

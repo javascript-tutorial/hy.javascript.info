@@ -2,9 +2,9 @@ importance: 2
 
 ---
 
-# Working with variables
+# Աշխատում ենք փոփոխականների հետ
 
-1. Declare two variables: `admin` and `name`.
-2. Assign the value `"John"` to `name`.
-3. Copy the value from `name` to `admin`.
-4. Show the value of `admin` using `alert` (must output "John").
+1. Հայտարարեք երկու փոփոխական. `admin` և `name`:
+2. `name`-ին վերագրեք `"John"` արժեքը:
+3. Պատճենեք `name`-ի արժեքը `admin`-ի մեջ:
+4. Ցույց տվեք `admin`-ի արժեքը `alert`-ի միջոցով (պետք է արտատպի "John"):

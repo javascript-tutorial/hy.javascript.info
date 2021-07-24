@@ -2,7 +2,7 @@ importance: 3
 
 ---
 
-# Giving the right name
+# Ընտրում ենք փոփոխականի ճիշտ անուն
 
-1. Create a variable with the name of our planet. How would you name such a variable?
-2. Create a variable to store the name of a current visitor to a website. How would you name that variable?
+1. Հայտարարեք փոփոխական մեր մոլորակի անվանումով: Ի՞նչ կդնեիք նման փոփոխականի անունը:
+2. Հայտարարեք փոփոխական, որը կպահի կայքի տվայլ հաճախորդի անունը: Ի՞նչ կդնեիք նման փոփոխականի անունը:
