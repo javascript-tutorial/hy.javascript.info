@@ -1,216 +1,212 @@
-# Comparisons
+# Համեմատություններ
 
-We know many comparison operators from maths.
+Մենք գիտենք շատ համեմատության համար նախատեսված նշաններ մաթեմատիկայից։
 
-In JavaScript they are written like this:
+JavaScript-ում դրանք գրվում են հետևյալ տեսքով․
 
-- Greater/less than: <code>a &gt; b</code>, <code>a &lt; b</code>.
-- Greater/less than or equals: <code>a &gt;= b</code>, <code>a &lt;= b</code>.
-- Equals: `a == b`, please note the double equality sign `==` means the equality test, while a single one `a = b` means an assignment.
-- Not equals. In maths the notation is <code>&ne;</code>, but in JavaScript it's written as <code>a != b</code>.
+- Մեծ/փոքր։ <code>a &gt; b</code>, <code>a &lt; b</code>։
+- Մեծ/փոքր կամ հավասար։ <code>a &gt;= b</code>, <code>a &lt;= b</code>։
+- Հավասար։ `a == b`, ուշադիր լինել այն բանին, որ `==` նշանով գրվածը ստուգում է հավադարությունը, մինչ դեռ `a = b` տվյալ
+  տեսքով գրվածը նշանակում է վերագրում։
+- Ոչ հավասար։ Մաթեմատիկայում այդ նշանը հետևյալն է <code>&ne;</code>, բայց JavaScript-ում դա ներկայացվում է հետևյալ
+  տեսքով <code>a != b</code>։ Տվյալ հոդվածի վերաբերյալ, մենք կսովորենք համեմատության տարբեր տեսակների հետ, ինչպես է
+  JavaScript-ը կատարում դրանք, ներադյալ կարևոր առանձնահատկությունները։
 
-In this article we'll learn more about different types of comparisons, how JavaScript makes them, including important peculiarities.
+Վերջում դուք կծանոթանաք "JavaScript-ի տարօրիանկություններ"-ի հետ առնչվող խնդիրենրին։
 
-At the end you'll find a good recipe to avoid "JavaScript quirks"-related issues.
-
-## Boolean is the result
+## Արդյունքը տրամաբանական է
 
 All comparison operators return a boolean value:
+Բոլոր համեմատության գործողությունները վերադարձնում են տրամաբանական արժեք․
 
-- `true` -- means "yes", "correct" or "the truth".
-- `false` -- means "no", "wrong" or "not the truth".
-
-For example:
-
-```js run
-alert( 2 > 1 );  // true (correct)
-alert( 2 == 1 ); // false (wrong)
-alert( 2 != 1 ); // true (correct)
-```
-
-A comparison result can be assigned to a variable, just like any value:
+- `true` - նշանակում է "այո", "ճիշտ" կամ "իրական".
+- `false` - նշանակում է "ոչ", "սխալ" կամ "ոչ իրական/կեղծ". Օրինակ․
 
 ```js run
-let result = 5 > 4; // assign the result of the comparison
-alert( result ); // true
+alert(2 > 1);  // true (ճիշտ)
+alert(2 == 1); // false (սխալ)
+alert(2 != 1); // true (ճիշտ)
 ```
 
-## String comparison
-
-To see whether a string is greater than another, JavaScript uses the so-called "dictionary" or "lexicographical" order.
-
-In other words, strings are compared letter-by-letter.
-
-For example:
+Համեմատության արդյունքը կարող է վերագրվել փոփոխականի, ինչպես ցանկացած արժեք․
 
 ```js run
-alert( 'Z' > 'A' ); // true
-alert( 'Glow' > 'Glee' ); // true
-alert( 'Bee' > 'Be' ); // true
+let result = 5 > 4; // վերագրել համեմատության արդյունքը
+alert(result); // true (ճիշտ)
 ```
 
-The algorithm to compare two strings is simple:
+## Խիստ համեմատություն
 
-1. Compare the first character of both strings.
-2. If the first character from the first string is greater (or less) than the other string's, then the first string is greater (or less) than the second. We're done.
-3. Otherwise, if both strings' first characters are the same, compare the second characters the same way.
-4. Repeat until the end of either string.
-5. If both strings end at the same length, then they are equal. Otherwise, the longer string is greater.
+Եթե ցանկանում ենք ստուգել թե որ տողային փոփոխականն է մեծ, JavaScript-ը օգտագործում է այսպես կոչված "բառարան" (անգլ․՝
+dictionary) կամ "բառարանային" (անգլ․՝ lexicographical) հերթականություն։ Եթե ասենք այլ կերպ, տողը համեմատվում է տառ առ
+տառ։ Օրինակ․
 
-In the first example above, the comparison `'Z' > 'A'` gets to a result at the first step.
+```js run
+alert('Z' > 'A'); // true
+alert('Glow' > 'Glee'); // true
+alert('Bee' > 'Be'); // true
+```
 
-The second comparison `'Glow'` and `'Glee'` needs more steps as strings are compared character-by-character:
+Երկու տեսակի տողային փոփոխականների համեմատման ալգորիթմը շատ պարզ է․
 
-1. `G` is the same as `G`.
-2. `l` is the same as `l`.
-3. `o` is greater than `e`. Stop here. The first string is greater.
+1. Համեմատել երկու տողերի առաջին նշանները 2․ Եթե առաջին տողի առաջին նշանը մեծ (կամ փոքր) քան մյուս տողինը, ապա առաջին
+   տողը մեծ (կամ փոքր) է քան երկրորդը
+2. Հակառակ դեպքում, եթե երկու տողերի առաջին նշանները հավասար են, ապա համեմտվում է երկրորդ նշանները նույն ձևով․
+3. Գործողությունը կրկնվում է մինչև երկու տողեևի ավարտը։ 5, Եթե երկու տողերը ունեն նույն երկարությունը, ապա դրանք հավասար
+   են։ Հակառակ դեպքում, մեծ երկարություն ունեցող տողը ամենամեծն է
+
+Առաջին օրինակում, `'Z' > 'A'` համեմատության արդյունքը կստացվի առաւին քայլից։
+
+Երկրորդ համեմատությունը `'Glow'` և `'Glee'`, պահանջում է ավելի քայլեր, քանի որ տողերը համեմատվում են նիշ առ նիշ․
+
+1. `G` նույնն է ինչ `G`։
+2. `l` նույնն է ինչ `l`։
+3. `o`մեծ է քան `e`։ Այստեղ համեմատթույունը վարտվում է, քանի որ առաջին տողը ավելի մեծ է, քան երկրորդը։
 
 ```smart header="Not a real dictionary, but Unicode order"
-The comparison algorithm given above is roughly equivalent to the one used in dictionaries or phone books, but it's not exactly the same.
-
-For instance, case matters. A capital letter `"A"` is not equal to the lowercase `"a"`. Which one is greater? The lowercase `"a"`. Why? Because the lowercase character has a greater index in the internal encoding table JavaScript uses (Unicode). We'll get back to specific details and consequences of this in the chapter <info:string>.
+Վերևում տրված համեմատության ալգորիթմը մոտավորապես համարժեք է բառարաններում կամ հեռախոսագրքերում օգտագործվողին, բայց դա նույնը չէ:
+Օրինակ։ Մեծատառ `"A"` հավասար չէ փոքրատառ `"a"`-ին։ Ո՞ր մեկն է մեծ, փոքրատառ `"a"`-ն։ Ինչու՞, քանի որ փոքրատառ նշանը ունի վաելի մեծ ինդեքս,  
+այն կոդավորման աղյուսակում, որը օգտագործվում է JavaScript-ում (Unicode)։ Մենք կվերադառնանք կոնկրետ մանրամասներին և հետևանքներին, <info:string> հատվածում։
 ```
 
-## Comparison of different types
+## Տարբեր տիպերի համեմատությունը
 
-When comparing values of different types, JavaScript converts the values to numbers.
-
-For example:
+Երբ համեմատությունը կատարվում է տարբեր տիպերի միջև, JavaScript-ը դրանք ձևափոխում է թվի Օրինակ․
 
 ```js run
-alert( '2' > 1 ); // true, string '2' becomes a number 2
-alert( '01' == 1 ); // true, string '01' becomes a number 1
+alert('2' > 1); // true, տողային '2' փոփոխականը ձևափոխվում է թվային 2-ի
+alert('01' == 1); // true, տողային '01' փոփոխականը ձևափոխվում է թվային 1-ի
 ```
 
-For boolean values, `true` becomes `1` and `false` becomes `0`.
-
-For example:
+Տրամաբանական արժեքների դեպքում  `true`-ն ձևափոխվում է `1`-ի,իսկ `false`-ը `0`-ի։ Օրինակ։
 
 ```js run
-alert( true == 1 ); // true
-alert( false == 0 ); // true
+alert(true == 1); // true
+alert(false == 0); // true
 ```
 
-````smart header="A funny consequence"
-It is possible that at the same time:
 
-- Two values are equal.
-- One of them is `true` as a boolean and the other one is `false` as a boolean.
-
-For example:
+Միաժամանակ հնարավոր է․
+- Երկու արժեքներ նույնն են։
+- Նրանցից մեկը տրամաբանական `true`-է, իսկ մյուսը տրամաբանական `false`-է։
+Օրինակ․
 
 ```js run
-let a = 0;
-alert( Boolean(a) ); // false
+        let a = 0;
+        alert( Boolean(a) ); // false
 
-let b = "0";
-alert( Boolean(b) ); // true
+        let b = "0";
+        alert( Boolean(b) ); // true
 
-alert(a == b); // true!
+        alert(a == b); // true!
 ```
 
-From JavaScript's standpoint, this result is quite normal. An equality check converts values using the numeric conversion (hence `"0"` becomes `0`), while the explicit `Boolean` conversion uses another set of rules.
-````
+JavaScript-ի տեսանկյունից, այս արդյունքը համարվում է նորմալ։ Հավասարությունը ձևափոխվում է թվային տիպի (ուստի `"0"`-ն ձևափոխվում է `0`-ի), մինչդեռ բացահայտ `Boolean`-փոխակերպումը կիրառում է մեկ այլ կանոն։
 
-## Strict equality
 
-A regular equality check `==` has a problem. It cannot differentiate `0` from `false`:
+## Խիստ հավասարություն
+
+Սովորական հավասարության ստուգումը `==` ունի խնդիր։ Դա չի կարող տարբերակել `0`-ն `false`-ից։
 
 ```js run
-alert( 0 == false ); // true
+alert(0 == false); // true
 ```
 
-The same thing happens with an empty string:
+Նույն բանը կատարվում է դատարկ տողային փոփոխականի հետ։
 
 ```js run
-alert( '' == false ); // true
+alert('' == false); // true
 ```
 
-This happens because operands of different types are converted to numbers by the equality operator `==`. An empty string, just like `false`, becomes a zero.
+Սա պատահում է, քանի որ տարբեր տիպերի համամատման ժամանակ, այն ձևափոխվում է թվի, `==` գործողության ժամանակ։ Դատարկ տողը,
+ինչպես `false`-ը, դառնում է զրո։ Ի"նչ պետք է անենք, եթե ցանկանում ենք տարբերակել `0`-ն `false`-ից։
 
-What to do if we'd like to differentiate `0` from `false`?
+**Խիստ համեմատույթն գործողությունը `===` ստուգում է հավասարությունը առանց տիպային կերպափոխումների**
 
-**A strict equality operator `===` checks the equality without type conversion.**
+Այլ կերպ ասած, եթե `a`-ն և `b`-ն տարբերի տիպերի են, ապա `a === b`-ն անմիջապես կվերադարձնի `false`, առանց տիպերի
+կերպափոխման։
 
-In other words, if `a` and `b` are of different types, then `a === b` immediately returns `false` without an attempt to convert them.
-
-Let's try it:
+Եկեք փորձենք դա․
 
 ```js run
-alert( 0 === false ); // false, because the types are different
+alert(0 === false); // false, քանի որ արժեքները ունեն տարբեր տիպեր
 ```
 
-There is also a "strict non-equality" operator `!==` analogous to `!=`.
+Գոյություն ունի "խիստ ոչ հավասար" գործողության նշանը `!==`, որը նման է `!=`-ին։ Խիստ հավասարության օպերատորը մի փոքր
+ավելի երկար է գրվում, բայց ակնհայտ է դառնում այն, որ դա ավելի քիչ է սխալներ առաջացնում։
 
-The strict equality operator is a bit longer to write, but makes it obvious what's going on and leaves less room for errors.
+## Համեմատություն null և undefined-ի միջոցով
 
-## Comparison with null and undefined
+Գոյություն ունի ոչ ինտուիտիվ պահվածք, երբ `null`-ը կամ `undefined`-ը համեմատվում են այլ արժեքների հետ։ Խիստ
+համեմատության `===` դեպքում․ այս արժեքները տարբեր են, քանի որ նրանցից մեկը ունի այլ տիպ
 
-There's a non-intuitive behavior when `null` or `undefined` are compared to other values.
+```js run
+    alert(null === undefined); // false
+```
 
-For a strict equality check `===`
-: These values are different, because each of them is a different type.
+Ոչ խիստ համեմատության `==` դեպքում․ Գոյություն ունի հատուկ կանոն։ Այս երկուսը համահունչ են, դրանք հավասար են իրար հետ,
+բայց հավասար չեն ոչ արժեքներով։
 
-    ```js run
-    alert( null === undefined ); // false
-    ```
-
-For a non-strict check `==`
-: There's a special rule. These two are a "sweet couple": they equal each other (in the sense of `==`), but not any other value.
-
-    ```js run
-    alert( null == undefined ); // true
-    ```
+```js run
+    alert(null == undefined); // true
+```
 
 For maths and other comparisons `< > <= >=`
-: `null/undefined` are converted to numbers: `null` becomes `0`, while `undefined` becomes `NaN`.
+: `null/undefined` are converted to numbers: `null` becomes `0`, while `undefined` becomes `NaN`. Մաթեմատիկական և այլ
+համեմատություններում `< > <= >=`․ `null/undefined`-ը ձևափոխվում են թվերի, `null`-ը ձևափոխվում է `0`-ի, մինչ
+դեռ `undefined`-ը ձևափոխվում է `NaN`-ի։
 
-Now let's see some funny things that happen when we apply these rules. And, what's more important, how to not fall into a trap with them.
+Այժմ եկեք դիտարկենք մի քանի հետաքրքիր բաներ, որոնք տեղի են ունենում, երբ կիրառում ենք այս կանոնները: Եվ, որ ավելի կարևոր
+է, ինչպես չնկնել այդ ծուղակը։
 
-### Strange result: null vs 0
+### Տարօրինակ արդյունք․ null vs 0
 
-Let's compare `null` with a zero:
-
-```js run
-alert( null > 0 );  // (1) false
-alert( null == 0 ); // (2) false
-alert( null >= 0 ); // (3) *!*true*/!*
-```
-
-Mathematically, that's strange. The last result states that "`null` is greater than or equal to zero", so in one of the comparisons above it must be `true`, but they are both false.
-
-The reason is that an equality check `==` and comparisons `> < >= <=` work differently. Comparisons convert `null` to a number, treating it as `0`. That's why (3) `null >= 0` is true and (1) `null > 0` is false.
-
-On the other hand, the equality check `==` for `undefined` and `null` is defined such that, without any conversions, they equal each other and don't equal anything else. That's why (2) `null == 0` is false.
-
-### An incomparable undefined
-
-The value `undefined` shouldn't be compared to other values:
+Եկեք համեմատենք `null`-ը զրոյի հետ․
 
 ```js run
-alert( undefined > 0 ); // false (1)
-alert( undefined < 0 ); // false (2)
-alert( undefined == 0 ); // false (3)
+alert(null > 0);  // (1) false
+alert(null == 0); // (2) false
+alert(null >= 0); // (3) *!*true*/!*
 ```
 
-Why does it dislike zero so much? Always false!
+Մաթեմատիկորեն, դա տարօրինակ է։ Վերջին արդյունքը, որ "`null`-ը մեծ կամ հավասար է զրոի", համեմատություններից գոնե մեկը
+պետք է լինի `true`, բայց երկուսնել սխալ են։ Դրա արդյունքը այն է, որ `==` և `> < >= <=` գործում են տարբեր։ Հավասարության
+ստուգումը կերպափոխվում է `null`-ը թվի, այսինքն 0-ի։ Ահա թե ինչու `null >= 0`-ն ճիշտ է, իսկ `null > 0`-ը սխալ։
 
-We get these results because:
+Մյուս կողմից, `==`-ը ստուգում է `undefined`-ը և  `null`-ը առանց ձևափոխման, դրանք հավասար են միմյանց, բայց հավասար չեն
+այլ փոփոխականի, ահա թե ինչու `null == 0` արտահայտությունը համարվում է սխալ։
 
-- Comparisons `(1)` and `(2)` return `false` because `undefined` gets converted to `NaN` and `NaN` is a special numeric value which returns `false` for all comparisons.
-- The equality check `(3)` returns `false` because `undefined` only equals `null`, `undefined`, and no other value.
+### Անհամեմատելի undefined-ը
 
-### Avoid problems
+`undefined` արժեքը, չի կարող համեմատվել այլ արժեքների հետ․
 
-Why did we go over these examples? Should we remember these peculiarities all the time? Well, not really. Actually, these tricky things will gradually become familiar over time, but there's a solid way to avoid problems with them:
+```js run
+alert(undefined > 0); // false (1)
+alert(undefined < 0); // false (2)
+alert(undefined == 0); // false (3)
+```
 
-- Treat any comparison with `undefined/null` except the strict equality `===` with exceptional care.
-- Don't use comparisons `>= > < <=` with a variable which may be `null/undefined`, unless you're really sure of what you're doing. If a variable can have these values, check for them separately.
+Ինչու՞ այն նման չէ այդքան զրոյին, միշտ կեղծ է Մենք ստանում ենք այս արդյունքը, քանի որ․
 
-## Summary
+- Համեմատություններ `(1)`-ինը և `(2)`-րդը վերադարձնում են `false`, քան որ `undefined`-ը ձևափոխվում է `NaN`-ի, իսկ `NaN`
+  -ը հատուկ թվային արժեք է, որը բոլոր համեմատությունների դեպքում վերադարձնում է `false`։
+- Համեմատություն `(3)`-ը վերադարձնում է `false`, քանի որ `undefined`-ը հավասար է միայն `null`-ին և `undefined`-ին, և ոչ
+  մի այլ արժեքի
 
-- Comparison operators return a boolean value.
-- Strings are compared letter-by-letter in the "dictionary" order.
-- When values of different types are compared, they get converted to numbers (with the exclusion of a strict equality check).
-- The values `null` and `undefined` equal `==` each other and do not equal any other value.
-- Be careful when using comparisons like `>` or `<` with variables that can occasionally be `null/undefined`. Checking for `null/undefined` separately is a good idea.
+### Խուսափել խնդիրներից
+
+Ինչու՞ դիտարկեցինք այս օրինակները, պետք է անընդհատ հիշել այս առանձնահատկությունները: Դե, իրականում ոչ: Փաստորեն, այս
+բարդ բաները ժամանակի ընթացքում աստիճանաբար հայտնի կդառնան, բայց այդ խնդիրներից խուսափելու հնարավոր միջոցներ կան.
+
+- Ցանկացաց համեմատություն `undefined/null`-ով, բացի խիստ հավասարությունից, հարկավոր է հատուկ մոտեցում։
+- Մի օգտագործիր `>= > < <=` համեմատությունները, այն արժեքների հետ, որոնք կարող են լինել `null/undefined`, եթե իսկապես
+  վստահ չեք թե ինչ եք անում։ Եթե փոփոխականը կարող է ունենալ այս արժեքները, ստուգեք դրանք առանձին
+
+## Ամփոփում
+
+- Հաեմատման գործողությունները վերադարձնում են տրամաբանական արժեք
+- Տողեչրը համամտվում ենտառ առ տառ, բառարանային հերթականությամբ
+- Երբ տարբեր տիպեր ունեցող արժեքները համեմատվում են, դրանք ձևափոխվում են թվերի (բացառությամբ խիստ հավասարության)
+- `null` և `undefined` արժեքները հավասար են `==` մեկը մյուսին և հավասար չեն մեկ այլ արժեքի
+- Եղեք եղեք, երբ օգտոգործում եք համեմատություններ, ինչպիսիք են `>` կամ `<`, այն փոփոխականների հետ, ոչոնք կարող են
+  պատահմամբ լինել `null/undefined`։ Լավ գաղափար է `null/undefined`-ը ստուգել առանձին։

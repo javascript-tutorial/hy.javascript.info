@@ -2,9 +2,9 @@ importance: 5
 
 ---
 
-# Comparisons
+# Համեմատություններ
 
-What will be the result for these expressions?
+Ի՞նչ կլինի հետևյալ արտահայոժտությունների արժեքները
 
 ```js no-beautify
 5 > 4

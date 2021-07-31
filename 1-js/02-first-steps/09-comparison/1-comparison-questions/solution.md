@@ -10,12 +10,11 @@ null == "\n0\n" → false
 null === +"\n0\n" → false
 ```
 
-Some of the reasons:
-
-1. Obviously, true.
-2. Dictionary comparison, hence false. `"a"` is smaller than `"p"`.
-3. Again, dictionary comparison, first char `"2"` is greater than the first char `"1"`.
-4. Values `null` and `undefined` equal each other only.
-5. Strict equality is strict. Different types from both sides lead to false.
-6. Similar to `(4)`, `null` only equals `undefined`.
-7. Strict equality of different types.
+Պատճառներից որոշները․
+1. Միանշանակ, true.
+2. Բառարանային համեմատություն, հետևաբար false:  `"a"`-ն փոքր է քան `"p"`-ն։
+3. Կրկին բառարանային համեմատություն, առաջին նշանը `"2"`-ը մեծ է, քան առաջինը նշանը `"1"`-ը։
+4. `null` և `undefined` արժեքները հավասար են միայն իրար։
+5. Խիստ հավասարություն։ Դարբեր տիպերը երկու կողմում էլ հավասար են false-ի։
+6. Նման է `(4)`-ին, `null`-ը միայն հավասար է `undefined`-ին։
+7․ Տիպերի խիստ հավասարություն
