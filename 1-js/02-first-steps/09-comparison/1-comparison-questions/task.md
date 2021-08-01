@@ -12,6 +12,6 @@ importance: 5
 "2" > "12"
 undefined == null
 undefined === null
-null == "0"
-null === "0"
+null == "\n0\n"
+null === +"\n0\n"
 ```
