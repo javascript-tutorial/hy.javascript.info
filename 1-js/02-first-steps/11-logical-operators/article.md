@@ -16,9 +16,9 @@ result = a || b
 
 Կլասիկ ծրագրավորման մեջ տրամաբանական ԿԱՄ օպերատորը կիրառվում է միայն տրամաբանական արժեքների վրա։ Եթե նրա արգումենտներից մեկը ճշմարի `true` է, ապա այն վերադարձնում է `true`, հակառակ դեպքում՝ `false`։
 
-In JavaScript, the operator is a little bit trickier and more powerful. But first, let's see what happens with boolean values.
+JavaScript֊ում այս օպերատորը ավելի ճկուն և հզոր է։ Բայց սկզում եկեք տեսնենք, թե ինչ է կատարվում տրամաբանական տիպերի հետ։
 
-There are four possible logical combinations:
+Կան չորս տրամաբանական կոմբինայիաներ․
 
 ```js run
 alert(true || true) // true
@@ -27,22 +27,22 @@ alert(true || false) // true
 alert(false || false) // false
 ```
 
-As we can see, the result is always `true` except for the case when both operands are `false`.
+Ինչպես տեսնում ենք արդյունքը միշտ ճիշտ(`true`) է, բացի այն դեպքից, երբ երկու օպերանդներն էլ սխալ(`false`) են։
 
 If an operand is not a boolean, it's converted to a boolean for the evaluation.
 
-For instance, the number `1` is treated as `true`, the number `0` as `false`:
+Օրինակ `1`֊ը մշակվում է որպես `true`, `0`֊ն՝ `false`․
 
 ```js run
 if (1 || 0) {
-  // works just like if( true || false )
-  alert('truthy!')
+  // աշխատում է ինչպես if( true || false )
+  alert('Ճշմարիտ է!')
 }
 ```
 
-Most of the time, OR `||` is used in an `if` statement to test if _any_ of the given conditions is `true`.
+Շատ հաճախ ԿԱՄ `||` օպերատորը օգտագործվում է `if` պայմանի օպերատորի հետ՝ ստուգելու համար արդյոք ճիշտ(`true`) է տրված պայմաններից _գոնե մեկը_։
 
-For example:
+Օրինակ․
 
 ```js run
 let hour = 9;
@@ -50,61 +50,61 @@ let hour = 9;
 *!*
 if (hour < 10 || hour > 18) {
 */!*
-  alert( 'The office is closed.' );
+  alert('Գրասենյակը փակ է։');
 }
 ```
 
-We can pass more conditions:
+Մենք կարող ենք ստուգել ավելի շատ պայմաններ․
 
 ```js run
 let hour = 12
 let isWeekend = true
 
 if (hour < 10 || hour > 18 || isWeekend) {
-  alert('The office is closed.') // it is the weekend
+  alert('Գրասենյակը փակ է։') // քանի որ շաբաթ կամ կիրակի է (weekend)
 }
 ```
 
-## OR "||" finds the first truthy value [#or-finds-the-first-truthy-value]
+## ԿԱՄ "||"֊ը գտնում է առաջին ճշմարիտ արժեքը [#or-finds-the-first-truthy-value]
 
-The logic described above is somewhat classical. Now, let's bring in the "extra" features of JavaScript.
+Վերոնշյալ տրամաբանությունը ստանդարտ է ԿԱՄ֊ի համար։ Հիմա եկեք դիտարկենք JavaScript֊ի "հավելյալ" հատկությունները։
 
-The extended algorithm works as follows.
+Ընդլայնված ալգորիթմը աշխատում է հետևյալ կերպ։
 
-Given multiple OR'ed values:
+Տրված են մի քանի ԿԱՄ֊ով կապված արժեքներ․
 
 ```js
 result = value1 || value2 || value3
 ```
 
-The OR `||` operator does the following:
+ԿԱՄ `||` օպերատորը կատարում է հետևյալ քայլերը․
 
-- Evaluates operands from left to right.
-- For each operand, converts it to boolean. If the result is `true`, stops and returns the original value of that operand.
-- If all operands have been evaluated (i.e. all were `false`), returns the last operand.
+- Հաշվում է օպերանդների արժեքները ձախից աջ։
+- Ամեն օպերանդի արժեք փոխակերպում է տրամաբանական տիպի։ Եթե արդյունքը `true` է այն կանգ է առնում և վերադարձնում այդ օպերանդի օրիգինալ արժեքը։
+- Եթե բոլոր օպերանդները հաշվվում են, և բոլորի արժեքը `false` է լինում, ապա վերադարձնում է վերջին օպերանդի արժեքը։
 
-A value is returned in its original form, without the conversion.
+Արժեքը վերադարձվում է իր օրիգինալ վիճակում, առանց փոխարկման(conversion)։
 
-In other words, a chain of OR `||` returns the first truthy value or the last one if no truthy value is found.
+Այլ կերպ ասած, ԿԱՄ `||`֊երից կազմված շղթան վերադարձնում է առաջին ճշմարիտ արժեքը, կամ վերջինը, եթե չկան ճշմարիտ արժեքներ։
 
-For instance:
+Օրինակ․
 
 ```js run
-alert(1 || 0) // 1 (1 is truthy)
+alert(1 || 0) // 1 (1֊ը ճշմարիտ է)
 
-alert(null || 1) // 1 (1 is the first truthy value)
-alert(null || 0 || 1) // 1 (the first truthy value)
+alert(null || 1) // 1 (1֊ը առաջին ճշմարիտ արժեքն է)
+alert(null || 0 || 1) // 1 (առաջին ճշմարիտ արժեքը)
 
-alert(undefined || null || 0) // 0 (all falsy, returns the last value)
+alert(undefined || null || 0) // 0 (քանի որ բոլորը սխալական(falsy) են, վերադարձնում է վերջինը)
 ```
 
-This leads to some interesting usage compared to a "pure, classical, boolean-only OR".
+Սա հնարավորություն է տալիս կիրառել օպերատորը "մաքուր, ստանդարտ, միայն տրամաբանական ԿԱՄ"֊ի շրջանակներից դուրս։
 
-1. **Getting the first truthy value from a list of variables or expressions.**
+1. **Առաջին ճշմարիտ արժեքի ստացումը փոփոխականների կամ արտահայտությունների ցուցակից։**
 
-   For instance, we have `firstName`, `lastName` and `nickName` variables, all optional (i.e. can be undefined or have falsy values).
+   Օրինակի, ունենք `firstName`, `lastName` և `nickName` փոփոխականները, բոլորը ըստ ցանկության կարող են ստանալ սխալական կամ `undefined` արժեքներ։
 
-   Let's use OR `||` to choose the one that has the data and show it (or `"Anonymous"` if nothing set):
+   Եկեք օգտագործենք ԿԱՄ `||`֊ը ընտրելու համար մեկը որը ունի արժեք(ճշմարիտ) և ցույց տանք այն (կամ `"Anonymous"` եթե այդպիսի արժեք չի գտնվել):
 
    ```js run
    let firstName = "";
@@ -116,26 +116,26 @@ This leads to some interesting usage compared to a "pure, classical, boolean-onl
    */!*
    ```
 
-   If all variables were falsy, `"Anonymous"` would show up.
+   Եթե բոլոր փոփոխականները լինեին սխալական, ապա կտեսնեինք `"Anonymous"`։
 
-2. **Short-circuit evaluation.**
+2. **Կրճատ հաշվարկ (Short-circuit evaluation)։**
 
-   Another feature of OR `||` operator is the so-called "short-circuit" evaluation.
+   ԿԱՄ `||`֊ի մեկ այլ հատկությունը այսպես կոչված "կրճատ հաշվարկ"֊ի հատկությունն է։
 
-   It means that `||` processes its arguments until the first truthy value is reached, and then the value is returned immediately, without even touching the other argument.
+   Դա նշանակում է, որ `||`֊ը կատարում է իր արգումենտների հաշվարկը և փոխակերպումը տրամաբանական տիպի մինչև առաջին ճշմարիտ արժեքին հանդիպելը, ապա այդ արժեքը միանգամից վերադարձվում է, առանց նույնիսկ հաջորդ արգումենտներին նայելու։
 
-   That importance of this feature becomes obvious if an operand isn't just a value, but an expression with a side effect, such as a variable assignment or a function call.
+   Այս հատկության կարևորությունն ակնհայտ է դառնում, եթե օպերանդը պարզապես արժեք չէ, այլ ինչ֊որ արտահայտություն՝ կողմնակի ազդեցությամբ, օրինակ փոփոխականի վերագրում կամ ֆունկցիայի կանչ։
 
-   In the example below, only the second message is printed:
+   Ներքևի օրինակում միայն երկրորդ նամակը կերևա էկրանին․
 
    ```js run no-beautify
-   *!*true*/!* || alert("not printed");
-   *!*false*/!* || alert("printed");
+   *!*true*/!* || alert("չի երևա");
+   *!*false*/!* || alert("կերևա");
    ```
 
-   In the first line, the OR `||` operator stops the evaluation immediately upon seeing `true`, so the `alert` isn't run.
+   Առաջին տողում ԿԱՄ `||` օպերատորը անմիջապես դադարեցնում է հաշվարկը հենց հանդիպում է `true` արժեքին, այդ պատճառով `alert`֊ը չի կանչվում։
 
-   Sometimes, people use this feature to execute commands only if the condition on the left part is falsy.
+   Հաճախ ծրագրավորողները օգտագործում են այս հատկությունը այն դեպքում, երբ անհրաժեշտ է կատարել հրամանները(execute commands) այն և միայն այն դեպքում, երբ ձախ կողմի գրված պայմանը սխալական է։
 
 ## && (AND)
 
