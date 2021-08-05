@@ -2,9 +2,9 @@
 
 ---
 
-# What's the result of OR?
+# Ի՞նչ է հետևյալ ԿԱՄ-ով արտահայտության արդյունքը:
 
-What is the code below going to output?
+Ի՞նչ կտպի ներքևում գրված ծրագիրը։
 
 ```js
 alert(null || 2 || undefined)
