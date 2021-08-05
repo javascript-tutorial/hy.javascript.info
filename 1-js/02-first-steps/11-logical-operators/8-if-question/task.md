@@ -1,4 +1,4 @@
-importance: 5
+Կարևորություն: 5
 
 ---
 
@@ -9,8 +9,7 @@ Which of these `alert`s are going to execute?
 What will the results of the expressions be inside `if(...)`?
 
 ```js
-if (-1 || 0) alert( 'first' );
-if (-1 && 0) alert( 'second' );
-if (null || -1 && 1) alert( 'third' );
+if (-1 || 0) alert('first')
+if (-1 && 0) alert('second')
+if (null || (-1 && 1)) alert('third')
 ```
-

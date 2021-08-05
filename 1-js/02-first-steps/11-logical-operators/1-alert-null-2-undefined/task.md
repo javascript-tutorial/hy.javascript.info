@@ -1,4 +1,4 @@
-importance: 5
+Կարևորություն: 5
 
 ---
 
@@ -7,6 +7,5 @@ importance: 5
 What is the code below going to output?
 
 ```js
-alert( null || 2 || undefined );
+alert(null || 2 || undefined)
 ```
-

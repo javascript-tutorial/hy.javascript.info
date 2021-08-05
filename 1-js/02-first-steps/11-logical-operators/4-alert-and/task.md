@@ -1,4 +1,4 @@
-importance: 3
+Կարևորություն: 3
 
 ---
 
@@ -7,6 +7,5 @@ importance: 3
 What will this code show?
 
 ```js
-alert( alert(1) && alert(2) );
+alert(alert(1) && alert(2))
 ```
-
