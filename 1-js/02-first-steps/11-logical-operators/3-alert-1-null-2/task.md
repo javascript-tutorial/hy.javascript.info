@@ -2,9 +2,9 @@
 
 ---
 
-# What is the result of AND?
+# Ի՞նչ է հետևյալ ԵՎ-ով արտահայտության արդյունքը:
 
-What is this code going to show?
+Ի՞նչ կտպի ներքևում գրված ծրագիրը։
 
 ```js
 alert(1 && null && 2)
