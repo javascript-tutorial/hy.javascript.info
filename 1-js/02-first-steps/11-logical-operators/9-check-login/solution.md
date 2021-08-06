@@ -1,25 +1,25 @@
 
 
 ```js run demo
-let userName = prompt("Who's there?", '');
+let userName = prompt("Ո՞վ է", '');
 
-if (userName === 'Admin') {
+if (userName === 'Ադմին') {
 
-  let pass = prompt('Password?', '');
+  let pass = prompt('Գաղտնաբառը՞', '');
 
-  if (pass === 'TheMaster') {
-    alert( 'Welcome!' );
+  if (pass === 'Գլխավոր') {
+    alert( 'Բարի գալուստ' );
   } else if (pass === '' || pass === null) {
-    alert( 'Canceled' );
+    alert( 'Չեղարկված է' );
   } else {
-    alert( 'Wrong password' );
+    alert( 'Սխալ գաղտնաբառ' );
   }
 
 } else if (userName === '' || userName === null) {
-  alert( 'Canceled' );
+  alert( 'Չեղարկված է' );
 } else {
-  alert( "I don't know you" );
+  alert( "Չեմ ճանաչում քեզ" );
 }
 ```
 
-Note the vertical indents inside the `if` blocks. They are technically not required, but make the code more readable.
+Ուշադրություն դարձրեք ուղղահայաց խորություններին(indents) `if` բլոկների ներսում։ Դրանք պարտադիր չեն, բայց դարձնում են ծրագիրը ավելի ընոեռնելի։
