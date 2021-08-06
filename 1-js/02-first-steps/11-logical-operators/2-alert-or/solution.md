@@ -1,13 +1,13 @@
-The answer: first `1`, then `2`.
+Այն կտպի `1`, այնուհետև `2`։
 
 ```js run
-alert( alert(1) || 2 || alert(3) );
+alert(alert(1) || 2 || alert(3))
 ```
 
-The call to `alert` does not return a value. Or, in other words, it returns `undefined`.
+`alert`֊ի կանչը չի վերադարձնում ոչ մի արժեք։ Կամ այլ կերպա ասած վերադարձնում է `undefined`։
 
-1. The first OR `||` evaluates its left operand `alert(1)`. That shows the first message with `1`.
-2. The `alert` returns `undefined`, so OR goes on to the second operand searching for a truthy value.
-3. The second operand `2` is truthy, so the execution is halted, `2` is returned and then shown by the outer alert.
+1. Սկզբում ԿԱՄ `||`֊ը հաշվում(evaluates) է իր ձախ կողմի օպերանդը՝ `alert(1)`, որն էլ էկրանին ցույց է տալիս `1` արժեքը։
+2. `alert`֊ը վերադարձնում է `undefined`։ ԿԱՄ֊ը անցնում է երկրորդ օպերանդին՝ որոնելով ճշմարիտ արժեք։
+3. Երկրորդ օպերանդը `2` է, որը ճշմարիտ է, և ԿԱՄ֊ը դադարացնում է իր հաշվարկները։ `2`֊ը վերադարձվում է և ցուցադրվում էկրանին դրսի `alert`֊ի միջոցով։
 
-There will be no `3`, because the evaluation does not reach `alert(3)`.
+`3`֊ը չի երևա էկրանին, քանի որ ԿԱՄ֊ը կանգ է առնում երկրորդ օպերանդի վրա և չի հասնում `alert(3)`֊ին։
