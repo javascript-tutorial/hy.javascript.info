@@ -1,20 +1,20 @@
-The answer: the first and the third will execute.
+Պատասխան՝ առաջին և երրորդ `alert`֊ները կկանչվեն։
 
-Details:
+Մանրամասներ․
 
 ```js run
-// Runs.
-// The result of -1 || 0 = -1, truthy
-if (-1 || 0) alert( 'first' );
+// Կանչվում է,
+// քանի որ -1 || 0 = -1 ճշմարիտ է
+if (-1 || 0) alert('առաջին')
 
-// Doesn't run
-// -1 && 0 = 0, falsy
-if (-1 && 0) alert( 'second' );
+// Չի կանչվում,
+// քանի որ -1 && 0 = 0 սխալական է
+if (-1 && 0) alert('երկրորդ')
 
-// Executes
-// Operator && has a higher precedence than ||
-// so -1 && 1 executes first, giving us the chain:
+// Կնչվում է, քանի որ
+// && օպերատորի նախապատվությունը ավելի բարձր է, քան ||֊ինը,
+// այսպիսով -1 && 1 հաշվվում է առաջինը։ Ստանում ենք հետևյալ շղթան․
 // null || -1 && 1  ->  null || 1  ->  1
-if (null || -1 && 1) alert( 'third' );
+if (null || -1 && 1) alert('երրորդ')
 ```
 

@@ -2,14 +2,14 @@
 
 ---
 
-# A question about "if"
+# Հարց "if"֊ի մասին
 
-Which of these `alert`s are going to execute?
+Այս `alert`֊ներից որո՞նք կաշխատեն։
 
-What will the results of the expressions be inside `if(...)`?
+Ի՞նչ կլինի `if(...)`֊երի ներսում գրված արտահայտությունների արժեքները։
 
 ```js
-if (-1 || 0) alert('first')
-if (-1 && 0) alert('second')
-if (null || (-1 && 1)) alert('third')
+if (-1 || 0) alert('առաջին')
+if (-1 && 0) alert('երկրորդ')
+if (null || -1 && 1) alert('երրորդ')
 ```
