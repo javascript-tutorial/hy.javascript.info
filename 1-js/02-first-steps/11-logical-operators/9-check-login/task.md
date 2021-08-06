@@ -2,7 +2,7 @@
 
 ---
 
-# Check the login
+# Մուտքի ստուգում (login)
 
 Write the code which asks for a login with `prompt`.
 
