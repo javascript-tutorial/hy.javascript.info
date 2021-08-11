@@ -1,7 +1,7 @@
 Այն կտպի `1`, այնուհետև `undefined`։
 
 ```js run
-alert(alert(1) && alert(2));
+alert( alert(1) && alert(2) );
 ```
 
 `alert`֊ի կանչը տպում է էկրանին և վերադարձնում `undefined`։

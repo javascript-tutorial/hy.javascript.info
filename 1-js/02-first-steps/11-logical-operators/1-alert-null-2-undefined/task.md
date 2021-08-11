@@ -1,4 +1,4 @@
-Կարևորություն: 5
+importance: 5
 
 ---
 
@@ -7,5 +7,5 @@
 Ի՞նչ կտպի ներքևում գրված ծրագիրը։
 
 ```js
-alert(null || 2 || undefined)
+alert( null || 2 || undefined );
 ```

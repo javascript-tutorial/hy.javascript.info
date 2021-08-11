@@ -1,5 +1,5 @@
 Պատասխանը `2` է, քանի որ այն առաջին ճշմարիտ արժեքն է։
 
 ```js run
-alert(null || 2 || undefined)
+alert( null || 2 || undefined );
 ```
