@@ -7,5 +7,5 @@ importance: 3
 Ի՞նչ կտպի ներքևում գրված ծրագիրը։
 
 ```js
-alert( alert(1) && alert(2) ); 
+alert( alert(1) && alert(2) );
 ```
