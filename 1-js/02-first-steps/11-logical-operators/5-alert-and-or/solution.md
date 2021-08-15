@@ -1,16 +1,16 @@
-The answer: `3`.
+Պատասխանը `3` է։
 
 ```js run
 alert( null || 2 && 3 || 4 );
 ```
 
-The precedence of AND `&&` is higher than `||`, so it executes first.
+ԵՎ `&&`֊ի նախապատվությունը ավելի բարձր է քան `||`֊ինը, հետևաբար այն ավելի շուտ կկատարվի։
 
-The result of `2 && 3 = 3`, so the expression becomes:
+Քանի որ `2 && 3 = 3`, ապա կստանանք հետևյալ արտահայտությունը․
 
 ```
 null || 3 || 4
 ```
 
-Now the result is the first truthy value: `3`.
+Եվ կստանանք պատասխանը առաջին ճշմարիտ արժեքը՝ `3`։
 

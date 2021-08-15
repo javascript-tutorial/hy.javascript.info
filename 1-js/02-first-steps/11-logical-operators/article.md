@@ -1,24 +1,24 @@
-# Logical operators
+# Տրամաբանական օպերատորներ (Logical operators)
 
-There are four logical operators in JavaScript: `||` (OR), `&&` (AND), `!` (NOT), `??` (Nullish Coalescing). Here we cover the first three, the `??` operator is in the next article.
+JavaScript-ում կան չորս տրամաբանական օպերատորներ՝ `||` (ԿԱՄ), `&&` (ԵՎ), `!` (ՈՉ), `??` (Nullish Coalescing). Այստեղ մենք կծանոթանանք առաջին երեքին։ `??` օպերատորին կարող եք ծանոթանալ հաջորդ հոդվածում։
 
-Although they are called "logical", they can be applied to values of any type, not only boolean. Their result can also be of any type.
+Չնայած նրանք անվանվում են "տրամաբանական", նրանք կարող են կիրառվել կամայական (տարբերվող տրամաբանական տիպից) տիպի վրա։ Նրանց արդյունքը նույպես կարող է լինել կամայական տիպի։
 
-Let's see the details.
+Եկեք դիտարկենք ավելի մանրամասն։
 
-## || (OR)
+## || (ԿԱՄ) (OR)
 
-The "OR" operator is represented with two vertical line symbols:
+"ԿԱՄ" օպերատորը ներկայացվում է երկու ուղղահայաց գիծ նշանների միջոցով։
 
 ```js
 result = a || b;
 ```
 
-In classical programming, the logical OR is meant to manipulate boolean values only. If any of its arguments are `true`, it returns `true`, otherwise it returns `false`.
+Դասական ծրագրավորման մեջ տրամաբանական ԿԱՄ օպերատորը կիրառվում է միայն տրամաբանական արժեքների վրա։ Եթե նրա արգումենտներից մեկը ճշմարիտ `true` է, ապա այն վերադարձնում է `true`, հակառակ դեպքում՝ `false`։
 
-In JavaScript, the operator is a little bit trickier and more powerful. But first, let's see what happens with boolean values.
+JavaScript֊ում այս օպերատորը ավելի ճկուն և հզոր է։ Բայց սկզում եկեք տեսնենք, թե ինչ է կատարվում տրամաբանական տիպերի հետ։
 
-There are four possible logical combinations:
+Կան չորս տրամաբանական կոմբինայիաներ․
 
 ```js run
 alert( true || true );   // true
@@ -27,21 +27,21 @@ alert( true || false );  // true
 alert( false || false ); // false
 ```
 
-As we can see, the result is always `true` except for the case when both operands are `false`.
+Ինչպես տեսնում ենք արդյունքը միշտ ճիշտ (`true`) է, բացի այն դեպքից, երբ երկու օպերանդներն էլ սխալ (`false`) են։
 
-If an operand is not a boolean, it's converted to a boolean for the evaluation.
+Եթե օպերանդը տրամաբանական տիպ չի, ապա այն փոխակերպվում (convert) է տրամաբանական տիպի։
 
-For instance, the number `1` is treated as `true`, the number `0` as `false`:
+Օրինակ `1`֊ը մշակվում է որպես `true`, `0`֊ն՝ `false`․
 
 ```js run
-if (1 || 0) { // works just like if( true || false )
-  alert( 'truthy!' );
+if (1 || 0) { // աշխատում է ինչպես if( true || false )
+  alert('Ճշմարիտ է!')
 }
 ```
 
-Most of the time, OR `||` is used in an `if` statement to test if *any* of the given conditions is `true`.
+Շատ հաճախ ԿԱՄ `||` օպերատորը օգտագործվում է `if` պայմանի օպերատորի հետ՝ ստուգելու համար արդյոք ճիշտ (`true`) է տրված պայմաններից _գոնե մեկը_։
 
-For example:
+Օրինակ․
 
 ```js run
 let hour = 9;
@@ -49,61 +49,61 @@ let hour = 9;
 *!*
 if (hour < 10 || hour > 18) {
 */!*
-  alert( 'The office is closed.' );
+  alert('Գրասենյակը փակ է։');
 }
 ```
 
-We can pass more conditions:
+Մենք կարող ենք ստուգել ավելի շատ պայմաններ․
 
 ```js run
-let hour = 12;
-let isWeekend = true;
+let hour = 12
+let isWeekend = true
 
 if (hour < 10 || hour > 18 || isWeekend) {
-  alert( 'The office is closed.' ); // it is the weekend
+  alert('Գրասենյակը փակ է։') // քանի որ շաբաթ կամ կիրակի է (weekend)
 }
 ```
 
-## OR "||" finds the first truthy value [#or-finds-the-first-truthy-value]
+## ԿԱՄ "||"֊ը գտնում է առաջին ճշմարիտ արժեքը [#or-finds-the-first-truthy-value]
 
-The logic described above is somewhat classical. Now, let's bring in the "extra" features of JavaScript.
+Վերոնշյալ տրամաբանությունը ստանդարտ է ԿԱՄ֊ի համար։ Հիմա եկեք դիտարկենք JavaScript֊ի "հավելյալ" հատկությունները։
 
-The extended algorithm works as follows.
+Ընդլայնված ալգորիթմը աշխատում է հետևյալ կերպ։
 
-Given multiple OR'ed values:
+Տրված են մի քանի ԿԱՄ֊ով կապված արժեքներ․
 
 ```js
-result = value1 || value2 || value3;
+result = value1 || value2 || value3
 ```
 
-The OR `||` operator does the following:
+ԿԱՄ `||` օպերատորը կատարում է հետևյալ քայլերը․
 
-- Evaluates operands from left to right.
-- For each operand, converts it to boolean. If the result is `true`, stops and returns the original value of that operand.
-- If all operands have been evaluated (i.e. all were `false`), returns the last operand.
+- Հաշվում է օպերանդների արժեքները ձախից աջ։
+- Ամեն օպերանդի արժեք փոխակերպում է տրամաբանական տիպի։ Եթե արդյունքը `true` է այն կանգ է առնում և վերադարձնում այդ օպերանդի օրիգինալ արժեքը։
+- Եթե բոլոր օպերանդները հաշվվում են, և բոլորի արժեքը `false` է լինում, ապա վերադարձնում է վերջին օպերանդի արժեքը։
 
-A value is returned in its original form, without the conversion.
+Արժեքը վերադարձվում է իր օրիգինալ վիճակում, առանց փոխարկման (conversion)։
 
-In other words, a chain of OR `||` returns the first truthy value or the last one if no truthy value is found.
+Այլ կերպ ասած, ԿԱՄ `||`֊երից կազմված շղթան վերադարձնում է առաջին ճշմարիտ արժեքը, կամ վերջինը, եթե չկան ճշմարիտ արժեքներ։
 
-For instance:
+Օրինակ․
 
 ```js run
-alert( 1 || 0 ); // 1 (1 is truthy)
+alert(1 || 0) // 1 (1֊ը ճշմարիտ է)
 
-alert( null || 1 ); // 1 (1 is the first truthy value)
-alert( null || 0 || 1 ); // 1 (the first truthy value)
+alert(null || 1) // 1 (1֊ը առաջին ճշմարիտ արժեքն է)
+alert(null || 0 || 1) // 1 (առաջին ճշմարիտ արժեքը)
 
-alert( undefined || null || 0 ); // 0 (all falsy, returns the last value)
+alert(undefined || null || 0) // 0 (քանի որ բոլորը սխալական (falsy) են, վերադարձնում է վերջինը)
 ```
 
-This leads to some interesting usage compared to a "pure, classical, boolean-only OR".
+Սա հնարավորություն է տալիս կիրառել օպերատորը "մաքուր, ստանդարտ, միայն տրամաբանական ԿԱՄ"֊ի շրջանակներից դուրս։
 
-1. **Getting the first truthy value from a list of variables or expressions.**
+1. **Առաջին ճշմարիտ արժեքի ստացումը փոփոխականների կամ արտահայտությունների ցուցակից։**
 
-    For instance, we have `firstName`, `lastName` and `nickName` variables, all optional (i.e. can be undefined or have falsy values).
+    Օրինակ ունենք `firstName`, `lastName` և `nickName` փոփոխականները, բոլորը ըստ ցանկության կարող են ստանալ սխալական կամ `undefined` արժեքներ։
 
-    Let's use OR `||` to choose the one that has the data and show it (or `"Anonymous"` if nothing set):
+    Եկեք օգտագործենք ԿԱՄ `||`֊ը ընտրելու համար մեկը որը ունի արժեք (ճշմարիտ) և ցույց տանք այն (կամ `"Anonymous"` եթե այդպիսի արժեք չի գտնվել)։
 
     ```js run
     let firstName = "";
@@ -115,36 +115,36 @@ This leads to some interesting usage compared to a "pure, classical, boolean-onl
     */!*
     ```
 
-    If all variables were falsy, `"Anonymous"` would show up.
+    Եթե բոլոր փոփոխականները լինեին սխալական, ապա կտեսնեինք `"Anonymous"`։
 
-2. **Short-circuit evaluation.**
+2. **Կրճատ հաշվարկ (Short-circuit evaluation)։**
 
-    Another feature of OR `||` operator is the so-called "short-circuit" evaluation.
+    ԿԱՄ `||`֊ի մեկ այլ հատկությունը այսպես կոչված "կրճատ հաշվարկ"֊ի հատկությունն է։
 
-    It means that `||` processes its arguments until the first truthy value is reached, and then the value is returned immediately, without even touching the other argument.
+    Դա նշանակում է, որ `||`֊ը կատարում է իր արգումենտների հաշվարկը և փոխակերպումը տրամաբանական տիպի մինչև առաջին ճշմարիտ արժեքին հանդիպելը, ապա այդ արժեքը միանգամից վերադարձվում է, առանց նույնիսկ հաջորդ արգումենտներին նայելու։
 
-    That importance of this feature becomes obvious if an operand isn't just a value, but an expression with a side effect, such as a variable assignment or a function call.
+    Այս հատկության կարևորությունն ակնհայտ է դառնում, եթե օպերանդը պարզապես արժեք չէ, այլ ինչ֊որ արտահայտություն՝ կողմնակի ազդեցությամբ, օրինակ փոփոխականի վերագրում կամ ֆունկցիայի կանչ։
 
-    In the example below, only the second message is printed:
+    Ներքևի օրինակում միայն երկրորդ նամակը կերևա էկրանին․
 
     ```js run no-beautify
-    *!*true*/!* || alert("not printed");
-    *!*false*/!* || alert("printed");
+    *!*true*/!* || alert("չի երևա");
+    *!*false*/!* || alert("կերևա");
     ```
 
-    In the first line, the OR `||` operator stops the evaluation immediately upon seeing `true`, so the `alert` isn't run.
+    Առաջին տողում ԿԱՄ `||` օպերատորը անմիջապես դադարեցնում է հաշվարկը հենց հանդիպում է `true` արժեքին, այդ պատճառով `alert`֊ը չի կանչվում։
 
-    Sometimes, people use this feature to execute commands only if the condition on the left part is falsy.
+    Հաճախ ծրագրավորողները օգտագործում են այս հատկությունը այն դեպքում, երբ անհրաժեշտ է կատարել հրամանները (execute commands) այն և միայն այն դեպքում, երբ ձախ կողմի գրված պայմանը սխալական է։
 
-## && (AND)
+## && (ԵՎ) (AND)
 
-The AND operator is represented with two ampersands `&&`:
+ԵՎ օպերատորը ներկայացվում է երկու ամպերսանդի նշանների միջոցով `&&`։
 
 ```js
-result = a && b;
+result = a && b
 ```
 
-In classical programming, AND returns `true` if both operands are truthy and `false` otherwise:
+Դասական ծրագրավորման մեջ ԵՎ օպերատորը վերադարձնում է `true`, եթե իր երկու օպերանդների արժեքները ճշմերիտ են, հակառակ դեպքում՝ `false`։
 
 ```js run
 alert( true && true );   // true
@@ -153,137 +153,137 @@ alert( true && false );  // false
 alert( false && false ); // false
 ```
 
-An example with `if`:
+Օրինակ `if`֊ի հետ։
 
 ```js run
 let hour = 12;
 let minute = 30;
 
 if (hour == 12 && minute == 30) {
-  alert( 'The time is 12:30' );
+  alert('Ժամը 12։30֊ն է');
 }
 ```
 
-Just as with OR, any value is allowed as an operand of AND:
+Ինչպես ԿԱՄ֊ի դեպքում, ԵՎ֊ի օպերանդները նույնպես կարող են ունենալ կամայական արժեք․
 
 ```js run
-if (1 && 0) { // evaluated as true && false
-  alert( "won't work, because the result is falsy" );
+if (1 && 0) { // հաշվվում է ինչպես true && false
+  alert('չի երևա, որովհետև արժեքը սխալական է');
 }
 ```
 
 
-## AND "&&" finds the first falsy value
+## ԵՎ "&&"֊ը գտնում է առաջին սխալական արժեքը
 
-Given multiple AND'ed values:
+Տրված է մի քանի արժեքներ կապակցված ԵՎ֊ով․
 
 ```js
-result = value1 && value2 && value3;
+result = value1 && value2 && value3
 ```
 
-The AND `&&` operator does the following:
+ԵՎ `&&` օպերատորը կատարում է հետևյալ գործողություննեը․
 
-- Evaluates operands from left to right.
-- For each operand, converts it to a boolean. If the result is `false`, stops and returns the original value of that operand.
-- If all operands have been evaluated (i.e. all were truthy), returns the last operand.
+- Հաշվում է օպերանդների արժեքները ձախից աջ։
+- Ամեն օպերանդի արժեք փոխակերպում է տրամաբանական տիպի։ Եթե արդյունքը `false` է այն կանգ է առնում և վերադարձնում այդ օպերանդի օրիգինալ արժեքը։
+- Եթե բոլոր օպերանդները հաշվվում են, և բոլորի արժեքը `true` է լինում, ապա վերադարձնում է վերջին օպերանդի արժեքը։
 
-In other words, AND returns the first falsy value or the last value if none were found.
+Այլ կերպ ասած, ԵՎ֊ը վերադարձնում է առաջին սխալական արժեքը, կամ վերջին արժեքը, եթե ոչ մի սխալական արժեք չի գտնվել։
 
-The rules above are similar to OR. The difference is that AND returns the first *falsy* value while OR returns the first *truthy* one.
+Վերոնշյալ կանոնները նման են ԿԱՄ֊ին։ Տարբերությունն այն է, որ ԵՎ֊ը վերադարձնում է առաջին _սխալական_ արժեքը, իսկ ԿԱՄ֊ը՝ առաջին _ճշմարիտ_ արժեքը։
 
-Examples:
+Օրինակներ․
 
 ```js run
-// if the first operand is truthy,
-// AND returns the second operand:
+// Եթե առաջին օպերանդը ճշմարիտ է,
+// ապա ԵՎ֊ը վերադարձնում է երկրոդ օպերանդը։
 alert( 1 && 0 ); // 0
 alert( 1 && 5 ); // 5
 
-// if the first operand is falsy,
-// AND returns it. The second operand is ignored
+// Եթե առաջին օպերանդը սխալական է,
+// ապա ԵՎ֊ը վերադարձնում է այն։ Երկրորդ օպերանդը անտեսվում է։
 alert( null && 5 ); // null
-alert( 0 && "no matter what" ); // 0
+alert( 0 && "կապ չունի ինչ" ); // 0
 ```
 
-We can also pass several values in a row. See how the first falsy one is returned:
+Կարող ենք նաև մի քանի արժեք միաժամանակ փոխանցել։ Տեսնենք թե ինչպես է ԵՎ֊ը վերադարձնում առաջին սխալական արժեքը․
 
 ```js run
-alert( 1 && 2 && null && 3 ); // null
+alert(1 && 2 && null && 3) // null
 ```
 
-When all values are truthy, the last value is returned:
+Երբ բոլոր արժեքնորը ճշմարիտ են, ապա վերադարձվում է վերջին արժեքը․
 
 ```js run
-alert( 1 && 2 && 3 ); // 3, the last one
+alert(1 && 2 && 3) // 3, վերջինը
 ```
 
-````smart header="Precedence of AND `&&` is higher than OR `||`"
-The precedence of AND `&&` operator is higher than OR `||`.
+````smart header="ԵՎ `&&`֊ի նախապատվությունը (precedence) ավելի բարձր է քան ԿԱՄ `||`֊ինը"
+ԵՎ `&&`֊ի նախապատվությունը (precedence) ավելի բարձր է քան ԿԱՄ `||`֊ինը:
 
-So the code `a && b || c && d` is essentially the same as if the `&&` expressions were in parentheses: `(a && b) || (c && d)`.
+Այսպիսով `a && b || c && d` արտահայտությունը համարժեք է հետևյալ արտահայտությանը՝ `(a && b) || (c && d)`, որտեղ `&&`֊երը փակագծերի մեջ են։
 ````
 
-````warn header="Don't replace `if` with `||` or `&&`"
-Sometimes, people use the AND `&&` operator as a "shorter way to write `if`".
+````warn header="Մի փոխարինեք `if`֊ը `||`֊ով կամ `&&`֊ով"
+Հաճախ ծրագրավորողները օգտագործում են ԵՎ `&&` օպերատորը, որպես "`if`֊ի կարճ գրելաձև"։
 
-For instance:
+Օրինակ․
 
 ```js run
 let x = 1;
 
-(x > 0) && alert( 'Greater than zero!' );
+(x > 0) && alert('Մեծ է զրոից');
 ```
 
-The action in the right part of `&&` would execute only if the evaluation reaches it. That is, only if `(x > 0)` is true.
+Աջ կողմի գործողությունը կկատարվի այն ժամանակ, երբ ձախից աջ արժեքավորումը հասնի իրեն (այսինքն ձախ կողմի բոլոր արժեքները ճշմարիտ են)։ Դա տեղի կունենա, եթե `(x > 0)` արտահայտությունը ճիշտ լինի։
 
-So we basically have an analogue for:
+Դա ստացվում է հետևյալի անալոգը․
 
 ```js run
 let x = 1;
 
-if (x > 0) alert( 'Greater than zero!' );
+if (x > 0) alert('Մեծ է զրոից');
 ```
 
-Although, the variant with `&&` appears shorter, `if` is more obvious and tends to be a little bit more readable. So we recommend using every construct for its purpose: use `if` if we want `if` and use `&&` if we want AND.
+Թեև `&&`֊ով տարբերակն ավելի կարճ է, `if`֊ը ավելի հասկանալի է և ավելի ընթեռնելի։ Այսպիսով, մենք խորհուրդ ենք տալիս օգտագործել յուրաքանչյուր գրելաձև իր նշանակությանը համապատասխան՝ օգտագործեք `if` եթե ցանկանում եք պայման ստուգել, և `&&`, եթե ցանկանում եք կատարել ԵՎ տրամաբանական գործողությունը։
 ````
 
 
-## ! (NOT)
+## ! (ՈՉ) (NOT)
 
-The boolean NOT operator is represented with an exclamation sign `!`.
+Տրամաբանական ՈՉ օպերատորը ներկայացվում է բացականչական նշանի միջոցով՝ `!`։
 
-The syntax is pretty simple:
+Նրա շարահյուսությունը (syntax) շատ պարզ է․
 
 ```js
-result = !value;
+result = !value
 ```
 
-The operator accepts a single argument and does the following:
+Օպերատորը ընդունում է մեկ արգումենտ և կատարում հետևյալ քայլերը․
 
-1. Converts the operand to boolean type: `true/false`.
-2. Returns the inverse value.
+1. Փոխակերպում է օպերանդը տրամաբանական տիպի՝ `true/false`.
+2. Վերադարձնում է հակադարձ արժեքը։
 
-For instance:
+Օրինակ․
 
 ```js run
 alert( !true ); // false
 alert( !0 ); // true
 ```
 
-A double NOT `!!` is sometimes used for converting a value to boolean type:
+Երբեմն կրկնակի ՈՉ `!!`֊ը օգտագործվում է արժեքը տրամաբանական տիպի փոխակերպելու համար․
 
 ```js run
-alert( !!"non-empty string" ); // true
-alert( !!null ); // false
+alert(!!'ոչ դատարկ տողային արժեք') // true
+alert(!!null) // false
 ```
 
-That is, the first NOT converts the value to boolean and returns the inverse, and the second NOT inverses it again. In the end, we have a plain value-to-boolean conversion.
+Այսինքն՝ առաջին ՈՉ֊ը փոխակերպում է արժեքը տրամաբանական տիպի, և վերադարձնում դրա հակադարձը, իսկ երկրորդ ՈՉ֊ը կրկին հակադարձում է այն։ Վերջնարդյունքում ունենում ենք տրամաբանական տիպի փոխակերպում (value-to-boolean conversion)։
 
-There's a little more verbose way to do the same thing -- a built-in `Boolean` function:
+Այս գործողության ավելի տեսանելի տարբերակը ներկառուցված `Boolean` ֆունկցիայի կիրառմամբ է․
 
 ```js run
-alert( Boolean("non-empty string") ); // true
-alert( Boolean(null) ); // false
+alert(Boolean('ոչ դատարկ տողային արժեք')) // true
+alert(Boolean(null)) // false
 ```
 
-The precedence of NOT `!` is the highest of all logical operators, so it always executes first, before `&&` or `||`.
+ՈՉ `!` օպերատորի նախապատվությունը ամենաբարձրն է բոլոր տրամաբանական օպերատորների մեջ, այսինքն արտահայտության մեջ միշտ առաջինը կատարվում է `!` գործողությունը, և այնուհետև `&&` և `||` գործողությունները։

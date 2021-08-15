@@ -2,8 +2,8 @@ importance: 3
 
 ---
 
-# Check the range between
+# Միջակայքի ստուգում
 
-Write an `if` condition to check that `age` is between `14` and `90` inclusively.
+Գրեք `if` պայման, որը կստուգի արդյոք `age` փոփոխականը ընկած է `14` և `90` թվերի միջակայքում, այդ թվերը ներառյալ։
 
-"Inclusively" means that `age` can reach the edges `14` or `90`.
+"Ներառյալ" նշանակում է, որ `age`֊ը կարող է ընդունել `14` կամ `90` արժեքները նույնպես։

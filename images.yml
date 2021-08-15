@@ -1,0 +1,15 @@
+# 1-js/02-first-steps/11-logical-operators/9-check-login/ifelse_task.svg
+ifelse_task.svg:
+  "_defaults":
+    position: "center"
+  "Begin": "Սկիզբ"
+  "Canceled": "Չեղարկված է"
+  "Welcome!": "Բարի գալուստ"
+  "I don't know you": "Չեմ ճանաչում քեզ"
+  "Wrong password": "Սխալ գաղտնաբառ"
+  "Who's there?": "Ո՞վ է"
+  "Password?": "Գաղտնաբա՞ռը"
+  "Cancel": "Չեղարկել"
+  "Admin": "Ադմին"
+  "TheMaster": "Գլխավոր"
+  "Other": "Ուրիշ"

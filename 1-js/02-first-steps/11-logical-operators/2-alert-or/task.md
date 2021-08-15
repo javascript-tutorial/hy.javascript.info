@@ -2,11 +2,10 @@ importance: 3
 
 ---
 
-# What's the result of OR'ed alerts?
+# Ի՞նչ է հետևյալ ԿԱՄ-ով արտահայտության արդյունքը
 
-What will the code below output?
+Ի՞նչ կտպի ներքևում գրված ծրագիրը։
 
 ```js
 alert( alert(1) || 2 || alert(3) );
 ```
-

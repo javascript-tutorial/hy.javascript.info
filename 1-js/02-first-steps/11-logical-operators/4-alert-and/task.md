@@ -2,11 +2,10 @@ importance: 3
 
 ---
 
-# What is the result of AND'ed alerts?
+# Ի՞նչ է հետևյալ ԵՎ-ով արտահայտության արդյունքը
 
-What will this code show?
+Ի՞նչ կտպի ներքևում գրված ծրագիրը։
 
 ```js
 alert( alert(1) && alert(2) );
 ```
-

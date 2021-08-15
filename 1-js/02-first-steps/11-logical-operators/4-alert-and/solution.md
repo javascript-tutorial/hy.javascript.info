@@ -1,10 +1,10 @@
-The answer: `1`, and then `undefined`.
+Այն կտպի `1`, այնուհետև `undefined`։
 
 ```js run
 alert( alert(1) && alert(2) );
 ```
 
-The call to `alert` returns `undefined` (it just shows a message, so there's no meaningful return).
+`alert`֊ի կանչը տպում է էկրանին և վերադարձնում `undefined`։
 
-Because of that, `&&` evaluates the left operand (outputs `1`), and immediately stops, because `undefined` is a falsy value. And `&&` looks for a falsy value and returns it, so it's done.
+Այդ պատճառով, երբ `&&`֊ը ավարտում է ձախ օպերանդի հաշվարկը (էկրանին ցուցադրում է `1`), անմիջապես կանգ է առնում, քանի որ `undefined`֊ը սխալական արժեք է։ `&&`֊ը փնտրում է առաջին սխալական արժեքը և վերադարձնում այն։
 
