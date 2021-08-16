@@ -1,54 +1,54 @@
-# Loops: while and for
+# Ցիկլեր․ while և for
 
-We often need to repeat actions.
+Հաճախ մենք կարիք ենք ունենում կրկնել ինչ֊որ գործողությունների հետթականություն։
 
-For example, outputting goods from a list one after another or just running the same code for each number from 1 to 10.
+Օրինակ․ տպել իրար հետևից ցուցակի մեջ գտնվող ապրանքները, կամ ուղղակի աշխակատցնել նույն կոդը 1֊ից 10 բոլոր թվերի համար։
 
-*Loops* are a way to repeat the same code multiple times.
+*Ցիկլերը* նույն կոդը մի քանի անգամ կրկնելու հնարավորություն են տալիս։
 
-## The "while" loop
+## "while" ցիկլը
 
-The `while` loop has the following syntax:
+`while` ցիկլը ունի հետևյալ գրելաձևը․
 
 ```js
 while (condition) {
-  // code
-  // so-called "loop body"
+  // կոդը
+  // որին նաև ասում են "ցիկլի մարմին" ("loop body")
 }
 ```
 
-While the `condition` is truthy, the `code` from the loop body is executed.
+Քանի դեռ `condition`֊ը (պայմանը) ճշմարիտ է, `կոդը` ցիկլի մարմնի ներսում կկատարվի։
 
-For instance, the loop below outputs `i` while `i < 3`:
+Օրինակի համար, ներքևի ցիկլը կարտածի `i`, քանի դեռ `i < 3`․
 
 ```js run
 let i = 0;
-while (i < 3) { // shows 0, then 1, then 2
+while (i < 3) { // ցույց կտա 0, հետո 1, հետո 2
   alert( i );
   i++;
 }
 ```
 
-A single execution of the loop body is called *an iteration*. The loop in the example above makes three iterations.
+Ցիկլի մարմնի մի կատարումը անվանում են *իտերացիա* (*an iteration*): Ցիկլը վերևի օրինակում կատարում է երեք իտերացիա։
 
-If `i++` was missing from the example above, the loop would repeat (in theory) forever. In practice, the browser provides ways to stop such loops, and in server-side JavaScript, we can kill the process.
+Եթե չլիներ `i++` գործողությունը վերևի օրինակում, ապա ցիկլը կկրկնվեր (տեսականորեն) անվերջ։ Պրակտիկայում, դիտարկիչը (browser) կտրամադրի տարբեր գործիքներ, որոնց միջոցով կկարողանանք կանգնեցնել այդպիսի ցիկլկերը, և սերվերում (server-side) կիրառվող JavaScript֊ում կարող ենք սպանել (kill) այդ պրոցեսը։
 
-Any expression or variable can be a loop condition, not just comparisons: the condition is evaluated and converted to a boolean by `while`.
+Կամայական արտահայտություն կամ փոփոխական կարող է լինել ցիկլի պայման։ Պայմանը հաշվվում և ձևափոխվում է տրամաբանական տիպի `while`֊ի կողմից։
 
-For instance, a shorter way to write `while (i != 0)` is `while (i)`:
+Օրինակի համար, `while (i != 0)` արտահայտության կարճ գրելաձևը կլինի `while (i)`:
 
 ```js run
 let i = 3;
 *!*
-while (i) { // when i becomes 0, the condition becomes falsy, and the loop stops
+while (i) { // երբ i֊ն դառնա 0, պայմանը կդառնա սխալական, և ցիկլը կանգ կառնի
 */!*
   alert( i );
   i--;
 }
 ```
 
-````smart header="Curly braces are not required for a single-line body"
-If the loop body has a single statement, we can omit the curly braces `{…}`:
+````smart header="Ձևավոր փակագծերը պարտադիր չեն մեկ տողանի մարմնի համար"
+Եթե ցիկլի մարմինը ունի ընդամենը մեկ արտահայտություն (statement), ապա կարող ենք բաց թողնել ձևավոր փակագծերը `{…}`․
 
 ```js run
 let i = 3;
@@ -58,19 +58,19 @@ while (i) alert(i--);
 ```
 ````
 
-## The "do..while" loop
+## "do..while" ցիկլը
 
-The condition check can be moved *below* the loop body using the `do..while` syntax:
+Պայմանի ստուգումը կարելի է տեղափոխել ցիկլի մարմնի *ներքևը* օգտագործելով `do..while` գերլաձևը․
 
 ```js
 do {
-  // loop body
+  // ցիկլի մարմին
 } while (condition);
 ```
 
-The loop will first execute the body, then check the condition, and, while it's truthy, execute it again and again.
+Ցիկլը սկզբում կաշխատացնի մարմնը, ապա կստուգի պայմանը, և քանի դեռ այն ճշմարիտ է, այն կաշխատացնի մարմինը նորից ու նորից։
 
-For example:
+Օրինակ․
 
 ```js run
 let i = 0;
@@ -80,68 +80,68 @@ do {
 } while (i < 3);
 ```
 
-This form of syntax should only be used when you want the body of the loop to execute **at least once** regardless of the condition being truthy. Usually, the other form is preferred: `while(…) {…}`.
+Այս գրելաձևը պետք է օգտագործվի միայն այն դեպքում, երբ ցանկանում եք, որ ցիկլի մարմինը աշխատի **առնվազն մեկ անգամ** անկախ պայմանի ճշմարիտ կամ սխալական լինելու փաստից։ Սովորաբար մյուս տեսքը ավելի նախընտրելի է․ `while(…) {…}`։
 
-## The "for" loop
+## "for" ցիկլը
 
-The `for` loop is more complex, but it's also the most commonly used loop.
+`for` ցիլկը ավելի կոմպլեքս է, բայց այն ամենից շատ կիրառվող ցիկլն է։
 
-It looks like this:
+Այն ունի հետևյալ տեսքը․
 
 ```js
 for (begin; condition; step) {
-  // ... loop body ...
+  // ... ցիկլի մարմին ...
 }
 ```
 
-Let's learn the meaning of these parts by example. The loop below runs `alert(i)` for `i` from `0` up to (but not including) `3`:
+Եկեք ուսումնասիրենք այդ մասեիը օրինակի վրա։ Ներքևի ցիկլը կատարում է `alert(i)` հրամանը `i`֊ն `0`֊ից մինչև `3`֊ը ոչ ներառյալ:
 
 ```js run
-for (let i = 0; i < 3; i++) { // shows 0, then 1, then 2
+for (let i = 0; i < 3; i++) { // ցույց կտա 0, հետո 1, հետո 2
   alert(i);
 }
 ```
 
-Let's examine the `for` statement part-by-part:
+Դիտարկենք `for`֊ը մաս֊առ֊մաս․
 
-| part  |          |                                                                            |
+| մաս  |          |                                                                            |
 |-------|----------|----------------------------------------------------------------------------|
-| begin | `i = 0`    | Executes once upon entering the loop.                                      |
-| condition | `i < 3`| Checked before every loop iteration. If false, the loop stops.              |
-| body | `alert(i)`| Runs again and again while the condition is truthy.                         |
-| step| `i++`      | Executes after the body on each iteration. |
+| սկիզբ | `i = 0`    | Կատարվում է, երբ մտնում ենք ցիկլ։                                      |
+| պայման | `i < 3`| Ստուգվում է ցիկլի ամեն իտերացիայից առաջ։ Եթե այն սխալ է, ապա ցիկլը կանգնեցվում է։              |
+| մարմին | `alert(i)`| Աշխատում է այնքան ժամանակ, քանի դեռ պայմանը ճշմարիտ է։                         |
+| քայլ| `i++`      | Կատարվում է մարմնի կատարումից հետո, ամեն իտերացիայից ժամանակ։ |
 
-The general loop algorithm works like this:
+Ընդհանուր դեպքում ալգորիթմը աշխատում է հետևյալ կերպ․
 
 ```
-Run begin
-→ (if condition → run body and run step)
-→ (if condition → run body and run step)
-→ (if condition → run body and run step)
+Աշխատացնել *սկիզբ*
+→ (եթե *պայման* → կատարել *մարմին* և աշխատացնել *քայլ*)
+→ (եթե *պայման* → կատարել *մարմին* և աշխատացնել *քայլ*)
+→ (եթե *պայման* → կատարել *մարմին* և աշխատացնել *քայլ*)
 → ...
 ```
 
-That is, `begin` executes once, and then it iterates: after each `condition` test, `body` and `step` are executed.
+Այսինքն, `սկիզբ`֊ը կատարվում է մեկ անգամ, և հետո սկսվում են իտերացիաները․ ամեն `պայման`֊ի ստուգումից հետո, `մարմին`֊ը և `քայլ`֊ը կատարվում են։
 
-If you are new to loops, it could help to go back to the example and reproduce how it runs step-by-step on a piece of paper.
+Եթե ցիկլերի թեման նոր է ձեր համար, ապա օգտակար կլինի հետ գնալ օրինակներին և քայլ֊առ֊քայլ գրառել դրանց կատարման ընթացքները թղթի վրա։
 
-Here's exactly what happens in our case:
+Ահա թե ինչ է տեղի ունենում կոնկրետ մեր օրինակի դեպքում․
 
 ```js
 // for (let i = 0; i < 3; i++) alert(i)
 
-// run begin
+// աշխատացնել սկիզբը
 let i = 0
-// if condition → run body and run step
+// եթե պայման → կատարել մարմինը և աշխատացնել քայլը
 if (i < 3) { alert(i); i++ }
-// if condition → run body and run step
+// եթե պայման → կատարել մարմինը և աշխատացնել քայլը
 if (i < 3) { alert(i); i++ }
-// if condition → run body and run step
+// եթե պայման → կատարել մարմինը և աշխատացնել քայլը
 if (i < 3) { alert(i); i++ }
-// ...finish, because now i == 3
+// ...ավարտ, քանի որ i == 3
 ```
 
-````smart header="Inline variable declaration"
+````smart header="Փոփոխականի ներկառուցված հայտարարում"
 Here, the "counter" variable `i` is declared right in the loop. This is called an "inline" variable declaration. Such variables are visible only inside the loop.
 
 ```js run
