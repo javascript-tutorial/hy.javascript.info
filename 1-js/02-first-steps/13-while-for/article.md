@@ -142,47 +142,47 @@ if (i < 3) { alert(i); i++ }
 ```
 
 ````smart header="Փոփոխականի ներկառուցված հայտարարում"
-Here, the "counter" variable `i` is declared right in the loop. This is called an "inline" variable declaration. Such variables are visible only inside the loop.
+Այստեղ "հաշվիչ" փոփոխական `i`֊ն հայտարարված է հենց ցիկլի վրա։ Այն կոչվում է "ներկառուցված" փոփոխականի հայտարարում։ Այսպիսի փոփոխականները տեսանելի են միայն ցիկլի ներսում։
 
 ```js run
 for (*!*let*/!* i = 0; i < 3; i++) {
   alert(i); // 0, 1, 2
 }
-alert(i); // error, no such variable
+alert(i); // սխալ է, չկա այդպիսի փոփոխական
 ```
 
-Instead of defining a variable, we could use an existing one:
+Փոփոխական հայտարարելու փոխարեն մենք կարող ենք օգտագործել արդեն գոյություն ունեցողը։
 
 ```js run
 let i = 0;
 
-for (i = 0; i < 3; i++) { // use an existing variable
+for (i = 0; i < 3; i++) { // օգտագործվում է գոյություն ունեցող փոփոխական
   alert(i); // 0, 1, 2
 }
 
-alert(i); // 3, visible, because declared outside of the loop
+alert(i); // 3, տեսանելի է, քանի որ հայտարարված է ցիկլից դուրս
 ```
 
 ````
 
 
-### Skipping parts
+### Մասերի բաց թողում
 
-Any part of `for` can be skipped.
+`for` ցիկլի ամեն մաս կաող է բաց թողնվել։
 
-For example, we can omit `begin` if we don't need to do anything at the loop start.
+Օրինակ, կարող ենք բաց թողնել `սկիզբ`֊ը, եթե ցիկլի սկզբում գործողություն չունենք անելու։
 
-Like here:
+Ինչպես այստեղ․
 
 ```js run
-let i = 0; // we have i already declared and assigned
+let i = 0; // i֊ն արդեն հայտարարված և արժեք ստացած է
 
-for (; i < 3; i++) { // no need for "begin"
+for (; i < 3; i++) { // կարիք չկա "սկիզբ"֊ի
   alert( i ); // 0, 1, 2
 }
 ```
 
-We can also remove the `step` part:
+Մենք կարող ենք նաև հեռացնել `քայլ`֊ի հատվածը․
 
 ```js run
 let i = 0;
@@ -192,32 +192,32 @@ for (; i < 3;) {
 }
 ```
 
-This makes the loop identical to `while (i < 3)`.
+Այն դառնում է նույնաբար `while (i < 3)` ցիկլը։
 
-We can actually remove everything, creating an infinite loop:
+Մենք կարող ենք հեռացնել ամեն բան, և կստանանք անվերջ ցիկլ․
 
 ```js
 for (;;) {
-  // repeats without limits
+  // կրկնվում է անվերջ
 }
 ```
 
-Please note that the two `for` semicolons `;` must be present. Otherwise, there would be a syntax error.
+Նկատի ունեցեք, որ `for`֊ի երկու կետ ստորակետները `;` պարտադիր պետք է գրված լինեն, հակառակ դեպքում տեղի կունենա սինտաքսի սխալ (syntax error)։
 
-## Breaking the loop
+## Ցիկլի ընդհատում (break)
 
-Normally, a loop exits when its condition becomes falsy.
+Սովորական դեպքերում ցիկլը դուրս է գալիս (ավարտվում է) այն ժամանակ, երբ նրա պայմանը դառնում է սխալական։
 
-But we can force the exit at any time using the special `break` directive.
+Բայց մենք կարող ենք հարկադրաբար (force) դուրս գալ ցիկլից, ամեն պահի, օգտագործելով հատուկ դիրեկտիվ `break`֊ը։
 
-For example, the loop below asks the user for a series of numbers, "breaking" when no number is entered:
+Օրինակ ներքևի ցիկլը օգտատիրոջից անընդհատ թվային մուտք է ուզում, "ընդհատվում" է, երբ ոչ թվային արժեք է մուտքագրվում․
 
 ```js run
 let sum = 0;
 
 while (true) {
 
-  let value = +prompt("Enter a number", '');
+  let value = +prompt("Մուտքագրեք թիվ", '');
 
 *!*
   if (!value) break; // (*)
@@ -226,12 +226,12 @@ while (true) {
   sum += value;
 
 }
-alert( 'Sum: ' + sum );
+alert( 'Գումարը՝ ' + sum );
 ```
 
-The `break` directive is activated at the line `(*)` if the user enters an empty line or cancels the input. It stops the loop immediately, passing control to the first line after the loop. Namely, `alert`.
+`break` դիրեկտիվը կատարվում է `(*)` տողում, եթե օգտատերը մուտքագրում է դատարկ տող կամ չեղարկում է ներմուծման դաշտը։ Այն անմիջապես դադարեցնում է ցիկլը, և փոխանցում կատարումը ցիկլի անմիջապես հաջորդող տողին։ Մեր դեպքում՝ `alert`։
 
-The combination "infinite loop + `break` as needed" is great for situations when a loop's condition must be checked not in the beginning or end of the loop, but in the middle or even in several places of its body.
+"Անվերջ ցիկլ + `break`" կոմբինացիան հիանալի լուծում է այն դեպքերի համար, երբ ցիկլի պայմանը պետք է ստուգվի ոչ թե սկզբում կամ վերջում, այլ ցիկլի մարմնի մեջ, նույնիսկ կարող է ստուգվել մի քանի տեղ։
 
 ## Continue to the next iteration [#continue]
 
