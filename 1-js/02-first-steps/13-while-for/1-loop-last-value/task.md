@@ -2,9 +2,9 @@ importance: 3
 
 ---
 
-# Last loop value
+# Ցիկլի վերջին արժեքը
 
-What is the last value alerted by this code? Why?
+Ի՞նչ արժեք ցույց կտա այս ծրագիրը ամենավերջում և ինչու՞։
 
 ```js
 let i = 3;
