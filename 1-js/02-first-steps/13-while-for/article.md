@@ -1,54 +1,54 @@
-# Loops: while and for
+# Ցիկլեր․ while և for
 
-We often need to repeat actions.
+Հաճախ մենք կարիք ենք ունենում կրկնել ինչ֊որ գործողությունների հերթականություն։
 
-For example, outputting goods from a list one after another or just running the same code for each number from 1 to 10.
+Օրինակ․ տպել իրար հետևից ցուցակի մեջ գտնվող ապրանքները, կամ ուղղակի աշխատեցնել նույն կոդը 1֊ից 10 բոլոր թվերի համար։
 
-*Loops* are a way to repeat the same code multiple times.
+*Ցիկլերը* նույն կոդը մի քանի անգամ կրկնելու հնարավորություն են տալիս։
 
-## The "while" loop
+## "while" ցիկլը
 
-The `while` loop has the following syntax:
+`while` ցիկլը ունի հետևյալ գրելաձևը․
 
 ```js
 while (condition) {
-  // code
-  // so-called "loop body"
+  // կոդը
+  // որին նաև ասում են "ցիկլի մարմին" ("loop body")
 }
 ```
 
-While the `condition` is truthy, the `code` from the loop body is executed.
+Քանի դեռ `condition`֊ը (պայմանը) ճշմարիտ է, `կոդը` ցիկլի մարմնի ներսում կկատարվի։
 
-For instance, the loop below outputs `i` while `i < 3`:
+Օրինակի համար, ներքևի ցիկլը կարտածի `i`, քանի դեռ `i < 3`․
 
 ```js run
 let i = 0;
-while (i < 3) { // shows 0, then 1, then 2
+while (i < 3) { // ցույց կտա 0, հետո 1, հետո 2
   alert( i );
   i++;
 }
 ```
 
-A single execution of the loop body is called *an iteration*. The loop in the example above makes three iterations.
+Ցիկլի մարմնի մի կատարումը անվանում են *իտերացիա* (*an iteration*): Ցիկլը վերևի օրինակում կատարում է երեք իտերացիա։
 
-If `i++` was missing from the example above, the loop would repeat (in theory) forever. In practice, the browser provides ways to stop such loops, and in server-side JavaScript, we can kill the process.
+Եթե չլիներ `i++` գործողությունը վերևի օրինակում, ապա ցիկլը կկրկնվեր (տեսականորեն) անվերջ։ Պրակտիկայում, դիտարկիչը (browser) կտրամադրի տարբեր գործիքներ, որոնց միջոցով կկարողանանք կանգնեցնել այդպիսի ցիկլկերը, և սերվերում (server-side) կիրառվող JavaScript֊ում կարող ենք սպանել (kill) այդ պրոցեսը։
 
-Any expression or variable can be a loop condition, not just comparisons: the condition is evaluated and converted to a boolean by `while`.
+Կամայական արտահայտություն կամ փոփոխական կարող է լինել ցիկլի պայման։ Պայմանը հաշվվում և ձևափոխվում է տրամաբանական տիպի `while`֊ի կողմից։
 
-For instance, a shorter way to write `while (i != 0)` is `while (i)`:
+Օրինակի համար, `while (i != 0)` արտահայտության կարճ գրելաձևը կլինի `while (i)`:
 
 ```js run
 let i = 3;
 *!*
-while (i) { // when i becomes 0, the condition becomes falsy, and the loop stops
+while (i) { // երբ i֊ն դառնա 0, պայմանը կդառնա սխալական, և ցիկլը կանգ կառնի
 */!*
   alert( i );
   i--;
 }
 ```
 
-````smart header="Curly braces are not required for a single-line body"
-If the loop body has a single statement, we can omit the curly braces `{…}`:
+````smart header="Ձևավոր փակագծերը պարտադիր չեն մեկ տողանի մարմնի համար"
+Եթե ցիկլի մարմինը ունի ընդամենը մեկ արտահայտություն (statement), ապա կարող ենք բաց թողնել ձևավոր փակագծերը `{…}`․
 
 ```js run
 let i = 3;
@@ -58,19 +58,19 @@ while (i) alert(i--);
 ```
 ````
 
-## The "do..while" loop
+## "do..while" ցիկլը
 
-The condition check can be moved *below* the loop body using the `do..while` syntax:
+Պայմանի ստուգումը կարելի է տեղափոխել ցիկլի մարմնի *ներքևը* օգտագործելով `do..while` գերլաձևը․
 
 ```js
 do {
-  // loop body
+  // ցիկլի մարմին
 } while (condition);
 ```
 
-The loop will first execute the body, then check the condition, and, while it's truthy, execute it again and again.
+Ցիկլը սկզբում կաշխատացնի մարմինը, ապա կստուգի պայմանը, և քանի դեռ այն ճշմարիտ է, այն կաշխատացնի մարմինը նորից ու նորից։
 
-For example:
+Օրինակ․
 
 ```js run
 let i = 0;
@@ -80,109 +80,109 @@ do {
 } while (i < 3);
 ```
 
-This form of syntax should only be used when you want the body of the loop to execute **at least once** regardless of the condition being truthy. Usually, the other form is preferred: `while(…) {…}`.
+Այս գրելաձևը պետք է օգտագործվի միայն այն դեպքում, երբ ցանկանում եք, որ ցիկլի մարմինը աշխատի **առնվազն մեկ անգամ** անկախ պայմանի ճշմարիտ կամ սխալական լինելու փաստից։ Սովորաբար մյուս տեսքը ավելի նախընտրելի է․ `while(…) {…}`։
 
-## The "for" loop
+## "for" ցիկլը
 
-The `for` loop is more complex, but it's also the most commonly used loop.
+`for` ցիլկը ավելի բարդ է, բայց այն ամենից շատ կիրառվող ցիկլն է։
 
-It looks like this:
+Այն ունի հետևյալ տեսքը․
 
 ```js
 for (begin; condition; step) {
-  // ... loop body ...
+  // ... ցիկլի մարմին ...
 }
 ```
 
-Let's learn the meaning of these parts by example. The loop below runs `alert(i)` for `i` from `0` up to (but not including) `3`:
+Եկեք ուսումնասիրենք այդ մասերը օրինակի վրա։ Ներքևի ցիկլը կատարում է `alert(i)` հրամանը `i`֊ն `0`֊ից մինչև `3`֊ը ոչ ներառյալ:
 
 ```js run
-for (let i = 0; i < 3; i++) { // shows 0, then 1, then 2
+for (let i = 0; i < 3; i++) { // ցույց կտա 0, հետո 1, հետո 2
   alert(i);
 }
 ```
 
-Let's examine the `for` statement part-by-part:
+Դիտարկենք `for`֊ը մաս առ մաս․
 
-| part  |          |                                                                            |
+| մաս  |          |                                                                            |
 |-------|----------|----------------------------------------------------------------------------|
-| begin | `let i = 0`    | Executes once upon entering the loop.                                      |
-| condition | `i < 3`| Checked before every loop iteration. If false, the loop stops.              |
-| body | `alert(i)`| Runs again and again while the condition is truthy.                         |
-| step| `i++`      | Executes after the body on each iteration. |
+| սկիզբ | `i = 0`    | Կատարվում է, երբ մտնում ենք ցիկլ։                                      |
+| պայման | `i < 3`| Ստուգվում է ցիկլի ամեն իտերացիայից առաջ։ Եթե այն սխալ է, ապա ցիկլը կանգնեցվում է։              |
+| մարմին | `alert(i)`| Աշխատում է այնքան ժամանակ, քանի դեռ պայմանը ճշմարիտ է։                         |
+| քայլ| `i++`      | Կատարվում է մարմնի կատարումից հետո, ամեն իտերացիայի ժամանակ։ |
 
-The general loop algorithm works like this:
+Ընդհանուր դեպքում ալգորիթմը աշխատում է հետևյալ կերպ․
 
 ```
-Run begin
-→ (if condition → run body and run step)
-→ (if condition → run body and run step)
-→ (if condition → run body and run step)
+Աշխատացնել *սկիզբ*
+→ (եթե *պայման* → կատարել *մարմին* և աշխատացնել *քայլ*)
+→ (եթե *պայման* → կատարել *մարմին* և աշխատացնել *քայլ*)
+→ (եթե *պայման* → կատարել *մարմին* և աշխատացնել *քայլ*)
 → ...
 ```
 
-That is, `begin` executes once, and then it iterates: after each `condition` test, `body` and `step` are executed.
+Այսինքն՝ `սկիզբ`֊ը կատարվում է մեկ անգամ, և հետո սկսվում են իտերացիաները․ ամեն `պայման`֊ի ստուգումից հետո, `մարմին`֊ը և `քայլ`֊ը կատարվում են։
 
-If you are new to loops, it could help to go back to the example and reproduce how it runs step-by-step on a piece of paper.
+Եթե ցիկլերի թեման նոր է ձեր համար, ապա օգտակար կլինի հետ գնալ օրինակներին և քայլ առ քայլ գրառել դրանց կատարման ընթացքները թղթի վրա։
 
-Here's exactly what happens in our case:
+Ահա թե ինչ է տեղի ունենում կոնկրետ մեր օրինակի դեպքում․
 
 ```js
 // for (let i = 0; i < 3; i++) alert(i)
 
-// run begin
+// աշխատացնել սկիզբը
 let i = 0
-// if condition → run body and run step
+// եթե պայման → կատարել մարմինը և աշխատացնել քայլը
 if (i < 3) { alert(i); i++ }
-// if condition → run body and run step
+// եթե պայման → կատարել մարմինը և աշխատացնել քայլը
 if (i < 3) { alert(i); i++ }
-// if condition → run body and run step
+// եթե պայման → կատարել մարմինը և աշխատացնել քայլը
 if (i < 3) { alert(i); i++ }
-// ...finish, because now i == 3
+// ...ավարտ, քանի որ i == 3
 ```
 
-````smart header="Inline variable declaration"
-Here, the "counter" variable `i` is declared right in the loop. This is called an "inline" variable declaration. Such variables are visible only inside the loop.
+````smart header="Փոփոխականի ներկառուցված հայտարարում"
+Այստեղ "հաշվիչ" փոփոխական `i`֊ն հայտարարված է հենց ցիկլի վրա։ Այն կոչվում է "ներկառուցված" փոփոխականի հայտարարում։ Այսպիսի փոփոխականները տեսանելի են միայն ցիկլի ներսում։
 
 ```js run
 for (*!*let*/!* i = 0; i < 3; i++) {
   alert(i); // 0, 1, 2
 }
-alert(i); // error, no such variable
+alert(i); // սխալ է, չկա այդպիսի փոփոխական
 ```
 
-Instead of defining a variable, we could use an existing one:
+Փոփոխական հայտարարելու փոխարեն մենք կարող ենք օգտագործել արդեն գոյություն ունեցողը։
 
 ```js run
 let i = 0;
 
-for (i = 0; i < 3; i++) { // use an existing variable
+for (i = 0; i < 3; i++) { // օգտագործվում է գոյություն ունեցող փոփոխական
   alert(i); // 0, 1, 2
 }
 
-alert(i); // 3, visible, because declared outside of the loop
+alert(i); // 3, տեսանելի է, քանի որ հայտարարված է ցիկլից դուրս
 ```
 
 ````
 
 
-### Skipping parts
+### Մասերի բաց թողում
 
-Any part of `for` can be skipped.
+`for` ցիկլի ամեն մաս կաող է բաց թողնվել։
 
-For example, we can omit `begin` if we don't need to do anything at the loop start.
+Օրինակ, կարող ենք բաց թողնել `սկիզբ`֊ը, եթե ցիկլի սկզբում գործողություն չունենք անելու։
 
-Like here:
+Ինչպես այստեղ․
 
 ```js run
-let i = 0; // we have i already declared and assigned
+let i = 0; // i֊ն արդեն հայտարարված և արժեք ստացած է
 
-for (; i < 3; i++) { // no need for "begin"
+for (; i < 3; i++) { // կարիք չկա "սկիզբ"֊ի
   alert( i ); // 0, 1, 2
 }
 ```
 
-We can also remove the `step` part:
+Մենք կարող ենք նաև հեռացնել `քայլ`֊ի հատվածը․
 
 ```js run
 let i = 0;
@@ -192,32 +192,32 @@ for (; i < 3;) {
 }
 ```
 
-This makes the loop identical to `while (i < 3)`.
+Այն դառնում է նույնաբար `while (i < 3)` ցիկլը։
 
-We can actually remove everything, creating an infinite loop:
+Մենք կարող ենք հեռացնել ամեն բան, և կստանանք անվերջ ցիկլ․
 
 ```js
 for (;;) {
-  // repeats without limits
+  // կրկնվում է անվերջ
 }
 ```
 
-Please note that the two `for` semicolons `;` must be present. Otherwise, there would be a syntax error.
+Նկատի ունեցեք, որ `for`֊ի երկու կետ ստորակետները `;` պարտադիր պետք է գրված լինեն, հակառակ դեպքում տեղի կունենա սինտաքսի սխալ (syntax error)։
 
-## Breaking the loop
+## Ցիկլի ընդհատում (break)
 
-Normally, a loop exits when its condition becomes falsy.
+Սովորական դեպքերում ցիկլը դուրս է գալիս (ավարտվում է) այն ժամանակ, երբ նրա պայմանը դառնում է սխալական։
 
-But we can force the exit at any time using the special `break` directive.
+Բայց մենք կարող ենք հարկադրաբար (force) դուրս գալ ցիկլից, ամեն պահի, օգտագործելով հատուկ դիրեկտիվ `break`֊ը։
 
-For example, the loop below asks the user for a series of numbers, "breaking" when no number is entered:
+Օրինակ՝ ներքևի ցիկլը օգտատիրոջից անընդհատ թվային մուտք է ուզում, "ընդհատվում" է, երբ ոչ թվային արժեք է մուտքագրվում․
 
 ```js run
 let sum = 0;
 
 while (true) {
 
-  let value = +prompt("Enter a number", '');
+  let value = +prompt("Մուտքագրեք թիվ", '');
 
 *!*
   if (!value) break; // (*)
@@ -226,35 +226,35 @@ while (true) {
   sum += value;
 
 }
-alert( 'Sum: ' + sum );
+alert( 'Գումարը՝ ' + sum );
 ```
 
-The `break` directive is activated at the line `(*)` if the user enters an empty line or cancels the input. It stops the loop immediately, passing control to the first line after the loop. Namely, `alert`.
+`break` դիրեկտիվը կատարվում է `(*)` տողում, եթե օգտատերը մուտքագրում է դատարկ տող կամ չեղարկում է ներմուծման դաշտը։ Այն անմիջապես դադարեցնում է ցիկլը, և փոխանցում կատարումը ցիկլի անմիջապես հաջորդող տողին։ Մեր դեպքում՝ `alert`։
 
-The combination "infinite loop + `break` as needed" is great for situations when a loop's condition must be checked not in the beginning or end of the loop, but in the middle or even in several places of its body.
+"Անվերջ ցիկլ + `break`" կոմբինացիան հիանալի լուծում է այն դեպքերի համար, երբ ցիկլի պայմանը պետք է ստուգվի ոչ թե սկզբում կամ վերջում, այլ ցիկլի մարմնի մեջ, նույնիսկ կարող է ստուգվել մի քանի տեղ։
 
-## Continue to the next iteration [#continue]
+## Շարունակել հաջորդ իտերացիայից [#continue]
 
-The `continue` directive is a "lighter version" of `break`. It doesn't stop the whole loop. Instead, it stops the current iteration and forces the loop to start a new one (if the condition allows).
+`continue` դիրեկտիվը `break`֊ի ավելի "թեթև տարբերակն" է։ Այն չի կանգնեցնում ամբողջ ցիկլը, այլ կանգնեցնում է միայն ընթացիկ իտերացիան, և հարկադրում ցիկլին անցնել հաջորդին (եթե պայմանը ճշմարիտ է)։
 
-We can use it if we're done with the current iteration and would like to move on to the next one.
+Մենք կարող ենք օգտագործել այն, եթե այլևս կարիք չկա շարունակել այդ պահի իտերացիան և ցանկանում ենք անցնել հաջորդին։
 
-The loop below uses `continue` to output only odd values:
+Ներքևի ցիկլը օգտագործում է `continue`֊ն՝ ցուցադրելու միայն կենտ արժեքները․
 
 ```js run no-beautify
 for (let i = 0; i < 10; i++) {
 
-  // if true, skip the remaining part of the body
+  // եթե ճիշտ է, բաց է թողնում ցիկլի մարմնի ներքևի հատվածը
   *!*if (i % 2 == 0) continue;*/!*
 
-  alert(i); // 1, then 3, 5, 7, 9
+  alert(i); // 1, հետո 3, 5, 7, 9
 }
 ```
 
-For even values of `i`, the `continue` directive stops executing the body and passes control to the next iteration of `for` (with the next number). So the `alert` is only called for odd values.
+`i`֊ի զույգ արժեքների համար `continue` դիրեկտիվը կանգնեցնում է մարմնի կատարումը և կատարումը փոխանցում `for`֊ի հաջորդ իտերացիային (հաջորդ թվով)։ Այսպիսով, `alert`֊ը կանչվում է միայն կենտ արժեքների համար։
 
-````smart header="The `continue` directive helps decrease nesting"
-A loop that shows odd values could look like this:
+````smart header="`continue` դիրեկտիվը օգնում է քչացնել ներդրվածությունները"
+Ցիկլը, որը ցույց է տալիս միայն կենտ արժեքները կարող էր ունենալ հետևյալ տեսքը․
 
 ```js run
 for (let i = 0; i < 10; i++) {
@@ -266,15 +266,15 @@ for (let i = 0; i < 10; i++) {
 }
 ```
 
-From a technical point of view, this is identical to the example above. Surely, we can just wrap the code in an `if` block instead of using `continue`.
+Տեխնիկական տեսանկյունից վերևում բերված երկու օրինակները ամբողջովին նույնն են։ Իհարկե, մենք կարող ենք շրջապատել մեր կոդի այդ հատվածը `if` բլոկով, `continue`֊ի փոխարեն։
 
-But as a side-effect, this created one more level of nesting (the `alert` call inside the curly braces). If the code inside of `if` is longer than a few lines, that may decrease the overall readability.
+Բայց մենք կստանանք լրացուցիչ ներդրված բլոկներ (`alert`֊ի կանչումը ձևավոր փակագծերի ներսում)։ Եթե `if`֊ի ներսի կոդը մի քանի տողից երկար է, ապա այն կարող է նվազեցնել ընդհանուր ծրագրի ընթեռնելիությունը։
 ````
 
-````warn header="No `break/continue` to the right side of '?'"
-Please note that syntax constructs that are not expressions cannot be used with the ternary operator `?`. In particular, directives such as `break/continue` aren't allowed there.
+````warn header="Ոչ մի `break/continue` '?'֊ի աջ կողմում"
+Ուշադրություն դարձրեք, որ սինտաքսիկ կոնդտրուկցիաները (syntax constructs) չեն հանդիսանում արտահայտություններ (expressions) և չեն կարող օգտագործվել `?` օպերատորի հետ։ Մասնավոր դեպքում, `break/continue` և նմանատիպ դիրեկտիվները թույլատրված չեն '?'֊ի հետ։
 
-For example, if we take this code:
+Օրինակի համար, եթե դիտարկենք այս ծրագիրը․
 
 ```js
 if (i > 5) {
@@ -284,114 +284,114 @@ if (i > 5) {
 }
 ```
 
-...and rewrite it using a question mark:
+...և ձևափոխենք այն օգտագործելով հարցականի նշանը․
 
 
 ```js no-beautify
-(i > 5) ? alert(i) : *!*continue*/!*; // continue isn't allowed here
+(i > 5) ? alert(i) : *!*continue*/!*; // continue֊ն թույլատրված չէ այստեղ
 ```
 
-...it stops working: there's a syntax error.
+...այն կդադարի աշխատել, քանի որ կա սինտաքսի սխալ։
 
-This is just another reason not to use the question mark operator `?` instead of `if`.
+Սա մեկ այլ պատճառ է, որպեսզի չօգտագործենք `?`֊ը `if`֊ի փոխարեն։
 ````
 
-## Labels for break/continue
+## Պիտակներ (labels) break֊ի և continue֊ի համար
 
-Sometimes we need to break out from multiple nested loops at once.
+Կան դեպքեր, երբ մենք ցանկանում ենք դուրս գալ միանգամից մի քանի դերդրված ցիկլերից միանգամից։
 
-For example, in the code below we loop over `i` and `j`, prompting for the coordinates `(i, j)` from `(0,0)` to `(2,2)`:
+Օրինակ, ներքևի ծրագրում մենք անցնում ենք ցիկլ `i` և `j` փոփոխականներով, `prompt`-ի օգնությամբ հարցնում `(i, j)` կոորդինատների համար արժեք, սկսած `(0,0)` մինչև `(2,2)`․
 
 ```js run no-beautify
 for (let i = 0; i < 3; i++) {
 
   for (let j = 0; j < 3; j++) {
 
-    let input = prompt(`Value at coords (${i},${j})`, '');
+    let input = prompt(`Արժեքը (${i},${j}) կոորդինատում`, '');
 
-    // what if we want to exit from here to Done (below)?
+    // ի՞նչ եթե ցանկանում ենք դուրս գալ այստեղից, և անցնել Պատրաստ է (ներքև) տողին
   }
 }
 
-alert('Done!');
+alert('Պատրաստ է!');
 ```
 
-We need a way to stop the process if the user cancels the input.
+Մեզ պետք է ինչ֊որ ձև կանգնեցնել պրոցեսը, եթե օգտատերը չեղարկել է ներմուծման դաշտը։
 
-The ordinary `break` after `input` would only break the inner loop. That's not sufficient -- labels, come to the rescue!
+Ստանդարտ `break`֊ը `input`֊ից հետո կկանգնեցնի միայն ներսի ցիկլը։ Դա բավարար չէ, և այստեղ է, որ պիտակները գալիս են օգնության։
 
-A *label* is an identifier with a colon before a loop:
+*Պիտակը* դա նույնականացուցիչ (identifier) է վերջակետով ցիկլից առաջ․
 ```js
 labelName: for (...) {
   ...
 }
 ```
 
-The `break <labelName>` statement in the loop below breaks out to the label:
+`break <labelName>` հրամանը ներքևի ցիկլում կանգնեցնում է դրսի ցիկլը և անցնում պիտակի ցիկլի վերջը․
 
 ```js run no-beautify
 *!*outer:*/!* for (let i = 0; i < 3; i++) {
 
   for (let j = 0; j < 3; j++) {
 
-    let input = prompt(`Value at coords (${i},${j})`, '');
+    let input = prompt(`Արժեքը (${i},${j}) կոորդինատում`, '');
 
-    // if an empty string or canceled, then break out of both loops
+    // եթե դատարկ տող է կամ չեղարկված, ապա երկու ցիկլերն էլ կանգնեցվում են
     if (!input) *!*break outer*/!*; // (*)
 
-    // do something with the value...
+    // արժեքի հետ ինչ֊որ գործողություն...
   }
 }
-alert('Done!');
+alert('Պատրաստ է!');
 ```
 
-In the code above, `break outer` looks upwards for the label named `outer` and breaks out of that loop.
+Վերևի ծրագրում `break outer`֊ը փնտրում է իրեն ընդգրկող դրսի ցիկլը, որի պիտակը `outer` է, և կանգնեցնում այն։
 
-So the control goes straight from `(*)` to `alert('Done!')`.
+Այդպիսով կատարումը `(*)`֊ից անցնում է միանգամից `alert('Done!')`։
 
-We can also move the label onto a separate line:
+Մենք նաև կարող ենք պիտակները տեղադրել ուրիշ տողում․
 
 ```js no-beautify
 outer:
 for (let i = 0; i < 3; i++) { ... }
 ```
 
-The `continue` directive can also be used with a label. In this case, code execution jumps to the next iteration of the labeled loop.
+`continue` դիրեկտիվը նույնպես կարող է կիրառվել պիտակների հետ։ Այս դեպքում, ծրագրի կատարումը անցնում է նշված պիտակով ցիկլի հաջորդ իտերացիային։
 
-````warn header="Labels do not allow to \"jump\" anywhere"
-Labels do not allow us to jump into an arbitrary place in the code.
+````warn header="Պիտակները թույլ չեն տալիս \"ցատկել\" կամայական տեղ"
+Պիտակները թույլ չեն տալիս մեզ ցատկել ծրագրի լրիվ այլ հատված։
 
-For example, it is impossible to do this:
+Օրինակ, անհնար է անել այսպիրի հնարք․
 ```js
-break label; // jump to the label below (doesn't work)
+break label; // ցատկ ներքևի պիտակին (չի աշխատի)
 
 label: for (...)
 ```
 
-A `break` directive must be inside a code block. Technically, any labelled code block will do, e.g.:
+`break` դիրեկտիվը պետք է լինի պիտակը պարունակող բլոկի ներսում։ Տեխնիկապես կամայական պիտակավորված բլոկի համար կարող ենք անել հետևյալը․
 ```js
 label: {
   // ...
-  break label; // works
+  break label; // կաշխատի
   // ...
 }
 ```
 
-...Although, 99.9% of the time `break` is used inside loops, as we've seen in the examples above.
+...Չնայած դրան, 99.9% դեպքերում `break`֊ը օգտագործվում է ցիկլերի ներսում, ինչպես տեսանք վերևի օրինակում։
 
-A `continue` is only possible from inside a loop.
+`continue`֊ն միայն հնարավոր է կիրառել ցիկլի ներսում։
 ````
 
-## Summary
+## Ամփոփում
 
-We covered 3 types of loops:
+Մենք դիտարկեցինք ցիկլերի 3 տիպ․
 
-- `while` -- The condition is checked before each iteration.
-- `do..while` -- The condition is checked after each iteration.
-- `for (;;)` -- The condition is checked before each iteration, additional settings available.
+- `while` -- Ստուգվում է պայմանը ամեն իտերացիայից առաջ։
+- `do..while` -- Ստուգվում է պայմանը ամեն իտերացիայից հետո։
+- `for (;;)` -- Ստուգվում է պայմանը ամեն իտերացիայից առաջ, և տալիս լրացուցիչ կարգավորումների հնարավորություն
 
-To make an "infinite" loop, usually the `while(true)` construct is used. Such a loop, just like any other, can be stopped with the `break` directive.
+"Անվերջ" ցիկլ ստանալու համար սովորաբար օգտագործում են `while(true)`։ Այս ցիկլը, ինչպես նաև կամայական այլ ցիկլ, կարող է կանգնեցվել `break` դիրեկտիվի միջոցով։
 
-If we don't want to do anything in the current iteration and would like to forward to the next one, we can use the `continue` directive.
+Եթե մենք չենք ուզում, որ աշխատի ընթացիկ իտերացիան, այլ ցանկանում ենք անցնել հաջորդին, ապա կարող ենք օգտագործել `continue` դիրեկտիվը։
 
-`break/continue` support labels before the loop. A label is the only way for `break/continue` to escape a nested loop to go to an outer one.
+`break/continue` կարող են կիրառվել ցիկլերից առաջ գրված պիտակների վրա։ Պիտակը միակ ձևն է `break/continue`֊ի միջոցով ներդրված ցիկլերից դրսի ցիկլը կանգնեցնելու կամ դրա հաջորդ իտերացիային անցնելու համար։

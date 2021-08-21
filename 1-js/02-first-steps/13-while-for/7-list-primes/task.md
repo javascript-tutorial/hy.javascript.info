@@ -2,16 +2,16 @@ importance: 3
 
 ---
 
-# Output prime numbers
+# Տպել պարզ թվերը
 
-An integer number greater than `1` is called a [prime](https://en.wikipedia.org/wiki/Prime_number) if it cannot be divided without a remainder by anything except `1` and itself.
+`1`֊ից մեծ ամբողջ թիվը կոչվում է [պարզ](https://hy.wikipedia.org/wiki/Պարզ_թիվ), եթե ունի միայն երկու բաժանարար, դրանք են՝ `1`֊ը և հենց ինքը։
 
-In other words, `n > 1` is a prime if it can't be evenly divided by anything except `1` and `n`.
+Այլ կերպ ասած, `n > 1` պայմանին բավարարող `n`֊ը պարզ է, եթե այն հնարավոր չէ անմնացորդ բաժանել կամայական ամբողջ թվի վրա, բացի `1`֊ից և `n`֊ից։
 
-For example, `5` is a prime, because it cannot be divided without a remainder by `2`, `3` and `4`.
+Օրինակ, `5`֊ը պարզ է, քանի որ այն չի բաժանվում `2`֊ի, `3`֊ի և `4`֊ի։
 
-**Write the code which outputs prime numbers in the interval from `2` to `n`.**
+**Գրել ծրագիր, որը կտպի բոլոր պարզ թվերը `2`֊ից մինչև `n` հատվածում:**
 
-For `n = 10` the result will be `2,3,5,7`.
+`n = 10` դեպքի համար արդյունքը պետք է լինի `2,3,5,7`։
 
-P.S. The code should work for any `n`, not be hard-tuned for any fixed value.
+Հ․Գ․ Ծրագիրը պետք է աշխատի կամայական `n`֊ի համար, այսինքն `n`֊ը պետք է հեշտ մոդիֆիկացվի։

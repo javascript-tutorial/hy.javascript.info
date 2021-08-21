@@ -1,29 +1,29 @@
-There are many algorithms for this task.
+Կան շատ տարբեր ալգորիթմներ այս խնդրիը լուծելու համար։
 
-Let's use a nested loop:
+Եկեք օգտագործենք ներդրված ցիկլեր․
 
 ```js
-For each i in the interval {
-  check if i has a divisor from 1..i
-  if yes => the value is not a prime
-  if no => the value is a prime, show it
+Բոլոր i֊երի համար հատվածից {
+  ստուգում է, արդյոք i֊ն բաժանվում է ինչ֊որ թվի միչև ինքը
+  եթե այո => արժեքը պարզ չէ
+  եթե ոչ => արժեքը պարզ է և պետք է ցույց տալ այն
 }
 ```
 
-The code using a label:
+Ծրագիրը օգտագործում է պիտակ (label)․
 
 ```js run
 let n = 10;
 
 nextPrime:
-for (let i = 2; i <= n; i++) { // for each i...
+for (let i = 2; i <= n; i++) { // ամեն i֊ի համար...
 
-  for (let j = 2; j < i; j++) { // look for a divisor..
-    if (i % j == 0) continue nextPrime; // not a prime, go next i
+  for (let j = 2; j < i; j++) { // փնտրում է բաժանարար..
+    if (i % j == 0) continue nextPrime; // պարզ չէ, անցնում է հաջորդ i֊ին
   }
 
-  alert( i ); // a prime
+  alert( i ); // պարզ թիվ
 }
 ```
 
-There's a lot of space to optimize it. For instance, we could look for the divisors from `2` to square root of `i`. But anyway, if we want to be really efficient for large intervals, we need to change the approach and rely on advanced maths and complex algorithms like [Quadratic sieve](https://en.wikipedia.org/wiki/Quadratic_sieve), [General number field sieve](https://en.wikipedia.org/wiki/General_number_field_sieve) etc.
+Այս օրինակում կան շատ տեղեր, որ կարելի է ավելի օպտիմալ գրել։ Օրինակ մենք կարող ենք փնտրել բաժանարարները `2`֊ից մինչև արմատ `i`֊ն։ Մեծ ինտերվալների դեպքում մենք պետք է լավացնենք (այսինքն փոքրացնենք) փնտրման սահմանները, ավելի արդյունավետ ծրագիր ստանալու համար։ Դրա համար պետք է ծանոթ լինենք խորացված մաթեմատիկայի տարրերին և կոմպլեքս ալգորիթմներին, ինչպիսիք են [Քառակուսային մաղ (Quadratic sieve)](https://en.wikipedia.org/wiki/Quadratic_sieve), [Ընդհանուր թվերի դաշտային մաղ (General number field sieve)](https://en.wikipedia.org/wiki/General_number_field_sieve) և այլն։

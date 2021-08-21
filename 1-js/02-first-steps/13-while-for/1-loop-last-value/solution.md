@@ -1,4 +1,4 @@
-The answer: `1`.
+Պատասխան՝ `1`։
 
 ```js run
 let i = 3;
@@ -8,18 +8,18 @@ while (i) {
 }
 ```
 
-Every loop iteration decreases `i` by `1`. The check `while(i)` stops the loop when `i = 0`.
+Ցիկլի ամեն իտերացիա `i`֊ն նվազեցնում է `1`֊ով։ `while(i)` ստուգումը կանգ կառնի, երբ `i = 0`։
 
-Hence, the steps of the loop form the following sequence ("loop unrolled"):
+Հետևաբար ցիկլը բաղկացած կլինի հետևյալ քայլերից ("բացենք ցիկլը")․
 
 ```js
 let i = 3;
 
-alert(i--); // shows 3, decreases i to 2
+alert(i--); // ցույց կտա 3, կնվազեցնի i֊ն 1֊ով՝ դարձնելով 2
 
-alert(i--) // shows 2, decreases i to 1
+alert(i--) // ցույց կտա 2, կնվազեցնի i֊ն 1֊ով՝ դարձնելով 1
 
-alert(i--) // shows 1, decreases i to 0
+alert(i--) // ցույց կտա 1, կնվազեցնի i֊ն 1֊ով՝ դարձնելով 0
 
-// done, while(i) check stops the loop
+// վերջ, while(i) ստուգումը կդադարեցնի ցիկլը
 ```

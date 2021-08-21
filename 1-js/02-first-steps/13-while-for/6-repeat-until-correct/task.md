@@ -2,12 +2,12 @@ importance: 5
 
 ---
 
-# Repeat until the input is correct
+# Կրկնել քանի դեռ ներմուծված արժեքը ճիշտ չէ
 
-Write a loop which prompts for a number greater than `100`. If the visitor enters another number -- ask them to input again.
+Գրել ցիկլ, որը կհարցնի (prompt) թիվ, որը պետք է լինի մեծ `100`֊ից։ Եթե օգտատերը ներմուծի ուրիշ թիվ (պայմանին չբավարարող) -- տալ նրան ներմուծել կրկին։
 
-The loop must ask for a number until either the visitor enters a number greater than `100` or cancels the input/enters an empty line.
+Ցիկլը պետք է ուզի թիվ օգտատերից, մինչև մուտքագրվի `100`֊ից մեծ թիվ կամ չեղարկվի (cancel) ներմուծումը (մուտքագրվի դատարկ տող)։
 
-Here we can assume that the visitor only inputs numbers. There's no need to implement a special handling for a non-numeric input in this task.
+Ենթադրվում է, որ օգտատերը ներմուծում է միայն թվային արժեքներ։ Լրացուցիչ դեպքեր պետք չէ դիտարկել ոչ թվային արժեքների համար։
 
 [demo]

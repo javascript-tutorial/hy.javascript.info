@@ -2,13 +2,13 @@ importance: 5
 
 ---
 
-# Replace "for" with "while"
+# Փոխարինեք "for"֊ը "while"֊ով
 
-Rewrite the code changing the `for` loop to `while` without altering its behavior (the output should stay same).
+Վերաշարադրեք կոդը, փոխելով `for` ցիկլը `while`֊ով, առանց նրա կատարման արդյունքը փոխելու (ցուցադրվող արժեքները պետք է մնան նույնը)։
 
 ```js run
 for (let i = 0; i < 3; i++) {
-  alert( `number ${i}!` );
+  alert( `Համար ${i}!` );
 }
 ```
 

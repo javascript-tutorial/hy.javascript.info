@@ -2,18 +2,18 @@ importance: 4
 
 ---
 
-# Which values get shown by the "for" loop?
+# Ո՞ր արժեքները կցուցադրվեն "for" ցիկլի միջոցով
 
-For each loop write down which values it is going to show. Then compare with the answer.
+Ամեն ցիկլի համար գրառեք, թե ինչպիսի արժեքներ ցույց կտա ցիկլը, և համեմատեք ձեր պատասխանները լուծման հետ։
 
-Both loops `alert` same values or not?
+Արդյո՞ք երկու ցիկլերն էլ ցույց `alert` կանեն նույն արժեքները, թե ոչ։
 
-1. The postfix form:
+1. Վերջածանցով (postfix).
 
     ```js
     for (let i = 0; i < 5; i++) alert( i );
     ```
-2. The prefix form:
+2. Նախածանցով (prefix).
 
     ```js
     for (let i = 0; i < 5; ++i) alert( i );
