@@ -3,13 +3,13 @@
 let num;
 
 do {
-  num = prompt("Enter a number greater than 100?", 0);
+  num = prompt("Ներմուծեք 100֊ից բարձր թիվ", 0);
 } while (num <= 100 && num);
 ```
 
-The loop `do..while` repeats while both checks are truthy:
+`do..while` ցիկլը կրկնում է քանի դեռ երկու պայմաններն էլ ճշմարիտ չեն․
 
-1. The check for `num <= 100` -- that is, the entered value is still not greater than `100`.
-2. The check `&& num` is false when `num` is `null` or an empty string. Then the `while` loop stops too.
+1. `num <= 100` ստուգումը նշանակում է, որ ներմուծված թիվը դեռ մեծ չէ `100`֊ից։
+2. `&& num` ստուգումը սխալ է, երբ `num`֊ը `null` է կամ դատարկ տող։ Այդ դեպքում `while`֊ը կանգ է առնում։
 
-P.S. If `num` is `null` then `num <= 100` is `true`, so without the 2nd check the loop wouldn't stop if the user clicks CANCEL. Both checks are required.
+Եթե `num`֊ը `null` է, ապա `num <= 100` համեմատումը `true` է, այսինքն առանց երկրորդ պայմանի ցիկլը կանգ չէր առնի, եթե օգտատերը սեղմեր ՉԵՂԱՐԿԵԼ (CANCEL): Երկու պայմանն էլ պարտադիր են։

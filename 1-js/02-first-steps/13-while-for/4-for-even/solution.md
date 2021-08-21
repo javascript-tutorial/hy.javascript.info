@@ -8,4 +8,4 @@ for (let i = 2; i <= 10; i++) {
 }
 ```
 
-We use the "modulo" operator `%` to get the remainder and check for the evenness here.
+Մենք օգտագործում ենք "մնացորդի" օպերատոր `%`֊ը մնացորդը ստանալու համար, և ստուգում ենք թվի զույգությունը։

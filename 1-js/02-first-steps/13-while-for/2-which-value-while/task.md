@@ -2,19 +2,19 @@ importance: 4
 
 ---
 
-# Which values does the while loop show?
+# Ինչպիսի՞ արժեքներ ցույց կտա while ցիկլը
 
-For every loop iteration, write down which value it outputs and then compare it with the solution.
+Ամեն իտերացիայի համար գրառեք, թե ինչպիսի արժեքներ ցույց կտա ցիկլը, և համեմատեք ձեր պատասխանները լուծման հետ։
 
-Both loops `alert` the same values, or not?
+Արդյո՞ք երկու ցիկլերն էլ ցույց `alert` կանեն նույն արժեքները, թե ոչ։
 
-1. The prefix form `++i`:
+1. `++i` նախածանցով (prefix).
 
     ```js
     let i = 0;
     while (++i < 5) alert( i );
     ```
-2. The postfix form `i++`
+2. `i++` վերջածանցով (postfix).
 
     ```js
     let i = 0;

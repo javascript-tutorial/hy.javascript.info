@@ -1,30 +1,30 @@
-The task demonstrates how postfix/prefix forms can lead to different results when used in comparisons.
+Այս առաջադրանքը ցուց է տալիս, թե ինչպես նախածանցի/վերջածանցի կիրառումը կարող է բերել տարբեր արդյունքների, երբ դրանք օգտագործվում են համեմատության մեջ։
 
-1. **From 1 to 4**
+1. **1֊ից մինչև 4**
 
     ```js run
     let i = 0;
     while (++i < 5) alert( i );
     ```
 
-    The first value is `i = 1`, because `++i` first increments `i` and then returns the new value. So the first comparison is `1 < 5` and the `alert` shows `1`.
+    Առաջին արժեքը `i = 1`, քանի որ `++i`֊ն սկզբում աճեցնում է `i`֊ի արժեքը, և հետո նոր վերադարձնում ստացված նոր աժեքը։ Այսպիսով առաջին համեմատությունը կլինի `1 < 5` և `alert`֊ը ցույց կտա `1`։
 
-    Then follow `2, 3, 4…` -- the values show up one after another. The comparison always uses the incremented value, because `++` is before the variable.
+    Ապա կհաջորդի `2, 3, 4…` -- արժեքները կցուցադրվեն մեկը մյուսի հետևից։ Համեմատումը միշտ օգտագործում է ավելացված արժեքը, քանի որ `++`֊ը գրված է փոփոխականից առաջ։
 
-    Finally, `i = 4` is incremented to `5`, the comparison `while(5 < 5)` fails, and the loop stops. So `5` is not shown.
-2. **From 1 to 5**
+    Եվ վերջապես `i = 4` ավելացվում է դառնալով `5`, `while(5 < 5)` համեմատումը կլինի սխալ, և ցիկլը կավարտվի։ Այսպիսով `5`֊ը չի երևա էկրանին։
+2. **1֊ից մինչև 5**
 
     ```js run
     let i = 0;
     while (i++ < 5) alert( i );
     ```
 
-    The first value is again `i = 1`. The postfix form of `i++` increments `i` and then returns the *old* value, so the comparison `i++ < 5` will use `i = 0` (contrary to `++i < 5`).
+    Առաջին արժեքը կրկին `i = 1`։ `i++`֊ը աճեցնում է `i`֊ն, և ապա վերադարձնում *հին* արժեքը, այսպիսով `i++ < 5` համեմատության մեջ `i = 0` (ի տարբերություն `++i < 5`֊ի)։
 
-    But the `alert` call is separate. It's another statement which executes after the increment and the comparison. So it gets the current `i = 1`.
+    Բայց `alert`֊ի կանչը առանձին է։ Այն առանձին հատված է, որը կատարվում է փոփոխականի աճից և համեմատումից հետո։ Այսպիսով այն ստանում է ընթացիկ `i = 1`։
 
-    Then follow `2, 3, 4…`
+    Ապա հետևում են `2, 3, 4…`։
 
-    Let's stop on `i = 4`. The prefix form `++i` would increment it and use `5` in the comparison. But here we have the postfix form `i++`. So it increments `i` to `5`, but returns the old value. Hence the comparison is actually `while(4 < 5)` -- true, and the control goes on to `alert`.
+    Կանգ առնենք `i = 4` դեպքի վրա։ `++i`֊ն կաճեցներ `i`֊ն և կօգտագործեր `5` արժեքը համեմատման համար։ Բայց այստեղ օգտագործվում է `i++`, որը աճեցնում է `i`֊ն՝ դանձնելով `5`, և վերադարձնում հին արժեքը։ Հետևաբար համեմատումը կլինի `while(4 < 5)` -- որն էլ ճիշտ է, և `alert`֊ը ցույց կտա `5` արժեքը։
 
-    The value `i = 5` is the last one, because on the next step `while(5 < 5)` is false.
+    `i = 5` արժեքի դեպքում հաջորդ քայլում կունենանք `while(5 < 5)`, որն էլ սխալ է։

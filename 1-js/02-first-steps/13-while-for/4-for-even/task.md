@@ -2,8 +2,8 @@ importance: 5
 
 ---
 
-# Output even numbers in the loop
+# Ցուցադրել զույգ թվերը ցիկլի միջոցով
 
-Use the `for` loop to output even numbers from `2` to `10`.
+Օգտագործեք `for` ցիկլը ցուցադրելու զույգ թվերը `2`֊ից մինչև `10`։
 
 [demo]
