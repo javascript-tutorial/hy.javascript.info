@@ -1,21 +1,21 @@
-## The variable for our planet
+## Մեր մոլորակի անունը պարունակող փոփոխականը
 
-That's simple:
+Այստեղ ամեն ինչ պարզ է՝
 
 ```js
 let ourPlanetName = "Earth";
 ```
 
-Note, we could use a shorter name `planet`, but it might not be obvious what planet it refers to. It's nice to be more verbose. At least until the variable isNotTooLong.
+Կարող էինք նաև օգտագործել ավելի կարճ `planet` անունը, բայց հասկանալի չէր լինի, թե որ մոլորակի անունն է այն: Ավելի լավ է փոփոխականի անունը լինի երկար, բայց հասկանալի: Բայց ոչ շատ երկար:
 
-## The name of the current visitor
+## Տվյալ հաճախորդի անունը պահող փոփոխականը
 
 ```js
 let currentUserName = "John";
 ```
 
-Again, we could shorten that to `userName` if we know for sure that the user is current.
+Կարող էինք ընտրել նաև `userName` անունը, եթե հաստատ գիտենք, որ հաճախորդը տվյալ պահին կայքում է:
 
-Modern editors and autocomplete make long variable names easy to write. Don't save on them. A name with 3 words in it is fine.
+Ժամանակակից խմբագրիչները կարող են նպաստել փոփոխականների երկար անուններ գրելուն: Արժի փոփոխականի անունը պահել կարճ, ոչ ավել, քան երեք բառ:
 
-And if your editor does not have proper autocompletion, get [a new one](/code-editors).
+Եվ եթե Ձեզ խմբագրիչը չունի կոդի ինքնաշխատ հուշումներ (autocompletion) տրամադրելու հնարավորությունը, խորհուրդ ենք տալիս [փոխել այն](/code-editors):

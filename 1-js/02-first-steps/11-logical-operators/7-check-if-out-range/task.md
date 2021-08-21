@@ -2,8 +2,8 @@ importance: 3
 
 ---
 
-# Check the range outside
+# Միջակայքից դուրս ստուգում
 
-Write an `if` condition to check that `age` is NOT between `14` and `90` inclusively.
+Գրեք `if` պայման, որը կստուգի արդյոք `age` փոփոխականը ընկած ՉԷ `14` և `90` թվերի միջակայքում, այդ թվերը ներառյալ։
 
-Create two variants: the first one using NOT `!`, the second one -- without it.
+Խնդրիը լուծեք երկու եղանակով․ առաջինը օգտագործելով ՈՉ `!` օպերատորը, երկրորդը առանց ՈՉ֊ի։

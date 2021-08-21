@@ -1,61 +1,61 @@
-# Variables
+# Փոփոխականներ
 
-Most of the time, a JavaScript application needs to work with information. Here are two examples:
-1. An online shop -- the information might include goods being sold and a shopping cart.
-2. A chat application -- the information might include users, messages, and much more.
+JavaScript ծրագրերը հաճախ աշխատում են տեղեկատվության հետ: Ահա երկու օրինակ.
+1. Առցանց խանութ -- տեղեկատվության մաս են կազմում վաճառվող ապրանքները, զամբյուղը (shopping cart):
+2. A chat application -- տեղեկատվությունթան մաս են կազմում օգտատերերը, հաղորդագրությունները և այլն:
 
-Variables are used to store this information.
+Փոփոխականներն օգտագործվում են այս ամենը պահելու համար:
 
-## A variable
+## Փոփոխական
 
-A [variable](https://en.wikipedia.org/wiki/Variable_(computer_science)) is a "named storage" for data. We can use variables to store goodies, visitors, and other data.
+[Փոփոխականը](https://en.wikipedia.org/wiki/Variable_(computer_science)) տվյալների «պահեստարան» է: Փոփոխականները կարելի է օգտագործել տարբեր տիպի տվյալներ պահելու համար:
 
-To create a variable in JavaScript, use the `let` keyword.
+JavaScript-ում փոփոխական ստեղծելու համար կիրառվում է `let` հիմնաբառը:
 
-The statement below creates (in other words: *declares*) a variable with the name "message":
+Ստորև բերված հայտարատությունը ստեղծում է (այլ կերպ ասած *հայտարարում է*) «message» անունով փոփոխական.
 
 ```js
 let message;
 ```
 
-Now, we can put some data into it by using the assignment operator `=`:
+Այդ փոփոխականի մեջ որևէ տվյալ տեղադրելու համար կիրառենք վերագրման օպերատորը՝ `=`.
 
 ```js
 let message;
 
 *!*
-message = 'Hello'; // store the string
+message = 'Hello'; // տեղադրել տողը «message» անունով փոփոխականի մեջ
 */!*
 ```
 
-The string is now saved into the memory area associated with the variable. We can access it using the variable name:
+Այդ տողն այժմ պահվում է հիշողության այն հատվածում, որը վերագրված է մեր փոփոխականին: Փոփոխականի պարունակությունը կարելի է կարդալ փոփոխականի անվան միջոցով.
 
 ```js run
 let message;
 message = 'Hello!';
 
 *!*
-alert(message); // shows the variable content
+alert(message); // ցույց է տալիս փոփոխականի պարունակությունը
 */!*
 ```
 
-To be concise, we can combine the variable declaration and assignment into a single line:
+Հակիրճ լինելու համար կհամատեղենք փոփոխականների հայտարարումն ու արժեքի վերագրումը մեկ տողում.
 
 ```js run
-let message = 'Hello!'; // define the variable and assign the value
+let message = 'Hello!'; // հայտատարում և արժեք ենք վերագրում փոփոխականին
 
 alert(message); // Hello!
 ```
 
-We can also declare multiple variables in one line:
+Նույն տողում կարելի է հայտարարել մի քանի փոփոխականներ.
 
 ```js no-beautify
 let user = 'John', age = 25, message = 'Hello';
 ```
 
-That might seem shorter, but we don't recommend it. For the sake of better readability, please use a single line per variable.
+Չնայած սա կարող է հարմար թվալ, այնուամենայնիվ մենք խորհուրդ ենք տալիս յուրաքանչյուր փոփոխական հայտարարել նոր տողում:
 
-The multiline variant is a bit longer, but easier to read:
+Մի քանի տողում փոփոխականներ հայտարարելը ավելի երկար է, բայց և ավելի հեշտ է դրանք ընթեռնելը.
 
 ```js
 let user = 'John';
@@ -63,14 +63,14 @@ let age = 25;
 let message = 'Hello';
 ```
 
-Some people also define multiple variables in this multiline style:
+Երբեմն փոփոխականները հայտարարվում են հետևյալ կերպ.
 ```js no-beautify
 let user = 'John',
   age = 25,
   message = 'Hello';
 ```
 
-...Or even in the "comma-first" style:
+...կամ էլ այսպես:
 
 ```js no-beautify
 let user = 'John'
@@ -78,46 +78,46 @@ let user = 'John'
   , message = 'Hello';
 ```
 
-Technically, all these variants do the same thing. So, it's a matter of personal taste and aesthetics.
+Սրանք բոլորն էլ նույն արդյունքն ունեն և յուրաքանչյուր ոք ընտրում է ըստ ճաշակի և նախընտրության:
 
-````smart header="`var` instead of `let`"
-In older scripts, you may also find another keyword: `var` instead of `let`:
+````smart header="`var`՝ `let`-ի փոխարեն"
+`let`-ի փոխարեն կարող է հանդիպել նաև `var` հիմնաբառը.
 
 ```js
 *!*var*/!* message = 'Hello';
 ```
 
-The `var` keyword is *almost* the same as `let`. It also declares a variable, but in a slightly different, "old-school" way.
+`var` հիմնաբառը *գրեթե* նույն `let`-ն է: Այն նույնպես հայտարարում է փոփոխական, բայց կան որոշ տարբերություններ:
 
-There are subtle differences between `let` and `var`, but they do not matter for us yet. We'll cover them in detail in the chapter <info:var>.
+`let`-ի և `var`-ի մեջ կան փոքր տարբերություններ, որոնք մենք դեռ չեն դիտարկի: Այդ տարբերությունների մասին մանրամասն կխոսենք <info:var> բաժնում:
 ````
 
 ## A real-life analogy
 
-We can easily grasp the concept of a "variable" if we imagine it as a "box" for data, with a uniquely-named sticker on it.
+Հեշտությամբ կարելի է հասկանալ «փոփոխական»-ի գաղափարը, եթե պատկերացնենք այն որպես տվյալների «արկղ», որն իրեն առանձնահատուկ պիտակ ունի:
 
-For instance, the variable `message` can be imagined as a box labeled `"message"` with the value `"Hello!"` in it:
+Օրինակ՝ `message` փոփոխականը կարելի է պատկերացնել որպես `"message"` պիտակով արկղ, որի մեջ պահվում է `"Hello!"` արժեքը:
 
 ![](variable.svg)
 
-We can put any value in the box.
+Արկղի մեջ կարող ենք դնել ցանկացած արժեք:
 
-We can also change it as many times as we want:
+Այդ արժեքները կարող ենք փոխել ըստ անհրաժեշտության.
 ```js run
 let message;
 
 message = 'Hello!';
 
-message = 'World!'; // value changed
+message = 'World!'; // արժեքը փոխված է
 
 alert(message);
 ```
 
-When the value is changed, the old data is removed from the variable:
+Երբ արժեքը փոխվում է, հին տվյալները դառնում են անհասանելի.
 
 ![](variable-change.svg)
 
-We can also declare two variables and copy data from one into the other.
+Մենք նաև կարող ենք սահմանել երկու փոփոխական և պատճենել դրանցից մեկի տվյալները մյուսի մեջ:
 
 ```js run
 let hello = 'Hello world!';
@@ -125,113 +125,113 @@ let hello = 'Hello world!';
 let message;
 
 *!*
-// copy 'Hello world' from hello into message
+// պատճենել 'Hello world'-ը hello-ից message
 message = hello;
 */!*
 
-// now two variables hold the same data
+// այժմ երկու փոփոխականները պարունակում են նույն տվյալները
 alert(hello); // Hello world!
 alert(message); // Hello world!
 ```
 
-````warn header="Declaring twice triggers an error"
-A variable should be declared only once.
+````warn header="Նույն փոփոխականը մեկից ավել անգամ սահմանելը սխալ է առաջացնում"
+Փոփոխականը կարող է սահմանվել միայն մեկ անգամ:
 
-A repeated declaration of the same variable is an error:
+Փոփոխականի հայտարարման կրկնությունը սխալ է.
 
 ```js run
 let message = "This";
 
-// repeated 'let' leads to an error
+// կրկնվող 'let' հայտարարությունները առաջացնում են սխալներ
 let message = "That"; // SyntaxError: 'message' has already been declared
 ```
-So, we should declare a variable once and then refer to it without `let`.
+Այսպիսով՝ մենք պետք է փոփոխականները հայտարարենք մեկ անգամ, այնուհետև օգտագործենք առանց `let` հիմնաբառի:
 ````
 
-```smart header="Functional languages"
-It's interesting to note that there exist [functional](https://en.wikipedia.org/wiki/Functional_programming) programming languages, like [Scala](http://www.scala-lang.org/) or [Erlang](http://www.erlang.org/) that forbid changing variable values.
+```smart header="Ֆունկցիոնալ լեզուներ"
+Հետաքրքիր է իմանալ, որ գոյություն ունեն [ֆունկցիոնալ](https://hy.wikipedia.org/wiki/%D5%96%D5%B8%D6%82%D5%B6%D5%AF%D6%81%D5%AB%D5%B8%D5%B6%D5%A1%D5%AC_%D5%AE%D6%80%D5%A1%D5%A3%D6%80%D5%A1%D5%BE%D5%B8%D6%80%D5%B8%D6%82%D5%B4) ծրագրավորման լեզուներ, օրինակ՝ [Scala](http://www.scala-lang.org/), [Erlang](http://www.erlang.org/), որոնք արգելում են փոփոխականների արժեքների փոփոխությունները:
 
-In such languages, once the value is stored "in the box", it's there forever. If we need to store something else, the language forces us to create a new box (declare a new variable). We can't reuse the old one.
+Նման լեզուներում, երբ արժեքները տեղադրվում են «արկղների» դրանք այլևս փոխել հնարավոր չէ: Եթե անհրաժեշտ է պահել այլ արժեք, լեզուն ստիպում է ստեղծել նոր արկղ (հայտարարել նոր փոփոխական):
 
-Though it may seem a little odd at first sight, these languages are quite capable of serious development. More than that, there are areas like parallel computations where this limitation confers certain benefits. Studying such a language (even if you're not planning to use it soon) is recommended to broaden the mind.
+Չնայած առաջին հայացքից այդ պահվածքը կարող է տարօրինակ թվալ, բայց այդ լեզուները իրոք օգտագործվում են լուրջ նախագծեր մշակելու համար: Ավելին, կան ոլորտներ (օր.՝ զուգահեռ հաշվարկներ), որտեղ այս սահմանափակումները շահավետ են: Խորհուրդ է տրվում ուսումնասիրել նման ծրագրավորման լեզու (նույնիսկ եթե չեք պատրաստվում օգտագործել) «աշխարհայացք» զարգացնելու համար:
 ```
 
-## Variable naming [#variable-naming]
+## Փոփոխականների անվանումը [#variable-naming]
 
-There are two limitations on variable names in JavaScript:
+JavaScript-ում փոփոխականների անունների հետ կապված կա երկու սահմանափակում.
 
-1. The name must contain only letters, digits, or the symbols `$` and `_`.
-2. The first character must not be a digit.
+1. Անունը պետք է պարունակի միայն տառեր, թվեր, կամ `$` և `_` նշանները:
+2. Փոփոխականի անվան առաջին նշանը չպետք է լինի թիվ:
 
-Examples of valid names:
+Ստորև բերված են վավեր անունների օրինակներ.
 
 ```js
 let userName;
 let test123;
 ```
 
-When the name contains multiple words, [camelCase](https://en.wikipedia.org/wiki/CamelCase) is commonly used. That is: words go one after another, each word except first starting with a capital letter: `myVeryLongName`.
+Երբ փոփոխականի անունը պարունակում է մի քանի բառեր, սովորաբար օգտագործվում է [camelCase](https://en.wikipedia.org/wiki/CamelCase): camelCase-ի օգինակ է հետևյալ անունը՝ `myVeryLongName`:
 
-What's interesting -- the dollar sign `'$'` and the underscore `'_'` can also be used in names. They are regular symbols, just like letters, without any special meaning.
+Ինչպես նշեցինք `'$'` և `'_'` նշանները ևս կարող են օգտագործվել փոփոխականների անուններում, սակայն դրանք որոշակի հատուկ իմաստ չունեն:
 
-These names are valid:
+Հետևյալ անունները վավեր են.
 
 ```js run untrusted
-let $ = 1; // declared a variable with the name "$"
-let _ = 2; // and now a variable with the name "_"
+let $ = 1; // հայտարարել փոփոխական "$" անունով
+let _ = 2; // և "_" անունով
 
 alert($ + _); // 3
 ```
 
-Examples of incorrect variable names:
+Սրանք անվավեր անունների օրինակներ են.
 
 ```js no-beautify
-let 1a; // cannot start with a digit
+let 1a; // փոփոխականի անունը չի կարող սկսել թվով
 
-let my-name; // hyphens '-' aren't allowed in the name
+let my-name; // գծիկները թույլատրված չեն անուններում
 ```
 
-```smart header="Case matters"
-Variables named `apple` and `AppLE` are two different variables.
+```smart header="Case-ը կարևոր է"
+`apple` և `AppLE` անուններով փոփոխականները նույնը չեն:
 ```
 
-````smart header="Non-Latin letters are allowed, but not recommended"
-It is possible to use any language, including cyrillic letters or even hieroglyphs, like this:
+````smart header="Ոչ լատիներեն տառերը թույլատրված են, բայց խորհուրդ չի տրվում դրանք օգտագործել"
+Հնարավոր է օգտագործել ցանկացած լեզվի տառեր, օրինակ՝
 
 ```js
 let имя = '...';
 let 我 = '...';
 ```
 
-Technically, there is no error here. Such names are allowed, but there is an international convention to use English in variable names. Even if we're writing a small script, it may have a long life ahead. People from other countries may need to read it some time.
+Նման անունները վավեր են, սակայն ամենուր ընդունված է օգտագործել անգլերենը: Նույնիսկ եթե փոքր սկրիպտ եք գրում, այն հնարավոր է կարդան նաև այլազգի ծրագրավորողները:
 ````
 
-````warn header="Reserved names"
-There is a [list of reserved words](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords), which cannot be used as variable names because they are used by the language itself.
+````warn header="Վերապահված անուններ (reserved names)"
+Գոյություն ունի [վերապահված բառերի ցանկ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords), որոնք չի կարելի օգտագործել որպես փոփոխականի անուն, քանի որ դրանք օգտագործվում են հենց լեզվի կողմից:
 
-For example: `let`, `class`, `return`, and `function` are reserved.
+Օրինակ՝ `let`, `class`, `return`, և `function` հիմնաբառերը վերապահված են:
 
-The code below gives a syntax error:
+Ստորև բերված կոդը սկալ է պարունակում.
 
 ```js run no-beautify
-let let = 5; // can't name a variable "let", error!
-let return = 5; // also can't name it "return", error!
+let let = 5; // փոփոխականի անունը չի կարող լինել "let"
+let return = 5; // ինչպես նաև "return"
 ```
 ````
 
-````warn header="An assignment without `use strict`"
+````warn header="Փոփոխականի վերագրումն առանց `use strict`-ի"
 
-Normally, we need to define a variable before using it. But in the old times, it was technically possible to create a variable by a mere assignment of the value without using `let`. This still works now if we don't put `use strict` in our scripts to maintain compatibility with old scripts.
+Սովորաբար փոփոխականներն օգտագործելուց առաջ պետք է դրանք հայտարարել: Նախկինում հնարավոր էր ստեղծել փոփոխական միայն վերագրման միջոցով՝ առանց օգտագործելու `let`-ը: Դա այժմ ևս հնարավոր է, եթե սկրիպտում չլինի `use strict`-ը:
 
 ```js run no-strict
-// note: no "use strict" in this example
+// ուշադրություն դրաձրեք, որ այս սկրիպտում "use strict" չկա
 
-num = 5; // the variable "num" is created if it didn't exist
+num = 5; // "num" փոփոխականը ստեղծվում է, եթե այն գոյություն չուներ
 
 alert(num); // 5
 ```
 
-This is a bad practice and would cause an error in strict mode:
+Սա սխալ է առաջացնում «strict mode»-ում.
 
 ```js
 "use strict";
@@ -242,15 +242,15 @@ num = 5; // error: num is not defined
 ```
 ````
 
-## Constants
+## Հաստատուններ
 
-To declare a constant (unchanging) variable, use `const` instead of `let`:
+Հաստատուն սահմանելու համար `let`-ի փոխարեն օգտագործեք `const`.
 
 ```js
 const myBirthday = '18.04.1982';
 ```
 
-Variables declared using `const` are called "constants". They cannot be reassigned. An attempt to do so would cause an error:
+`const`-ով սահմանված փոփոխականները կոչվում են «հաստատուններ». դրանց չի կարելի նոր արժեք վերագրել: Նման փորձը սխալի կհանգեցնի.
 
 ```js run
 const myBirthday = '18.04.1982';
@@ -258,16 +258,16 @@ const myBirthday = '18.04.1982';
 myBirthday = '01.01.2001'; // error, can't reassign the constant!
 ```
 
-When a programmer is sure that a variable will never change, they can declare it with `const` to guarantee and clearly communicate that fact to everyone.
+Եթե վստահ եք, որ փոփոխականի արժեքը երբեր չի փոխվի, սահմանեք այն որպես `const` դա ապահովելու և բոլորին այդ փաստն ակնհայտ դարձնելու համար:
 
 
-### Uppercase constants
+### Մեծատառ հաստատուններ
 
-There is a widespread practice to use constants as aliases for difficult-to-remember values that are known prior to execution.
+Ընդունված է օգտագործել հաստատունները դժվար հիշվող արժեքների համար, որոնք հայտնի են նախօրոք:
 
-Such constants are named using capital letters and underscores.
+Նման հաստատունները գրվում են մեծատառ և ընդգծիկներով (underscores):
 
-For instance, let's make constants for colors in so-called "web" (hexadecimal) format:
+Օրինակ՝ սահմանենք հաստատուններ որոշ գույների համար.
 
 ```js run
 const COLOR_RED = "#F00";
@@ -275,69 +275,69 @@ const COLOR_GREEN = "#0F0";
 const COLOR_BLUE = "#00F";
 const COLOR_ORANGE = "#FF7F00";
 
-// ...when we need to pick a color
+// ...գույնն օգտագործելու համար
 let color = COLOR_ORANGE;
 alert(color); // #FF7F00
 ```
 
-Benefits:
+Առավելությունները.
 
-- `COLOR_ORANGE` is much easier to remember than `"#FF7F00"`.
-- It is much easier to mistype `"#FF7F00"` than `COLOR_ORANGE`.
-- When reading the code, `COLOR_ORANGE` is much more meaningful than `#FF7F00`.
+- `COLOR_ORANGE`-ը շատ ավելի հեշտ է մտապահել, քան `"#FF7F00"`-ը,
+- ավելի հեշտ է սխալ գրել `"#FF7F00"`-ը, քան `COLOR_ORANGE`-ը,
+- կոդը կարդալիս `COLOR_ORANGE`-ն ավելի շատ իմաստ է արտահայտում, քան `#FF7F00`-ը:
 
-When should we use capitals for a constant and when should we name it normally? Let's make that clear.
+Եկեք հասկանանք երբ է պետք հաստատունները գրել մեծատառերով, իսկ երբ ոչ:
 
-Being a "constant" just means that a variable's value never changes. But there are constants that are known prior to execution (like a hexadecimal value for red) and there are constants that are *calculated* in run-time, during the execution, but do not change after their initial assignment.
+«Հաստատունն» ուղղակի փոփոխական է, որի արժեքը չի փոխվում: Այունամենայնիվ կան հաստատուններ, որոնց արժեքը հայտնի է մինչև սկրիպը գործարկելը (ինչպես, օրինակ, վերոնշյալ գույները) և կան հաստատուններ, որոնց արժեքը հայտնի է դառնում միայն սկրիպտի աշխատանքի ընթացքում և այն չի փոխվում սկզբնական վերագրումից հետո:
 
-For instance:
+Օրինակ՝
 ```js
 const pageLoadTime = /* time taken by a webpage to load */;
 ```
 
-The value of `pageLoadTime` is not known prior to the page load, so it's named normally. But it's still a constant because it doesn't change after assignment.
+`pageLoadTime`-ի արժեքը հայտնի չէ քանի դեռ էջն ամբողջությամբ չի բեռնվել, սակայն այն հաստատուն է, քանի որ արժեքը չի փոխվում:
 
-In other words, capital-named constants are only used as aliases for "hard-coded" values.  
+Այլ կերպ ասած, մեծատառերով գրված հաստատունները պարունակում են այսպես կոչված «hard-coded» արժեքներ:
 
-## Name things right
+## Ճիշտ անունների ընտրությունը կարևոր է
 
-Talking about variables, there's one more extremely important thing.
+Երբ խոսում ենք փոփոխականների մասին մի կարևոր բան կա, որը պետք է միշտ հիշել:
 
-A variable name should have a clean, obvious meaning, describing the data that it stores.
+Փոփոխականը պետք է ունենա պարզ, միարժեք հասկանալի, և պարունակող արժեքը բնութագրող անուն:
 
-Variable naming is one of the most important and complex skills in programming. A quick glance at variable names can reveal which code was written by a beginner versus an experienced developer.
+Փոփոխականները անվանելը կարևորագույն և դժվար ունակություններից է ծրագրավորման մեջ: Արագ նայելով փոփոխականնրի անուններին կարելի է կարծիք կազվել կոդը գրած ծրագրավորողի ունակությունների մասին:
 
-In a real project, most of the time is spent modifying and extending an existing code base rather than writing something completely separate from scratch. When we return to some code after doing something else for a while, it's much easier to find information that is well-labeled. Or, in other words, when the variables have good names.
+Իրական նախագծերում հիմնական ժամանակը ծախսվում է գոյություն ունեցող կոդը փոփոխելու և զարգացնելու վրա: Երբ վերադառնում ենք մեր գրած կոդին որոշ ժամանակ հետո շատ ավելի հեշտ է վերհիշել այն, երբ փոփոխականներն իմաստավոր անուններ ունեն:
 
-Please spend time thinking about the right name for a variable before declaring it. Doing so will repay you handsomely.
+Հորդորում ենք ծախսել որոշ ժամանակ մտածելու ճիշտ անուններ փոփոխականների համար մինչև դրանք հայտարարելը: Հավատացեք, դա Ձեզ հետագայում միայն կօգնի:
 
-Some good-to-follow rules are:
+Ահա որոշ կանոններ, որոնց արժի հետևել.
 
-- Use human-readable names like `userName` or `shoppingCart`.
-- Stay away from abbreviations or short names like `a`, `b`, `c`, unless you really know what you're doing.
-- Make names maximally descriptive and concise. Examples of bad names are `data` and `value`. Such names say nothing. It's only okay to use them if the context of the code makes it exceptionally obvious which data or value the variable is referencing.
-- Agree on terms within your team and in your own mind. If a site visitor is called a "user" then we should name related variables `currentUser` or `newUser` instead of `currentVisitor` or `newManInTown`.
+- օգտագործեք հեշտ ընթեռնելի անուններ, օրինակ՝ `userName`, կամ `shoppingCart`,
+- մի օգտագործեք հապավումներ կամ նմանատիպ կարճ անուններ՝ `a`, `b`, `c`, եթե, իհարկե, գիտեք ինչ եք ունում,
+- անուններն ընտրեք հնարավորինս նկարագրող և հակիրճ: `data`-ն և `value`-ն վատ անունների օրինակներ են, քանի որ նման անունները ոչինչ չեն ասում: Նման անունները կարելի է միայն օգտագործել այն դեպքերում, երբ կոդի համատեքստը (context) միանշանակ հասկանալի է դարձնում, թե ինչ արժեքներ են այդ փոփոխականները պարունակում,
+- եկեք համաձայնության Ձեր թիմով, կամ ինքներդ Ձեզ հետ: Եթե Ձեր կայքի հաճախորդին անվանում եք «user», ապա նրա հետ կապված փոփոխականները պետք է ունենան նմանատիպ անուններ՝ `currentUser`, կամ `newUser` և ոչ թե `currentVisitor`, կամ `newManInTown`:
 
-Sounds simple? Indeed it is, but creating descriptive and concise variable names in practice is not. Go for it.
+Այս ամենը պարզ է հնչում, սակայն գործնականում հասկանալի և հակիրճ փոփոխականների անուններ մտածելն այնքան էլ հեշտ չէ: Ինքներդ փորձեք և կհամոզվեք:
 
-```smart header="Reuse or create?"
-And the last note. There are some lazy programmers who, instead of declaring new variables, tend to reuse existing ones.
+```smart header="Օգտագործե՞լ եղած փոփոխականը, թե՞ նորը մտածել"
+Որոշ ծույլ ծրագրավորողներ փորձում են կրկին օգտագործել հայտարարած փոփոխականները՝ նորերը սահմանելու փոխարեն:
 
-As a result, their variables are like boxes into which people throw different things without changing their stickers. What's inside the box now? Who knows? We need to come closer and check.
+Արդյունքում նրանց փոփոխականները նմանվում են արկղերի, որոնց մեջ տարբեր տիպի իրեր են նետվում, առանց արկի պիտակը փոխելու: Այպես դժվարանում է հասկանալ, թե ինչ է պահվում այդ արկղում:
 
-Such programmers save a little bit on variable declaration but lose ten times more on debugging.
+Նման դեպքերում ծրագրավորողները մի փոքր խնայում են փոփոխականները հայտարարելիս, սակայն ավելի շատ ժամանակ են ծախսում, երբ խնդիրներ են առաջանում:
 
-An extra variable is good, not evil.
+Այսպիսով՝ ավել փոփոխականը վատ բան չէ:
 
-Modern JavaScript minifiers and browsers optimize code well enough, so it won't create performance issues. Using different variables for different values can even help the engine optimize your code.
+Ժամանակակից JavaScript-ում կան գործիքներ, որոնք փոքրացնում և լավարկում (optimize) են կոդն այն աստիճան, որ ավել փոփոխականներ ունենալը խնդիրներ չի առաջացնի: Նույնիսկ հակառակը. տարբեր արժեքները տարբեր փոփոխականներում պահելը կարող է օգնել շարժիչին այս գործը կատարելիս:
 ```
 
-## Summary
+## Ամփոփում
 
-We can declare variables to store data by using the `var`, `let`, or `const` keywords.
+Տվյալները պահելու համար կարող ենք հայտարարել փոփոխականներ, օգտագործելով `var`, `let`, կամ `const` հիմնաբառերը:
 
-- `let` -- is a modern variable declaration.
-- `var` -- is an old-school variable declaration. Normally we don't use it at all, but we'll cover subtle differences from `let` in the chapter <info:var>, just in case you need them.
-- `const` -- is like `let`, but the value of the variable can't be changed.
+- `let` -- ներկայումս փոփոխականները հայտարարվում են այս հիմնաբառով:
+- `var` -- նախկինում օգտագործվում էր փոփոխականներ հայտարարելու համար: Այժմ այն չենք օգտագործում, իսկ սրա և `let`-ի տարբերությունները կքննարկենք <info:var> բաժնում:
+- `const` -- նման է `let`-ին, սակայն այս հիմնաբառով հայտարարված փոփոխականի արժեքը չի փոխվում:
 
-Variables should be named in a way that allows us to easily understand what's inside them.
+Փոփոխականների անունները պետք է պարզ հուշեն, թե ինչ արժեք է պարունակում տվյալ փոփոխականը:

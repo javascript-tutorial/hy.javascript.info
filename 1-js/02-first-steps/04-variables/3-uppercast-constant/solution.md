@@ -1,5 +1,5 @@
-We generally use upper case for constants that are "hard-coded". Or, in other words, when the value is known prior to execution and directly written into the code.
+Ընդհանուր առմամբ մեծատառերով գրվում են այսպես կոչված «hard-coded» հաստատունները: Այլ կերպ ասած, երբ հաստատունի արժեքը նախօրոք հայտնի է մինչև կոդը գործարկելը, և այդ արժեքը ուղղակի գրված է կոդում:
 
-In this code, `birthday` is exactly like that. So we could use the upper case for it.
+Այս օրինակում `birthday`-ը պարունակում է նման արժեք, այնպես որ իմաստ ունի այն գրել մեծատառերով:
 
-In contrast, `age` is evaluated in run-time. Today we have one age, a year after we'll have another one. It is constant in a sense that it does not change through the code execution. But it is a bit "less of a constant" than `birthday`: it is calculated, so we should keep the lower case for it.
+Մյուս կողմից, `age`-ի արժեքը հայտնի է դառնում միայն երբ կոդը գործարկվում է: Տարեցտարի այդ փոփոխականի արժեքը փոխվում է: Այն հաստատուն է այն իմաստով, որ իր արժեքը չի փոխում կոդի գործարկման ժամանակ: Բայց այն «ավելի քիչ հաստատուն» է, քան `birthday`-ը, քանի որ արժեքը հաշվվում է սկրիպտի աշխատանքի ընթացքում: Այսպիսով՝ արժի գրել այն փոքրատառ:

@@ -2,9 +2,9 @@ importance: 4
 
 ---
 
-# Uppercase const?
+# Մեծատառ հաստատուններ
 
-Examine the following code:
+Դիտարկենք ստորև բերված կոդը՝
 
 ```js
 const birthday = '18.04.1982';
@@ -12,13 +12,13 @@ const birthday = '18.04.1982';
 const age = someCode(birthday);
 ```
 
-Here we have a constant `birthday` date and the `age` is calculated from `birthday` with the help of some code (it is not provided for shortness, and because details don't matter here).
+Այստեղ ունենք `birthday` հաստատունը, որն ամսաթիվ է պարունակում, իսկ `age`-ը հաշվարկվում է `birthday`-ից ինչ-որ ֆուկցիայի միջոցով (մանրամասները նշված չեն հակիրճության համար):
 
-Would it be right to use upper case for `birthday`? For `age`? Or even for both?
+Ճիշտ կլինե՞ր մեծատառերով գրել `birthday`-ը: Իսկ `age`-ը՞: Կամ գուցե երկու՞սն էլ:
 
 ```js
-const BIRTHDAY = '18.04.1982'; // make uppercase?
+const BIRTHDAY = '18.04.1982'; // սա՞ գրել մեծատառերով
 
-const AGE = someCode(BIRTHDAY); // make uppercase?
+const AGE = someCode(BIRTHDAY); // թե՞ age-ը
 ```
 

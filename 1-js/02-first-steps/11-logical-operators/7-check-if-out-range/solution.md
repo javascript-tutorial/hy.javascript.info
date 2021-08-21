@@ -1,10 +1,10 @@
-The first variant:
+Առաջին եղանակը․
 
 ```js
 if (!(age >= 14 && age <= 90))
 ```
 
-The second variant:
+Երկրորդ եղանակը․
 
 ```js
 if (age < 14 || age > 90)
