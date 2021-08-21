@@ -19,7 +19,7 @@ nextPrime:
 for (let i = 2; i <= n; i++) { // ամեն i֊ի համար...
 
   for (let j = 2; j < i; j++) { // փնտրում է բաժանարար..
-    if (i % j == 0) continue nextPrime; // պերզ չէ, անցնում է հաջորդ i֊ին
+    if (i % j == 0) continue nextPrime; // պարզ չէ, անցնում է հաջորդ i֊ին
   }
 
   alert( i ); // պարզ թիվ
