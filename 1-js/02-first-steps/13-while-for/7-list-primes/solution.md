@@ -1,16 +1,16 @@
-There are many algorithms for this task.
+Կան շատ տարբեր ալգորիթմներ այս խնդրիը լուծելու համար։
 
-Let's use a nested loop:
+Եկեք օգտագործենք ներդրված ցիկլեր․
 
 ```js
-For each i in the interval {
-  check if i has a divisor from 1..i
-  if yes => the value is not a prime
-  if no => the value is a prime, show it
+Բոլոր i֊երի համար հատվածից {
+  ստուգու է, արդյոք i֊ն բաժանվում է ինչ֊որ թվի միչև ինքը
+  եթե այո => արժեքը պարզ չէ
+  եթե ոչ => արժեքը պարզ է և պետք է ցույց տալ այն
 }
 ```
 
-The code using a label:
+Ծրագիրը օգտագործում է պիտակ (label)․
 
 ```js run
 let n = 10;
