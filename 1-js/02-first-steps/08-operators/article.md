@@ -1,15 +1,15 @@
-# Basic operators, maths
+# Մաթեմատիկական տարրական գործողություններ
 
-We know many operators from school. They are things like addition `+`, multiplication `*`, subtraction `-`, and so on.
+Մենք գպրոցից գիտեն շատ գործողություններ։ Դրանցից են, օրինակ գումարում `+`, բազմապատկում `*`, հանում `-` և այլն։
 
-In this chapter, we’ll start with simple operators, then concentrate on JavaScript-specific aspects, not covered by school arithmetic.
+Այս հատվածում, մենք կսկսենք պարզ գործողույթուններից, ապա կկենտրոնանանք JavaScript-ի հատուկ ասպեկտների վրա, որոնք գոյություն չունեն դպրոցական թվաբանության մեջ։
 
-## Terms: "unary", "binary", "operand"
+## "ունար", "բինար" և "օպերանդ" հասկացությունները
 
-Before we move on, let's grasp some common terminology.
+Մինչ առաջ անցնելը, եկեք հասկանանք որոշ տերմինների նշանակությունը։
 
-- *An operand* -- is what operators are applied to. For instance, in the multiplication of `5 * 2` there are two operands: the left operand is `5` and the right operand is `2`. Sometimes, people call these "arguments" instead of "operands".
-- An operator is *unary* if it has a single operand. For example, the unary negation `-` reverses the sign of a number:
+-  *Նշան* -- հասկացություն, որը կազմում է գործողությունների հիմքը։ Օրինակ ՝ `5 * 2` –ի բազմապատկման մեջ կան երկու օպերանդներ՝ ձախ օպերանդը՝ `5`, իսկ աջը՝ `2`: Երբեմն, մարդիկ «օպերանդներ»-ի փոխարեն, անվանում են «արգումենտներ»:
+- Գործողությունը համարվում է *ունար* եթե այն ունի միայն մեկ օպերանդ։ Օրինակ՝ ունար ժխտումը `-` հակադարձում է թվի նշանը:
 
     ```js run
     let x = 1;
@@ -17,50 +17,50 @@ Before we move on, let's grasp some common terminology.
     *!*
     x = -x;
     */!*
-    alert( x ); // -1, unary negation was applied
+    alert( x ); // -1, կիրառվել է ունար ժխտում
     ```
-- An operator is *binary* if it has two operands. The same minus exists in binary form as well:
+- Գործողույթունը համարվում է *երկուական* եթե այն ունի երկու օպերանդ. Նույն մինուսը գոյություն ունի նաև հանման տեսքով:
 
     ```js run no-beautify
     let x = 1, y = 3;
-    alert( y - x ); // 2, binary minus subtracts values
+    alert( y - x ); // 2, երկուական մինուսը ցույց է տալիս արժեքների տարբերությունը
     ```
 
-    Formally, in the examples above we have two different operators that share the same symbol: the negation operator, a unary operator that reverses the sign, and the subtraction operator, a binary operator that subtracts one number from another.
+  Վերը նշված օրինակներում մենք ունենք երկու տարբեր օպերատորներ, որոնք կիրառում են նույն նշանը. Ժխտման օպերատոր, նշանը հակադարձող ունարի օպերատոր և հանում օպերատոր, երկուական օպերատոր, որը հանում է մեկ թիվը մյուսից:
 
-## Maths
+## Մաթեմատիկա
 
-The following math operations are supported:
+Հետևյալ մաթեմատիկական գործողությունները աջակցվում են․
 
-- Addition `+`,
-- Subtraction `-`,
-- Multiplication `*`,
-- Division `/`,
-- Remainder `%`,
-- Exponentiation `**`.
+- Գումարում `+`,
+- Հանում `-`,
+- Բազմապատկում `*`,
+- Բաժանում `/`,
+- Մնացորդ `%`,
+- Աստիճան բարձրացնել (անգլ․՝ Exponentiation) `**`.
 
-The first four are straightforward, while `%` and `**` need a few words about them.
+Առաջին չորս գործողությունները պարզ են, մինչդեռ `%` և `**` գործողությունների համար, մի քան խոսք ավելին։
 
-### Remainder %
+### Մնացորդ %
 
-The remainder operator `%`, despite its appearance, is not related to percents.
+Մնացորդի օպերատորը հետևյալն է `%`, չնայած նշանի պատկերմանը, դա կապված չէ տոկոսների հետ:
 
-The result of `a % b` is the [remainder](https://en.wikipedia.org/wiki/Remainder) of the integer division of `a` by `b`.
+Հետրյալ հավասարման `a % b` արդյունքը [remainder](https://en.wikipedia.org/wiki/Remainder) `a` բաժանած `b` մնացորդն է։
 
-For instance:
+Օրինակ՝
 
 ```js run
-alert( 5 % 2 ); // 1, a remainder of 5 divided by 2
-alert( 8 % 3 ); // 2, a remainder of 8 divided by 3
+alert( 5 % 2 ); // 1, 5-ը բաժանած 2-ի մնացորդը
+alert( 8 % 3 ); // 2, 8-ը բաժանած 3-ի մնացորդը
 ```
 
-### Exponentiation **
+### Աստիճան բարձրացնել  **
 
-The exponentiation operator `a ** b` raises `a` to the power of `b`.
+Աստիճան բարձրացնելու օպերատորը `a ** b` բարձրացնում է `a`-ն `b`-ի աստիճան.
 
-In school maths, we write that as a<sup>b</sup>.
+Դպրոցական մաթեմատիկայում այն գրում ենք հետևյալ տեսքով a<sup>b</sup>։
 
-For instance:
+Օրինակ՝
 
 ```js run
 alert( 2 ** 2 ); // 2² = 4
@@ -68,9 +68,9 @@ alert( 2 ** 3 ); // 2³ = 8
 alert( 2 ** 4 ); // 2⁴ = 16
 ```
 
-Just like in maths, the exponentiation operator is defined for non-integer numbers as well. 
+Ինչպես մաթեմատիկայում, այստեղ նույնպես հետևայալ օպերատորը կարող ենք կիրառել ոչ ամբողջ թվերի դեպքում։
 
-For example, a square root is an exponentiation by ½:
+Օրինակ՝ ½-ի աստիճանը:
 
 ```js run
 alert( 4 ** (1/2) ); // 2 (power of 1/2 is the same as a square root)
