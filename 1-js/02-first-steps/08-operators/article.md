@@ -124,16 +124,16 @@ alert( 6 - '2' ); // 4, '2'-ը ձևափոխվում է թվի
 alert( '6' / '2' ); // 3, երկու օպերանդներնել ձևափոխվում են թվերի
 ```
 
-## Numeric conversion, unary +
+## Թվային կերպափոխումներ, ունար +
 
-The plus `+` exists in two forms: the binary form that we used above and the unary form.
+Գոյություն ունի `+`-ի երկու տեսակ․ երկուական տեսակ, որը մենք կիրառեցինք վերևում և ունար տեսակ։
 
-The unary plus or, in other words, the plus operator `+` applied to a single value, doesn't do anything to numbers. But if the operand is not a number, the unary plus converts it into a number.
+Ունար գումարում կամ մեկ այլ խոսքով `+` որը կիրառվում է մեկ արժեքների դեպքում, թվերի վրա չի ազդում։ Բայց եթե օպերանդը թիվ չէ, ապա ունար գումարումը այն կերպափոխում է թվի։
 
-For example:
+Օրինակ՝
 
 ```js run
-// No effect on numbers
+// Թվերի վրա ազդեցություն չի ունենում
 let x = 1;
 alert( +x ); // 1
 
@@ -141,71 +141,71 @@ let y = -2;
 alert( +y ); // -2
 
 *!*
-// Converts non-numbers
+// Կերպափոխում է ոչ թվային արժեքները
 alert( +true ); // 1
 alert( +"" );   // 0
 */!*
 ```
 
-It actually does the same thing as `Number(...)`, but is shorter.
+Այն իրականում անում է նույնը, ինչ `Number(...)`-ը, բայց կարճ տարբերակով։
 
-The need to convert strings to numbers arises very often. For example, if we are getting values from HTML form fields, they are usually strings. What if we want to sum them?
+Տողերը թվերի կերպափոխելու անհրաժեշտությունը շատ հաճախ է առաջանում։ Օրինակ՝ եթե մենք ստանում ենք դաշտերը HTML ֆորմայից, դրանք սովորաբար տողային տիպի են։ Ի՞նչ կլինի այդ դեպքում դրանց գումարը։
 
-The binary plus would add them as strings:
+Երկուական գումարումը դրանք կավելացնի իրար ինչպես տող։
 
 ```js run
 let apples = "2";
 let oranges = "3";
 
-alert( apples + oranges ); // "23", the binary plus concatenates strings
+alert( apples + oranges ); // "23", երկուական գումարը միացնում է տողերը իրար հետ
 ```
 
-If we want to treat them as numbers, we need to convert and then sum them:
+Եթե մենք ուզում ենք նրանց վերաբերվել որպես թվերի, կարիք կա կերպափոխելու դրանք և կատարել դրանց գումարումը:
 
 ```js run
 let apples = "2";
 let oranges = "3";
 
 *!*
-// both values converted to numbers before the binary plus
+// երկու արժեքները մինչև երկուական գումարմանը մասնակցելը, կերպափոխվում են թվերի
 alert( +apples + +oranges ); // 5
 */!*
 
-// the longer variant
+// երկար տարբերակը
 // alert( Number(apples) + Number(oranges) ); // 5
 ```
 
-From a mathematician's standpoint, the abundance of pluses may seem strange. But from a programmer's standpoint, there's nothing special: unary pluses are applied first, they convert strings to numbers, and then the binary plus sums them up.
+Մաթեմատիկական տեսանկյունից, պլյուսների առատությունը կարող է տարօրինակ թվալ։ Բայց ծրագրավորողների տեսանկյունից, հատուկ ոչինչ չկա: ունար պլյուսը կիրառվում է սկզբից, դրանք կերպափոխում են տողերը թվերի, իսկ երկուական պլյուսը գումարում է դրանք։
 
-Why are unary pluses applied to values before the binary ones? As we're going to see, that's because of their *higher precedence*.
+Ինչու՞ է ունար պլյուսը կիրառվում սկզբից, նախքան երկուականը, դա կախված է *բարձր առաջնահերթություն*.
 
-## Operator precedence
+## Օպերատորների առաջնահերթություն
 
-If an expression has more than one operator, the execution order is defined by their *precedence*, or, in other words, the default priority order of operators.
+Եթե արդահայտությունը ունի մեկից ավել օպերատորներ, ապա կատարման հերթականությունը սահմանվում է կախված նրանց *առաջնահերթությունից*, կամ այլ բառով, օպերատորների կանխադրված առաջնահերթ կարգը։
 
-From school, we all know that the multiplication in the expression `1 + 2 * 2` should be calculated before the addition. That's exactly the precedence thing. The multiplication is said to have *a higher precedence* than the addition.
+Դպրոցից մենք գիտեն արտահայտությունում բազմապատկման կարգի մասին `1 + 2 * 2` պետք է կատարվի մինչ գումարումը։ Դա հենց առաջնահերթությունն է: Ասում են, որ բազմապատկումը ունի *ավելի բարձր առաջնահերթություն* քան թե գումարումը։
 
-Parentheses override any precedence, so if we're not satisfied with the default order, we can use them to change it. For example, write `(1 + 2) * 2`.
+Փակագծերը ավելի առաջնահերթ են քան մյուսները, ուստի, եթե մենք համամիտ չենք առաջնահերթությունից, կարող ենք օգտագործել դրանք, այն փոխելու համար: Օրինակ՝ գրելով `(1 + 2) * 2`.
 
-There are many operators in JavaScript. Every operator has a corresponding precedence number. The one with the larger number executes first. If the precedence is the same, the execution order is from left to right.
+Կան բազմաթիվ օպերատորներ JavaScript-ում։ Յուրաքանչյուր օպերատոր ունի իր համապատասխան առաջնահերթության համարը: Ավելի մեծ թիվ ունեցողը կատարվում է առաջինը։ Եթե առաջնահերթությունը նույնն է, ապա կատարման հերթականությունը ձախից դեպի աջ է։
 
-Here's an extract from the [precedence table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence) (you don't need to remember this, but note that unary operators are higher than corresponding binary ones):
+Ահա քաղվածքը [precedence table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence) (դուք պարտավոր չեք հիշել սա, բայց նշեք, որ ունար օպերատորներն ավելի բարձր են, քան համապատասխան երկուականները):
 
-| Precedence | Name | Sign |
+| Առաջնահերթւոյուն | Անվանում | Նշան |
 |------------|------|------|
 | ... | ... | ... |
-| 17 | unary plus | `+` |
-| 17 | unary negation | `-` |
-| 16 | exponentiation | `**` |
-| 15 | multiplication | `*` |
-| 15 | division | `/` |
-| 13 | addition | `+` |
-| 13 | subtraction | `-` |
+| 17 | ունար պլյուս | `+` |
+| 17 | ունար ժխտում | `-` |
+| 16 | ընդլայնում | `**` |
+| 15 | բազմապատկում | `*` |
+| 15 | բաժանում | `/` |
+| 13 | գումարում | `+` |
+| 13 | հանում | `-` |
 | ... | ... | ... |
-| 3 | assignment | `=` |
+| 3 | վերագրում | `=` |
 | ... | ... | ... |
 
-As we can see, the "unary plus" has a priority of `17` which is higher than the `13` of "addition" (binary plus). That's why, in the expression `"+apples + +oranges"`, unary pluses work before the addition.
+Կարող ենք տեսնել, "ունար պլյուս"-ը ունի `17` գերակայությունը, որը մեծ է քան `13`-ը "գումարում" (երկուական պլյուս)։ Ահա թե ինչու  է, `"+apples + +oranges"` արտահայտությունում, ունար պլյուսը կատարվում նախքան գումարումը։
 
 ## Assignment
 
