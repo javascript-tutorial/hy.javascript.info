@@ -78,50 +78,50 @@ alert( 8 ** (1/3) ); // 2 (power of 1/3 is the same as a cubic root)
 ```
 
 
-## String concatenation with binary +
+## Տողերի միավորումը երկուական +-ով
 
-Let's meet features of JavaScript operators that are beyond school arithmetics.
+Եկեք ծանոթանանք JavaScript-ի հնարավորությունների հետ, որոնք հիմքում ընկած է դպրոցական թվաբանությունը։
 
-Usually, the plus operator `+` sums numbers.
+Սովորաբար, `+` գործողությունը գումարում է թվերը։
 
-But, if the binary `+` is applied to strings, it merges (concatenates) them:
+Բայց, երբ երկուական `+`-ը կիրառովում է տողերի համար, դա միացնում է դրանք․
 
 ```js
 let s = "my" + "string";
 alert(s); // mystring
 ```
 
-Note that if any of the operands is a string, then the other one is converted to a string too.
+Նշում, եթե ցանկացած օպրանդ տող է, ապա մյուս օպերանդը նույնպես ձևափոխվում է տողի։
 
-For example:
+Օրինակ՝
 
 ```js run
 alert( '1' + 2 ); // "12"
 alert( 2 + '1' ); // "21"
 ```
 
-See, it doesn't matter whether the first operand is a string or the second one.
+Կապ չունի այն, որ առաջին օպերանդն է տող, թե երկրորդը․
 
-Here's a more complex example:
+Դիտարկենք ավելի բարդ օրինակ՝
 
 ```js run
-alert(2 + 2 + '1' ); // "41" and not "221"
+alert(2 + 2 + '1' ); // "41", այլ ոչ թե "221"
 ```
 
-Here, operators work one after another. The first `+` sums two numbers, so it returns `4`, then the next `+` adds the string `1` to it, so it's like `4 + '1' = '41'`.
+Այստեղ օպերատորները աշխատում են հաջորդաբար։ Առաջին `+`-ը գումարում է երկու թվերը, վարադարձնում է `4`, ապա հաջորդ `+`-ը ավալցանում`1` տողային փոփոխականը, այսպիսով դա նման է հետևյալին `4 + '1' = '41'`.
 
 ```js run
-alert('1' + 2 + 2); // "122" and not "14"
+alert('1' + 2 + 2); // "122", այլ ոչ թե "14"
 ```
-Here, the first operand is a string, the compiler treats the other two operands as strings too. The `2` gets concatenated to `'1'`, so it's like `'1' + 2 = "12"` and `"12" + 2 = "122"`.
+Այստեղ առաջին օպերանդը տող է, կոմպիլյատորը վերաբերվում է մյուս օպերանդներին նույնպես տող . `2`-ը կմիավորվի `'1'`-ի հետ, այսպիսով դա նման է հետևյալին `'1' + 2 = "12"` և `"12" + 2 = "122"`.
 
-The binary `+` is the only operator that supports strings in such a way. Other arithmetic operators work only with numbers and always convert their operands to numbers.
+Երկուական `+`-ը միակ օպերատորնե, որը նման կերպ է վարվում տողերի հետ։ Մյուս թվաբանական օպերատորները աշխատում են միայն թվերի հետ և միշտ կերպափոխում են օպերանդները թվերի։
 
-Here's the demo for subtraction and division:
+Դիտարկենք հանման և բաժանման ցուցադրությունը․
 
 ```js run
-alert( 6 - '2' ); // 4, converts '2' to a number
-alert( '6' / '2' ); // 3, converts both operands to numbers
+alert( 6 - '2' ); // 4, '2'-ը ձևափոխվում է թվի
+alert( '6' / '2' ); // 3, երկու օպերանդներնել ձևափոխվում են թվերի
 ```
 
 ## Numeric conversion, unary +
