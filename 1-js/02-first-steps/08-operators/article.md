@@ -207,11 +207,11 @@ alert( +apples + +oranges ); // 5
 
 Կարող ենք տեսնել, "ունար պլյուս"-ը ունի `17` գերակայությունը, որը մեծ է քան `13`-ը "գումարում" (երկուական պլյուս)։ Ահա թե ինչու  է, `"+apples + +oranges"` արտահայտությունում, ունար պլյուսը կատարվում նախքան գումարումը։
 
-## Assignment
+## Վերագրում
 
-Let's note that an assignment `=` is also an operator. It is listed in the precedence table with the very low priority of `3`.
+Պետք է նշել այն, որ վերագրումը `=` նույնպես օպերատոոր է։ Այն գերակայության աղյուսակում ունի շատ ցածր դիրքը `3`։
 
-That's why, when we assign a variable, like `x = 2 * 2 + 1`, the calculations are done first and then the `=` is evaluated, storing the result in `x`.
+Ահա ինչու, երբ մենք վերագրում ենք փոփոխկան, ինչպիսին է `x = 2 * 2 + 1`, հաշվարկը կատարվում է սկզբում և հետո կատարվում է`=`, պահպանելով արդյունքը `x`-ում։
 
 ```js
 let x = 2 * 2 + 1;
@@ -219,15 +219,15 @@ let x = 2 * 2 + 1;
 alert( x ); // 5
 ```
 
-### Assignment = returns a value
+### Վերագրումը = վերադարձնում է արժեք
 
-The fact of `=` being an operator, not a "magical" language construct has an interesting implication.
+Վերագրման `=` օպերատոր լինլու փաստը, ունի ոչ "կախարդական" ենթատեքստ։
 
-All operators in JavaScript return a value. That's obvious for `+` and `-`, but also true for `=`.
+JavaScript-ում բոլոր օպերատորները վերադարձնում են արժեք։ Դա ակնհայտ է `+`-ի և `-`-ի համար, բայց նաև `=`-ի համար։
 
-The call `x = value` writes the `value` into `x` *and then returns it*.
+`x = value`-ի կանչը գրանցում է `value`-ն  `x`-ի մեջ *և վերադարձնում է այն*։
 
-Here's a demo that uses an assignment as part of a more complex expression:
+Այա վերագրման կիրառման օրինակ, որպես բարդ արտահայտության հատված:
 
 ```js run
 let a = 1;
@@ -241,15 +241,15 @@ alert( a ); // 3
 alert( c ); // 0
 ```
 
-In the example above, the result of expression `(a = b + 1)` is the value which was assigned to `a` (that is `3`). It is then used for further evaluations.
+Վերը նշված օրինակում, հետևյալ արտահայտության `(a = b + 1)` արժեքը դա այն է, որը պետք է վերագրվի `a`-ին (դա `3`-ն է)։ Այնուհետեւ այն օգտագործվում է հետագա արժեվորման համար։
 
-Funny code, isn't it? We should understand how it works, because sometimes we see it in JavaScript libraries.
+Զվարճալի կոդ է, այնպես չէ՞: Մենք պետք է հասկանանք թե ինչպես է այն աշխատում, քանի որ երբեմն այն կարող եք հանդիպել JavaScript-ի գրադարաններում։
 
-Although, please don't write the code like that. Such tricks definitely don't make code clearer or readable.
+Ամեն դեպքում, խնդրում եմ, կոդը այդպես մի գրեք: Նման հնարքները հաստատ հստակ ու հասկանալի չեն դարձնում կոդը:
 
-### Chaining assignments
+### Կապակցված վերագրումներ
 
-Another interesting feature is the ability to chain assignments:
+Մեկ այլ հետաքրքիր առանձնահատկություն է վերգրումների կապակցումը․
 
 ```js run
 let a, b, c;
@@ -263,22 +263,22 @@ alert( b ); // 4
 alert( c ); // 4
 ```
 
-Chained assignments evaluate from right to left. First, the rightmost expression `2 + 2` is evaluated and then assigned to the variables on the left: `c`, `b` and `a`. At the end, all the variables share a single value.
+Կապակցումը կատարվում է աջից դեպի ձախ։ Առաջին կատարվում է ամենաաջակողմյան `2 + 2` արդահայտությունը, ապա վերագրվում է ձախ կողմի փոփոխականին․ `c`, `b` և `a`։ Ամենավերջում, բոլոր փոփոխականները հավաքվում է մեկ արժեքի մեջ։
 
-Once again, for the purposes of readability it's better to split such code into few lines:
+Կրկին անգամ, ընթերցելիության նկատառումներից ելնելով, լավ է որ այն բաժանված է մի քանի տողերի․
 
 ```js
 c = 2 + 2;
 b = c;
 a = c;
 ```
-That's easier to read, especially when eye-scanning the code fast.
+Սա հեշտ է ընթերցվում, հատկապես այն դեպքւոմ, երբ աչքը արագ է դիտարկում կոդը։
 
-## Modify-in-place
+## Փոփոխել տեղում
 
-We often need to apply an operator to a variable and store the new result in that same variable.
+Երբեմն մենք կարիք ենք ունենում, կիրառել օպերատորը և պահպանել նոր արդյունքը նույն փոփոխականի մեջ։
 
-For example:
+Օրինակ՝
 
 ```js
 let n = 2;
@@ -286,26 +286,26 @@ n = n + 5;
 n = n * 2;
 ```
 
-This notation can be shortened using the operators `+=` and `*=`:
+Այս ամենը կարող ենք կարճ գրել `+=` և `*=`:
 
 ```js run
 let n = 2;
-n += 5; // now n = 7 (same as n = n + 5)
-n *= 2; // now n = 14 (same as n = n * 2)
+n += 5; // յաժմ n = 7 (նույնն է ինչ n = n + 5)
+n *= 2; // յաժմ n = 14 (նույնն է ինչ n = n * 2)
 
 alert( n ); // 14
 ```
 
-Short "modify-and-assign" operators exist for all arithmetical and bitwise operators: `/=`, `-=`, etc.
+Կարճ "ձևափոխել և վերագրել" օպերատորները գոյություն ունեն բոլոր մաթեմատիկական և բիթային օպերատորների համար․ `/=`, `-=` և այլն։
 
-Such operators have the same precedence as a normal assignment, so they run after most other calculations:
+Նման օպերատորներն ունեն նույն գերակայությունը, ինչ սովորական վերագրումները, այնպես որ նրանք աշխատում են շատ այլ հաշվարկներից հետո.
 
 ```js run
 let n = 2;
 
 n *= 3 + 5;
 
-alert( n ); // 16  (right part evaluated first, same as n *= 8)
+alert( n ); // 16  (նախ կատարվում է աջ մասը, նույնն է ինչ n *= 8)
 ```
 
 ## Increment/decrement
