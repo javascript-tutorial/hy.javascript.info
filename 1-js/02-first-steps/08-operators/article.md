@@ -308,45 +308,45 @@ n *= 3 + 5;
 alert( n ); // 16  (նախ կատարվում է աջ մասը, նույնն է ինչ n *= 8)
 ```
 
-## Increment/decrement
+## Ինկրեմենտ/դեկրեմենտ
 
 <!-- Can't use -- in title, because the built-in parser turns it into a 'long dash' – -->
 
-Increasing or decreasing a number by one is among the most common numerical operations.
+Թիվը մեկով մեծացնելը կամ փոքրացնելը ամենատարածված թվային գործողություններից է։
 
-So, there are special operators for it:
+Այսպիսով դրա համար կան հատուկ օպերատորներ․
 
-- **Increment** `++` increases a variable by 1:
+- **Ինկրեմենտ** `++` փոփոխականի ավելացումը 1-ով․
 
     ```js run no-beautify
     let counter = 2;
-    counter++;        // works the same as counter = counter + 1, but is shorter
+    counter++;        // կաշխատի որպես counter = counter + 1, բայց կարճ տարբերակով
     alert( counter ); // 3
     ```
-- **Decrement** `--` decreases a variable by 1:
+- **Դեկրեմենտ** `--` փոքրացնել փոփոխականը 1-ով․
 
     ```js run no-beautify
     let counter = 2;
-    counter--;        // works the same as counter = counter - 1, but is shorter
+    counter--;        // կաշխատի որպես counter = counter - 1, բայց կարճ տարբերակով
     alert( counter ); // 1
     ```
 
 ```warn
-Increment/decrement can only be applied to variables. Trying to use it on a value like `5++` will give an error.
+Ինկրեմենտ/դեկրեմենտ պետք է կրատվի փոփոխականների համար։ Այն փորձելով օգտագործել օրինակ՝ `5++` փոփոխականի համար կստանանք սխալ։
 ```
 
-The operators `++` and `--` can be placed either before or after a variable.
+`++` և `--` օպերատորները կարող են տեղադրվել փոփոխականից առաջ և հետո։
 
-- When the operator goes after the variable, it is in "postfix form": `counter++`.
-- The "prefix form" is when the operator goes before the variable: `++counter`.
+- Երբ օպերատորը կիրառվում է փոփոխականից հետո, դա համարվում է "պոստֆիքս կառուցվածք"․ `counter++`.
+- "պրեֆիքս կառուցվածք"-ը երբ կիրառվում է փոփոխականից առաջ․ `++counter`.
 
-Both of these statements do the same thing: increase `counter` by `1`.
+Բոլոր գործեղությունները կատարում են նույնը․ ավելացնում են `counter`-ին `1`.
 
-Is there any difference? Yes, but we can only see it if we use the returned value of `++/--`.
+Կա՞ արդյոք տարբերություն․ Այո, բայց դա մենք կարող ենք տեսնել դա միայն վերադարձվող արժեքում `++/--`.
 
-Let's clarify. As we know, all operators return a value. Increment/decrement is no exception. The prefix form returns the new value while the postfix form returns the old value (prior to increment/decrement).
+Եկեք պարզաբանենք։ Ինչպես գիտենք բոլոր օպերատորները վերադարձնում են արժեք։ Ինկրեմենտ/դեկրեմենտ-ը բացառություն չեն։ Պրեֆիքս տեսքը վերադարձնում է նոր արժեք, մինչ դեռ պոստֆիքը վերադարձնում է հին արժեքը (նախքան ինկրեմենտ/դեկտրեմենտ-ը).
 
-To see the difference, here's an example:
+Տարբերությունը տեսնելու համար, դիտարկենք օրինակը․
 
 ```js run
 let counter = 1;
@@ -355,36 +355,36 @@ let a = ++counter; // (*)
 alert(a); // *!*2*/!*
 ```
 
-In the line `(*)`, the *prefix* form `++counter` increments `counter` and returns the new value, `2`. So, the `alert` shows `2`.
+Հետևյալ տողում `(*)`, *պրեֆիք*-ը `++counter` ավելացնում է `counter`-ի արժեքը և վերադարձնում է նոր արժեքը, `2`։ Այսպիսով `alert`-ը ցույց կտա`2`։
 
-Now, let's use the postfix form:
+Դիտարկենք պոստֆիքս կառուցվածքը․
 
 ```js run
 let counter = 1;
-let a = counter++; // (*) changed ++counter to counter++
+let a = counter++; // (*)  ++counter-ը ձևափոխվել է counter++ - ի
 
 alert(a); // *!*1*/!*
 ```
 
-In the line `(*)`, the *postfix* form `counter++` also increments `counter` but returns the *old* value (prior to increment). So, the `alert` shows `1`.
+Հետևյալ տեղում `(*)`, *պոստվիքս* կառուցվածքը `counter++` նույնպես ավելացնում է `counter`-ի արժեքը, բայց վերադարձնում է *հին* արժեքը (նախքան ավելացումը)։ Այսպիսով `alert`-ը ցույց կտա `1`։
 
-To summarize:
+Ամփոփում․
 
-- If the result of increment/decrement is not used, there is no difference in which form to use:
+- Եթե ինկրեմենտ/դեկրեմենտ-ի արժեքները չեն օգտագործվում, ապա տարբերություն չկա թե որ մեկը կկիրառվի․
 
     ```js run
     let counter = 0;
     counter++;
     ++counter;
-    alert( counter ); // 2, the lines above did the same
+    alert( counter ); // 2, վերը նշված տողերը իրականացնում են նույնը
     ```
-- If we'd like to increase a value *and* immediately use the result of the operator, we need the prefix form:
+- Եթե մենք ցանկանում են ավելացնել արժեքը *և* անմիջապես օգտագործել օպերատորի արժեքը, մենք պետք է օգտագործենք պրեֆիքս կառուցվածքը․
 
     ```js run
     let counter = 0;
     alert( ++counter ); // 1
     ```
-- If we'd like to increment a value but use its previous value, we need the postfix form:
+- Եթե ցանկանում ենք ավելացնել արժեքը, բայց օգտագործել նախորդ արժեքը, կարիք կա կիրառելու պոստֆիքս կառուցվածքը․
 
     ```js run
     let counter = 0;
@@ -421,38 +421,38 @@ counter++;
 ```
 ````
 
-## Bitwise operators
+## Բիթային օպերատորներ
 
-Bitwise operators treat arguments as 32-bit integer numbers and work on the level of their binary representation.
+Բիթային օպերատորները արգումենտներին վերաբերվում են որպես 32-բիթ երկարությամբ ամբողջ թվերի և աշխատում են իրենց երկուական ներկայացման մակարդակով:
 
-These operators are not JavaScript-specific. They are supported in most programming languages.
+Այս օպերատորները կոնկրետ JavaScript-ինը չեն։ Դրանք աջակցվում են ծրագրավորման լեզուների մեծ մասում։
 
-The list of operators:
+Օպերատորների ցանկը․
 
-- AND ( `&` )
-- OR ( `|` )
-- XOR ( `^` )
-- NOT ( `~` )
-- LEFT SHIFT ( `<<` )
-- RIGHT SHIFT ( `>>` )
-- ZERO-FILL RIGHT SHIFT ( `>>>` )
+- և ( `&` )
+- կամ ( `|` )
+- Բացառող կամ (XOR) ( `^` )
+- ժխտում ( `~` )
+- Ձախ տեղաշարժ ( `<<` )
+- Աջ տեխաշարժ ( `>>` )
+- Զրոյի ավելացմամբ աջ տեղաշարժ ( `>>>` )
 
-These operators are used very rarely, when we need to fiddle with numbers on the very lowest (bitwise) level. We won't need these operators any time soon, as web development has little use of them, but in some special areas, such as cryptography, they are useful. You can read the [Bitwise Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Bitwise) chapter on MDN when a need arises.
+Այս օպերատորները շատ հազվադեպ են օգտագործվում, երբ մենք պետք է կիրառենք թվերը ամենացածր (բիթային) մակարդակում։ Այս օպերատորները մեզ շուտ պետք չեն, քանի որ վեբ ծրագրավորման մեջ դրանք քիչ են օգտագործում, բայց որոշ հատուկ ոլորտներում, ինչպիսին է գաղտանգրությունը, դրանք կիրառվում են։ Դուք կարող եք կարդալ [Բիթային օպերատորն](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Bitwise) հոդվածը MDN-ում, երբ անհարժեշտ է։
 
-## Comma
+## Ստորակետ
 
-The comma operator `,` is one of the rarest and most unusual operators. Sometimes, it's used to write shorter code, so we need to know it in order to understand what's going on.
+Ստորակետ օպերատորը `,` ամենահազվագյուտ և անսովոր օպերատորներից է։ Երբեմն դա օգտագործվում է ավելի կարճ կոդ գրելու համար, այնպես որ մենք պետք է դա իմանանք, որպեսզի հասկանանք, թե ինչ է կատարվում:
 
-The comma operator allows us to evaluate several expressions, dividing them with a comma `,`. Each of them is evaluated but only the result of the last one is returned.
+Հետևյալ օպերատորը թույլ է տալիս հաշվարկել մի քանի արտահայտություններ բաժանելով դրանք `,`-ով։ Նրանցից յուրաքանչյուրը հաշվարկվում է, բայց վերադարձվում է միայն վերջին արդյունքը։
 
-For example:
+Օրինակ՝
 
 ```js run
 *!*
 let a = (1 + 2, 3 + 4);
 */!*
 
-alert( a ); // 7 (the result of 3 + 4)
+alert( a ); // 7 (3 + 4-ի արդյունքը)
 ```
 
 Here, the first expression `1 + 2` is evaluated and its result is thrown away. Then, `3 + 4` is evaluated and returned as the result.
