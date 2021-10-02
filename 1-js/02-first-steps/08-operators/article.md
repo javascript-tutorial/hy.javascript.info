@@ -290,8 +290,8 @@ n = n * 2;
 
 ```js run
 let n = 2;
-n += 5; // յաժմ n = 7 (նույնն է ինչ n = n + 5)
-n *= 2; // յաժմ n = 14 (նույնն է ինչ n = n * 2)
+n += 5; // այժմ n = 7 (նույնն է ինչ n = n + 5)
+n *= 2; // այժմ n = 14 (նույնն է ինչ n = n * 2)
 
 alert( n ); // 14
 ```
@@ -392,27 +392,27 @@ alert(a); // *!*1*/!*
     ```
 
 ````smart header="Increment/decrement among other operators"
-The operators `++/--` can be used inside expressions as well. Their precedence is higher than most other arithmetical operations.
+Հետևյալ օպերատորները `++/--` կարող են կիրառվել նաև արտահայտությունների ներսում։ Նրանց գերակայությունն ավելի բարձր է, քան մյուս թվաբանական գործողություններինը։
 
-For instance:
+Օրինակ՝
 
 ```js run
 let counter = 1;
 alert( 2 * ++counter ); // 4
 ```
 
-Compare with:
+Համեմատել հետևյալի հետ
 
 ```js run
 let counter = 1;
-alert( 2 * counter++ ); // 2, because counter++ returns the "old" value
+alert( 2 * counter++ ); // 2, քանի որ counter++ վերադարձնում է "հին" արժեքը
 ```
 
-Though technically okay, such notation usually makes code less readable. One line does multiple things -- not good.
+Չնայած տեխնիկապես սա լավ է, սովորաբար նման կիարառությունը կոդը դարձնում է քիչ ընթեռնելի։ Մի տողը կատարում է բազմաթիվ գործողություններ -- դա լավ չէ։
 
-While reading code, a fast "vertical" eye-scan can easily miss something like `counter++` and it won't be obvious that the variable increased.
+Քանի դեռ ընթերցվում է կոդը, արագ "ուղղահայաց" դիտարկումը կարող է բաց քողնել այնպիսի բան, ինչպիսին է `counter++`-ը և ակնհայտ չի լինի, որ փոփոխականի արժեքը ավելացել է։
 
-We advise a style of "one line -- one action":
+Մենք խորհուրդ ենք տալիս "մեկ տող -- մեկ գործողություն" ոճը:
 
 ```js run
 let counter = 1;
