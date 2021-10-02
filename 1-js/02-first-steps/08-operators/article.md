@@ -455,25 +455,25 @@ let a = (1 + 2, 3 + 4);
 alert( a ); // 7 (3 + 4-ի արդյունքը)
 ```
 
-Here, the first expression `1 + 2` is evaluated and its result is thrown away. Then, `3 + 4` is evaluated and returned as the result.
+Այստես առաջին արտահայտությունը`1 + 2` վերլուծվում է, և արդյունքը անտեսվում է. Որից հետո, `3 + 4` արտահայտությունը վերլուծվում է, և վերադարձվում է որպես արդյունք։
 
 ```smart header="Comma has a very low precedence"
-Please note that the comma operator has very low precedence, lower than `=`, so parentheses are important in the example above.
+Խնդրում ենք նկատի ունենալ, որ ստորակետի օպերատորը շատ ցածր առաջնահերթություն ունի, ցածր քան `=`, այնպես որ փակագծերը կարևոր են վերը նշված օրինակում։
 
-Without them: `a = 1 + 2, 3 + 4` evaluates `+` first, summing the numbers into `a = 3, 7`, then the assignment operator `=` assigns `a = 3`, and the rest is ignored. It's like `(a = 1 + 2), 3 + 4`.
+Առանց դրանց: `a = 1 + 2, 3 + 4` վերլուծվում է `+`-ը առաջին հերթին, ստանալով `a = 3, 7`, ապա վերագրամն օպերատորը `=` վերագրում է `a = 3`, իսկ մնացածը անտեսվում է։ Դա նման է հետևյալին `(a = 1 + 2), 3 + 4`։
 ```
 
-Why do we need an operator that throws away everything except the last expression?
+Ինչու՞ է մեզ պետք օպերատոր, որը անտեսում է ամեն ինչ, բացի վերջին արտահայտությունից:
 
-Sometimes, people use it in more complex constructs to put several actions in one line.
+Երբեմն, երբեմն մարդիկ օգտագործում են դա, առավել բարդ կառուցվածքներում,մի շարք գործողություններ դնելում համար մեկ տողում։
 
-For example:
+Օրինակ՝
 
 ```js
-// three operations in one line
+// երեք օպերատորներ մեկ տողում
 for (*!*a = 1, b = 3, c = a * b*/!*; a < 10; a++) {
  ...
 }
 ```
 
-Such tricks are used in many JavaScript frameworks. That's why we're mentioning them. But usually they don't improve code readability so we should think well before using them.
+Նման հնարքներ կիրառվում են JavaScript-ի մի շարք ֆրեյմվորկներում։ Ահա թե ինչում մենք դիտարկեցինք դրանք։ Բայց երբեմն դրանք չեն բարելավում կոդի ընթեռնելիությունը, ուստի դրանք օգտագործելուց առաջ պետք է լավ մտածել։
