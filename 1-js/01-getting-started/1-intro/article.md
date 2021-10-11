@@ -24,11 +24,19 @@ Browser-ն ունի իր մեջ ներառված engine, որը նաև անվա�
 
 Տարբեր engin-ներ ունեն տարբեր «կեղծանուններ»՝
 
+<<<<<<< HEAD
 - [V8](https://hy.wikipedia.org/wiki/V8_(JavaScript_%D5%B7%D5%A1%D6%80%D5%AA%D5%AB%D5%B9)) -- Chrome-ում և Opera-ում։
 - [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- Firefox-ում։
 - ...Կան այլ կեղծանուններ, ինչպես «Chakra» IE-ի համար, «JavaScriptCore», «Nitro» և «SquirrelFish»՝ Safari-ի համար, և այլն։
 
 Նշված տերմինները պետք է հիշել, քանի որ նրանք շատ են օգտագործվում համացանցի հոդվածներում։ Մենք նույնպես կօգտագործենք։ Օրինակ, եթե նշված է, որ «Ա հատկությունը օգտագործվում է V8-ում», ապա այն հավանաբար կաշխատի Chrome-ում և Opera-ում։
+=======
+- [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- in Chrome, Opera and Edge.
+- [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- in Firefox.
+- ...There are other codenames like "Chakra" for IE, "JavaScriptCore", "Nitro" and "SquirrelFish" for Safari, etc.
+
+The terms above are good to remember because they are used in developer articles on the internet. We'll use them too. For instance, if "a feature X is supported by V8", then it probably works in Chrome, Opera and Edge.
+>>>>>>> 193319c963b9ba86ac7d9590f7261a36ecdcc4d2
 
 ```smart header="Ինչպե՞ս են աշխատում engine-ները"
 
