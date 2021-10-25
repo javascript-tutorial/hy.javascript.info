@@ -4,10 +4,17 @@
 
 JavaScript-ում դրանք գրվում են հետևյալ տեսքով․
 
+<<<<<<< HEAD
 - Մեծ/փոքր։ <code>a &gt; b</code>, <code>a &lt; b</code>։- Մեծ/փոքր։ <code>a &gt; b</code>, <code>a &lt; b</code>։
 - Մեծ/փոքր կամ հավասար։ <code>a &gt;= b</code>, <code>a &lt;= b</code>։
 - Հավասար՝ `a == b`: Ուշադրություն դարձրեք, որ `==` գործողությունով ստուգվում է հավասարությունը, մինչդեռ `a = b` նշանակում է վերագրում։
 - Ոչ հավասար։ Մաթեմատիկայում այս նշանը հետևյալն է՝ <code>&ne;</code>, բայց JavaScript-ում այն ներկայացվում է հետևյալ տեսքով՝ <code>a != b</code>։
+=======
+- Greater/less than: <code>a &gt; b</code>, <code>a &lt; b</code>.
+- Greater/less than or equals: <code>a &gt;= b</code>, <code>a &lt;= b</code>.
+- Equals: `a == b`, please note the double equality sign `==` means the equality test, while a single one `a = b` means an assignment.
+- Not equals: In maths the notation is <code>&ne;</code>, but in JavaScript it's written as <code>a != b</code>.
+>>>>>>> 3699f73b4ccb2a57ac5ef990d2687bf31ccf564c
 
 Այս հոդվածում մենք կսովորենք համեմատության տարբեր գործողությունները, թե ինչպես է JavaScript-ը կատարում դրանք, ներառյալ կարևոր առանձնահատկությունները։
 
