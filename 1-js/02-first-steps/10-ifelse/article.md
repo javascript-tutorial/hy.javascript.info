@@ -1,26 +1,26 @@
-# Conditional branching: if, '?'
+# Պայմանական ճյուղավորում։ if, '?'
 
-Sometimes, we need to perform different actions based on different conditions.
+Երբեմն, մենք կարիք ենք ունենում կատարել տարբեր գործողություններ, կախված տարբեր պայմաններից։
 
-To do that, we can use the `if` statement and the conditional operator `?`, that's also called a "question mark" operator.
+Դա կատարելու համար, մենք քժկարող ենք օգտագործել `if` գործողույթունը և պայմանական օպերատորը `?`, դա կոչվում է "հարցական նշան"-ի օպերատոր։
 
-## The "if" statement
+## "if" գործողություն
 
-The `if(...)` statement evaluates a condition in parentheses and, if the result is `true`, executes a block of code.
+`if(...)` գործողույթունը ստուգում է փակագծերում գրված գրված պայմանը, եթե արդյունքը `true` է, ապա կատարվում է կոդի հատվածը։ 
 
-For example:
+Օրինակ՝
 
 ```js run
-let year = prompt('In which year was ECMAScript-2015 specification published?', '');
+let year = prompt('Ո՞ր թվականին է ECMAScript-2015 ստանդարտը թողարկվել', '');
 
 *!*
-if (year == 2015) alert( 'You are right!' );
+if (year == 2015) alert( 'Դուք ճիշտ եք' );
 */!*
 ```
 
-In the example above, the condition is a simple equality check (`year == 2015`), but it can be much more complex.
+Վերը տրված օրինակում, պայմանը ստուգում է պարզ արտահայտությունը (`year == 2015`), բայց դա կարող է լինել ավելի բարդ։
 
-If we want to execute more than one statement, we have to wrap our code block inside curly braces:
+Եթե մենք ցանկանում ենք կատարել մեկից ավել պայմաններ, մենք պետք է գրենք մեր կոդի հատվածները ձևավոր փակագծերի մեջ․
 
 ```js
 if (year == 2015) {
@@ -29,7 +29,7 @@ if (year == 2015) {
 }
 ```
 
-We recommend wrapping your code block with curly braces `{}` every time you use an `if` statement, even if there is only one statement to execute. Doing so improves readability.
+Մենք խորհուրդ ենք տալիս տեղադրել կոդի հատվածները `{}`-ի մեջ, ամեն անգամ երբ կրառում եք `if` արտահայտությունը,  նույնիսկ եթե պետք է աշխատի մեկ գործողությւոն։ Դրա կիրառությունը բարձրացնում է ընթեռնելությունը։
 
 ## Boolean conversion
 
