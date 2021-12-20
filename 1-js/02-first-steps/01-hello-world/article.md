@@ -73,7 +73,11 @@ JavaScript ծրագրերը կարելի է ներդնել HTML փաստաթղթ
 <script src="/path/to/script.js"></script>
 ```
 
+<<<<<<< HEAD
 Այստեղ, `/path/to/script.js`–ը կայքի արմատից (root) սկրիպտի բացարձակ ուղին է (absolute path)։ Կարելի է տրամադրել նաև հարաբերական ուղի տվյալ էջից։ Օրինակ՝ `src="script.js"`–ը նշանակում է, որ `"script.js"` ֆայլը գտնվում է տվյալ պանակում (folder)։
+=======
+Here, `/path/to/script.js` is an absolute path to the script from the site root. One can also provide a relative path from the current page. For instance, `src="script.js"`, just like `src="./script.js"`, would mean a file `"script.js"` in the current folder.
+>>>>>>> 8d04d0d2db97276dbb2b451c30a7bd3e05d65831
 
 Կարելի է նաև նշել ամբողջական URL։ Օրինակ՝
 
