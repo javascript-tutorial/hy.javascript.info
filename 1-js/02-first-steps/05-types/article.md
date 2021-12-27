@@ -214,6 +214,7 @@ alert(age); // «undefined»
 
 `typeof` օպերատորը վերադարձնում է իր արգումենտի տիպը։ Այն օգտակար է, երբ մենք ուզում ենք մշակել տարբեր տիպերի արժեքները տարբեր կերպով, կամ պարզեպես արագ ստուգման կարիք կա։
 
+<<<<<<< HEAD
 Այն ունի օգտագործման երկու շարահյուսություն (syntax)․
 
 1. Որպես օպերատոր՝ `typeof x`։
@@ -222,6 +223,9 @@ alert(age); // «undefined»
 Այլ կերպ ասած, այն աշխատում է և՛ փակագծերով, և՛ առանց դրանց։ Արդյունքը նույնն է։
 
 `typeof x`-ի կանչը վերադարձնում է տող, որը պարունակում է տիպի անվանումը․
+=======
+A call to `typeof x` returns a string with the type name:
+>>>>>>> 3c934b5a46a76861255e3a4f29da6fd54ab05c8c
 
 ```js
 typeof undefined // "undefined"
@@ -251,11 +255,29 @@ typeof alert // "function"  (3)
 
 Վերջին երեք տողերը ունեն հավելյալ պարզաբանման կարիք․
 
+<<<<<<< HEAD
 1. `Math`-ը ներկառուցված օբյեկտ է, որը տրամադրում է մաթեմատիկական տարբեր գործողություններ և հաստատուններ։ Մենք կուսումնասիրենք այն <info:number> գլխում։ Այստեղ այն պարզապես ծառայում է որպես օբյեկտի օրինակ։
 2. `typeof null`-ի արդյունքը `"object"` է։ Այն `typeof` օպերատորի վարքագծի պաշտոնապես ընդունված սխալ է, որը եկել է JavaScript-ի ստեղծման վաղ ժամանակներից և մնացել է լեզվում համատեղելիության նպատակով։ Անշուշտ, `null`-ը օբյեկտ չէ։ Այն հատուկ արժեք է, որը ունի իր սեփական տիպը։
 3. `typeof alert`-ի արդյունքը `"function"` է, քանի որ `alert`-ը ֆունկցիա է։ Մենք կուսումնասիրենք ֆունկցիաները հաջորդ գլուխներում, որտեղ կիմանանք, որ JavaScript-ը չունի առանձին function տիպ։ Ֆունկցիաները պատկանում են object տիպին։ Բայց `typeof`-ը մշակում է դրանք հատուկ ձևով՝ վերադարձնելով `"function"` արժեքը։ Դա նույնպես գալիս է JavaScript-ի պատմության վաղ ժամանակներից։ Տեխնիկապես վարքագիծը ճիշտ չէ, բայց պրակտիկայում կարող է հարմար լինել։
 
 ## Ամփոփում
+=======
+1. `Math` is a built-in object that provides mathematical operations. We will learn it in the chapter <info:number>. Here, it serves just as an example of an object.
+2. The result of `typeof null` is `"object"`. That's an officially recognized error in `typeof`, coming from very early days of JavaScript and kept for compatibility. Definitely, `null` is not an object. It is a special value with a separate type of its own. The behavior of `typeof` is wrong here.
+3. The result of `typeof alert` is `"function"`, because `alert` is a function. We'll study functions in the next chapters where we'll also see that there's no special "function" type in JavaScript. Functions belong to the object type. But `typeof` treats them differently, returning `"function"`. That also comes from the early days of JavaScript. Technically, such behavior isn't correct, but can be convenient in practice.
+
+```smart header="The `typeof(x)` syntax"
+You may also come across another syntax: `typeof(x)`. It's the same as `typeof x`.
+
+To put it clear: `typeof` is an operator, not a function. The parentheses here aren't a part of `typeof`. It's the kind of parentheses used for mathematical grouping.
+
+Usually, such parentheses contain a mathematical expression, such as `(2 + 2)`, but here they contain only one argument `(x)`. Syntactically, they allow to avoid a space between the `typeof` operator and its argument, and some people like it.
+
+Some people prefer `typeof(x)`, although the `typeof x` syntax is much more common.
+```
+
+## Summary
+>>>>>>> 3c934b5a46a76861255e3a4f29da6fd54ab05c8c
 
 JavaScript-ում գոյություն ունեն տվյալների 8 տիպեր։
 
@@ -270,8 +292,14 @@ JavaScript-ում գոյություն ունեն տվյալների 8 տիպե�
 
 `typeof`-ը թույլ է տալիս ստուգել, թե ինչ տիպի արժեք է պահված փոփոխականում։
 
+<<<<<<< HEAD
 - Ունի երկու ձև․ `typeof x` կամ `typeof(x)`։
 - Վերադարձնում է տող, որը պարունակում է տիպի անվանումը, օրինակ՝ `"string"`։
 - `null`-ի դեպքում վերադարձնում է `"object"`․ սա լեզվի սխալ է, այն իրականում օբյեկտ չէ։
+=======
+- Usually used as `typeof x`, but `typeof(x)` is also possible.
+- Returns a string with the name of the type, like `"string"`.
+- For `null` returns `"object"` -- this is an error in the language, it's not actually an object.
+>>>>>>> 3c934b5a46a76861255e3a4f29da6fd54ab05c8c
 
 Հաջորդ գլուխներում մենք կկենտրոնանանք պրիմիտիվ արժեքների վրա և երբ ծանոթանանք դրանց հետ, կանցնենք օբյեկտների ուսումնասիրությանը։
