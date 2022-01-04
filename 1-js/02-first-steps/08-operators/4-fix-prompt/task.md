@@ -2,13 +2,13 @@ importance: 5
 
 ---
 
-# Fix the addition
+# Ուղղել գումարումը
 
-Here's a code that asks the user for two numbers and shows their sum.
+Գրված է կոդի հատված, որը օգտագործողից ստանում է երկու թվեր և ցուցադրում է դրանց գումարը։
 
-It works incorrectly. The output in the example below is `12` (for default prompt values).
+Սա աշխատում է սխալ։ Ելքային արդյունքը, պատկերված օրինակում `12`-է (լռելայն արժեքների դեպքում)։
 
-Why? Fix it. The result should be `3`.
+Ինչու՞ ուղղել դա։ Արդյունքը պետք է լինի `3`.
 
 ```js run
 let a = prompt("First number?", 1);

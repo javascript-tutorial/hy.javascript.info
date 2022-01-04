@@ -1,6 +1,6 @@
-The reason is that prompt returns user input as a string.
+Պատճառը այն է որ մուտքագրված թվերը վերդարձվում են որպես տող։
 
-So variables have values `"1"` and `"2"` respectively.
+Այսպիսով փոփոխականները ունեն `"1"` և `"2"` արժեքները։
 
 ```js run
 let a = "1"; // prompt("First number?", 1);
@@ -9,9 +9,9 @@ let b = "2"; // prompt("Second number?", 2);
 alert(a + b); // 12
 ```
 
-What we should do is to convert strings to numbers before `+`. For example, using `Number()` or prepending them with `+`.
+Այն, ինչ մենք պետք է անենք, տողերը թվեր փոխարկելն է `+`-ից առաջ։ Օրինակ՝ կիրառելով `Number()` կամ դնելով դիմացից `+`։
 
-For example, right before `prompt`:
+Օրինակ՝ `prompt`-ից անմիջապես առաջ:
 
 ```js run
 let a = +prompt("First number?", 1);
@@ -20,7 +20,7 @@ let b = +prompt("Second number?", 2);
 alert(a + b); // 3
 ```
 
-Or in the `alert`:
+Կամ `alert`-ի մեջ:
 
 ```js run
 let a = prompt("First number?", 1);
@@ -29,4 +29,4 @@ let b = prompt("Second number?", 2);
 alert(+a + +b); // 3
 ```
 
-Using both unary and binary `+` in the latest code. Looks funny, doesn't it?
+Կիրառվել են և ունար և բինար `+`վերջին կոդւոմ։ Հիանալի տեսք ունի, այդպես չէ՞
