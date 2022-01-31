@@ -24,11 +24,19 @@ Browser-ն ունի իր մեջ ներառված engine, որը նաև անվա�
 
 Տարբեր engin-ներ ունեն տարբեր «կեղծանուններ»՝
 
+<<<<<<< HEAD
 - [V8](https://hy.wikipedia.org/wiki/V8_(JavaScript_%D5%B7%D5%A1%D6%80%D5%AA%D5%AB%D5%B9)) -- Chrome-ում և Opera-ում։
 - [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- Firefox-ում։
 - ...Կան այլ կեղծանուններ, ինչպես «Chakra» IE-ի համար, «JavaScriptCore», «Nitro» և «SquirrelFish»՝ Safari-ի համար, և այլն։
 
 Նշված տերմինները պետք է հիշել, քանի որ նրանք շատ են օգտագործվում համացանցի հոդվածներում։ Մենք նույնպես կօգտագործենք։ Օրինակ, եթե նշված է, որ «Ա հատկությունը օգտագործվում է V8-ում», ապա այն հավանաբար կաշխատի Chrome-ում և Opera-ում։
+=======
+- [V8](https://en.wikipedia.org/wiki/V8_(JavaScript_engine)) -- in Chrome, Opera and Edge.
+- [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey) -- in Firefox.
+- ...There are other codenames like "Chakra" for IE, "JavaScriptCore", "Nitro" and "SquirrelFish" for Safari, etc.
+
+The terms above are good to remember because they are used in developer articles on the internet. We'll use them too. For instance, if "a feature X is supported by V8", then it probably works in Chrome, Opera and Edge.
+>>>>>>> 0f748275e20a81700c8514f22a7cc80c4422d09c
 
 ```smart header="Ինչպե՞ս են աշխատում engine-ները"
 
@@ -59,7 +67,11 @@ Browser-ի միջի JavaScript-ը կարող է անել ամեն ինչ կապ�
 
 ## Ի՞նչ չի կարող JavaScript-ը անել
 
+<<<<<<< HEAD
 JavaScript-ի հնարավորությունները browser-ում սահմանափակ են ապահովության նկատառումներով։ Նպատակն է կանխել չար կայքերի հասանելիությունը օգտագործողի անձնական տվյալներին։
+=======
+JavaScript's abilities in the browser are limited for the sake of a user's safety. The aim is to prevent an evil webpage from accessing private information or harming the user's data.
+>>>>>>> 0f748275e20a81700c8514f22a7cc80c4422d09c
 
 Այսպիսի սահմանափակումների օրինակներ են՝
 
@@ -84,9 +96,15 @@ JavaScript-ի հնարավորությունները browser-ում սահման
 Կան գոնե *երեք* լավ բաներ JavaScript-ի մասին՝
 
 ```compare
+<<<<<<< HEAD
 + HTML/CSS-ի հետ ներառում։
 + Հասարակ բաները արվում են հասարակ կերպով։
 + Բոլոր մեծ browser-ները աշխատում են JavaScript—ի հետ։
+=======
++ Full integration with HTML/CSS.
++ Simple things are done simply.
++ Supported by all major browsers and enabled by default.
+>>>>>>> 0f748275e20a81700c8514f22a7cc80c4422d09c
 ```
 JavaScript-ը միակ borwser-ային տեխնոլոգիան է, որը ներառում է այս 3 կետերը։
 
@@ -115,6 +133,12 @@ JavaScript-ի գրելաձևը բոլորին չի բավարարում։ Տար
 
 ## Ամփոփում
 
+<<<<<<< HEAD
 - JavaScript-ը սկզբում ստեղծվել է միայն browser-ների համար, սակայն այն հիմա օգտագործվում է շատ այլ միջավայրներում նույնպես։
 - Այսօր JavaScript-ը ունի իր ուրույն տեղը ամենաընդունված browser-ի լեզուն, HTML/CSS-ի հետ լրիվ ներառմամբ։ 
 - Կան շատ լեզուներ, որոնք «թարգմանվում» են JavaScript-ի և տրամադրում որոշ հատկություններ։ Խորհուրդ է տրվում աչքի անց կացնել դրանք, գոնե մակերեսային, JavaScript-ում խորանալուց առաց։
+=======
+- JavaScript was initially created as a browser-only language, but it is now used in many other environments as well.
+- Today, JavaScript has a unique position as the most widely-adopted browser language, fully integrated with HTML/CSS.
+- There are many languages that get "transpiled" to JavaScript and provide certain features. It is recommended to take a look at them, at least briefly, after mastering JavaScript.
+>>>>>>> 0f748275e20a81700c8514f22a7cc80c4422d09c
