@@ -194,6 +194,7 @@ alert( +apples + +oranges ); // 5
 | Առաջնահերթություն | Անվանում | Նշան |
 |------------|------|------|
 | ... | ... | ... |
+<<<<<<< HEAD
 | 16 | ունար պլյուս | `+` |
 | 16 | ունար ժխտում | `-` |
 | 15 | ընդլայնում | `**` |
@@ -206,10 +207,28 @@ alert( +apples + +oranges ); // 5
 | ... | ... | ... |
 
 Կարող ենք տեսնել, "ունար պլյուս"-ը ունի `16` գերակայությունը, որը մեծ է քան `13`-ը "գումարում" (երկուական պլյուս)։ Ահա թե ինչու է `"+apples + +oranges"` արտահայտությունում ունար պլյուսը կատարվում նախքան գումարումը։
+=======
+| 15 | unary plus | `+` |
+| 15 | unary negation | `-` |
+| 14 | exponentiation | `**` |
+| 13 | multiplication | `*` |
+| 13 | division | `/` |
+| 12 | addition | `+` |
+| 12 | subtraction | `-` |
+| ... | ... | ... |
+| 2 | assignment | `=` |
+| ... | ... | ... |
+
+As we can see, the "unary plus" has a priority of `15` which is higher than the `12` of "addition" (binary plus). That's why, in the expression `"+apples + +oranges"`, unary pluses work before the addition.
+>>>>>>> 2cca9a9d09fdd45819832294225aa3721fa5a2d4
 
 ## Վերագրում
 
+<<<<<<< HEAD
 Պետք է նշել այն, որ վերագրումը `=` նույնպես օպերատոոր է։ Այն գերակայության աղյուսակում ունի շատ ցածր դիրքը `3`։
+=======
+Let's note that an assignment `=` is also an operator. It is listed in the precedence table with the very low priority of `2`.
+>>>>>>> 2cca9a9d09fdd45819832294225aa3721fa5a2d4
 
 Ահա ինչու, երբ մենք վերագրում ենք փոփոխկան, ինչպիսին է `x = 2 * 2 + 1`, հաշվարկը կատարվում է սկզբում և հետո կատարվում է`=`, պահպանելով արդյունքը `x`-ում։
 
