@@ -1,4 +1,4 @@
-# Arrow functions, the basics
+# Սլաքով ֆունկցիաներ, հիմունքներ
 
 There's another very simple and concise syntax for creating functions, that's often better than Function Expressions.
 
