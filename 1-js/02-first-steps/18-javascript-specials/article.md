@@ -1,51 +1,51 @@
-# JavaScript specials
+# JavaScript-ի հատկանիշները
 
-This chapter briefly recaps the features of JavaScript that we've learned by now, paying special attention to subtle moments.
+Այս գլխում հակիրճ կամփոփենք JavaScript-ի առանձնահատկությունները, որոնք ուսումնասիրել ենք մինչ այս, հատուկ ուշադրություն դարձնելով նրբություններին:
 
-## Code structure
+## Կոդի կառուցվածքը
 
-Statements are delimited with a semicolon:
-
-```js run no-beautify
-alert('Hello'); alert('World');
-```
-
-Usually, a line-break is also treated as a delimiter, so that would also work:
+Հայտարարությունները տարանջատվում են կետ-ստորակետով.
 
 ```js run no-beautify
-alert('Hello')
-alert('World')
+alert('Ողջույն'); alert('Աշխարհ');
 ```
 
-That's called "automatic semicolon insertion". Sometimes it doesn't work, for instance:
+Սովորաբար տողադարձը նույնպես դիտվում է որպես տարանջատիչ և սա նույնպես կաշխատի.
+
+```js run no-beautify
+alert('Ողջույն')
+alert('Աշխարհ')
+```
+
+Դա կոչվում է «կետ-ստորակետի ավտոմատ տեղադրում»։ Երբեմն այն չի աշխատում, օրինակ.
 
 ```js run
-alert("There will be an error after this message")
+alert("Այս հաղորդագրությունից հետո սխալ կլինի:")
 
 [1, 2].forEach(alert)
 ```
 
-Most codestyle guides agree that we should put a semicolon after each statement.
+Կոդի գրելաձևին և ոճին վերաբերվող ուղեցույցների մեծ մասը խորհուրդ են տալիս, որ մենք պետք է կետ-ստորակետ դնենք յուրաքանչյուր հայտարարությունից հետո:
 
-Semicolons are not required after code blocks `{...}` and syntax constructs with them like loops:
+Կոդերի բլոկներից `{...}` և դրանցով կառուցված շարահյուսական կոնստրուկցիաներից հետո կետ-ստորակետեր չեն պահանջվում՝ ինչպես ցիկլում է.
 
 ```js
 function f() {
-  // no semicolon needed after function declaration
+  // կետ-ստորակետ պետք չէ ֆունկցիայի հայտարարումից հետո
 }
 
 for(;;) {
-  // no semicolon needed after the loop
+  // կետ-ստորակետ պետք չէ ցիկլից հետո
 }
 ```
 
-...But even if we can put an "extra" semicolon somewhere, that's not an error. It will be ignored.
+...Սակայն, եթե մենք «ավելնորդ» կետ-ստորակետ դնենք, սխալ չի լինի։ Այն պարզապես կանտեսվի:
 
-More in: <info:structure>.
+Մանրամասն՝ <info:structure>.
 
-## Strict mode
+## Խիստ ռեժիմ
 
-To fully enable all features of modern JavaScript, we should start scripts with `"use strict"`.
+Ժամանակակից JavaScript-ի բոլոր առանձնահատկություններն ակտիվացնելու համար, կոդի սկզբում հարկավոր է նշել `"use strict"`։
 
 ```js
 'use strict';
@@ -53,11 +53,11 @@ To fully enable all features of modern JavaScript, we should start scripts with 
 ...
 ```
 
-The directive must be at the top of a script or at the beginning of a function body.
+Այդ ցուցումը պետք է լինի սքրիփթի սկզբում կամ ֆունկցիայի մարմնի սկզբում:
 
-Without `"use strict"`, everything still works, but some features behave in the old-fashion, "compatible" way. We'd generally prefer the modern behavior.
+Առանց `"use strict"` օգտագործելու ամեն ինչ կաշխատի, բայց որոշ առանձնահատկությունների վարքագիծը կլինի հնաոճ ձևի հետ «համատեղելի» եղանակով։ Ընդհանուր առմամբ մենք կնախընտրեինք ժամանակակից վարքագիծը:
 
-Some modern features of the language (like classes that we'll study in the future) enable strict mode implicitly.
+Լեզվի որոշ ժամանակակից առանձնահատկություններ (օրինակ՝ կլասները, որոնք պետք է սովորենք հետագայում) լռեցյալ ակտիվացնում են խիստ ռեժիմը։
 
 More in: <info:strict-mode>.
 
