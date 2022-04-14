@@ -1,8 +1,8 @@
 # JavaScript-ի հատկանիշները
 
-Այս գլխում հակիրճ կամփոփենք JavaScript-ի առանձնահատկությունները, որոնք ուսումնասիրել ենք մինչ այս, հատուկ ուշադրություն դարձնելով նրբություններին:
+Այս գլխում, հատուկ ուշադրություն դարձնելով նրբություններին, հակիրճ կամփոփենք JavaScript-ի առանձնահատկությունները, որոնք ուսումնասիրել ենք մինչ այս:
 
-## Կոդի կառուցվածքը
+## Կոդի կառուցվածք
 
 Հայտարարությունները տարանջատվում են կետ-ստորակետով.
 
@@ -45,7 +45,7 @@ for(;;) {
 
 ## Խիստ ռեժիմ
 
-Ժամանակակից JavaScript-ի բոլոր առանձնահատկություններն ակտիվացնելու համար, կոդի սկզբում հարկավոր է նշել `"use strict"`։
+Ժամանակակից JavaScript-ի բոլոր առանձնահատկություններն ակտիվացնելու համար կոդի սկզբում հարկավոր է նշել `"use strict"`։
 
 ```js
 'use strict';
@@ -84,14 +84,14 @@ x = "Պողոս";
 Տվյալների 8 տեսակ կա.
 
 - `number` ինչպես կոտորակային, այնպես էլ ամբողջ թվերի համար,
-- `bigint` կամայական երկարության ամբողջ թվերի համար,
+- `bigint` կամայական երկարություն ունեցող ամբողջ թվերի համար,
 - `string` տողերի համար,
-- `boolean` տրամաբանական արժեքների համար: `true/false`,
-- `null` -- մեկ արժեք ունեցող տեսակ `null`, նշանակում է «դատարկ» կամ «գոյություն չունի»,
-- `undefined` -- մեկ արժեք ունեցող տեսակ `undefined`, նշանակում է «չնշված»,
+- `boolean` տրամաբանական արժեքների համար՝ `true/false`,
+- `null` -- մեկ արժեք ունեցող տեսակ՝ `null`, նշանակում է «դատարկ» կամ «գոյություն չունի»,
+- `undefined` -- մեկ արժեք ունեցող տեսակ՝ `undefined`, նշանակում է «չնշված»,
 - `object` և `symbol` -- բարդ տվյալների կառուցվածքների և յուրահատուկ նույնացուցիչների համար, մենք դեռ չենք սովորել դրանք։
 
-`typeof` օպերատորը վերադարձնում է արժեքի տեսակը, երկու բացառությամբ.
+`typeof` օպերատորը վերադարձնում է արժեքի տեսակը երկու բացառությամբ.
 ```js
 typeof null == "object" // սխալ լեզվում
 typeof function(){} == "function" // ֆունկցիաները վերարտադրվում են առանձնահատուկ կերպով
@@ -104,13 +104,13 @@ typeof function(){} == "function" // ֆունկցիաները վերարտադր
 Մենք բրաուզերն ենք օգտագործում որպես աշխատանքային միջավայր, ուստի UI-ի (օգտվողի ինտերֆեյս) հիմնական ֆունկցիաները կլինեն.
 
 [`prompt(question, [default])`](mdn:api/Window/prompt)
-: Հարց է տալիս՝ `question`, այնուհետև վերադարձնում է այն, ինչ մուտքագրել է այցելուն կամ՝ `null`, եթե այցելուն սեղմել է «Cancel»:
+: Հարց է տալիս `question`, այնուհետև վերադարձնում է այն, ինչ մուտքագրել է այցելուն կամ՝ `null`, եթե այցելուն սեղմել է «Cancel»:
 
 [`confirm(question)`](mdn:api/Window/confirm)
-: Հարց է տալիս՝ `question` և առաջարկում ընտրություն կատարել՝ «Ok» կամ «Cancel». Ընտրությունը վերադարձվում է որպես `true/false`։
+: Հարց է տալիս `question` և առաջարկում ընտրություն կատարել՝ «Ok» կամ «Cancel». Ընտրությունը վերադարձվում է որպես `true/false`։
 
 [`alert(message)`](mdn:api/Window/alert)
-: Ցուցադրում է հաղորդագրություն՝ `message`։
+: Ցուցադրում է հաղորդագրություն `message`։
 
 Բոլոր այս ֆունկցիաները *մոդալ* են, նրանք դադարեցնում են կոդի կատարումը և թույլ չեն տալիս այցելուներին փոխազդեցություն ունենալ էջի հետ, մինչև նրանք չպատասխանեն։
 
@@ -120,7 +120,7 @@ typeof function(){} == "function" // ֆունկցիաները վերարտադր
 let userName = prompt("Ձեր անո՞ւնը:", "Ալիսա");
 let isTeaWanted = confirm("Թեյ կցանկանա՞ք:");
 
-alert( "Այցելու` " + userName ); // Ալիսա
+alert( "Այցելու՝ " + userName ); // Ալիսա
 alert( "Թեյ ուզեց՝ " + isTeaWanted ); // true
 ```
 
@@ -131,9 +131,9 @@ alert( "Թեյ ուզեց՝ " + isTeaWanted ); // true
 JavaScript-ը սպասարկում է հետևյալ օպերատորները.
 
 Թվաբանական
-: Կանոնավոր` `* + - /`, նաև `%` մնացորդի համար և `**` աստիճան բարձրացնելու համար:
+: Կանոնավոր՝ `* + - /`, նաև `%` մնացորդի համար և `**` աստիճան բարձրացնելու համար։
 
-    Բինար գումարումը `+` միացնում է տողերը։ Եթե օպերանդներից մեկը տող է, մյուսը նույնպես վերածվում է տողի.
+    Բինար գումարումը `+` միացնում է տողերը։ Եթե օպերանդներից մեկը տող է, մյուսը նույնպես վերածվում է տողի․
 
     ```js run
     alert( '1' + 2 ); // '12', տող
@@ -141,7 +141,7 @@ JavaScript-ը սպասարկում է հետևյալ օպերատորները.
     ```
 
 Վերագրում
-: Կա պարզ վերագրում `a = b` և համակցված վերագրում `a *= 2`:
+: Կա պարզ վերագրում `a = b` և համակցված վերագրում `a *= 2`։
 
 Բիթային
 : Բիթային օպերատորները աշխատում են 32-բիթ ամբողջ թվերի հետ ամենացածր՝ բիթային մակարդակում. տեսեք [docs](mdn:/JavaScript/Guide/Expressions_and_Operators#Bitwise)-ում, երբ դրա կարիքը լինի:
@@ -153,7 +153,7 @@ JavaScript-ը սպասարկում է հետևյալ օպերատորները.
 : Տրամաբանական ԵՎ `&&` ու ԿԱՄ `||` օպերատորները իրականացնում են «կարճ միացման» արժեվորում, այնուհետև վերադարձնում են արժեք՝ որտեղ կանգ են առել (պարտադիր չէ `true`/`false`). Տրամաբանական ՈՉ `!` կերպափոխում է օպերանդը տրամաբանական տեսակի և վերադարձնում է հակառակ արժեքը։
 
 Զրոյական միավորման օպերատոր
-: `??` օպերատորը փոփոխականնների ցանկից հատկանշված արժեքի ընտրության հնարավորություն է տալիս: `a ?? b`-ի արդյունքը կլինի `a`, եթե այն `null/undefined` չէ, հակառակ դեպքում՝ `b`:
+: `??` օպերատորը փոփոխականների ցանկից հատկանշված արժեքի ընտրության հնարավորություն է տալիս: `a ?? b`-ի արդյունքը կլինի `a`, եթե այն `null/undefined` չէ, հակառակ դեպքում՝ `b`:
 
 Համեմատություններ
 : հավասարության ստուգումը `==` տարբեր տեսակի արժեքների դեպքում նրանց կերպափոխում է թվի (բացի `null` և `undefined` տեսակներից, որոնք միայն իրար կարող են հավասար լինել), այսպիսով սրանք հավասար են.
@@ -163,9 +163,9 @@ JavaScript-ը սպասարկում է հետևյալ օպերատորները.
     alert( 0 == '' ); // true
     ```
 
-    Այլ համեմատությունները նույնպես կերպափոխում են թվի:
+    Այլ համեմատությունները նույնպես արժեքները կերպափոխում են թվի:
 
-    Խիստ հավասարության օպերատորը `===` չի կատարում փոխակերպում․ նրա համար տարբեր տեսակներ միշտ նշանակում է տարբեր արժեքներ։
+    Խիստ հավասարության օպերատորը `===` չի կատարում կերպափոխում․ նրա համար տարբեր տեսակները միշտ ունեն տարբեր արժեքների նշանակությունը։
 
     `null` և `undefined` արժեքները հատուկ են․ նրանք հավասար են `==` իրար և ուրիշ ոչնչի հավասար չեն։
 
@@ -174,11 +174,11 @@ JavaScript-ը սպասարկում է հետևյալ օպերատորները.
 Այլ օպերատորներ
 : Կա մի քանի ալյ օպերատոր, օր․՝ ստորակետի օպերատորը։
 
-Ավելին՝ <info:operators>, <info:comparison>, <info:logical-operators>, <info:nullish-coalescing-operator>.
+Ավելին՝ <info:operators>, <info:comparison>, <info:logical-operators>, <info:nullish-coalescing-operator>։
 
-## Loops
+## Ցիկլներ
 
-- We covered 3 types of loops:
+- Մենք դիտարկել ենք 3 տեսակի ցիկլ․
 
     ```js
     // 1
@@ -197,43 +197,43 @@ JavaScript-ը սպասարկում է հետևյալ օպերատորները.
     }
     ```
 
-- The variable declared in `for(let...)` loop is visible only inside the loop. But we can also omit `let` and reuse an existing variable.
-- Directives `break/continue` allow to exit the whole loop/current iteration. Use labels to break nested loops.
+- `for(let...)` ցիկլում հայտարարված փոփոխականը հասանելի է միայն ցիկլի ներսում։ Բայց մենք կարող ենք նաև բաց թողնել `let`-ը և կրկին օգտագործել արդեն իսկ գոյություն ունեցող փոփոխականը:
+- `break/continue` հրահանգները թույլ են տալիս դուրս գալ ամբողջ ցիկլից/ընթացիկ կրկնությունից: Օգտագործեք պիտակներ ներդրված ցիկլները կանգնեցնելու համար։
 
-Details in: <info:while-for>.
+Մանրամասն՝ <info:while-for>։
 
-Later we'll study more types of loops to deal with objects.
+Ավելի ուշ, օբյեկտների հետ աշխատելու համար մենք կուսումնասիրենք ցիկլների ավելի շատ տեսակներ:
 
-## The "switch" construct
+## Կոնստրուկցիա «switch»
 
-The "switch" construct can replace multiple `if` checks. It uses `===` (strict equality) for comparisons.
+կոնստրուկցիա «switch»-ը կարող է փոխարինել մի քանի `if` ստուգումներ. Համեմատությունների ժամանակ այն օգտագործում է `===` խիստ հավասարման օպերատորը։
 
-For instance:
+Օրինակ՝
 
 ```js run
-let age = prompt('Your age?', 18);
+let age = prompt('Ձեր տարի՞քը:', 18);
 
 switch (age) {
   case 18:
-    alert("Won't work"); // the result of prompt is a string, not a number
+    alert("Չի աշխատի"); // prompt-ի վերադարձրած արդյունքը տող է, թիվ չէ
     break;
 
   case "18":
-    alert("This works!");
+    alert("Սա կաշխատի");
     break;
 
   default:
-    alert("Any value not equal to one above");
+    alert("Ցանկացած արժեք՝ վերոնշյալներին ոչ հավասար");
 }
 ```
 
-Details in: <info:switch>.
+Մանրամասն՝ <info:switch>։
 
-## Functions
+## Ֆունկցիաներ
 
-We covered three ways to create a function in JavaScript:
+Մենք դիտարկեցինք JavaScript-ում ֆունկցիաներ ստեղծելու երեք տարբերակ․
 
-1. Function Declaration: the function in the main code flow
+1. Function Declaration -- ֆունկցիան հիմնական կոդի հոսքում․
 
     ```js
     function sum(a, b) {
@@ -243,7 +243,7 @@ We covered three ways to create a function in JavaScript:
     }
     ```
 
-2. Function Expression: the function in the context of an expression
+2. Function Expression -- ֆունկցիան արտահայտության համատեքստում․
 
     ```js
     let sum = function(a, b) {
@@ -253,32 +253,32 @@ We covered three ways to create a function in JavaScript:
     };
     ```
 
-3. Arrow functions:
+3. Սլաքով ֆունկցիաներ․
 
     ```js
-    // expression at the right side
+    // արտահայտությունն աջ կողմում է
     let sum = (a, b) => a + b;
 
-    // or multi-line syntax with { ... }, need return here:
+    // կամ բազմատողանի շարահյուսություն ձևավոր փակագծերով { ... }, այստեղ return-ը անհրաժեշտ է
     let sum = (a, b) => {
       // ...
       return a + b;
     }
 
-    // without arguments
-    let sayHi = () => alert("Hello");
+    // առանց արգումենտների
+    let sayHi = () => alert("Ողջույն");
 
-    // with a single argument
+    // մեկ արգումենտով
     let double = n => n * 2;
     ```
 
 
-- Functions may have local variables: those declared inside its body or its parameter list. Such variables are only visible inside the function.
-- Parameters can have default values: `function sum(a = 1, b = 2) {...}`.
-- Functions always return something. If there's no `return` statement, then the result is `undefined`.
+- Ֆունկցիաները կարող են ունենալ տեղական (local) փոփոխականներ․ դրանք հայտարարվում են իրենց մարմնի ներսում կամ պարամետրերի ցանկում. Նման փոփոխականները հասանելի են միայն ֆունկցիայի ներսում:
+- Պարամետրերը կարող են ունենալ նախնական արժեք․ `function sum(a = 1, b = 2) {...}`։
+- Ֆունկցիաները միշտ ինչ-որ բան են վերադարձնում. Եթե չկա `return` հայտարարությունը, ապա արդյունքը `undefined` է։
 
-Details: see <info:function-basics>, <info:arrow-functions-basics>.
+Մանրամասն՝ <info:function-basics>, <info:arrow-functions-basics>։
 
-## More to come
+## Սպասվում է ավելին
 
-That was a brief list of JavaScript features. As of now we've studied only basics. Further in the tutorial you'll find more specials and advanced features of JavaScript.
+Սա JavaScript-ի առանձնահատկությունների համառոտ ցանկն էր: Այս պահի դրությամբ մենք ուսումնասիրել ենք միայն հիմունքները: Այս ձեռնարկում ավելի ուշ կգտնեք JavaScript-ի վերաբերյալ ավելի շատ հատկանիշներ և ընդլայնված առանձնահատկություններ։
