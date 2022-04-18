@@ -6,8 +6,13 @@
 
 Նաև լինում են դեպքեր, երբ մենք կարիք ենք ունենում բացահայտորեն փոխարկել արժեքը անհրաժեշ տիպի։
 
+<<<<<<< HEAD
 ```smart header="Դեռևս չենք խոսում օբյեկտների մասին"
 Այս գլխում մենք չենք դիտարկի օբյեկտները։ Առայժմ կխոսենք միայն պրիմիտիվ տիպերի մասին։
+=======
+```smart header="Not talking about objects yet"
+In this chapter, we won't cover objects. For now, we'll just be talking about primitives.
+>>>>>>> 291b5c05b99452cf8a0d32bd32426926dbcc0ce0
 
 Հետագայում, երբ կծանոթանանք օբյեկտների հետ <info:object-toprimitive> գլխում, կտեսնենք, թե ինչպես են փոխարկվում օբյեկտները։
 ```
