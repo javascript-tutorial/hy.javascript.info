@@ -89,8 +89,8 @@ let func = sayHi;
 Ամեն ինչ նույն կերպ կաշխատի:
 
 
-````smart header="Why is there a semicolon at the end?"
-You might wonder, why does Function Expression have a semicolon `;` at the end, but Function Declaration does not:
+````smart header="Ինչո՞ւ է վերջում կետ-ստորակետ:"
+Կարող եք զարմանալ, թե ինչու Ֆունկցիայի Արտահայտությունը վերջում ունի կետ-ստորակետ `;`, բայց Ֆունկցիայի Հայտարարությունը չունի.
 
 ```js
 function sayHi() {
@@ -102,12 +102,12 @@ let sayHi = function() {
 }*!*;*/!*
 ```
 
-The answer is simple: a Function Expression is created here as `function(…) {…}` inside the assignment statement: `let sayHi = …;`. The semicolon `;` is recommended at the end of the statement, it's not a part of the function syntax.
+Պատասխանը պարզ է. Ֆունկցիայի Արտահայտությունը ստեղծվել է այստեղ որպես `function(…) {…}` վերագրման հայտարարության ներսում. `let sayHi = …;` (statement): Կետ-ստորակետը `;` խորհուրդ է տրվում հայտարարության վերջում, դա ֆունկցիայի շարահյուսության մաս չէ:
 
-The semicolon would be there for a simpler assignment, such as `let sayHi = 5;`, and it's also there for a function assignment.
+Կետ-ստորակետը կարող է լինել ավելի պարզ վերագրման դեպքում, ինչպիսին է `let sayHi = 5;`, այն առկա է նաև ֆունկցիա վերագրելու դեպքում։
 ````
 
-## Callback functions
+## Callback ֆունկցիաներ (Հետկանչ)
 
 Let's look at more examples of passing functions as values and using function expressions.
 
