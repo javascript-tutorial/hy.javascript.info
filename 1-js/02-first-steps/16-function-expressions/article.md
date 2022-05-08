@@ -1,92 +1,92 @@
-# Function expressions
+# Function Expression
 
-In JavaScript, a function is not a "magical language structure", but a special kind of value.
+Ֆունկցիան JavaScript-ում «լեզվի կախարդական կառուցվածք» չէ, բայց արժեքի հատուկ տեսակ է:
 
-The syntax that we used before is called a *Function Declaration*:
+Այն շարահյուսությունը, որ մինչ այս օգտագործել ենք, կոչվում է *Function Declaration* (Ֆունկցիայի Հայտարարություն):
 
 ```js
 function sayHi() {
-  alert( "Hello" );
+  alert( "Ողջույն" );
 }
 ```
 
-There is another syntax for creating a function that is called a *Function Expression*.
+Կա նաև այլ շարահյուսություն, որը կոչվում է *Function Expression* (Ֆունկցիայի Արտահայտություն):
 
-It allows us to create a new function in the middle of any expression.
+Դա մեզ թույլ է տալիս ստեղծել նոր ֆունկցիա ցանկացած արտահայտության մեջտեղում:
 
-For example:
+Օրինակ.
 
 ```js
 let sayHi = function() {
-  alert( "Hello" );
+  alert( "Ողջույն" );
 };
 ```
 
-Here we can see a variable `sayHi` getting a value, the new function, created as `function() { alert("Hello"); }`.
+Այստեղ մենք կարող ենք տեսնել, որ `sayHi` փոփոխականը ստանում է արժեք՝ նոր ֆունկցիա, որը ստեղծվել է այսպես՝ `function() { alert("Ողջույն"); }`:
 
-As the function creation happens in the context of the assignment expression (to the right side of `=`), this is a *Function Expression*.
+Քանի որ ֆունկցիայի ստեղծումը տեղի է ունենում վերագրման արտահայտության համատեքստում (`=` նշանի աջ կողմում), ապա սա *Function Expression* է:
 
-Please note, there's no name after the `function` keyword. Omitting a name is allowed for Function Expressions.
+Նկատի ունեցեք, որ `function` հիմնաբառից հետո չկա անվանում: Անվան բացթողումը թույլատրելի է Ֆունկցիայի Արտահայտությունների համար:
 
-Here we immediately assign it to the variable, so the meaning of these code samples is the same: "create a function and put it into the variable `sayHi`".
+Այստեղ մենք անմիջապես վերագրում ենք այն փոփոխականին, ուստի այս կոդի նմուշների իմաստը նույնն է. «ստեղծել ֆունկցիա և տեղադրել այն `sayHi` փոփոխականում»:
 
-In more advanced situations, that we'll come across later, a function may be created and immediately called or scheduled for a later execution, not stored anywhere, thus remaining anonymous.
+Ավելի առաջադեմ իրավիճակներում, որոնց մենք հետո կհանդիպենք, ֆունկցիան կարող է ստեղծվել և անմիջապես կանչվել կամ պլանավորվել ավելի ուշ կատարման համար, ոչ մի տեղ չպահվել, այդպիսով մնալով անանուն:
 
-## Function is a value
+## Ֆունկցիան արժեք է
 
-Let's reiterate: no matter how the function is created, a function is a value. Both examples above store a function in the `sayHi` variable.
+Եկեք կրկնենք. անկախ նրանից, թե ինչպես է ստեղծվում ֆունկցիան, այն արժեք է: Վերոնշյալ երկու օրինակներն էլ պահում են ֆունկցիան `sayHi` փոփոխականում:
 
-We can even print out that value using `alert`:
+Մենք կարող ենք նույնիսկ տպել այդ արժեքը՝ օգտագործելով `alert`.
 
 ```js run
 function sayHi() {
-  alert( "Hello" );
+  alert( "Ողջույն" );
 }
 
 *!*
-alert( sayHi ); // shows the function code
+alert( sayHi ); // ցուցադրում է ֆունկցիայի կոդը
 */!*
 ```
 
-Please note that the last line does not run the function, because there are no parentheses after `sayHi`. There are programming languages where any mention of a function name causes its execution, but JavaScript is not like that.
+Նկատի ունեցեք, որ վերջին տողը չի կատարում ֆունկցիան, որովհետև `sayHi`-ից հետո չկան փակագծեր: Կան ծրագրավորման լեզուներ, որտեղ ֆունկցիայի անվան ցանկացած հիշատակում հանգեցնում է դրա կատարմանը, բայց JavaScript-ը այդպիսին չէ։
 
-In JavaScript, a function is a value, so we can deal with it as a value. The code above shows its string representation, which is the source code.
+JavaScript-ում ֆունկցիան արժեք է, այնպես որ մենք կարող ենք դրան վերաբերվել որպես արժեքի: Վերոնշյալ կոդը ցույց է տալիս իր տողային ներկայացումը, որը սկզբնական կոդը է:
 
-Surely, a function is a special value, in the sense that we can call it like `sayHi()`.
+Անշուշտ, ֆունկցիան հատուկ արժեք է, այն իմաստով, որ մենք կարող ենք այն կանչել որպես `sayHi()`:
 
-But it's still a value. So we can work with it like with other kinds of values.
+Բայց դա դեռևս արժեք է: Այսպիսով, մենք կարող ենք աշխատել դրա հետ, ինչպես այլ տեսակի արժեքների հետ:
 
-We can copy a function to another variable:
+Մենք կարող ենք պատճենել ֆունկցիան մեկ այլ փոփոխականում.
 
 ```js run no-beautify
-function sayHi() {   // (1) create
-  alert( "Hello" );
+function sayHi() {     // (1) ստեղծել
+  alert( "Ողջույն" );
 }
 
-let func = sayHi;    // (2) copy
+let func = sayHi;      // (2) պատճենել
 
-func(); // Hello     // (3) run the copy (it works)!
-sayHi(); // Hello    //     this still works too (why wouldn't it)
+func(); // Ողջույն     // (3) կատարել կրկնօրինակը (սա աշխատում է)
+sayHi(); // Ողջույն    //     սա նույնպես դեռ աշխատում է (ինչու ոչ)
 ```
 
-Here's what happens above in detail:
+Ահա մանրամասն, թե ինչ է տեղի ունենում վերևում.
 
-1. The Function Declaration `(1)` creates the function and puts it into the variable named `sayHi`.
-2. Line `(2)` copies it into the variable `func`. Please note again: there are no parentheses after `sayHi`. If there were, then `func = sayHi()` would write  *the result of the call* `sayHi()` into `func`, not *the function* `sayHi` itself.
-3. Now the function can be called as both `sayHi()` and `func()`.
+1. Ֆունկցիայի Հայտարարությունը `(1)` ստեղծում է ֆունկցիա և տեղադրում այն `sayHi` փոփոխականում:
+2. Տող `(2)`-ը պատճենում է այն `func` փոփոխականում: Կրկին նկատի ունեցեք. `sayHi`-ից հետո չկան փակագծեր: Եթե լինեին, ապա `func = sayHi()` կվերագրեր `sayHi()`-ի *կանչվելու արդյունքը* `func`-ին, այլ ոչ թե հենց `sayHi` *ֆունկցիան*:
+3. Այժմ երկու եղանակով էլ ֆունկցիան կարող է կանչվել՝ `sayHi()` և `func()`:
 
-We could also have used a Function Expression to declare `sayHi`, in the first line:
+Մենք `sayHi` հայտարարելու համար կարող էինք նաև օգտագործել Ֆունկցիայի Արտահայտություն՝ առաջին տողում.
 
 ```js
-let sayHi = function() { // (1) create
-  alert( "Hello" );
+let sayHi = function() { // (1) ստեղծել
+  alert( "Ողջույն" );
 };
 
 let func = sayHi;
 // ...
 ```
 
-Everything would work the same.
+Ամեն ինչ նույն կերպ կաշխատի:
 
 
 ````smart header="Why is there a semicolon at the end?"
