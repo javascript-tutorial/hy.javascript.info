@@ -1,51 +1,51 @@
-# JavaScript specials
+# JavaScript-ի հատկանիշները
 
-This chapter briefly recaps the features of JavaScript that we've learned by now, paying special attention to subtle moments.
+Այս գլխում, հատուկ ուշադրություն դարձնելով նրբություններին, հակիրճ կամփոփենք JavaScript-ի առանձնահատկությունները, որոնք ուսումնասիրել ենք մինչ այս:
 
-## Code structure
+## Կոդի կառուցվածք
 
-Statements are delimited with a semicolon:
-
-```js run no-beautify
-alert('Hello'); alert('World');
-```
-
-Usually, a line-break is also treated as a delimiter, so that would also work:
+Հայտարարությունները տարանջատվում են կետ-ստորակետով.
 
 ```js run no-beautify
-alert('Hello')
-alert('World')
+alert('Ողջույն'); alert('Աշխարհ');
 ```
 
-That's called "automatic semicolon insertion". Sometimes it doesn't work, for instance:
+Սովորաբար տողադարձը նույնպես դիտվում է որպես տարանջատիչ և սա նույնպես կաշխատի.
+
+```js run no-beautify
+alert('Ողջույն')
+alert('Աշխարհ')
+```
+
+Դա կոչվում է «կետ-ստորակետի ավտոմատ տեղադրում»։ Երբեմն այն չի աշխատում, օրինակ.
 
 ```js run
-alert("There will be an error after this message")
+alert("Այս հաղորդագրությունից հետո սխալ կլինի:")
 
 [1, 2].forEach(alert)
 ```
 
-Most codestyle guides agree that we should put a semicolon after each statement.
+Կոդի գրելաձևին և ոճին վերաբերվող ուղեցույցների մեծ մասը խորհուրդ են տալիս, որ մենք պետք է կետ-ստորակետ դնենք յուրաքանչյուր հայտարարությունից հետո:
 
-Semicolons are not required after code blocks `{...}` and syntax constructs with them like loops:
+Կոդերի բլոկներից `{...}` և դրանցով կառուցված շարահյուսական կոնստրուկցիաներից հետո կետ-ստորակետեր չեն պահանջվում՝ ինչպես ցիկլում է.
 
 ```js
 function f() {
-  // no semicolon needed after function declaration
+  // կետ-ստորակետ պետք չէ ֆունկցիայի հայտարարումից հետո
 }
 
 for(;;) {
-  // no semicolon needed after the loop
+  // կետ-ստորակետ պետք չէ ցիկլից հետո
 }
 ```
 
-...But even if we can put an "extra" semicolon somewhere, that's not an error. It will be ignored.
+...Սակայն, եթե մենք «ավելնորդ» կետ-ստորակետ դնենք, սխալ չի լինի։ Այն պարզապես կանտեսվի:
 
-More in: <info:structure>.
+Մանրամասն՝ <info:structure>.
 
-## Strict mode
+## Խիստ ռեժիմ
 
-To fully enable all features of modern JavaScript, we should start scripts with `"use strict"`.
+Ժամանակակից JavaScript-ի բոլոր առանձնահատկություններն ակտիվացնելու համար կոդի սկզբում հարկավոր է նշել `"use strict"`։
 
 ```js
 'use strict';
@@ -53,132 +53,132 @@ To fully enable all features of modern JavaScript, we should start scripts with 
 ...
 ```
 
-The directive must be at the top of a script or at the beginning of a function body.
+Այդ ցուցումը պետք է լինի սքրիփթի սկզբում կամ ֆունկցիայի մարմնի սկզբում:
 
-Without `"use strict"`, everything still works, but some features behave in the old-fashion, "compatible" way. We'd generally prefer the modern behavior.
+Առանց `"use strict"` օգտագործելու ամեն ինչ կաշխատի, բայց որոշ առանձնահատկությունների վարքագիծը կլինի հնաոճ ձևի հետ «համատեղելի» եղանակով։ Ընդհանուր առմամբ մենք կնախընտրեինք ժամանակակից վարքագիծը:
 
-Some modern features of the language (like classes that we'll study in the future) enable strict mode implicitly.
+Լեզվի որոշ ժամանակակից առանձնահատկություններ (օրինակ՝ կլասները, որոնք պետք է սովորենք հետագայում) լռեցյալ ակտիվացնում են խիստ ռեժիմը։
 
-More in: <info:strict-mode>.
+Ավելին՝ <info:strict-mode>։
 
-## Variables
+## Փոփոխականներ
 
-Can be declared using:
+Կարող ենք հայտարարել, օգտագործելով․
 
 - `let`
-- `const` (constant, can't be changed)
-- `var` (old-style, will see later)
+- `const` (հաստատուն, չի կարող փոփոխվել)
+- `var` (հին ոճ, կդիտարկենք ավելի ուշ)
 
-A variable name can include:
-- Letters and digits, but the first character may not be a digit.
-- Characters `$` and `_` are normal, on par with letters.
-- Non-Latin alphabets and hieroglyphs are also allowed, but commonly not used.
+Փոփոխականի անվանումը կարող է ներառել․
+- Տառեր և թվեր, բայց առաջին նիշը չի կարող լինել թիվ:
+- `$` և `_` նիշերը նորմալ են, համարժեք են տառերին։
+- Թույլատրվում են նաև ոչ լատինական այբուբեններ և հիերոգլիֆներ, բայց սովորաբար չեն օգտագործվում:
 
-Variables are dynamically typed. They can store any value:
+Փոփոխականները տեսակավորվում են դինամիկ կերպով և կարող են պահել ցանկացած արժեք.
 
 ```js
 let x = 5;
-x = "John";
+x = "Պողոս";
 ```
 
-There are 8 data types:
+Տվյալների 8 տեսակ կա.
 
-- `number` for both floating-point and integer numbers,
-- `bigint` for integer numbers of arbitrary length,
-- `string` for strings,
-- `boolean` for logical values: `true/false`,
-- `null` -- a type with a single value `null`, meaning "empty" or "does not exist",
-- `undefined` -- a type with a single value `undefined`, meaning "not assigned",
-- `object` and `symbol` -- for complex data structures and unique identifiers, we haven't learnt them yet.
+- `number` ինչպես կոտորակային, այնպես էլ ամբողջ թվերի համար,
+- `bigint` կամայական երկարություն ունեցող ամբողջ թվերի համար,
+- `string` տողերի համար,
+- `boolean` տրամաբանական արժեքների համար՝ `true/false`,
+- `null` -- մեկ արժեք ունեցող տեսակ՝ `null`, նշանակում է «դատարկ» կամ «գոյություն չունի»,
+- `undefined` -- մեկ արժեք ունեցող տեսակ՝ `undefined`, նշանակում է «չնշված»,
+- `object` և `symbol` -- բարդ տվյալների կառուցվածքների և յուրահատուկ նույնացուցիչների համար, մենք դեռ չենք սովորել դրանք։
 
-The `typeof` operator returns the type for a value, with two exceptions:
+`typeof` օպերատորը վերադարձնում է արժեքի տեսակը երկու բացառությամբ.
 ```js
-typeof null == "object" // error in the language
-typeof function(){} == "function" // functions are treated specially
+typeof null == "object" // սխալ լեզվում
+typeof function(){} == "function" // ֆունկցիաները վերարտադրվում են առանձնահատուկ կերպով
 ```
 
-More in: <info:variables> and <info:types>.
+Ավելին՝ <info:variables> և <info:types>։
 
-## Interaction
+## Փոխազդեցություն
 
-We're using a browser as a working environment, so basic UI functions will be:
+Մենք բրաուզերն ենք օգտագործում որպես աշխատանքային միջավայր, ուստի UI-ի (օգտվողի ինտերֆեյս) հիմնական ֆունկցիաները կլինեն.
 
 [`prompt(question, [default])`](mdn:api/Window/prompt)
-: Ask a `question`, and return either what the visitor entered or `null` if they clicked "cancel".
+: Հարց է տալիս `question`, այնուհետև վերադարձնում է այն, ինչ մուտքագրել է այցելուն կամ՝ `null`, եթե այցելուն սեղմել է «Cancel»:
 
 [`confirm(question)`](mdn:api/Window/confirm)
-: Ask a `question` and suggest to choose between Ok and Cancel. The choice is returned as `true/false`.
+: Հարց է տալիս `question` և առաջարկում ընտրություն կատարել՝ «Ok» կամ «Cancel». Ընտրությունը վերադարձվում է որպես `true/false`։
 
 [`alert(message)`](mdn:api/Window/alert)
-: Output a `message`.
+: Ցուցադրում է հաղորդագրություն `message`։
 
-All these functions are *modal*, they pause the code execution and prevent the visitor from interacting with the page until they answer.
+Բոլոր այս ֆունկցիաները *մոդալ* են, նրանք դադարեցնում են կոդի կատարումը և թույլ չեն տալիս այցելուներին փոխազդեցություն ունենալ էջի հետ, մինչև նրանք չպատասխանեն։
 
-For instance:
+Օրինակ.
 
 ```js run
-let userName = prompt("Your name?", "Alice");
-let isTeaWanted = confirm("Do you want some tea?");
+let userName = prompt("Ձեր անո՞ւնը:", "Ալիսա");
+let isTeaWanted = confirm("Թեյ կցանկանա՞ք:");
 
-alert( "Visitor: " + userName ); // Alice
-alert( "Tea wanted: " + isTeaWanted ); // true
+alert( "Այցելու՝ " + userName ); // Ալիսա
+alert( "Թեյ ուզեց՝ " + isTeaWanted ); // true
 ```
 
-More in: <info:alert-prompt-confirm>.
+Ավելին՝ <info:alert-prompt-confirm>։
 
-## Operators
+## Օպերատորներ
 
-JavaScript supports the following operators:
+JavaScript-ը սպասարկում է հետևյալ օպերատորները.
 
-Arithmetical
-: Regular: `* + - /`, also `%` for the remainder and `**` for power of a number.
+Թվաբանական
+: Կանոնավոր՝ `* + - /`, նաև `%` մնացորդի համար և `**` աստիճան բարձրացնելու համար։
 
-    The binary plus `+` concatenates strings. And if any of the operands is a string, the other one is converted to string too:
+    Բինար գումարումը `+` միացնում է տողերը։ Եթե օպերանդներից մեկը տող է, մյուսը նույնպես վերածվում է տողի․
 
     ```js run
-    alert( '1' + 2 ); // '12', string
-    alert( 1 + '2' ); // '12', string
+    alert( '1' + 2 ); // '12', տող
+    alert( 1 + '2' ); // '12', տող
     ```
 
-Assignments
-: There is a simple assignment: `a = b` and combined ones like `a *= 2`.
+Վերագրում
+: Կա պարզ վերագրում `a = b` և համակցված վերագրում `a *= 2`։
 
-Bitwise
-: Bitwise operators work with 32-bit integers at the lowest, bit-level: see the [docs](mdn:/JavaScript/Guide/Expressions_and_Operators#Bitwise) when they are needed.
+Բիթային
+: Բիթային օպերատորները աշխատում են 32-բիթ ամբողջ թվերի հետ ամենացածր՝ բիթային մակարդակում. տեսեք [docs](mdn:/JavaScript/Guide/Expressions_and_Operators#Bitwise)-ում, երբ դրա կարիքը լինի:
 
-Conditional
-: The only operator with three parameters: `cond ? resultA : resultB`. If `cond` is truthy, returns `resultA`, otherwise `resultB`.
+Պայմանական
+: Միակ օպերատորը երեք պարամետրով՝ `cond ? resultA : resultB`։ Եթե `cond` պայմանը ճշմարիտ է, վերադարձվում է `resultA`, հակառակ դեպքում՝ `resultB`։
 
-Logical operators
-: Logical AND `&&` and OR `||` perform short-circuit evaluation and then return the value where it stopped (not necessary `true`/`false`). Logical NOT `!` converts the operand to boolean type and returns the inverse value.
+Տրամաբանական օպերատորներ
+: Տրամաբանական ԵՎ `&&` ու ԿԱՄ `||` օպերատորները իրականացնում են «կարճ միացման» արժեվորում, այնուհետև վերադարձնում են արժեք՝ որտեղ կանգ են առել (պարտադիր չէ `true`/`false`). Տրամաբանական ՈՉ `!` կերպափոխում է օպերանդը տրամաբանական տեսակի և վերադարձնում է հակառակ արժեքը։
 
-Nullish coalescing operator
-: The `??` operator provides a way to choose a defined value from a list of variables. The result of `a ?? b` is `a` unless it's `null/undefined`, then `b`.
+Զրոյական միավորման օպերատոր
+: `??` օպերատորը փոփոխականների ցանկից հատկանշված արժեքի ընտրության հնարավորություն է տալիս: `a ?? b`-ի արդյունքը կլինի `a`, եթե այն `null/undefined` չէ, հակառակ դեպքում՝ `b`:
 
-Comparisons
-: Equality check `==` for values of different types converts them to a number (except `null` and `undefined` that equal each other and nothing else), so these are equal:
+Համեմատություններ
+: հավասարության ստուգումը `==` տարբեր տեսակի արժեքների դեպքում նրանց կերպափոխում է թվի (բացի `null` և `undefined` տեսակներից, որոնք միայն իրար կարող են հավասար լինել), այսպիսով սրանք հավասար են.
 
     ```js run
     alert( 0 == false ); // true
     alert( 0 == '' ); // true
     ```
 
-    Other comparisons convert to a number as well.
+    Այլ համեմատությունները նույնպես արժեքները կերպափոխում են թվի:
 
-    The strict equality operator `===` doesn't do the conversion: different types always mean different values for it.
+    Խիստ հավասարության օպերատորը `===` չի կատարում կերպափոխում․ նրա համար տարբեր տեսակները միշտ ունեն տարբեր արժեքների նշանակությունը։
 
-    Values `null` and `undefined` are special: they equal `==` each other and don't equal anything else.
+    `null` և `undefined` արժեքները հատուկ են․ նրանք հավասար են `==` իրար և ուրիշ ոչնչի հավասար չեն։
 
-    Greater/less comparisons compare strings character-by-character, other types are converted to a number.
+    Մեծ/փոքր համեմատությունները տողերին համեմատում են նիշ-առ-շիշ, մյուս տեսակներին կերպափոխվում են թվի։
 
-Other operators
-: There are few others, like a comma operator.
+Այլ օպերատորներ
+: Կա մի քանի ալյ օպերատոր, օր․՝ ստորակետի օպերատորը։
 
-More in: <info:operators>, <info:comparison>, <info:logical-operators>, <info:nullish-coalescing-operator>.
+Ավելին՝ <info:operators>, <info:comparison>, <info:logical-operators>, <info:nullish-coalescing-operator>։
 
-## Loops
+## Ցիկլներ
 
-- We covered 3 types of loops:
+- Մենք դիտարկել ենք 3 տեսակի ցիկլ․
 
     ```js
     // 1
@@ -197,43 +197,43 @@ More in: <info:operators>, <info:comparison>, <info:logical-operators>, <info:nu
     }
     ```
 
-- The variable declared in `for(let...)` loop is visible only inside the loop. But we can also omit `let` and reuse an existing variable.
-- Directives `break/continue` allow to exit the whole loop/current iteration. Use labels to break nested loops.
+- `for(let...)` ցիկլում հայտարարված փոփոխականը հասանելի է միայն ցիկլի ներսում։ Բայց մենք կարող ենք նաև բաց թողնել `let`-ը և կրկին օգտագործել արդեն իսկ գոյություն ունեցող փոփոխականը:
+- `break/continue` հրահանգները թույլ են տալիս դուրս գալ ամբողջ ցիկլից/ընթացիկ կրկնությունից: Օգտագործեք պիտակներ ներդրված ցիկլները կանգնեցնելու համար։
 
-Details in: <info:while-for>.
+Մանրամասն՝ <info:while-for>։
 
-Later we'll study more types of loops to deal with objects.
+Ավելի ուշ, օբյեկտների հետ աշխատելու համար մենք կուսումնասիրենք ցիկլների ավելի շատ տեսակներ:
 
-## The "switch" construct
+## Կոնստրուկցիա «switch»
 
-The "switch" construct can replace multiple `if` checks. It uses `===` (strict equality) for comparisons.
+կոնստրուկցիա «switch»-ը կարող է փոխարինել մի քանի `if` ստուգումներ. Համեմատությունների ժամանակ այն օգտագործում է `===` խիստ հավասարման օպերատորը։
 
-For instance:
+Օրինակ՝
 
 ```js run
-let age = prompt('Your age?', 18);
+let age = prompt('Ձեր տարի՞քը:', 18);
 
 switch (age) {
   case 18:
-    alert("Won't work"); // the result of prompt is a string, not a number
+    alert("Չի աշխատի"); // prompt-ի վերադարձրած արդյունքը տող է, թիվ չէ
     break;
 
   case "18":
-    alert("This works!");
+    alert("Սա կաշխատի");
     break;
 
   default:
-    alert("Any value not equal to one above");
+    alert("Ցանկացած արժեք՝ վերոնշյալներին ոչ հավասար");
 }
 ```
 
-Details in: <info:switch>.
+Մանրամասն՝ <info:switch>։
 
-## Functions
+## Ֆունկցիաներ
 
-We covered three ways to create a function in JavaScript:
+Մենք դիտարկեցինք JavaScript-ում ֆունկցիաներ ստեղծելու երեք տարբերակ․
 
-1. Function Declaration: the function in the main code flow
+1. Function Declaration -- ֆունկցիան հիմնական կոդի հոսքում․
 
     ```js
     function sum(a, b) {
@@ -243,7 +243,7 @@ We covered three ways to create a function in JavaScript:
     }
     ```
 
-2. Function Expression: the function in the context of an expression
+2. Function Expression -- ֆունկցիան արտահայտության համատեքստում․
 
     ```js
     let sum = function(a, b) {
@@ -253,32 +253,32 @@ We covered three ways to create a function in JavaScript:
     };
     ```
 
-3. Arrow functions:
+3. Սլաքով ֆունկցիաներ․
 
     ```js
-    // expression at the right side
+    // արտահայտությունն աջ կողմում է
     let sum = (a, b) => a + b;
 
-    // or multi-line syntax with { ... }, need return here:
+    // կամ բազմատողանի շարահյուսություն ձևավոր փակագծերով { ... }, այստեղ return-ը անհրաժեշտ է
     let sum = (a, b) => {
       // ...
       return a + b;
     }
 
-    // without arguments
-    let sayHi = () => alert("Hello");
+    // առանց արգումենտների
+    let sayHi = () => alert("Ողջույն");
 
-    // with a single argument
+    // մեկ արգումենտով
     let double = n => n * 2;
     ```
 
 
-- Functions may have local variables: those declared inside its body or its parameter list. Such variables are only visible inside the function.
-- Parameters can have default values: `function sum(a = 1, b = 2) {...}`.
-- Functions always return something. If there's no `return` statement, then the result is `undefined`.
+- Ֆունկցիաները կարող են ունենալ տեղական (local) փոփոխականներ․ դրանք հայտարարվում են իրենց մարմնի ներսում կամ պարամետրերի ցանկում. Նման փոփոխականները հասանելի են միայն ֆունկցիայի ներսում:
+- Պարամետրերը կարող են ունենալ նախնական արժեք․ `function sum(a = 1, b = 2) {...}`։
+- Ֆունկցիաները միշտ ինչ-որ բան են վերադարձնում. եթե չկա `return` հայտարարությունը, ապա արդյունքը `undefined` է։
 
-Details: see <info:function-basics>, <info:arrow-functions-basics>.
+Մանրամասն՝ <info:function-basics>, <info:arrow-functions-basics>։
 
-## More to come
+## Սպասվում է ավելին
 
-That was a brief list of JavaScript features. As of now we've studied only basics. Further in the tutorial you'll find more specials and advanced features of JavaScript.
+Սա JavaScript-ի առանձնահատկությունների համառոտ ցանկն էր: Այս պահի դրությամբ մենք ուսումնասիրել ենք միայն հիմունքները: Այս ձեռնարկում ավելի ուշ կգտնեք JavaScript-ի վերաբերյալ ավելի շատ հատկանիշներ և ընդլայնված առանձնահատկություններ։
