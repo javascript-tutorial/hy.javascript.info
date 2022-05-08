@@ -104,25 +104,25 @@ let sayHi = function() {
 
 Պատասխանը պարզ է. Ֆունկցիայի Արտահայտությունը ստեղծվել է այստեղ որպես `function(…) {…}` վերագրման հայտարարության ներսում. `let sayHi = …;` (statement): Կետ-ստորակետը `;` խորհուրդ է տրվում հայտարարության վերջում, դա ֆունկցիայի շարահյուսության մաս չէ:
 
-Կետ-ստորակետը կարող է լինել ավելի պարզ վերագրման դեպքում, ինչպիսին է `let sayHi = 5;`, այն առկա է նաև ֆունկցիա վերագրելու դեպքում։
+Կետ-ստորակետը կարող է լինել ավելի պարզ վերագրման դեպքում, ինչպիսին է `let sayHi = 5;`, այն առկա է նաև ֆունկցիա վերագրելու դեպքում:
 ````
 
-## Callback ֆունկցիաներ (Հետկանչ)
+## Հետկանչ ֆունկցիաներ
 
-Let's look at more examples of passing functions as values and using function expressions.
+Դիտարկենք ֆունկցիաները որպես արժեքներ փոխանցելու և ֆունկցիաների արտահայտություններ օգտագործելու ավելի շատ օրինակներ:
 
-We'll write a function `ask(question, yes, no)` with three parameters:
+Մենք կգրենք ֆունկցիա `ask(question, yes, no)` երեք պարամետրով:
 
 `question`
-: Text of the question
+: Հարցի տեքստը
 
 `yes`
-: Function to run if the answer is "Yes"
+: Կատարման համար ֆունկցիա, եթե պատասխանը «Դրական» է
 
 `no`
-: Function to run if the answer is "No"
+: Կատարման համար ֆունկցիա, եթե պատասխանը «Բացասական» է
 
-The function should ask the `question` and, depending on the user's answer, call `yes()` or `no()`:
+Ֆունկցիան պետք է հարցնի `question` և, կախված օգտատիրոջ պատասխանից, կանչի `yes()` կամ `no()`.
 
 ```js run
 *!*
@@ -133,24 +133,24 @@ function ask(question, yes, no) {
 */!*
 
 function showOk() {
-  alert( "You agreed." );
+  alert( "Դուք համաձայնեցիք:" );
 }
 
 function showCancel() {
-  alert( "You canceled the execution." );
+  alert( "Դուք չեղարկեցիք կատարումը։" );
 }
 
-// usage: functions showOk, showCancel are passed as arguments to ask
-ask("Do you agree?", showOk, showCancel);
+// օգտագործումը. showOk և showCancel ֆունկցիաները փոխանցվում են ask ֆունկցիային որպես արգումենտներ
+ask("Դուք համաձա՞յն եք:", showOk, showCancel);
 ```
 
-In practice, such functions are quite useful. The major difference between a real-life `ask` and the example above is that real-life functions use more complex ways to interact with the user than a simple `confirm`. In the browser, such function usually draws a nice-looking question window. But that's another story.
+Գործնականում նման ֆունկցիաները բավականին օգտակար են: Հիմնական տարբերությունը «իրական կյանքով» `ask`-ի և վերոնշյալ օրինակի միջև այն է, որ «իրական կյանքով» ֆունկցիաները օգտագործում են ավելի բարդ ուղիներ օգտատիրոջ հետ փոխազդելու համար, քան պարզ `confirm`-ը: Բրաուզերում նման ֆունկցիաները սովորաբար նկարում են գեղեցիկ տեսք ունեցող հարցերի պատուհան: Բայց դա այլ պատմություն է:
 
-**The arguments `showOk` and `showCancel` of `ask` are called *callback functions* or just *callbacks*.**
+**`ask` ֆունկցիայի `showOk` և `showCancel` արգումենտները կոչվում են *callback functions* (հետկանչ ֆունկցիաներ) կամ պարզապես *callbacks* (հետկանչեր):**
 
-The idea is that we pass a function and expect it to be "called back" later if necessary. In our case, `showOk` becomes the callback for "yes" answer, and `showCancel` for "no" answer.
+Գաղափարն այն է, որ մենք փոխանցում ենք ֆունկցիա և ակնկալում, որ այն հետագայում «հետ կկանչվի» անհրաժեշտության դեպքում: Մեր պարագայում `showOk`-ը դառնում է հետկանչ «դրական» պատասխանի համար, իսկ `showCancel`-ը՝ «բացասական» պատասխանի համար:
 
-We can use Function Expressions to write the same function much shorter:
+Մենք կարող ենք օգտագործել Ֆունկցիայի Արտահայտություն՝ նույն ֆունկցիան շատ ավելի հակիրճ գրելու համար.
 
 ```js run no-beautify
 function ask(question, yes, no) {
@@ -160,23 +160,23 @@ function ask(question, yes, no) {
 
 *!*
 ask(
-  "Do you agree?",
-  function() { alert("You agreed."); },
-  function() { alert("You canceled the execution."); }
+  "Դուք համաձա՞յն եք:",
+  function() { alert("Դուք համաձայնեցիք:"); },
+  function() { alert("Դուք չեղարկեցիք կատարումը։"); }
 );
 */!*
 ```
 
-Here, functions are declared right inside the `ask(...)` call. They have no name, and so are called *anonymous*. Such functions are not accessible outside of `ask` (because they are not assigned to variables), but that's just what we want here.
+Այստեղ ֆունկցիաները ճշգրիտ են հայտարարված `ask(...)` կանչի ներսում: Նրանք չունեն անվանում, ուստի կոչվում են *anonymous* (անանուն): Նման ֆունկցիաները հասանելի չեն `ask`-ից դուրս (քանի որ դրանք վերագրված չեն փոփոխականներին), բայց դա հենց այն է, ինչ մենք ուզում ենք այստեղ:
 
-Such code appears in our scripts very naturally, it's in the spirit of JavaScript.
+Շատ բնական է, որ նմանատիպ կոդ է հայտնվում մեր սքրիփթներում, այն JavaScript-ի ոգով է:
 
-```smart header="A function is a value representing an \"action\""
-Regular values like strings or numbers represent the *data*.
+```smart header="Ֆունկցիան արժեք է, որը ներկայացնում է «գործողություն»"
+Սովորական արժեքները, ինչպիսիք են տողերը կամ թվերը, ներկայացնում են *տվյալներ*:
 
-A function can be perceived as an *action*.
+Ֆունկցիան կարող է ընկալվել որպես *գործողություն*։
 
-We can pass it between variables and run when we want.
+Մենք կարող ենք այն փոխանցել փոփոխականների միջև և գործարկել, երբ կցանկանանք:
 ```
 
 
