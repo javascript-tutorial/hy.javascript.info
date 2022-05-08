@@ -1,16 +1,16 @@
-# Սլաքով ֆունկցիաներ, հիմունքներ
+# Arrow functions, the basics
 
-Կա ևս մեկ շատ պարզ ու հակիրճ շարահյուսություն (syntax) ֆունկցիաներ ստեղծելու համար, որը հաճախ ավելի լավ է, քան Function Expression-ը (Ֆունկցիայի Արտահայտություն):
+There's another very simple and concise syntax for creating functions, that's often better than Function Expressions.
 
-Այն կոչվում է «սլաքով ֆունկցիաներ» (arrow functions), քանի որ այն ունի հետևյալ տեսքը.
+It's called "arrow functions", because it looks like this:
 
 ```js
 let func = (arg1, arg2, ..., argN) => expression;
 ```
 
-Սա ստեղծում է ֆունկցիա `func`, որն ընդունում է `arg1..argN` արգումենտները, այնուհետև արժեվորում է `expression`-ը աջ կողմում իրենց կիրառմամբ և վերադարձնում արդյունք։
+This creates a function `func` that accepts arguments `arg1..argN`, then evaluates the `expression` on the right side with their use and returns its result.
 
-Այլ կերպ ասած՝ սա կրճատ տարբերակն է ստորև գրելաձևի.
+In other words, it's the shorter version of:
 
 ```js
 let func = function(arg1, arg2, ..., argN) {
@@ -18,12 +18,12 @@ let func = function(arg1, arg2, ..., argN) {
 };
 ```
 
-Եկեք տեսնենք հստակ օրինակ:
+Let's see a concrete example:
 
 ```js run
 let sum = (a, b) => a + b;
 
-/* Այս սլաքով ֆունկցիան ավելի կրճատ ձև է, քան․
+/* This arrow function is a shorter form of:
 
 let sum = function(a, b) {
   return a + b;
@@ -33,22 +33,22 @@ let sum = function(a, b) {
 alert( sum(1, 2) ); // 3
 ```
 
-Ինչպես տեսնում եք, `(a, b) => a + b` նշանակում է ֆունկցիա, որն ընդունում է երկու արգումենտ՝ `a` և `b` անվանումներով. Կատարման ժամանակ այն արժեվորում է `a + b` արտահայտությունը և վերադարձնում արդյունք։
+As you can see, `(a, b) => a + b` means a function that accepts two arguments named `a` and `b`. Upon the execution, it evaluates the expression `a + b` and returns the result.
 
-- Եթե ունենք միայն մեկ արգումենտ, ապա կոր փակագծերը արգումենտի շուրջ կարելի է չնշել՝ կրճատելով գրելաձևը․
+- If we have only one argument, then parentheses around parameters can be omitted, making that even shorter.
 
-    Օրինակ.
+    For example:
 
     ```js run
     *!*
     let double = n => n * 2;
-    // նույնն է, ինչ․ let double = function(n) { return n * 2 }
+    // roughly the same as: let double = function(n) { return n * 2 }
     */!*
 
     alert( double(3) ); // 6
     ```
 
-- Եթե չկան արգումենտներ, կոր փակագծերը դատարկ են, բայց դրանք պետք է առկա լինեն․
+- If there are no arguments, parentheses are empty, but they must be present:
 
     ```js run
     let sayHi = () => alert("Hello!");
@@ -56,56 +56,56 @@ alert( sum(1, 2) ); // 3
     sayHi();
     ```
 
-Սլաքով ֆունկցիաները կարող են օգտագործվել նույն կերպ, ինչպես Function Expression-ը։
+Arrow functions can be used in the same way as Function Expressions.
 
-Օրինակ՝ դինամիկ կերպով ֆունկցիա ստեղծելու համար․
+For instance, to dynamically create a function:
 
 ```js run
-let age = prompt("Քանի՞ տարեկան եք:", 18);
+let age = prompt("What is your age?", 18);
 
 let welcome = (age < 18) ?
-  () => alert('Ողջույն') :
-  () => alert("Ողջույններ");
+  () => alert('Hello') :
+  () => alert("Greetings!");
 
 welcome();
 ```
 
-Սլաքով ֆունկցիաները սկզբից կարող են անսովոր և ոչ այդքան հեշտ ընթերվող թվալ, բայց դա արագ փոխվում է, երբ աչքերը սովորում են կառուցվածքին:
+Arrow functions may appear unfamiliar and not very readable at first, but that quickly changes as the eyes get used to the structure.
 
-Դրանք շատ հարմար են պարզ, մի տողանի գործողությունների համար, երբ կալարենք գրել ավելի շատ բառեր։
+They are very convenient for simple one-line actions, when we're just too lazy to write many words.
 
-## Բազմատողանի սլաքով ֆունկցիաներ
+## Multiline arrow functions
 
-Սլաքով ֆունկցիաները, որոնք մենք տեսանք մինչ այս, շատ պարզ էին։ Նրանք ստանում էին արգումենտներ `=>`-ի ձախ կողմում, արժեվորում և դրանցով վերադարձնում էին արտահայտությունն աջ կողմում:
+The arrow functions that we've seen so far were very simple. They took arguments from the left of `=>`, evaluated and returned the right-side expression with them.
 
-Երբեմն մեզ պետք է լինում ավելի բարդ ֆունկցիա՝ մի քանի արտահայտություններով և հայտարարություններվ։ Այդ դեպքում կարող ենք դրանք վերցնել ձևավոր փակագծերի մեջ: Հիմնական տարբերությունը նրանում է, որ ձևավոր փակագծերի ժամանակ պատասխան վերադարձնելու համար անհրաժեշտ է օգտագործել `return` նրանց ներսում (ինչպես սովորական ֆունկցիաներում)։
+Sometimes we need a more complex function, with multiple expressions and statements. In that case, we can enclose them in curly braces. The major difference is that curly braces require a `return` within them to return a value (just like a regular function does).
 
-Այսպես․
+Like this:
 
 ```js run
-let sum = (a, b) => {  // ձևավոր փակագիծը բացում է բազմատողանի ֆունկցիան
+let sum = (a, b) => {  // the curly brace opens a multiline function
   let result = a + b;
 *!*
-  return result; // եթե օգտագործում ենք ձևավոր փակագծեր, ապա անհրաժեշտ է հստակ նշել "return"
+  return result; // if we use curly braces, then we need an explicit "return"
 */!*
 };
 
 alert( sum(1, 2) ); // 3
 ```
 
-```smart header="Սպասվում է ավելին"
-Այստեղ գովեցինք սլաքով ֆունկցիաները հակիրճ լինելու համար։ Բայց սա դեռ ամենը չէ։
+```smart header="More to come"
+Here we praised arrow functions for brevity. But that's not all!
 
-Սլաքով ֆունկցիաներն ունեն նաև այլ հետաքրքիր առանձնահատկություններ:
+Arrow functions have other interesting features.
 
-Դրանց խորը ուսումնասիրման համար, մեզ առաջին հերթին պետք է ծանոթանալ JavaScript-ի որոշ այլ ասպեկտների հետ, այնպես որ մենք կվերադառնանք սլաքով ֆունկցիաներին ավելի ուշ՝ <info:arrow-functions> գլխում:
+To study them in-depth, we first need to get to know some other aspects of JavaScript, so we'll return to arrow functions later in the chapter <info:arrow-functions>.
 
-Առայժմ մենք կարող ենք օգտագործել սլաքով ֆունկցիաները մեկ տողանի գործողությունների և հետկանչերի (callback) համար:
+For now, we can already use arrow functions for one-line actions and callbacks.
 ```
 
-## Ամփոփում
+## Summary
 
-Սլաքով ֆունկցիաները հարմար են պարզ գործողությունների համար, հատկապես՝ մեկ տողանի։ Դրանք լինում են երկու տեսակի.
+Arrow functions are handy for simple actions, especially for one-liners. They come in two flavors:
 
-1. Առանց ձևավոր փակագծերի: `(...args) => expression` -- աջ կողմում արտահայտությունն է. ֆունկցիան արժեվորում է այն և վերադարձնում արդյունքը: Կոր փակագծերը կարելի է չնշել, եթե կա միայն մեկ արգումենտ, օր․՝ `n => n*2`։
-2. Ձևավոր փակագծերով․ `(...args) => { body }` -- փակագծերը թույլ են տալիս գրել մի քանի հայտարարություն ֆունկցիայի ներսում, բայց անհրաժեշտ է հստակ նշել `return` պատասխան վերադարձնելու համար:
+1. Without curly braces: `(...args) => expression` -- the right side is an expression: the function evaluates it and returns the result. Parentheses can be omitted, if there's only a single argument, e.g. `n => n*2`.
+2. With curly braces: `(...args) => { body }` -- brackets allow us to write multiple statements inside the function, but we need an explicit `return` to return something.

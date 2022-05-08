@@ -1,7 +1,7 @@
 
-# Վերագրել սլաքով ֆունկցիաների
+# Rewrite with arrow functions
 
-Ստորև կոդում սովորական ֆունկցիաները (Function Expressions) փոխարինել՝ դարձնել սլաքով ֆունկցիաներ․
+Replace Function Expressions with arrow functions in the code below:
 
 ```js run
 function ask(question, yes, no) {
@@ -10,8 +10,8 @@ function ask(question, yes, no) {
 }
 
 ask(
-  "Դուք համաձա՞յն եք:",
-  function() { alert("Դուք համաձայնվեցիք:"); },
-  function() { alert("Դուք չեղարկեցիք կատարումը:"); }
+  "Do you agree?",
+  function() { alert("You agreed."); },
+  function() { alert("You canceled the execution."); }
 );
 ```

@@ -6,12 +6,12 @@ function ask(question, yes, no) {
 }
 
 ask(
-  "Դուք համաձա՞յն եք:",
+  "Do you agree?",
 *!*
-  () => alert("Դուք համաձայնվեցիք:"),
-  () => alert("Դուք չեղարկեցիք կատարումը:")
+  () => alert("You agreed."),
+  () => alert("You canceled the execution.")
 */!*
 );
 ```
 
-Հակիրճ և պարզ տեսք ունի, այդպես չէ՞:
+Looks short and clean, right?
