@@ -191,8 +191,13 @@ let 1a; // փոփոխականի անունը չի կարող սկսել թվով
 let my-name; // գծիկները թույլատրված չեն անուններում
 ```
 
+<<<<<<< HEAD
 ```smart header="Case-ը կարևոր է"
 `apple` և `AppLE` անուններով փոփոխականները նույնը չեն:
+=======
+```smart header="Case matters"
+Variables named `apple` and `APPLE` are two different variables.
+>>>>>>> 206485fc3a5465f961608b6e7303fae2e1a0e0b5
 ```
 
 ````smart header="Ոչ լատիներեն տառերը թույլատրված են, բայց խորհուրդ չի տրվում դրանք օգտագործել"
@@ -297,7 +302,11 @@ const pageLoadTime = /* time taken by a webpage to load */;
 
 `pageLoadTime`-ի արժեքը հայտնի չէ քանի դեռ էջն ամբողջությամբ չի բեռնվել, սակայն այն հաստատուն է, քանի որ արժեքը չի փոխվում:
 
+<<<<<<< HEAD
 Այլ կերպ ասած, մեծատառերով գրված հաստատունները պարունակում են այսպես կոչված «hard-coded» արժեքներ:
+=======
+In other words, capital-named constants are only used as aliases for "hard-coded" values.
+>>>>>>> 206485fc3a5465f961608b6e7303fae2e1a0e0b5
 
 ## Ճիշտ անունների ընտրությունը կարևոր է
 

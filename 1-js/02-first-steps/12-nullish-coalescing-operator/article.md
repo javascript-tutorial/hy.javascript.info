@@ -4,7 +4,11 @@
 
 Null֊ի միավորման օպերատորը գրվում է երկու հարցականի նշանի միջոցով՝ `??`։
 
+<<<<<<< HEAD
 Քանի որ այն վերաբերվում է `null` և `undefined` արժեքներին, մենք կօգտագործենք հատուկ տերմին այս հոդվածում։ Կասենք, որ արտահայտությունը "որոշված" է, եթե դրա արժեքը ո՛չ `null` է, ո՛չ `undefined`։
+=======
+As it treats `null` and `undefined` similarly, we'll use a special term here, in this article. For brevity, we'll say that a value is "defined" when it's neither `null` nor `undefined`.
+>>>>>>> 206485fc3a5465f961608b6e7303fae2e1a0e0b5
 
 `a ?? b` արտահայտության արժեքը կլինի՝
 - եթե `a`֊ն որոշված է, ապա `a`,
@@ -22,9 +26,15 @@ result = (a !== null && a !== undefined) ? a : b;
 
 Հիմա արդեն պետք է պարզ լինի, թե ինչ է անում `??`֊ը։ Տեսնենք, թե որտեղ կարող է այն օգտակար լինել։
 
+<<<<<<< HEAD
 `??`֊ի հաճախ կիրառվում է պոտենցիալ չորոշված փոփոխականի փոխարեն լռելյայն (default) արժեք տալու համար:
 
 Օրինակ, այստեղ ցուցադրում ենք `user`, եթե այն որոշված է, հակառակ դեպքում `Անանուն`․
+=======
+The common use case for `??` is to provide a default value.
+
+For example, here we show `user` if its value isn't `null/undefined`, otherwise `Anonymous`:
+>>>>>>> 206485fc3a5465f961608b6e7303fae2e1a0e0b5
 
 ```js run
 let user;
@@ -42,9 +52,15 @@ alert(user ?? "Անանուն"); // Ջոն (user֊ը որոշված է)
 
 Մենք կարող ենք նաև օգտագործել `??`֊ից կազմված շարան, առաջին ոչ `null/undefined` արժեքը վերցնելու համար։
 
+<<<<<<< HEAD
 Ենթադրենք ունենք օգտատիրոջ տվյալները հետևյալ փոփոխականների մեջ՝ `firstName`, `lastName`, `nickName`։ Դրանք բոլորը կարող են որոշված չլինել, եթե օգտատերը որոշի չմուտքագրել արժեք։
 
 Մենք ցանկանում ենք ցուցադրել օգտատիրոջ անունը, օգտագործելով տրված փոփոխականներից մեկը, կամ ցուցադրել "Անանուն", եթե դրանցից ոչ մեկ որոշված չէ։
+=======
+Let's say we have a user's data in variables `firstName`, `lastName` or `nickName`. All of them may be not defined, if the user decided not to fill in the corresponding values.
+
+We'd like to display the user name using one of these variables, or show "Anonymous" if all of them are `null/undefined`.
+>>>>>>> 206485fc3a5465f961608b6e7303fae2e1a0e0b5
 
 Օգտագործենք `??` օպերատորը․
 
@@ -110,7 +126,11 @@ alert(height ?? 100); // 0
 
 Դա նշանակում է, որ ինչպես `||`֊ի դեպքում, null֊ի միավորման օպերատոր `??`֊ը կատարվում է `=` և `?` օպերատորներից առաջ, բայց շատ այլ օպերատորնեից հետո, ինչպիսիք են `+`, `*`։
 
+<<<<<<< HEAD
 Այսպիսով, եթե մենք օգտագործում ենք `??`֊ը այլ օպերատորների հետ միասին մեկ արտահայտությունում՝ արժեք ընտրելու համար, պետք է նաև ավելացնել փակագծեր․
+=======
+So we may need to add parentheses in expressions like this:
+>>>>>>> 206485fc3a5465f961608b6e7303fae2e1a0e0b5
 
 ```js run
 let height = null;
@@ -128,7 +148,11 @@ alert(area); // 5000
 // առանց փակագծեր
 let area = height ?? 100 * width ?? 50;
 
+<<<<<<< HEAD
 // ...աշխատում է ինչպես հետևյալը (որը այն չէ ինչ մենք ուզում ենք)․
+=======
+// ...works this way (not what we want):
+>>>>>>> 206485fc3a5465f961608b6e7303fae2e1a0e0b5
 let area = height ?? (100 * width) ?? 50;
 ```
 

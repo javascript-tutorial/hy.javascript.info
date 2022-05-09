@@ -89,8 +89,13 @@ let func = sayHi;
 Ամեն ինչ նույն կերպ կաշխատի:
 
 
+<<<<<<< HEAD
 ````smart header="Ինչո՞ւ է վերջում կետ-ստորակետ:"
 Կարող եք զարմանալ, թե ինչու Ֆունկցիայի Արտահայտությունը վերջում ունի կետ-ստորակետ `;`, բայց Ֆունկցիայի Հայտարարությունը չունի.
+=======
+````smart header="Why is there a semicolon at the end?"
+You might wonder, why do Function Expressions have a semicolon `;` at the end, but Function Declarations do not:
+>>>>>>> 206485fc3a5465f961608b6e7303fae2e1a0e0b5
 
 ```js
 function sayHi() {
@@ -144,13 +149,21 @@ function showCancel() {
 ask("Դուք համաձա՞յն եք:", showOk, showCancel);
 ```
 
+<<<<<<< HEAD
 Գործնականում նման ֆունկցիաները բավականին օգտակար են: Հիմնական տարբերությունը «իրական կյանքով» `ask`-ի և վերոնշյալ օրինակի միջև այն է, որ «իրական կյանքով» ֆունկցիաները օգտագործում են ավելի բարդ ուղիներ օգտատիրոջ հետ փոխազդելու համար, քան պարզ `confirm`-ը: Բրաուզերում նման ֆունկցիաները սովորաբար նկարում են գեղեցիկ տեսք ունեցող հարցերի պատուհան: Բայց դա այլ պատմություն է:
+=======
+In practice, such functions are quite useful. The major difference between a real-life `ask` and the example above is that real-life functions use more complex ways to interact with the user than a simple `confirm`. In the browser, such functions usually draw a nice-looking question window. But that's another story.
+>>>>>>> 206485fc3a5465f961608b6e7303fae2e1a0e0b5
 
 **`ask` ֆունկցիայի `showOk` և `showCancel` արգումենտները կոչվում են *callback functions* (հետկանչ ֆունկցիաներ) կամ պարզապես *callbacks* (հետկանչեր):**
 
 Գաղափարն այն է, որ մենք փոխանցում ենք ֆունկցիա և ակնկալում, որ այն հետագայում «հետ կկանչվի» անհրաժեշտության դեպքում: Մեր պարագայում `showOk`-ը դառնում է հետկանչ «դրական» պատասխանի համար, իսկ `showCancel`-ը՝ «բացասական» պատասխանի համար:
 
+<<<<<<< HEAD
 Մենք կարող ենք օգտագործել Ֆունկցիայի Արտահայտություն՝ նույն ֆունկցիան շատ ավելի հակիրճ գրելու համար.
+=======
+We can use Function Expressions to write an equivalent, shorter function:
+>>>>>>> 206485fc3a5465f961608b6e7303fae2e1a0e0b5
 
 ```js run no-beautify
 function ask(question, yes, no) {
@@ -186,7 +199,11 @@ ask(
 
 Առաջին հերթին՝ շարահյությությունը. ինչպես տարանջատել դրանք կոդում:
 
+<<<<<<< HEAD
 - *Function Declaration* - ֆունկցիա՝ հայտարարված որպես առանձին հայտարարություն (statement), հիմնական կոդի հոսքում:
+=======
+- *Function Declaration:* a function, declared as a separate statement, in the main code flow:
+>>>>>>> 206485fc3a5465f961608b6e7303fae2e1a0e0b5
 
     ```js
     // Ֆունկցիայի Հայտարարություն
@@ -194,7 +211,11 @@ ask(
       return a + b;
     }
     ```
+<<<<<<< HEAD
 - *Function Expression* - ֆունկցիա՝ ստեղծված արտահայտության ներսում կամ մեկ այլ շարահյուսական կառուցվածքի ներսում: Այստեղ ֆունկցիան ստեղծվում է «վերագրման արտահայտության» `=` աջ կողմում.
+=======
+- *Function Expression:* a function, created inside an expression or inside another syntax construct. Here, the function is created on the right side of the "assignment expression" `=`:
+>>>>>>> 206485fc3a5465f961608b6e7303fae2e1a0e0b5
 
     ```js
     // Ֆունկցիայի Արտահայտություն
@@ -290,19 +311,32 @@ if (age < 18) {
 *!*
   welcome();                // \   (գործարկվում է)
 */!*
+<<<<<<< HEAD
                             //  |
   function welcome() {      //  |
     alert("Ողջույն");       //  |  Ֆունկցիայի Հայտարարությունը հասանելի է
   }                         //  |  ամենուր՝ բլոկում, որտեղ այն հայտարարված է
                             //  |
+=======
+                           //  |
+  function welcome() {     //  |
+    alert("Hello!");       //  |  Function Declaration is available
+  }                        //  |  everywhere in the block where it's declared
+                           //  |
+>>>>>>> 206485fc3a5465f961608b6e7303fae2e1a0e0b5
 *!*
   welcome();                // /   (գործարկվում է)
 */!*
 
 } else {
 
+<<<<<<< HEAD
   function welcome() {    
     alert("Ողջույններ");
+=======
+  function welcome() {
+    alert("Greetings!");
+>>>>>>> 206485fc3a5465f961608b6e7303fae2e1a0e0b5
   }
 }
 
