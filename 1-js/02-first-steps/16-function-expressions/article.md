@@ -1,4 +1,4 @@
-# Function Expression
+# Ֆունկցիայի Արտահայտություն
 
 Ֆունկցիան JavaScript-ում «լեզվի կախարդական կառուցվածք» չէ, բայց արժեքի հատուկ տեսակ է:
 
@@ -182,199 +182,199 @@ ask(
 
 ## Function Expression vs Function Declaration
 
-Let's formulate the key differences between Function Declarations and Expressions.
+Եկեք ձևակերպենք Ֆունկցիայի Հայտարարության և Արտահայտության միջև հիմնական տարբերությունները:
 
-First, the syntax: how to differentiate between them in the code.
+Առաջին հերթին՝ շարահյությությունը. ինչպես տարանջատել դրանք կոդում:
 
-- *Function Declaration:* a function, declared as a separate statement, in the main code flow.
+- *Function Declaration* - ֆունկցիա՝ հայտարարված որպես առանձին հայտարարություն (statement), հիմնական կոդի հոսքում:
 
     ```js
-    // Function Declaration
+    // Ֆունկցիայի Հայտարարություն
     function sum(a, b) {
       return a + b;
     }
     ```
-- *Function Expression:* a function, created inside an expression or inside another syntax construct. Here, the function is created at the right side of the "assignment expression" `=`:
+- *Function Expression* - ֆունկցիա՝ ստեղծված արտահայտության ներսում կամ մեկ այլ շարահյուսական կառուցվածքի ներսում: Այստեղ ֆունկցիան ստեղծվում է «վերագրման արտահայտության» `=` աջ կողմում.
 
     ```js
-    // Function Expression
+    // Ֆունկցիայի Արտահայտություն
     let sum = function(a, b) {
       return a + b;
     };
     ```
 
-The more subtle difference is *when* a function is created by the JavaScript engine.
+Ավելի նուրբ տարբերությունն այն է, թե *երբ* է ֆունկցիան ստեղծվում JavaScript շարժիչի կողմից:
 
-**A Function Expression is created when the execution reaches it and is usable only from that moment.**
+**Ֆունկցիայի Արտահայտությունը ստեղծվում է, երբ կատարումը հասնում է դրան և կարող է օգտագործվել միայն այդ պահից:**
 
-Once the execution flow passes to the right side of the assignment `let sum = function…` -- here we go, the function is created and can be used (assigned, called, etc. ) from now on.
+Երբ կատարման հոսքն անցնում է վերագրման աջ կողմ `let sum = function…`, այդ պահից սկսած ֆունկցիան համարվում է ստեղծված և կարող է օգտագործվել (վերագրվել, կանչվել, և այլն․․․):
 
-Function Declarations are different.
+Ֆունկցիայի Հայտարարությունները տարբեր են:
 
-**A Function Declaration can be called earlier than it is defined.**
+**Ֆունկցիայի Հայտարարությունը կարող է կանչվել ավելի վաղ, քան այն սահմանվել է:**
 
-For example, a global Function Declaration is visible in the whole script, no matter where it is.
+Օրինակ՝ գլոբալ Ֆունկցիայի Հայտարարությունը հասանելի է ամբողջ սքրիփթում, անկախ նրանից, թե որտեղ է այն գտնվում:
 
-That's due to internal algorithms. When JavaScript prepares to run the script, it first looks for global Function Declarations in it and creates the functions. We can think of it as an "initialization stage".
+Դա պայմանավորված է ներքին ալգորիթմներով: Երբ JavaScript-ը պատրաստվում է գործարկել սքրիփթը, այն նախ որոնում է գլոբալ Ֆունկցիայի Հայտարարությունները և ստեղծում ֆունկցիաները: Մենք կարող ենք դա համարել որպես «նախաձեռնման փուլ»:
 
-And after all Function Declarations are processed, the code is executed. So it has access to these functions.
+ԵՎ այն բանից հետո, երբ բոլոր Ֆունկցիայի Հայտարարությունները մշակվել են, կոդը կատարվում է: Այսպիսով, այն ունի հասանելիություն այս ֆունկցիաներին:
 
-For example, this works:
+Օրինակ՝ սա աշխատում է.
 
 ```js run refresh untrusted
 *!*
-sayHi("John"); // Hello, John
+sayHi("Պողոս"); // Ողջույն Պողոս
 */!*
 
 function sayHi(name) {
-  alert( `Hello, ${name}` );
+  alert( `Ողջույն ${name}` );
 }
 ```
 
-The Function Declaration `sayHi` is created when JavaScript is preparing to start the script and is visible everywhere in it.
+Ֆունկցիայի հայտարարությունը `sayHi` ստեղծվում է, երբ JavaScript-ը պատրաստվում է սկսել սքրիփթը և դրա մեջ ամենուր տեսանելի է:
 
-...If it were a Function Expression, then it wouldn't work:
+...Եթե դա լիներ Ֆունկցիայի Արտահայտություն, ապա այն չէր աշխատի.
 
 ```js run refresh untrusted
 *!*
-sayHi("John"); // error!
+sayHi("Պողոս"); // սխալ
 */!*
 
-let sayHi = function(name) {  // (*) no magic any more
-  alert( `Hello, ${name}` );
+let sayHi = function(name) {  // (*) այլևս ոչ մի կախարդանք
+  alert( `Ողջույն ${name}` );
 };
 ```
 
-Function Expressions are created when the execution reaches them. That would happen only in the line `(*)`. Too late.
+Ֆունկցիայի Արտահայտությունները ստեղծվում են, երբ կատարումը հասնում է դրանց: Դա տեղի կունենա միայն `(*)` տողում՝ չափազանց ուշ։
 
-Another special feature of Function Declarations is their block scope.
+Ֆունկցիայի Արտահայտությունների մեկ այլ առանձնահատկություն է նրանց բլոկային տեսադաշտը։
 
-**In strict mode, when a Function Declaration is within a code block, it's visible everywhere inside that block. But not outside of it.**
+**Խիստ ռեժիմում, երբ Ֆունկցիայի Հայտարարությունը գտնվում է կոդի բլոկի ներսում, այն տեսանելի է ամենուր՝ այդ բլոկի ներսում, բայց՝ ոչ դրանից դուրս:**
 
-For instance, let's imagine that we need to declare a function `welcome()` depending on the `age` variable that we get during runtime. And then we plan to use it some time later.
+Օրինակ՝ եկեք պատկերացնենք, որ մենք պետք է հայտարարենք `welcome()` ֆունկցիան՝ կախված `age` փոփոխականից, որը մենք ստանում ենք գործարկման ընթացքում: Եվ հետո մենք նախատեսում ենք օգտագործել այն որոշ ժամանակ անց:
 
-If we use Function Declaration, it won't work as intended:
+Եթե մենք օգտագործում ենք Ֆունկցիայի Հայտարարություն, այն չի աշխատի այնպես, ինչպես նախատեսված էր.
 
 ```js run
-let age = prompt("What is your age?", 18);
+let age = prompt("Քանի՞ տարեկան եք:", 18);
 
 // conditionally declare a function
 if (age < 18) {
 
   function welcome() {
-    alert("Hello!");
+    alert("Ողջույն");
   }
 
 } else {
 
   function welcome() {
-    alert("Greetings!");
+    alert("Ողջույններ");
   }
 
 }
 
-// ...use it later
+// ...օգտագործել ավելի ուշ
 *!*
-welcome(); // Error: welcome is not defined
+welcome(); // սխալ` welcome is not defined
 */!*
 ```
 
-That's because a Function Declaration is only visible inside the code block in which it resides.
+Դա պայմանավորված է նրանով, որ Ֆունկցիայի Հայտարարությունը տեսանելի է միայն կոդի բլոկի ներսում, որտեղ այն գտնվում է:
 
-Here's another example:
+Ահա ևս մեկ օրինակ.
 
 ```js run
-let age = 16; // take 16 as an example
+let age = 16; // օրինակի համար վերցրեք 16
 
 if (age < 18) {
 *!*
-  welcome();               // \   (runs)
+  welcome();                // \   (գործարկվում է)
 */!*
-                           //  |
-  function welcome() {     //  |  
-    alert("Hello!");       //  |  Function Declaration is available
-  }                        //  |  everywhere in the block where it's declared
-                           //  |
+                            //  |
+  function welcome() {      //  |
+    alert("Ողջույն");       //  |  Ֆունկցիայի Հայտարարությունը հասանելի է
+  }                         //  |  ամենուր՝ բլոկում, որտեղ այն հայտարարված է
+                            //  |
 *!*
-  welcome();               // /   (runs)
+  welcome();                // /   (գործարկվում է)
 */!*
 
 } else {
 
   function welcome() {    
-    alert("Greetings!");
+    alert("Ողջույններ");
   }
 }
 
-// Here we're out of curly braces,
-// so we can not see Function Declarations made inside of them.
+// Այստեղ մենք ձևավոր փակագծերից դուրս ենք,
+// այնպես որ մենք չենք կարող տեսնել դրանց ներսում ստեղծված Ֆունկցիայի Հայտարարությունները:
 
 *!*
-welcome(); // Error: welcome is not defined
+welcome(); // սխալ՝ welcome is not defined
 */!*
 ```
 
-What can we do to make `welcome` visible outside of `if`?
+Ի՞նչ կարող ենք անել, որպեսզի `welcome`-ը դարձնենք տեսանելի `if`-ից դուրս:
 
-The correct approach would be to use a Function Expression and assign `welcome` to the variable that is declared outside of `if` and has the proper visibility.
+Ճիշտ մոտեցումը կլինի՝ օգտագործել Ֆունկցիայի Արտահայտություն և վերագրել `welcome`-ը փոփոխականին, որը հայտարարված է `if`-ից դուրս և ունի համապատասխան տեսանելիություն:
 
-This code works as intended:
+Այս կոդը աշխատում է այնպես, ինչպես նախատեսված է.
 
 ```js run
-let age = prompt("What is your age?", 18);
+let age = prompt("Քանի՞ տարեկան եք:", 18);
 
 let welcome;
 
 if (age < 18) {
 
   welcome = function() {
-    alert("Hello!");
+    alert("Ողջույն");
   };
 
 } else {
 
   welcome = function() {
-    alert("Greetings!");
+    alert("Ողջույններ");
   };
 
 }
 
 *!*
-welcome(); // ok now
+welcome(); // այժմ նորմալ է
 */!*
 ```
 
-Or we could simplify it even further using a question mark operator `?`:
+Կամ մենք կարող ենք այն էլ ավելի պարզեցնել՝ օգտագործելով `?` հարցական նշանի օպերատոր.
 
 ```js run
-let age = prompt("What is your age?", 18);
+let age = prompt("Քանի՞ տարեկան եք:", 18);
 
 let welcome = (age < 18) ?
-  function() { alert("Hello!"); } :
-  function() { alert("Greetings!"); };
+  function() { alert("Ողջույն"); } :
+  function() { alert("Ողջույններ"); };
 
 *!*
-welcome(); // ok now
+welcome(); // այժմ նորմալ է
 */!*
 ```
 
 
-```smart header="When to choose Function Declaration versus Function Expression?"
-As a rule of thumb, when we need to declare a function, the first to consider is Function Declaration syntax. It gives more freedom in how to organize our code, because we can call such functions before they are declared.
+```smart header="Ե՞րբ օգտագործել Ֆունկցիայի Հայտարարություն, երբ՝ Ֆունկցիայի Արտահայտություն:"
+Որպես հիմնական կանոն, երբ մենք պետք է հայտարարենք ֆունկցիա, առաջին հերթին պետք է հաշվի առնել Ֆունկցիայի Հայտարարության շարահուսությունը: Այն ավելի շատ ազատություն է տալիս մեր կոդի դասավորության հարցում, քանի որ մենք կարող ենք կանչել այդպիսի ֆունկցիաները նախքան նրանց հայտարարումը:
 
-That's also better for readability, as it's easier to look up `function f(…) {…}` in the code than `let f = function(…) {…};`. Function Declarations are more "eye-catching".
+Դա նաև ավելի լավ է ընթեռնելիության համար, քանի որ կոդում ավելի հեշտ է փնտրել `function f(…) {…}`, քան՝ `let f = function(…) {…};`: Ֆունկցիայի Հայտարարություններն ավելի «աչք են գրավում»:
 
-...But if a Function Declaration does not suit us for some reason, or we need a conditional declaration (we've just seen an example), then Function Expression should be used.
+...Բայց եթե Ֆունկցիայի Հայտարարությունն ինչ-ինչ պատճառներով մեզ չի համապատասխանում, կամ մեզ անհրաժեշտ է պայմանական հայտարարագիր (մենք հենց նոր տեսանք օրինակը), ապա պետք է օգտագործվի Ֆունկցիայի Արտահայտություն:
 ```
 
-## Summary
+## Ամփոփում
 
-- Functions are values. They can be assigned, copied or declared in any place of the code.
-- If the function is declared as a separate statement in the main code flow, that's called a "Function Declaration".
-- If the function is created as a part of an expression, it's called a "Function Expression".
-- Function Declarations are processed before the code block is executed. They are visible everywhere in the block.
-- Function Expressions are created when the execution flow reaches them.
+- Ֆունկցիաներն արժեքներ են: Դրանք կարող են նշանակվել, պատճենվել կամ հայտարարվել կոդի ցանկացած վայրում:
+- Եթե հիմնական կոդի հոսքում ֆունկցիան հայտարարագրվում է որպես առանձին հայտարարություն, դա կոչվում է «Ֆունկցիայի Հայտարարություն» (Function Declaration):
+- Եթե ֆունկցիան ստեղծվում է որպես արտահայտության մաս, այն կոչվում է «Ֆունկցիայի Արտահայտություն» (Function Expression):
+- Ֆունկցիայի Հայտարարությունները մշակվում են նախքան կոդի բլոկի գործարկումը: Դրանք տեսանելի են բլոկում ամենուր:
+- Ֆունկցիայի Արտահայտությունները ստեղծվում են, երբ կատարողական հոսքը հասնում է նրանց:
 
-In most cases when we need to declare a function, a Function Declaration is preferable, because it is visible prior to the declaration itself. That gives us more flexibility in code organization, and is usually more readable.
+Շատ դեպքերում, երբ մենք պետք է հայտարարագրենք ֆունկցիա, գերադասելի է Ֆունկցիայի Հայտարարությունը, քանի որ այն տեսանելի է նախքան հայտարարագրումը: Դա մեզ ավելի շատ ճկունություն է տալիս կոդի կազմակերպման մեջ և սովորաբար ավելի ընթեռնելի է:
 
-So we should use a Function Expression only when a Function Declaration is not fit for the task. We've seen a couple of examples of that in this chapter, and will see more in the future.
+Այսպիսով, մենք պետք է օգտագործենք Ֆունկցիայի Արտահայտություն միայն այն դեպքում, երբ Ֆունկցիայի Հայտարարությունը հարմար չէ առաջադրանքի համար: Մենք տեսել ենք դրա մի քանի օրինակ այս գլխում և ավելին կտեսնենք հետագայում:
