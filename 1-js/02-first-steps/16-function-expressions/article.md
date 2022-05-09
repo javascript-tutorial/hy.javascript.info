@@ -359,22 +359,22 @@ welcome(); // այժմ նորմալ է
 ```
 
 
-```smart header="When to choose Function Declaration versus Function Expression?"
-As a rule of thumb, when we need to declare a function, the first to consider is Function Declaration syntax. It gives more freedom in how to organize our code, because we can call such functions before they are declared.
+```smart header="Ե՞րբ օգտագործել Ֆունկցիայի Հայտարարություն, երբ՝ Ֆունկցիայի Արտահայտություն:"
+Որպես հիմնական կանոն, երբ մենք պետք է հայտարարենք ֆունկցիա, առաջին հերթին պետք է հաշվի առնել Ֆունկցիայի Հայտարարության շարահուսությունը: Այն ավելի շատ ազատություն է տալիս մեր կոդի դասավորության հարցում, քանի որ մենք կարող ենք կանչել այդպիսի ֆունկցիաները նախքան նրանց հայտարարումը:
 
-That's also better for readability, as it's easier to look up `function f(…) {…}` in the code than `let f = function(…) {…};`. Function Declarations are more "eye-catching".
+Դա նաև ավելի լավ է ընթեռնելիության համար, քանի որ կոդում ավելի հեշտ է փնտրել `function f(…) {…}`, քան՝ `let f = function(…) {…};`: Ֆունկցիայի Հայտարարություններն ավելի «աչք են գրավում»:
 
-...But if a Function Declaration does not suit us for some reason, or we need a conditional declaration (we've just seen an example), then Function Expression should be used.
+...Բայց եթե Ֆունկցիայի Հայտարարությունն ինչ-ինչ պատճառներով մեզ չի համապատասխանում, կամ մեզ անհրաժեշտ է պայմանական հայտարարագիր (մենք հենց նոր տեսանք օրինակը), ապա պետք է օգտագործվի Ֆունկցիայի Արտահայտություն:
 ```
 
-## Summary
+## Ամփոփում
 
-- Functions are values. They can be assigned, copied or declared in any place of the code.
-- If the function is declared as a separate statement in the main code flow, that's called a "Function Declaration".
-- If the function is created as a part of an expression, it's called a "Function Expression".
-- Function Declarations are processed before the code block is executed. They are visible everywhere in the block.
-- Function Expressions are created when the execution flow reaches them.
+- Ֆունկցիաներն արժեքներ են: Դրանք կարող են նշանակվել, պատճենվել կամ հայտարարվել կոդի ցանկացած վայրում:
+- Եթե հիմնական կոդի հոսքում ֆունկցիան հայտարարագրվում է որպես առանձին հայտարարություն, դա կոչվում է «Ֆունկցիայի Հայտարարություն» (Function Declaration):
+- Եթե ֆունկցիան ստեղծվում է որպես արտահայտության մաս, այն կոչվում է «Ֆունկցիայի Արտահայտություն» (Function Expression):
+- Ֆունկցիայի Հայտարարությունները մշակվում են նախքան կոդի բլոկի գործարկումը: Դրանք տեսանելի են բլոկում ամենուր:
+- Ֆունկցիայի Արտահայտությունները ստեղծվում են, երբ կատարողական հոսքը հասնում է նրանց:
 
-In most cases when we need to declare a function, a Function Declaration is preferable, because it is visible prior to the declaration itself. That gives us more flexibility in code organization, and is usually more readable.
+Շատ դեպքերում, երբ մենք պետք է հայտարարագրենք ֆունկցիա, գերադասելի է Ֆունկցիայի Հայտարարությունը, քանի որ այն տեսանելի է նախքան հայտարարագրումը: Դա մեզ ավելի շատ ճկունություն է տալիս կոդի կազմակերպման մեջ և սովորաբար ավելի ընթեռնելի է:
 
-So we should use a Function Expression only when a Function Declaration is not fit for the task. We've seen a couple of examples of that in this chapter, and will see more in the future.
+Այսպիսով, մենք պետք է օգտագործենք Ֆունկցիայի Արտահայտություն միայն այն դեպքում, երբ Ֆունկցիայի Հայտարարությունը հարմար չէ առաջադրանքի համար: Մենք տեսել ենք դրա մի քանի օրինակ այս գլխում և ավելին կտեսնենք հետագայում:
