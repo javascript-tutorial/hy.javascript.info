@@ -1,35 +1,35 @@
-# Conditional branching: if, '?'
+# Պայմանական ճյուղավորում. if, ?
 
-Sometimes, we need to perform different actions based on different conditions.
+Երբեմն, մենք կարիք ենք ունենում կատարել տարբեր գործողություններ՝ կախված տարբեր պայմաններից։
 
-To do that, we can use the `if` statement and the conditional operator `?`, that's also called a "question mark" operator.
+Դա անելու համար մենք կարող ենք օգտագործել `if` դրույթը և `?` պայմանական օպերատորը: Վերջինս նաև կոչվում է «հարցական նշան»-ի օպերատոր։
 
-## The "if" statement
+## «if» դրույթը
 
-The `if(...)` statement evaluates a condition in parentheses and, if the result is `true`, executes a block of code.
+`if(...)` դրույթը արժեվորում է փակագծերում նշված պայմանը և, եթե արդյունքը `true` է, ապա կատարում է կոդի բլոկը:
 
-For example:
+Օրինակ.
 
 ```js run
-let year = prompt('In which year was ECMAScript-2015 specification published?', '');
+let year = prompt('Ո՞ր թվականին է թողարկվել ECMAScript-2015 ստանդարտը:', '');
 
 *!*
-if (year == 2015) alert( 'You are right!' );
+if (year == 2015) alert( 'Դուք ճիշտ եք:' );
 */!*
 ```
 
-In the example above, the condition is a simple equality check (`year == 2015`), but it can be much more complex.
+Վերոնշյալ օրինակում պայմանը ստուգում է պարզ հավասարություն (`year == 2015`), բայց այն կարող է շատ ավելի բարդ լինել:
 
-If we want to execute more than one statement, we have to wrap our code block inside curly braces:
+Եթե մենք ցանկանում ենք կատարել մեկից ավել դրույթներ, ապա մեր կոդի հատվածը պետք է վերցնենք ձևավոր փակագծերի մեջ:
 
 ```js
 if (year == 2015) {
-  alert( "That's correct!" );
-  alert( "You're so smart!" );
+  alert( "Ճիշտ է:" );
+  alert( "Դուք այնքան խելացի եք․․․" );
 }
 ```
 
-We recommend wrapping your code block with curly braces `{}` every time you use an `if` statement, even if there is only one statement to execute. Doing so improves readability.
+Մենք խորհուրդ ենք տալիս պատել կոդի հատվածը ձևավոր փակագծերով {} ամեն անգամ, երբ օգտագործում եք if արտահայտությունը, նույնիսկ եթե կատարման համար առկա է միայն մեկ գործողություն։ Այդպես բարելավվում է ընթեռնելիությունը:
 
 ## Boolean conversion
 
