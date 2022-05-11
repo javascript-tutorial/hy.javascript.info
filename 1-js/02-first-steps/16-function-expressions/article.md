@@ -344,7 +344,6 @@ welcome(); // այժմ նորմալ է
 */!*
 ```
 
-Or we could simplify it even further using a question mark operator `?`:
 Կամ մենք կարող ենք այն էլ ավելի պարզեցնել՝ օգտագործելով `?` հարցական նշանի օպերատոր.
 
 ```js run
@@ -359,14 +358,6 @@ welcome(); // այժմ նորմալ է
 */!*
 ```
 
-
-```smart header="When to choose Function Declaration versus Function Expression?"
-As a rule of thumb, when we need to declare a function, the first to consider is Function Declaration syntax. It gives more freedom in how to organize our code, because we can call such functions before they are declared.
-
-That's also better for readability, as it's easier to look up `function f(…) {…}` in the code than `let f = function(…) {…};`. Function Declarations are more "eye-catching".
-
-...But if a Function Declaration does not suit us for some reason, or we need a conditional declaration (we've just seen an example), then Function Expression should be used.
-```
 
 ```smart header="Ե՞րբ օգտագործել Ֆունկցիոնալ Հռչակագիր, երբ՝ Ֆունկցիոնալ Արտահայտություն:"
 Որպես հիմնական կանոն, երբ մենք պետք է հայտարարենք ֆունկցիա, առաջին հերթին պետք է հաշվի առնել Ֆունկցիոնալ Հռչակագրի շարահուսությունը: Այն ավելի շատ ազատություն է տալիս այն հարցում, թի ինչպես կազմակերպենք մեր կոդը, քանի որ մենք կարող ենք կանչել այդպիսի ֆունկցիաները նախքան նրանց հռչակումը:
