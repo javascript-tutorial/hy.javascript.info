@@ -1,96 +1,96 @@
-# Ֆունկցիայի Արտահայտություն
+# Function expressions
 
-Ֆունկցիան JavaScript-ում «լեզվի կախարդական կառուցվածք» չէ, բայց արժեքի հատուկ տեսակ է:
+In JavaScript, a function is not a "magical language structure", but a special kind of value.
 
-Այն շարահյուսությունը, որ մինչ այս օգտագործել ենք, կոչվում է *Function Declaration* (Ֆունկցիայի Հայտարարություն):
+The syntax that we used before is called a *Function Declaration*:
 
 ```js
 function sayHi() {
-  alert( "Ողջույն" );
+  alert( "Hello" );
 }
 ```
 
-Կա նաև այլ շարահյուսություն, որը կոչվում է *Function Expression* (Ֆունկցիայի Արտահայտություն):
+There is another syntax for creating a function that is called a *Function Expression*.
 
-Դա մեզ թույլ է տալիս ստեղծել նոր ֆունկցիա ցանկացած արտահայտության մեջտեղում:
+It allows us to create a new function in the middle of any expression.
 
-Օրինակ.
+For example:
 
 ```js
 let sayHi = function() {
-  alert( "Ողջույն" );
+  alert( "Hello" );
 };
 ```
 
-Այստեղ մենք կարող ենք տեսնել, որ `sayHi` փոփոխականը ստանում է արժեք՝ նոր ֆունկցիա, որը ստեղծվել է այսպես՝ `function() { alert("Ողջույն"); }`:
+Here we can see a variable `sayHi` getting a value, the new function, created as `function() { alert("Hello"); }`.
 
-Քանի որ ֆունկցիայի ստեղծումը տեղի է ունենում վերագրման արտահայտության համատեքստում (`=` նշանի աջ կողմում), ապա սա *Function Expression* է:
+As the function creation happens in the context of the assignment expression (to the right side of `=`), this is a *Function Expression*.
 
-Նկատի ունեցեք, որ `function` հիմնաբառից հետո չկա անվանում: Անվան բացթողումը թույլատրելի է Ֆունկցիայի Արտահայտությունների համար:
+Please note, there's no name after the `function` keyword. Omitting a name is allowed for Function Expressions.
 
-Այստեղ մենք անմիջապես վերագրում ենք այն փոփոխականին, ուստի այս կոդի նմուշների իմաստը նույնն է. «ստեղծել ֆունկցիա և տեղադրել այն `sayHi` փոփոխականում»:
+Here we immediately assign it to the variable, so the meaning of these code samples is the same: "create a function and put it into the variable `sayHi`".
 
-Ավելի առաջադեմ իրավիճակներում, որոնց մենք հետո կհանդիպենք, ֆունկցիան կարող է ստեղծվել և անմիջապես կանչվել կամ պլանավորվել ավելի ուշ գործարկման համար, ոչ մի տեղ չպահվել, այդպիսով մնալով անանուն:
+In more advanced situations, that we'll come across later, a function may be created and immediately called or scheduled for a later execution, not stored anywhere, thus remaining anonymous.
 
-## Ֆունկցիան արժեք է
+## Function is a value
 
-Եկեք կրկնենք. անկախ նրանից, թե ինչպես է ստեղծվում ֆունկցիան, այն արժեք է: Վերոնշյալ երկու օրինակներն էլ պահում են ֆունկցիան `sayHi` փոփոխականում:
+Let's reiterate: no matter how the function is created, a function is a value. Both examples above store a function in the `sayHi` variable.
 
-Մենք կարող ենք նույնիսկ տպել այդ արժեքը՝ օգտագործելով `alert`.
+We can even print out that value using `alert`:
 
 ```js run
 function sayHi() {
-  alert( "Ողջույն" );
+  alert( "Hello" );
 }
 
 *!*
-alert( sayHi ); // ցուցադրում է ֆունկցիայի կոդը
+alert( sayHi ); // shows the function code
 */!*
 ```
 
-Նկատի ունեցեք, որ վերջին տողը չի գործարկում ֆունկցիան, որովհետև `sayHi`-ից հետո չկան փակագծեր: Կան ծրագրավորման լեզուներ, որտեղ ֆունկցիայի անվան ցանկացած հիշատակում հանգեցնում է դրա գործարկմանը, բայց JavaScript-ը այդպիսին չէ։
+Please note that the last line does not run the function, because there are no parentheses after `sayHi`. There are programming languages where any mention of a function name causes its execution, but JavaScript is not like that.
 
-JavaScript-ում ֆունկցիան արժեք է, այնպես որ մենք կարող ենք դրան վերաբերվել որպես արժեքի: Վերոնշյալ կոդը ցույց է տալիս իր տողային ներկայացումը, որը սկզբնական կոդը է:
+In JavaScript, a function is a value, so we can deal with it as a value. The code above shows its string representation, which is the source code.
 
-Անշուշտ, ֆունկցիան հատուկ արժեք է, այն իմաստով, որ մենք կարող ենք այն կանչել որպես `sayHi()`:
+Surely, a function is a special value, in the sense that we can call it like `sayHi()`.
 
-Բայց դա դեռևս արժեք է: Այսպիսով, մենք կարող ենք աշխատել դրա հետ, ինչպես այլ տեսակի արժեքների հետ:
+But it's still a value. So we can work with it like with other kinds of values.
 
-Մենք կարող ենք պատճենել ֆունկցիան մեկ այլ փոփոխականում.
+We can copy a function to another variable:
 
 ```js run no-beautify
-function sayHi() {     // (1) ստեղծել
-  alert( "Ողջույն" );
+function sayHi() {   // (1) create
+  alert( "Hello" );
 }
 
-let func = sayHi;      // (2) պատճենել
+let func = sayHi;    // (2) copy
 
-func(); // Ողջույն     // (3) գործարկել կրկնօրինակը (սա աշխատում է)
-sayHi(); // Ողջույն    //     սա նույնպես դեռ աշխատում է (ինչու ոչ)
+func(); // Hello     // (3) run the copy (it works)!
+sayHi(); // Hello    //     this still works too (why wouldn't it)
 ```
 
-Ահա մանրամասն, թե ինչ է տեղի ունենում վերևում.
+Here's what happens above in detail:
 
-1. Ֆունկցիայի Հայտարարությունը `(1)` ստեղծում է ֆունկցիա և տեղադրում այն `sayHi` փոփոխականում:
-2. Տող `(2)`-ը պատճենում է այն `func` փոփոխականում: Կրկին նկատի ունեցեք. `sayHi`-ից հետո չկան փակագծեր: Եթե լինեին, ապա `func = sayHi()` կվերագրեր `sayHi()`-ի *կանչվելու արդյունքը* `func`-ին, այլ ոչ թե հենց `sayHi` *ֆունկցիան*:
-3. Այժմ երկու եղանակով էլ ֆունկցիան կարող է կանչվել՝ `sayHi()` և `func()`:
+1. The Function Declaration `(1)` creates the function and puts it into the variable named `sayHi`.
+2. Line `(2)` copies it into the variable `func`. Please note again: there are no parentheses after `sayHi`. If there were, then `func = sayHi()` would write  *the result of the call* `sayHi()` into `func`, not *the function* `sayHi` itself.
+3. Now the function can be called as both `sayHi()` and `func()`.
 
-Մենք `sayHi` հայտարարելու համար կարող էինք նաև օգտագործել Ֆունկցիայի Արտահայտություն՝ առաջին տողում.
+We could also have used a Function Expression to declare `sayHi`, in the first line:
 
 ```js
-let sayHi = function() { // (1) ստեղծել
-  alert( "Ողջույն" );
+let sayHi = function() { // (1) create
+  alert( "Hello" );
 };
 
 let func = sayHi;
 // ...
 ```
 
-Ամեն ինչ նույն կերպ կաշխատի:
+Everything would work the same.
 
 
-````smart header="Ինչո՞ւ է վերջում կետ-ստորակետ:"
-Կարող եք զարմանալ, թե ինչու Ֆունկցիայի Արտահայտությունը վերջում ունի կետ-ստորակետ `;`, բայց Ֆունկցիայի Հայտարարությունը չունի.
+````smart header="Why is there a semicolon at the end?"
+You might wonder, why do Function Expressions have a semicolon `;` at the end, but Function Declarations do not:
 
 ```js
 function sayHi() {
@@ -102,27 +102,27 @@ let sayHi = function() {
 }*!*;*/!*
 ```
 
-Պատասխանը պարզ է. Ֆունկցիայի Արտահայտությունը ստեղծվել է այստեղ որպես `function(…) {…}` վերագրման հայտարարության ներսում. `let sayHi = …;` (statement): Կետ-ստորակետը `;` խորհուրդ է տրվում հայտարարության վերջում, դա ֆունկցիայի շարահյուսության մաս չէ:
+The answer is simple: a Function Expression is created here as `function(…) {…}` inside the assignment statement: `let sayHi = …;`. The semicolon `;` is recommended at the end of the statement, it's not a part of the function syntax.
 
-Կետ-ստորակետը կարող է լինել ավելի պարզ վերագրման դեպքում, ինչպիսին է `let sayHi = 5;`, այն առկա է նաև ֆունկցիա վերագրելու դեպքում:
+The semicolon would be there for a simpler assignment, such as `let sayHi = 5;`, and it's also there for a function assignment.
 ````
 
-## Հետկանչ ֆունկցիաներ
+## Callback functions
 
-Դիտարկենք ֆունկցիաները որպես արժեքներ փոխանցելու և ֆունկցիաների արտահայտություններ օգտագործելու ավելի շատ օրինակներ:
+Let's look at more examples of passing functions as values and using function expressions.
 
-Մենք կգրենք ֆունկցիա `ask(question, yes, no)` երեք պարամետրով:
+We'll write a function `ask(question, yes, no)` with three parameters:
 
 `question`
-: Հարցի տեքստը
+: Text of the question
 
 `yes`
-: Գործարկման համար ֆունկցիա, եթե պատասխանը «Դրական» է
+: Function to run if the answer is "Yes"
 
 `no`
-: Գործարկման համար ֆունկցիա, եթե պատասխանը «Բացասական» է
+: Function to run if the answer is "No"
 
-Ֆունկցիան պետք է հարցնի `question` և, կախված օգտատիրոջ պատասխանից, կանչի `yes()` կամ `no()`.
+The function should ask the `question` and, depending on the user's answer, call `yes()` or `no()`:
 
 ```js run
 *!*
@@ -133,24 +133,24 @@ function ask(question, yes, no) {
 */!*
 
 function showOk() {
-  alert( "Դուք համաձայնեցիք:" );
+  alert( "You agreed." );
 }
 
 function showCancel() {
-  alert( "Դուք չեղարկեցիք գործարկումը։" );
+  alert( "You canceled the execution." );
 }
 
-// օգտագործումը. showOk և showCancel ֆունկցիաները փոխանցվում են ask ֆունկցիային որպես արգումենտներ
-ask("Դուք համաձա՞յն եք:", showOk, showCancel);
+// usage: functions showOk, showCancel are passed as arguments to ask
+ask("Do you agree?", showOk, showCancel);
 ```
 
-Գործնականում նման ֆունկցիաները բավականին օգտակար են: Հիմնական տարբերությունը «իրական կյանքով» `ask`-ի և վերոնշյալ օրինակի միջև այն է, որ «իրական կյանքով» ֆունկցիաները օգտագործում են ավելի բարդ ուղիներ օգտատիրոջ հետ փոխազդելու համար, քան պարզ `confirm`-ը: Բրաուզերում նման ֆունկցիաները սովորաբար նկարում են գեղեցիկ տեսք ունեցող հարցերի պատուհան: Բայց դա այլ պատմություն է:
+In practice, such functions are quite useful. The major difference between a real-life `ask` and the example above is that real-life functions use more complex ways to interact with the user than a simple `confirm`. In the browser, such functions usually draw a nice-looking question window. But that's another story.
 
-**`ask` ֆունկցիայի `showOk` և `showCancel` արգումենտները կոչվում են *callback functions* (հետկանչ ֆունկցիաներ) կամ պարզապես *callbacks* (հետկանչեր):**
+**The arguments `showOk` and `showCancel` of `ask` are called *callback functions* or just *callbacks*.**
 
-Գաղափարն այն է, որ մենք փոխանցում ենք ֆունկցիա և ակնկալում, որ այն հետագայում «հետ կկանչվի» անհրաժեշտության դեպքում: Մեր պարագայում `showOk`-ը դառնում է հետկանչ «դրական» պատասխանի համար, իսկ `showCancel`-ը՝ «բացասական» պատասխանի համար:
+The idea is that we pass a function and expect it to be "called back" later if necessary. In our case, `showOk` becomes the callback for "yes" answer, and `showCancel` for "no" answer.
 
-Մենք կարող ենք օգտագործել Ֆունկցիայի Արտահայտություն՝ նույն ֆունկցիան շատ ավելի հակիրճ գրելու համար.
+We can use Function Expressions to write an equivalent, shorter function:
 
 ```js run no-beautify
 function ask(question, yes, no) {
@@ -160,221 +160,221 @@ function ask(question, yes, no) {
 
 *!*
 ask(
-  "Դուք համաձա՞յն եք:",
-  function() { alert("Դուք համաձայնեցիք:"); },
-  function() { alert("Դուք չեղարկեցիք գործարկումը։"); }
+  "Do you agree?",
+  function() { alert("You agreed."); },
+  function() { alert("You canceled the execution."); }
 );
 */!*
 ```
 
-Այստեղ ֆունկցիաները ճշգրիտ են հայտարարված `ask(...)` կանչի ներսում: Նրանք չունեն անվանում, ուստի կոչվում են *anonymous* (անանուն): Նման ֆունկցիաները հասանելի չեն `ask`-ից դուրս (քանի որ դրանք վերագրված չեն փոփոխականներին), բայց դա հենց այն է, ինչ մենք ուզում ենք այստեղ:
+Here, functions are declared right inside the `ask(...)` call. They have no name, and so are called *anonymous*. Such functions are not accessible outside of `ask` (because they are not assigned to variables), but that's just what we want here.
 
-Շատ բնական է, որ նմանատիպ կոդ է հայտնվում մեր սքրիփթներում, այն JavaScript-ի ոգով է:
+Such code appears in our scripts very naturally, it's in the spirit of JavaScript.
 
-```smart header="Ֆունկցիան արժեք է, որը ներկայացնում է «գործողություն»"
-Սովորական արժեքները, ինչպիսիք են տողերը կամ թվերը, ներկայացնում են *տվյալներ*:
+```smart header="A function is a value representing an \"action\""
+Regular values like strings or numbers represent the *data*.
 
-Ֆունկցիան կարող է ընկալվել որպես *գործողություն*։
+A function can be perceived as an *action*.
 
-Մենք կարող ենք այն փոխանցել փոփոխականների միջև և գործարկել, երբ կցանկանանք:
+We can pass it between variables and run when we want.
 ```
 
 
 ## Function Expression vs Function Declaration
 
-Եկեք ձևակերպենք Ֆունկցիայի Հայտարարության և Արտահայտության միջև հիմնական տարբերությունները:
+Let's formulate the key differences between Function Declarations and Expressions.
 
-Առաջին հերթին՝ շարահյությությունը. ինչպես տարանջատել դրանք կոդում:
+First, the syntax: how to differentiate between them in the code.
 
-- *Function Declaration* - ֆունկցիա՝ հայտարարված որպես առանձին հայտարարություն (statement), հիմնական կոդի հոսքում:
+- *Function Declaration:* a function, declared as a separate statement, in the main code flow:
 
     ```js
-    // Ֆունկցիայի Հայտարարություն
+    // Function Declaration
     function sum(a, b) {
       return a + b;
     }
     ```
-- *Function Expression* - ֆունկցիա՝ ստեղծված արտահայտության ներսում կամ մեկ այլ շարահյուսական կառուցվածքի ներսում: Այստեղ ֆունկցիան ստեղծվում է «վերագրման արտահայտության» `=` աջ կողմում.
+- *Function Expression:* a function, created inside an expression or inside another syntax construct. Here, the function is created on the right side of the "assignment expression" `=`:
 
     ```js
-    // Ֆունկցիայի Արտահայտություն
+    // Function Expression
     let sum = function(a, b) {
       return a + b;
     };
     ```
 
-Ավելի նուրբ տարբերությունն այն է, թե *երբ* է ֆունկցիան ստեղծվում JavaScript շարժիչի կողմից:
+The more subtle difference is *when* a function is created by the JavaScript engine.
 
-**Ֆունկցիայի Արտահայտությունը ստեղծվում է, երբ կատարումը հասնում է դրան և կարող է օգտագործվել միայն այդ պահից:**
+**A Function Expression is created when the execution reaches it and is usable only from that moment.**
 
-Երբ կատարման հոսքն անցնում է վերագրման աջ կողմ `let sum = function…`, այդ պահից սկսած ֆունկցիան համարվում է ստեղծված և կարող է օգտագործվել (վերագրվել, կանչվել, և այլն․․․):
+Once the execution flow passes to the right side of the assignment `let sum = function…` -- here we go, the function is created and can be used (assigned, called, etc. ) from now on.
 
-Ֆունկցիայի Հայտարարությունները տարբեր են:
+Function Declarations are different.
 
-**Ֆունկցիայի Հայտարարությունը կարող է կանչվել ավելի վաղ, քան այն սահմանվել է:**
+**A Function Declaration can be called earlier than it is defined.**
 
-Օրինակ՝ գլոբալ Ֆունկցիայի Հայտարարությունը հասանելի է ամբողջ սքրիփթում, անկախ նրանից, թե որտեղ է այն գտնվում:
+For example, a global Function Declaration is visible in the whole script, no matter where it is.
 
-Դա պայմանավորված է ներքին ալգորիթմներով: Երբ JavaScript-ը պատրաստվում է գործարկել սքրիփթը, այն նախ որոնում է գլոբալ Ֆունկցիայի Հայտարարությունները և ստեղծում ֆունկցիաները: Մենք կարող ենք դա համարել որպես «նախաձեռնման փուլ»:
+That's due to internal algorithms. When JavaScript prepares to run the script, it first looks for global Function Declarations in it and creates the functions. We can think of it as an "initialization stage".
 
-ԵՎ այն բանից հետո, երբ բոլոր Ֆունկցիայի Հայտարարությունները մշակվել են, կոդը կատարվում է: Այսպիսով, այն ունի հասանելիություն այս ֆունկցիաներին:
+And after all Function Declarations are processed, the code is executed. So it has access to these functions.
 
-Օրինակ՝ սա աշխատում է.
+For example, this works:
 
 ```js run refresh untrusted
 *!*
-sayHi("Պողոս"); // Ողջույն Պողոս
+sayHi("John"); // Hello, John
 */!*
 
 function sayHi(name) {
-  alert( `Ողջույն ${name}` );
+  alert( `Hello, ${name}` );
 }
 ```
 
-Ֆունկցիայի հայտարարությունը `sayHi` ստեղծվում է, երբ JavaScript-ը պատրաստվում է սկսել սքրիփթը և դրա մեջ ամենուր տեսանելի է:
+The Function Declaration `sayHi` is created when JavaScript is preparing to start the script and is visible everywhere in it.
 
-...Եթե դա լիներ Ֆունկցիայի Արտահայտություն, ապա այն չէր աշխատի.
+...If it were a Function Expression, then it wouldn't work:
 
 ```js run refresh untrusted
 *!*
-sayHi("Պողոս"); // սխալ
+sayHi("John"); // error!
 */!*
 
-let sayHi = function(name) {  // (*) այլևս ոչ մի կախարդանք
-  alert( `Ողջույն ${name}` );
+let sayHi = function(name) {  // (*) no magic any more
+  alert( `Hello, ${name}` );
 };
 ```
 
-Ֆունկցիայի Արտահայտությունները ստեղծվում են, երբ կատարումը հասնում է դրանց: Դա տեղի կունենա միայն `(*)` տողում՝ չափազանց ուշ։
+Function Expressions are created when the execution reaches them. That would happen only in the line `(*)`. Too late.
 
-Ֆունկցիայի Արտահայտությունների մեկ այլ առանձնահատկություն է նրանց բլոկային տեսադաշտը։
+Another special feature of Function Declarations is their block scope.
 
-**Խիստ ռեժիմում, երբ Ֆունկցիայի Հայտարարությունը գտնվում է կոդի բլոկի ներսում, այն տեսանելի է ամենուր՝ այդ բլոկի ներսում, բայց՝ ոչ դրանից դուրս:**
+**In strict mode, when a Function Declaration is within a code block, it's visible everywhere inside that block. But not outside of it.**
 
-Օրինակ՝ եկեք պատկերացնենք, որ մենք պետք է հայտարարենք `welcome()` ֆունկցիան՝ կախված `age` փոփոխականից, որը մենք ստանում ենք գործարկման ընթացքում: Եվ հետո մենք նախատեսում ենք օգտագործել այն որոշ ժամանակ անց:
+For instance, let's imagine that we need to declare a function `welcome()` depending on the `age` variable that we get during runtime. And then we plan to use it some time later.
 
-Եթե մենք օգտագործում ենք Ֆունկցիայի Հայտարարություն, այն չի աշխատի այնպես, ինչպես նախատեսված էր.
+If we use Function Declaration, it won't work as intended:
 
 ```js run
-let age = prompt("Քանի՞ տարեկան եք:", 18);
+let age = prompt("What is your age?", 18);
 
 // conditionally declare a function
 if (age < 18) {
 
   function welcome() {
-    alert("Ողջույն");
+    alert("Hello!");
   }
 
 } else {
 
   function welcome() {
-    alert("Ողջույններ");
+    alert("Greetings!");
   }
 
 }
 
-// ...օգտագործել ավելի ուշ
+// ...use it later
 *!*
-welcome(); // սխալ` welcome is not defined
+welcome(); // Error: welcome is not defined
 */!*
 ```
 
-Դա պայմանավորված է նրանով, որ Ֆունկցիայի Հայտարարությունը տեսանելի է միայն կոդի բլոկի ներսում, որտեղ այն գտնվում է:
+That's because a Function Declaration is only visible inside the code block in which it resides.
 
-Ահա ևս մեկ օրինակ.
+Here's another example:
 
 ```js run
-let age = 16; // օրինակի համար վերցրեք 16
+let age = 16; // take 16 as an example
 
 if (age < 18) {
 *!*
-  welcome();                // \   (գործարկվում է)
+  welcome();               // \   (runs)
 */!*
-                            //  |
-  function welcome() {      //  |
-    alert("Ողջույն");       //  |  Ֆունկցիայի Հայտարարությունը հասանելի է
-  }                         //  |  ամենուր՝ բլոկում, որտեղ այն հայտարարված է
-                            //  |
+                           //  |
+  function welcome() {     //  |
+    alert("Hello!");       //  |  Function Declaration is available
+  }                        //  |  everywhere in the block where it's declared
+                           //  |
 *!*
-  welcome();                // /   (գործարկվում է)
+  welcome();               // /   (runs)
 */!*
 
 } else {
 
-  function welcome() {    
-    alert("Ողջույններ");
+  function welcome() {
+    alert("Greetings!");
   }
 }
 
-// Այստեղ մենք ձևավոր փակագծերից դուրս ենք,
-// այնպես որ մենք չենք կարող տեսնել դրանց ներսում ստեղծված Ֆունկցիայի Հայտարարությունները:
+// Here we're out of curly braces,
+// so we can not see Function Declarations made inside of them.
 
 *!*
-welcome(); // սխալ՝ welcome is not defined
+welcome(); // Error: welcome is not defined
 */!*
 ```
 
-Ի՞նչ կարող ենք անել, որպեսզի `welcome`-ը դարձնենք տեսանելի `if`-ից դուրս:
+What can we do to make `welcome` visible outside of `if`?
 
-Ճիշտ մոտեցումը կլինի՝ օգտագործել Ֆունկցիայի Արտահայտություն և վերագրել `welcome`-ը փոփոխականին, որը հայտարարված է `if`-ից դուրս և ունի համապատասխան տեսանելիություն:
+The correct approach would be to use a Function Expression and assign `welcome` to the variable that is declared outside of `if` and has the proper visibility.
 
-Այս կոդը աշխատում է այնպես, ինչպես նախատեսված է.
+This code works as intended:
 
 ```js run
-let age = prompt("Քանի՞ տարեկան եք:", 18);
+let age = prompt("What is your age?", 18);
 
 let welcome;
 
 if (age < 18) {
 
   welcome = function() {
-    alert("Ողջույն");
+    alert("Hello!");
   };
 
 } else {
 
   welcome = function() {
-    alert("Ողջույններ");
+    alert("Greetings!");
   };
 
 }
 
 *!*
-welcome(); // այժմ նորմալ է
+welcome(); // ok now
 */!*
 ```
 
-Կամ մենք կարող ենք այն էլ ավելի պարզեցնել՝ օգտագործելով `?` հարցական նշանի օպերատոր.
+Or we could simplify it even further using a question mark operator `?`:
 
 ```js run
-let age = prompt("Քանի՞ տարեկան եք:", 18);
+let age = prompt("What is your age?", 18);
 
 let welcome = (age < 18) ?
-  function() { alert("Ողջույն"); } :
-  function() { alert("Ողջույններ"); };
+  function() { alert("Hello!"); } :
+  function() { alert("Greetings!"); };
 
 *!*
-welcome(); // այժմ նորմալ է
+welcome(); // ok now
 */!*
 ```
 
 
-```smart header="Ե՞րբ օգտագործել Ֆունկցիայի Հայտարարություն, երբ՝ Ֆունկցիայի Արտահայտություն:"
-Որպես հիմնական կանոն, երբ մենք պետք է հայտարարենք ֆունկցիա, առաջին հերթին պետք է հաշվի առնել Ֆունկցիայի Հայտարարության շարահուսությունը: Այն ավելի շատ ազատություն է տալիս մեր կոդի դասավորության հարցում, քանի որ մենք կարող ենք կանչել այդպիսի ֆունկցիաները նախքան նրանց հայտարարումը:
+```smart header="When to choose Function Declaration versus Function Expression?"
+As a rule of thumb, when we need to declare a function, the first to consider is Function Declaration syntax. It gives more freedom in how to organize our code, because we can call such functions before they are declared.
 
-Դա նաև ավելի լավ է ընթեռնելիության համար, քանի որ կոդում ավելի հեշտ է փնտրել `function f(…) {…}`, քան՝ `let f = function(…) {…};`: Ֆունկցիայի Հայտարարություններն ավելի «աչք են գրավում»:
+That's also better for readability, as it's easier to look up `function f(…) {…}` in the code than `let f = function(…) {…};`. Function Declarations are more "eye-catching".
 
-...Բայց եթե Ֆունկցիայի Հայտարարությունն ինչ-ինչ պատճառներով մեզ չի համապատասխանում, կամ մեզ անհրաժեշտ է պայմանական հայտարարագիր (մենք հենց նոր տեսանք օրինակը), ապա պետք է օգտագործվի Ֆունկցիայի Արտահայտություն:
+...But if a Function Declaration does not suit us for some reason, or we need a conditional declaration (we've just seen an example), then Function Expression should be used.
 ```
 
-## Ամփոփում
+## Summary
 
-- Ֆունկցիաներն արժեքներ են: Դրանք կարող են նշանակվել, պատճենվել կամ հայտարարվել կոդի ցանկացած վայրում:
-- Եթե հիմնական կոդի հոսքում ֆունկցիան հայտարարագրվում է որպես առանձին հայտարարություն, դա կոչվում է «Ֆունկցիայի Հայտարարություն» (Function Declaration):
-- Եթե ֆունկցիան ստեղծվում է որպես արտահայտության մաս, այն կոչվում է «Ֆունկցիայի Արտահայտություն» (Function Expression):
-- Ֆունկցիայի Հայտարարությունները մշակվում են նախքան կոդի բլոկի գործարկումը: Դրանք տեսանելի են բլոկում ամենուր:
-- Ֆունկցիայի Արտահայտությունները ստեղծվում են, երբ կատարողական հոսքը հասնում է նրանց:
+- Functions are values. They can be assigned, copied or declared in any place of the code.
+- If the function is declared as a separate statement in the main code flow, that's called a "Function Declaration".
+- If the function is created as a part of an expression, it's called a "Function Expression".
+- Function Declarations are processed before the code block is executed. They are visible everywhere in the block.
+- Function Expressions are created when the execution flow reaches them.
 
-Շատ դեպքերում, երբ մենք պետք է հայտարարագրենք ֆունկցիա, գերադասելի է Ֆունկցիայի Հայտարարությունը, քանի որ այն տեսանելի է նախքան հայտարարագրումը: Դա մեզ ավելի շատ ճկունություն է տալիս կոդի կազմակերպման մեջ և սովորաբար ավելի ընթեռնելի է:
+In most cases when we need to declare a function, a Function Declaration is preferable, because it is visible prior to the declaration itself. That gives us more flexibility in code organization, and is usually more readable.
 
-Այսպիսով, մենք պետք է օգտագործենք Ֆունկցիայի Արտահայտություն միայն այն դեպքում, երբ Ֆունկցիայի Հայտարարությունը հարմար չէ առաջադրանքի համար: Մենք տեսել ենք դրա մի քանի օրինակ այս գլխում և ավելին կտեսնենք հետագայում:
+So we should use a Function Expression only when a Function Declaration is not fit for the task. We've seen a couple of examples of that in this chapter, and will see more in the future.
