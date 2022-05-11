@@ -437,11 +437,7 @@ counter++;
 - Աջ տեխաշարժ ( `>>` )
 - Զրոյի ավելացմամբ աջ տեղաշարժ ( `>>>` )
 
-<<<<<<< HEAD
-Այս օպերատորները շատ հազվադեպ են օգտագործվում, երբ մենք պետք է կիրառենք թվերը ամենացածր (բիթային) մակարդակում։ Այս օպերատորները մեզ շուտ պետք չեն, քանի որ վեբ ծրագրավորման մեջ դրանք քիչ են օգտագործում, բայց որոշ հատուկ ոլորտներում, ինչպիսին է գաղտանգրությունը, դրանք կիրառվում են։ Դուք կարող եք կարդալ [Բիթային օպերատորն](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Bitwise) հոդվածը MDN-ում, երբ անհարժեշտ է։
-=======
-These operators are used very rarely, when we need to fiddle with numbers on the very lowest (bitwise) level. We won't need these operators any time soon, as web development has little use of them, but in some special areas, such as cryptography, they are useful. You can read the [Bitwise Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#bitwise_operators) chapter on MDN when a need arises.
->>>>>>> 206485fc3a5465f961608b6e7303fae2e1a0e0b5
+Այս օպերատորները շատ հազվադեպ են օգտագործվում, երբ մենք պետք է կիրառենք թվերը ամենացածր (բիթային) մակարդակում։ Մեզ այս օպերատորները շուտով պետք չեն լինի, քանի որ վեբ ծրագրավորման մեջ դրանք քիչ են օգտագործում, բայց որոշ հատուկ ոլորտներում, ինչպիսին է գաղտնագրությունը, դրանք կիրառվում են։ Անհարժեշտության դեպքում կարող եք MDN-ում կարդալ [Բիթային օպերատորներ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Bitwise) հոդվածը։
 
 ## Ստորակետ
 
