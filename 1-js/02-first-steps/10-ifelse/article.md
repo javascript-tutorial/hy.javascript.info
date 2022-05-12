@@ -162,44 +162,44 @@ let accessAllowed = age > 18;
 ```
 ````
 
-## Multiple '?'
+## Բազմաթիվ «?»
 
-A sequence of question mark operators `?` can return a value that depends on more than one condition.
+Հարցական նշանի օպերատորների `?` հաջորդականությունը կարող է վերադարձնել արժեք, որը կախված է մեկից ավելի պայմաններից:
 
-For instance:
+Օրինակ.
 ```js run
-let age = prompt('age?', 18);
+let age = prompt('տարի՞քը', 18);
 
-let message = (age < 3) ? 'Hi, baby!' :
-  (age < 18) ? 'Hello!' :
-  (age < 100) ? 'Greetings!' :
-  'What an unusual age!';
+let message = (age < 3) ? 'Ողջույն փոքրիկ' :
+  (age < 18) ? 'Ողջույն' :
+  (age < 100) ? 'Ողջույններ' :
+  'Ի՜նչ անսովոր տարիք է։';
 
 alert( message );
 ```
 
-It may be difficult at first to grasp what's going on. But after a closer look, we can see that it's just an ordinary sequence of tests:
+Սկզբում կարող է դժվար լինել հասկանալը, թե ինչ է կատարվում: Բայց ավելի ուշադիր նայելուց հետո մենք կարող ենք տեսնել, որ դա ընդամենը թեստերի սովորական հաջորդականություն է.
 
-1. The first question mark checks whether `age < 3`.
-2. If true -- it returns `'Hi, baby!'`. Otherwise, it continues to the expression after the colon '":"', checking `age < 18`.
-3. If that's true -- it returns `'Hello!'`. Otherwise, it continues to the expression after the next colon '":"', checking `age < 100`.
-4. If that's true -- it returns `'Greetings!'`. Otherwise, it continues to the expression after the last colon '":"', returning `'What an unusual age!'`.
+1. Առաջին հարցական նշանը ստուգում է, թե արդյո՞ք `age < 3`:
+2. Եթե ճիշտ է, այն վերադարձնում է `'Ողջույն փոքրիկ'`: Հակառակ դեպքում, այն շարունակում է `:` կրկնակետից հետո արտահայտությունը՝ ստուգելով `age < 18`:
+3. Եթե դա ճիշտ է, այն վերադարձնում է `'Ողջույն'`: Հակառակ դեպքում, այն շարունակում է հաջորդ `:` կրկնակետից հետո արտահայտությունը՝ ստուգելով `age < 100`:
+4. Եթե դա ճիշտ է, այն վերադարձնում է `'Ողջույններ!'`: Հակառակ դեպքում, այն շարունակում է վերջին `:` կրկնակետից հետո արտահայտությունը՝ վերադարձնելով `'Ի՜նչ անսովոր տարիք է։'`:
 
-Here's how this looks using `if..else`:
+Ահա, թե ինչպես է սա երևում `if..else`-ի միջոցով.
 
 ```js
 if (age < 3) {
-  message = 'Hi, baby!';
+  message = 'Ողջույն փոքրիկ';
 } else if (age < 18) {
-  message = 'Hello!';
+  message = 'Ողջույն';
 } else if (age < 100) {
-  message = 'Greetings!';
+  message = 'Ողջույններ';
 } else {
-  message = 'What an unusual age!';
+  message = 'Ի՜նչ անսովոր տարիք է։';
 }
 ```
 
-## Non-traditional use of '?'
+## «?»-ի ոչ ավանդական օգտագործումը
 
 Sometimes the question mark `?` is used as a replacement for `if`:
 
