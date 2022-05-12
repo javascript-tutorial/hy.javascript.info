@@ -31,35 +31,35 @@ if (year == 2015) {
 
 Մենք խորհուրդ ենք տալիս պատել կոդի հատվածը `{}` ձևավոր փակագծերով ամեն անգամ, երբ օգտագործում եք `if` դրույթը, նույնիսկ եթե կատարման համար առկա է միայն մեկ դրույթ։ Այդպես բարելավվում է ընթեռնելիությունը:
 
-## Boolean conversion
+## Բուլյան փոխակերպում
 
-The `if (…)` statement evaluates the expression in its parentheses and converts the result to a boolean.
+`if (…)` դրույթը գնահատում է իր փակագծերում առկա արտահայտությունը և արդյունքը դարձնում բուլյան:
 
-Let's recall the conversion rules from the chapter <info:type-conversions>:
+Եկեք հիշենք փոխակերպման կանոնները <info:type-conversions> գլխից.
 
-- A number `0`, an empty string `""`, `null`, `undefined`, and `NaN` all become `false`. Because of that they are called "falsy" values.
-- Other values become `true`, so they are called "truthy".
+- `0` թիվը, դատարկ տողը `""`, `null`, `undefined` և `NaN`՝ սրանք բոլորը դառնում են `false`: Այդ պատճառով կոչվում են «կեղծ» արժեքներ։
+- Մյուս արժեքները դառնում են `true`, ուստի դրանք կոչվում են «ճշմարիտ»:
 
-So, the code under this condition would never execute:
+Այսպիսով, այս պայմանի ներսում կոդը երբեք չի գործարկվի.
 
 ```js
-if (0) { // 0 is falsy
+if (0) { // 0-ն կեղծ է
   ...
 }
 ```
 
-...and inside this condition -- it always will:
+...և այս պայմանի ներսում միշտ կգործարկվի.
 
 ```js
-if (1) { // 1 is truthy
+if (1) { // 1-ը ճշմարիտ է
   ...
 }
 ```
 
-We can also pass a pre-evaluated boolean value to `if`, like this:
+Մենք կարող ենք նաև նախապես գնահատված բուլյան արժեք փոխանցել `if`-ին, այսպես.
 
 ```js
-let cond = (year == 2015); // equality evaluates to true or false
+let cond = (year == 2015); // հավասարությունը գնահատվում է ճշմարիտ կամ կեղծ
 
 if (cond) {
   ...
