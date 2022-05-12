@@ -201,39 +201,39 @@ if (age < 3) {
 
 ## «?»-ի ոչ ավանդական օգտագործումը
 
-Sometimes the question mark `?` is used as a replacement for `if`:
+Երբեմն `?` հարցական նշանն օգտագործվում է որպես `if`-ին փոխարինող.
 
 ```js run no-beautify
-let company = prompt('Which company created JavaScript?', '');
+let company = prompt('Ո՞ր ընկերությունն է ստեղծել JavaScript-ը:', '');
 
 *!*
 (company == 'Netscape') ?
-   alert('Right!') : alert('Wrong.');
+   alert('Ճիշտ է:') : alert('Սխալ է:');
 */!*
 ```
 
-Depending on the condition `company == 'Netscape'`, either the first or the second expression after the `?` gets executed and shows an alert.
+Կախված `company == 'Netscape'` պայմանից, գործարկվում է առաջին կամ երկրորդ արտահայտությունը `?`-ից հետո և ցույց է տալիս alert-ը:
 
-We don't assign a result to a variable here. Instead, we execute different code depending on the condition.
+Մենք այստեղ արդյունքը չենք վերագրում փոփոխականի: Փոխարենը մենք գործարկում ենք տարբեր կոդեր՝ կախված պայմանից։
 
-**It's not recommended to use the question mark operator in this way.**
+**Խորհուրդ չի տրվում այս եղանակով օգտագործել հարցական նշանի օպերատորը։**
 
-The notation is shorter than the equivalent `if` statement, which appeals to some programmers. But it is less readable.
+Նշանագրությունն ավելի կրճատ է, քան համարժեք `if` դրույթի դեպքում, ինչը գրավիչ է որոշ ծրագրավորողների համար: Բայց դա ավելի քիչ ընթեռնելի է։
 
-Here is the same code using `if` for comparison:
+Ահա նույն կոդը, որտեղ համեմատության համար օգտագործված է `if`.
 
 ```js run no-beautify
-let company = prompt('Which company created JavaScript?', '');
+let company = prompt('Ո՞ր ընկերությունն է ստեղծել JavaScript-ը:', '');
 
 *!*
 if (company == 'Netscape') {
-  alert('Right!');
+  alert('Ճիշտ է:');
 } else {
-  alert('Wrong.');
+  alert('Սխալ է:');
 }
 */!*
 ```
 
-Our eyes scan the code vertically. Code blocks which span several lines are easier to understand than a long, horizontal instruction set.
+Մեր աչքերը ուղղահայաց են սքանավորում կոդը: Կոդի բլոկները, որոնք ընդգրկում են մի քանի տող, ավելի հասկանալի են, քան երկար, հորիզոնական հրահանգների հավաքածուն:
 
-The purpose of the question mark operator `?` is to return one value or another depending on its condition. Please use it for exactly that. Use `if` when you need to execute different branches of code.
+Հարցական նշանի օպերատորի `?` նպատակն է վերադարձնել այս կամ այն արժեքը՝ կախված իր պայմանից: Օգտագործեք այն հենց դրա համար: Օգտագործեք `if`, երբ անհրաժեշտ է գործարկել կոդի տարբեր ճյուղեր:
