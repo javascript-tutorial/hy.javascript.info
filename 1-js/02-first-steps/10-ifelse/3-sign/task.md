@@ -1,15 +1,15 @@
-importance: 2
+կարևորությունը՝ 2
 
 ---
 
-# Show the sign
+# Ցույց տալ նշանը
 
-Using `if..else`, write the code which gets a number via `prompt` and then shows in `alert`:
+Օգտագործելով `if..else`՝ գրեք այնպիսի կոդ, որը `prompt`-ի միջոցով ստանում է թիվ և այնուհետև `alert`-ով ցուցադրում է.
 
-- `1`, if the value is greater than zero,
-- `-1`, if less than zero,
-- `0`, if equals zero.
+- `1`, եթե արժեքը մեծ է զրոյից,
+- `-1`, եթե փոքր է զրոյից,
+- `0`, եթե հավասար է զրոյի։
 
-In this task we assume that the input is always a number.
+Այս առաջադրանքում մենք ենթադրում ենք, որ մուտքագրվածը միշտ թիվ է:
 
 [demo src="if_sign"]
