@@ -176,7 +176,7 @@ When a value is passed as a function parameter, it's also called an *argument*.
 
 In other words, to put these terms straight:
 
-- A parameter is the variable listed inside the parentheses in the function declaration (it's a declaration time term)
+- A parameter is the variable listed inside the parentheses in the function declaration (it's a declaration time term).
 - An argument is the value that is passed to the function when it is called (it's a call time term).
 
 We declare functions listing their parameters, then call them passing arguments.
@@ -224,6 +224,38 @@ In the example above, `anotherFunction()` isn't called at all, if the `text` par
 
 On the other hand, it's independently called every time when `text` is missing.
 ```
+
+````smart header="Default parameters in old JavaScript code"
+Several years ago, JavaScript didn't support the syntax for default parameters. So people used other ways to specify them.
+
+Nowadays, we can come across them in old scripts.
+
+For example, an explicit check for `undefined`:
+
+```js
+function showMessage(from, text) {
+*!*
+  if (text === undefined) {
+    text = 'no text given';
+  }
+*/!*
+
+  alert( from + ": " + text );
+}
+```
+
+...Or using the `||` operator:
+
+```js
+function showMessage(from, text) {
+  // If the value of text is falsy, assign the default value
+  // this assumes that text == "" is the same as no text at all
+  text = text || 'no text given';
+  ...
+}
+```
+````
+
 
 ### Alternative default parameters
 
@@ -490,7 +522,7 @@ function name(parameters, delimited, by, comma) {
 
 To make the code clean and easy to understand, it's recommended to use mainly local variables and parameters in the function, not outer variables.
 
-It is always easier to understand a function which gets parameters, works with them and returns a result than a function which gets no parameters, but modifies outer variables as a side-effect.
+It is always easier to understand a function which gets parameters, works with them and returns a result than a function which gets no parameters, but modifies outer variables as a side effect.
 
 Function naming:
 

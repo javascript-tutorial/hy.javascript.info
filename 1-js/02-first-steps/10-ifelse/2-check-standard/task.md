@@ -1,12 +1,12 @@
-importance: 2
+կարևորությունը՝ 2
 
 ---
 
-# The name of JavaScript
+# JavaScript-ի անվանումը
 
-Using the `if..else` construct, write the code which asks: 'What is the "official" name of JavaScript?'
+Օգտագործելով `if..else` կառուցվածքը, գրեք կոդ, որը կհարցնի. «Ո՞րն է JavaScript-ի «պաշտոնական» անվանումը:»։
 
-If the visitor enters "ECMAScript", then output "Right!", otherwise -- output: "You don't know? ECMAScript!"
+Եթե այցելուն մուտքագրում է «ECMAScript», ապա արտատպեք «Ճիշտ է:», հակառակ դեպքում՝ արտատպեք «Դուք չգիտե՞ք. ECMAScript:»:
 
 ![](ifelse_task2.svg)
 
