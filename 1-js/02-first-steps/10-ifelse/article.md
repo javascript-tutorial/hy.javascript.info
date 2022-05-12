@@ -66,42 +66,42 @@ if (cond) {
 }
 ```
 
-## The "else" clause
+## «else» դրույթը
 
-The `if` statement may contain an optional "else" block. It executes when the condition is falsy.
+`if` դրույթը կարող է պարունակել կամընտրական, ոչ պարտադիր «else» բլոկ: Այն գործարկվում է, երբ պայմանը կեղծ է:
 
-For example:
+Օրինակ.
 ```js run
-let year = prompt('In which year was the ECMAScript-2015 specification published?', '');
+let year = prompt('Ո՞ր թվականին է հրապարակվել ECMAScript-2015 դասակարգումը:', '');
 
 if (year == 2015) {
-  alert( 'You guessed it right!' );
+  alert( 'Դուք ճիշտ գուշակեցիք:' );
 } else {
-  alert( 'How can you be so wrong?' ); // any value except 2015
+  alert( 'Ինչպե՞ս կարող եք այդքան սխալվել:' ); // ցանկացած արժեք, բացի 2015-ից
 }
 ```
 
-## Several conditions: "else if"
+## Մի քանի պայմաններ. «else if»
 
-Sometimes, we'd like to test several variants of a condition. The `else if` clause lets us do that.
+Երբեմն մենք ցանկանում ենք փորձարկել պայմանի մի քանի տարբերակներ: `else if` դրույթը մեզ թույլ է տալիս անել դա:
 
-For example:
+Օրինակ.
 
 ```js run
-let year = prompt('In which year was the ECMAScript-2015 specification published?', '');
+let year = prompt('Ո՞ր թվականին է հրապարակվել ECMAScript-2015 դասակարգումը:', '');
 
 if (year < 2015) {
-  alert( 'Too early...' );
+  alert( 'Շատ վաղ է...' );
 } else if (year > 2015) {
-  alert( 'Too late' );
+  alert( 'Շատ ուշ է' );
 } else {
-  alert( 'Exactly!' );
+  alert( 'Ճիշտ այդպես:' );
 }
 ```
 
-In the code above, JavaScript first checks `year < 2015`. If that is falsy, it goes to the next condition `year > 2015`. If that is also falsy, it shows the last `alert`.
+Վերևի կոդում JavaScript-ը նախ ստուգում է `year < 2015`-ը: Եթե դա կեղծ է, անցում է կատարում հաջորդ պայմանին՝ `year > 2015`: Եթե դա նույնպես կեղծ է, ցույց է տալիս վերջին `alert`-ը:
 
-There can be more `else if` blocks. The final `else` is optional.
+Կարող են լինել ավելի շատ `else if` բլոկներ: Վերջին `else`-ը կամընտիր է:
 
 ## Conditional operator '?'
 
