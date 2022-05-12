@@ -1,14 +1,14 @@
-importance: 5
+կարևորությունը՝ 5
 
 ---
 
-# if (a string with zero)
+# if (զրոյով տող)
 
-Will `alert` be shown?
+Կցուցադրվի՞ արդյոք `alert`-ը:
 
 ```js
 if ("0") {
-  alert( 'Hello' );
+  alert( 'Ողջույն' );
 }
 ```
 
