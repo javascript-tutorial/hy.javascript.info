@@ -103,15 +103,15 @@ if (year < 2015) {
 
 Կարող են լինել ավելի շատ `else if` բլոկներ: Վերջին `else`-ը կամընտիր է:
 
-## Conditional operator '?'
+## Պայմանական օպերատոր «?»
 
-Sometimes, we need to assign a variable depending on a condition.
+Երբեմն մեզ պետք է լինում փոփոխական նշանակել՝ կախված պայմանից:
 
-For instance:
+Օրինակ.
 
 ```js run no-beautify
 let accessAllowed;
-let age = prompt('How old are you?', '');
+let age = prompt('Քանի՞ տարեկան եք:', '');
 
 *!*
 if (age > 18) {
@@ -124,40 +124,40 @@ if (age > 18) {
 alert(accessAllowed);
 ```
 
-The so-called "conditional" or "question mark" operator lets us do that in a shorter and simpler way.
+Այսպես կոչված «պայմանական» կամ «հարցական նշանի» օպերատորը թույլ է տալիս դա անել ավելի կարճ և ավելի պարզ ձևով:
 
-The operator is represented by a question mark `?`. Sometimes it's called "ternary", because the operator has three operands. It is actually the one and only operator in JavaScript which has that many.
+Օպերատորը ներկայացված է `?` հարցական նշանով: Երբեմն այն կոչվում է «եռակի», քանի որ օպերատորն ունի երեք օպերանդ։ Այն իրականում միակ օպերատորն է JavaScript-ում, որն այդքան օպերանդ ունի:
 
-The syntax is:
+Շարահյուսությունը հետևյալն է.
 ```js
 let result = condition ? value1 : value2;
 ```
 
-The `condition` is evaluated: if it's truthy then `value1` is returned, otherwise -- `value2`.
+Գնահատվում է `condition`-ը. եթե այն ճշմարիտ է, ապա `value1`-ն է վերադարձվում, հակառակ դեպքում՝ `value2`-ը:
 
-For example:
+Օրինակ.
 
 ```js
 let accessAllowed = (age > 18) ? true : false;
 ```
 
-Technically, we can omit the parentheses around `age > 18`. The question mark operator has a low precedence, so it executes after the comparison `>`.
+Տեխնիկապես մենք կարող ենք բաց թողնել փակագծերը `age > 18`-ի շուրջ: Հարցական նշանի օպերատորն ունի ցածր գերակայություն, ուստի այն գործարկվում է `>` համեմատությունից հետո:
 
-This example will do the same thing as the previous one:
+Այս օրինակը կանի նույն բանը, ինչ նախորդը.
 
 ```js
-// the comparison operator "age > 18" executes first anyway
-// (no need to wrap it into parentheses)
+// համեմատության «age > 18» օպերատորը ամեն դեպքում առաջինն է կատարվում
+// (կարիք չկա փակագծերի մեջ վերցնել այն)
 let accessAllowed = age > 18 ? true : false;
 ```
 
-But parentheses make the code more readable, so we recommend using them.
+Բայց փակագծերը կոդն ավելի ընթեռնելի են դարձնում, ուստի խորհուրդ ենք տալիս օգտագործել դրանք:
 
 ````smart
-In the example above, you can avoid using the question mark operator because the comparison itself returns `true/false`:
+Վերևի օրինակում դուք կարող եք խուսափել հարցական նշանի օպերատորի օգտագործումից, քանի որ համեմատությունն ինքնին վերադարձնում է `true/false`.
 
 ```js
-// the same
+// նույնը
 let accessAllowed = age > 18;
 ```
 ````
