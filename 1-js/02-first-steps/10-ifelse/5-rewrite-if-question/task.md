@@ -1,17 +1,17 @@
-importance: 5
+կարևորությունը՝ 5
 
 ---
 
-# Rewrite 'if' into '?'
+# «if»-ը փոխարինեք «?»-ով
 
-Rewrite this `if` using the conditional operator `'?'`:
+Վերագրեք այս `if`-ը՝ օգտագործելով `'?'` պայմանական օպերատորը.
 
 ```js
 let result;
 
 if (a + b < 4) {
-  result = 'Below';
+  result = 'Ցածր';
 } else {
-  result = 'Over';
+  result = 'Բարձր';
 }
 ```
