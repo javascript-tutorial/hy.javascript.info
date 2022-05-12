@@ -11,7 +11,7 @@ function ask(question, yes, no) {
 
 ask(
   "Դուք համաձա՞յն եք:",
-  function() { alert("Դուք համաձայնվեցիք:"); },
+  function() { alert("Դուք համաձայնեցիք:"); },
   function() { alert("Դուք չեղարկեցիք կատարումը:"); }
 );
 ```
