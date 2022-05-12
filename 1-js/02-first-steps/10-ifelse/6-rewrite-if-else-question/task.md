@@ -1,22 +1,22 @@
-importance: 5
+կարևորությունը՝ 5
 
 ---
 
-# Rewrite 'if..else' into '?'
+# «if..else»-ը փոխարինեք «?»-ով:
 
-Rewrite `if..else` using multiple ternary operators `'?'`.
+Վերաշարադրեք `if..else`-ը՝ օգտագործելով մի քանի «եռակի» օպերատորներ `'?'`:
 
-For readability, it's recommended to split the code into multiple lines.
+Ընթեռնելիության համար խորհուրդ է տրվում կոդը բաժանել մի քանի տողերի:
 
 ```js
 let message;
 
-if (login == 'Employee') {
-  message = 'Hello';
-} else if (login == 'Director') {
-  message = 'Greetings';
+if (login == 'Աշխատակից') {
+  message = 'Ողջույն';
+} else if (login == 'Տնօրեն') {
+  message = 'Ողջույններ';
 } else if (login == '') {
-  message = 'No login';
+  message = 'Մուտք չկա';
 } else {
   message = '';
 }
