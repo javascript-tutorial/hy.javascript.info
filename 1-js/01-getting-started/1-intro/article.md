@@ -106,10 +106,19 @@ JavaScript-ի գրելաձևը բոլորին չի բավարարում։ Տար
 
 Այսպիսի լեզուների օրինակներ են՝
 
+<<<<<<< HEAD
 - [CoffeeScript](http://coffeescript.org/)-ը ունի կարճ գրելաձև, թույլատրելով ծրագրավորողին գրելկ ավելի մաքուր և ճշգրիտ կոդ։ Հիմնականում Ruby-ի ծրագրավորողներն են հավանում այն։
 - [TypeScript](http://www.typescriptlang.org/)-ը կենտրոնացած է խիստ տիպերի ներմուծման վրա, հեշտացնելով դժվար համակարգերի ծրագրավորումն ու հետագա ապահովումը։ Այն ստեղծվել է Microsoft-ի կողմից։
 - [Flow](http://flow.org/)-ը նույնպես ավելացնում է տվյալների տիպեր, սակայն այլ կերպով է աշխատում։ Ստեղծված է Facebook-ի կողմից։
 - [Dart](https://www.dartlang.org/)-ը առանձին լեզու է, որը ունի իր սեփական engine-ը և աշխատում է ոչ-browser-ային միջավայրներում, ինչպես mobile ծրագրերում, սակայն կարող է թարգմանվել JavaScript-ի։ Ստեղծվել է Google-ի կողմից։
+=======
+- [CoffeeScript](https://coffeescript.org/) is a "syntactic sugar" for JavaScript. It introduces shorter syntax, allowing us to write clearer and more precise code. Usually, Ruby devs like it.
+- [TypeScript](https://www.typescriptlang.org/) is concentrated on adding "strict data typing" to simplify the development and support of complex systems. It is developed by Microsoft.
+- [Flow](https://flow.org/) also adds data typing, but in a different way. Developed by Facebook.
+- [Dart](https://www.dartlang.org/) is a standalone language that has its own engine that runs in non-browser environments (like mobile apps), but also can be transpiled to JavaScript. Developed by Google.
+- [Brython](https://brython.info/) is a Python transpiler to JavaScript that enables the writing of applications in pure Python without JavaScript.
+- [Kotlin](https://kotlinlang.org/docs/reference/js-overview.html) is a modern, concise and safe programming language that can target the browser or Node.
+>>>>>>> 7964b11b8fa2c314d9a09a82ea4b585cda618c80
 
 Կան ուրիշներ։ Իհարկե, եթե նույնիսկ օգտագործենք թարգմանված լեզուները, պետք է իմանանք JavaScript, որպեսզի հասկանանք՝ ինչ ենք անում։
 

@@ -6,7 +6,24 @@
 
 *Ցիկլերը* նույն կոդը մի քանի անգամ կրկնելու հնարավորություն են տալիս։
 
+<<<<<<< HEAD
 ## "while" ցիկլը
+=======
+```smart header="The for..of and for..in loops"
+A small announcement for advanced readers.
+
+This article covers only basic loops: `while`, `do..while` and `for(..;..;..)`.
+
+If you came to this article searching for other types of loops, here are the pointers:
+
+- See [for..in](info:object#forin) to loop over object properties.
+- See [for..of](info:array#loops) and [iterables](info:iterable) for looping over arrays and iterable objects.
+
+Otherwise, please read on.
+```
+
+## The "while" loop
+>>>>>>> 7964b11b8fa2c314d9a09a82ea4b585cda618c80
 
 `while` ցիկլը ունի հետևյալ գրելաձևը․
 
@@ -162,11 +179,14 @@ for (i = 0; i < 3; i++) { // օգտագործվում է գոյություն ո
 
 alert(i); // 3, տեսանելի է, քանի որ հայտարարված է ցիկլից դուրս
 ```
-
 ````
 
+<<<<<<< HEAD
 
 ### Մասերի բաց թողում
+=======
+### Skipping parts
+>>>>>>> 7964b11b8fa2c314d9a09a82ea4b585cda618c80
 
 `for` ցիկլի ամեն մաս կաող է բաց թողնվել։
 
@@ -286,7 +306,6 @@ if (i > 5) {
 
 ...և ձևափոխենք այն օգտագործելով հարցականի նշանը․
 
-
 ```js no-beautify
 (i > 5) ? alert(i) : *!*continue*/!*; // continue֊ն թույլատրված չէ այստեղ
 ```
@@ -320,7 +339,12 @@ alert('Պատրաստ է!');
 
 Ստանդարտ `break`֊ը `input`֊ից հետո կկանգնեցնի միայն ներսի ցիկլը։ Դա բավարար չէ, և այստեղ է, որ պիտակները գալիս են օգնության։
 
+<<<<<<< HEAD
 *Պիտակը* դա նույնականացուցիչ (identifier) է վերջակետով ցիկլից առաջ․
+=======
+A *label* is an identifier with a colon before a loop:
+
+>>>>>>> 7964b11b8fa2c314d9a09a82ea4b585cda618c80
 ```js
 labelName: for (...) {
   ...
@@ -342,7 +366,12 @@ labelName: for (...) {
     // արժեքի հետ ինչ֊որ գործողություն...
   }
 }
+<<<<<<< HEAD
 alert('Պատրաստ է!');
+=======
+
+alert('Done!');
+>>>>>>> 7964b11b8fa2c314d9a09a82ea4b585cda618c80
 ```
 
 Վերևի ծրագրում `break outer`֊ը փնտրում է իրեն ընդգրկող դրսի ցիկլը, որի պիտակը `outer` է, և կանգնեցնում այն։
@@ -361,14 +390,24 @@ for (let i = 0; i < 3; i++) { ... }
 ````warn header="Պիտակները թույլ չեն տալիս \"ցատկել\" կամայական տեղ"
 Պիտակները թույլ չեն տալիս մեզ ցատկել ծրագրի լրիվ այլ հատված։
 
+<<<<<<< HEAD
 Օրինակ, անհնար է անել այսպիրի հնարք․
+=======
+For example, it is impossible to do this:
+
+>>>>>>> 7964b11b8fa2c314d9a09a82ea4b585cda618c80
 ```js
 break label; // ցատկ ներքևի պիտակին (չի աշխատի)
 
 label: for (...)
 ```
 
+<<<<<<< HEAD
 `break` դիրեկտիվը պետք է լինի պիտակը պարունակող բլոկի ներսում։ Տեխնիկապես կամայական պիտակավորված բլոկի համար կարող ենք անել հետևյալը․
+=======
+A `break` directive must be inside a code block. Technically, any labelled code block will do, e.g.:
+
+>>>>>>> 7964b11b8fa2c314d9a09a82ea4b585cda618c80
 ```js
 label: {
   // ...
