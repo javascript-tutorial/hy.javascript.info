@@ -143,13 +143,8 @@ JavaScript-ը սպասարկում է հետևյալ օպերատորները.
 Վերագրում
 : Կա պարզ վերագրում՝ `a = b`, և համակցված վերագրում՝ `a *= 2`։
 
-<<<<<<< HEAD
 Բիթային
-: Բիթային օպերատորները աշխատում են 32-բիթ ամբողջ թվերի հետ ամենացածր՝ բիթային մակարդակում. տեսեք [դոկումենտացիան](mdn:/JavaScript/Guide/Expressions_and_Operators#Bitwise)-ում, երբ դրա կարիքը լինի:
-=======
-Bitwise
-: Bitwise operators work with 32-bit integers at the lowest, bit-level: see the [docs](mdn:/JavaScript/Guide/Expressions_and_Operators#bitwise_operators) when they are needed.
->>>>>>> 7964b11b8fa2c314d9a09a82ea4b585cda618c80
+: Բիթային օպերատորները աշխատում են 32-բիթ ամբողջ թվերի հետ ամենացածր՝ բիթային մակարդակում. տեսեք [դոկումենտացիան](mdn:/JavaScript/Guide/Expressions_and_Operators#bitwise_operators)-ում, երբ դրա կարիքը լինի:
 
 Պայմանական
 : Միակ օպերատորը երեք պարամետրով՝ `cond ? resultA : resultB`։ Եթե `cond` պայմանը ճշմարիտ է, վերադարձվում է `resultA`, հակառակ դեպքում՝ `resultB`։
