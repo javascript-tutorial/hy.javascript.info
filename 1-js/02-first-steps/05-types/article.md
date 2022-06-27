@@ -264,6 +264,7 @@ Some people prefer `typeof(x)`, although the `typeof x` syntax is much more comm
 
 JavaScript-ում գոյություն ունեն տվյալների 8 տիպեր։
 
+<<<<<<< HEAD
 - `number` բոլոր տեսակի թվերի համար․ ամբողջ և տասնորդական, ամբողջ թվերը սահմանափակված են <code>±(2<sup>53</sup>-1)</code> միջակայքում։
 - `bigint` կամայական մեծության ամբողջ թվերի համար։
 - `string` տողերի համար։ Տողը կարող է պարունակել զրո կամ ավել նիշեր, չկա նիշի համար նախատեսված առանձին տիպ։
@@ -272,6 +273,18 @@ JavaScript-ում գոյություն ունեն տվյալների 8 տիպե�
 - `undefined` չվերագրված արժեքների համար․ առանձին տիպ է, որը ունի մեկ արժեք՝ `undefined`։
 - `object` ավելի բարդ տվյալների կառուցվածքների համար։
 - `symbol` չկրկնվող նույնացուցիչների համար։
+=======
+- Seven primitive data types:
+    - `number` for numbers of any kind: integer or floating-point, integers are limited by <code>±(2<sup>53</sup>-1)</code>.
+    - `bigint` for integer numbers of arbitrary length.
+    - `string` for strings. A string may have zero or more characters, there's no separate single-character type.
+    - `boolean` for `true`/`false`.
+    - `null` for unknown values -- a standalone type that has a single value `null`.
+    - `undefined` for unassigned values -- a standalone type that has a single value `undefined`.
+    - `symbol` for unique identifiers.
+- And one non-primitive data type:
+    - `object` for more complex data structures.
+>>>>>>> 30a5d5e2a7c3504c9afd5028f83f4a696e60aede
 
 `typeof`-ը թույլ է տալիս ստուգել, թե ինչ տիպի արժեք է պահված փոփոխականում։
 
