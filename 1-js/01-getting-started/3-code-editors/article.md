@@ -12,13 +12,8 @@ IDE-ն բեռնում է նախագիծը (որը կարող է պարունակ
 
 IDE-ների օրնակներ են.
 
-<<<<<<< HEAD
 - [Visual Studio Code](https://code.visualstudio.com/) (հասանելի է տարբեր հարթակների համար, անվճար է):
-- [WebStorm](http://www.jetbrains.com/webstorm/) (հասանելի է տարբեր հարթակների համար, վճարովի է):
-=======
-- [Visual Studio Code](https://code.visualstudio.com/) (cross-platform, free).
-- [WebStorm](https://www.jetbrains.com/webstorm/) (cross-platform, paid).
->>>>>>> 30a5d5e2a7c3504c9afd5028f83f4a696e60aede
+- [WebStorm](https://www.jetbrains.com/webstorm/) (հասանելի է տարբեր հարթակների համար, վճարովի է):
 
 Windows-ի համար կա նաև «Visual Studio»-ն, որը տարբերվում է «Visual Studio Code»-ից. «Visual Studio»-ն վճարովի և բազմաֆունկցիոնալ խմբագրիչ է, ստեղծված միայն Windows-ի համար և հարմարեցված .NET հարթակի համար: Ունի նաև [Visual Studio Community](https://www.visualstudio.com/vs/community/) անվճար տարբերակը:
 
