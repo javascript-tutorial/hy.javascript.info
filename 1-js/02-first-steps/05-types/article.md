@@ -68,9 +68,26 @@ n = 12.345;
 
 ## BigInt [#bigint-type]
 
+<<<<<<< HEAD
 JavaScript-ում թվային (number) տիպը չի կարող ներկայացնել թվային արժեքներ, որոնք մեծ են <code>(2<sup>53</sup>-1)</code>-ից (նույնն է, ինչ `9007199254740991`), կամ փոքր են <code>-(2<sup>53</sup>-1)</code>-ից՝ բացասական թվերի դեպքում։ Այս տեխիկական սահմանափակումը պայմանավորված է թվերի ներքին ներկայացման յուրահատկություններով։
 
 Հիմնական դեպքերում սա ավելի քան բավական է, բայց երբեմն մենք կարիք ենք ունենում օգտագործելու իսկապես մեծ թվեր, օրինակ՝ գաղտնագրման կամ ժամանականիշի (timestamp) միկրովարկյաններով ներկայացման դեպքում։
+=======
+In JavaScript, the "number" type cannot safely represent integer values larger than <code>(2<sup>53</sup>-1)</code> (that's `9007199254740991`), or less than <code>-(2<sup>53</sup>-1)</code> for negatives.
+
+To be really precise, the "number" type can store larger integers (up to <code>1.7976931348623157 * 10<sup>308</sup></code>), but outside of the safe integer range <code>±(2<sup>53</sup>-1)</code> there'll be a precision error, because not all digits fit into the fixed 64-bit storage. So an "approximate" value may be stored.
+
+For example, these two numbers (right above the safe range) are the same:
+
+```js
+console.log(9007199254740991 + 1); // 9007199254740992
+console.log(9007199254740991 + 2); // 9007199254740992
+```
+
+So to say, all odd integers greater than <code>(2<sup>53</sup>-1)</code> can't be stored at all in the "number" type.
+
+For most purposes <code>±(2<sup>53</sup>-1)</code> range is quite enough, but sometimes we need the entire range of really big integers, e.g. for cryptography or microsecond-precision timestamps.
+>>>>>>> 82ed8f11b40bd40797427a5dd1763edbe1fca523
 
 `BigInt`-ը վերջերս է ավելացվել լեզվում՝ կամայական մեծության թվեր նեկայացնելու նպատակով։
 
