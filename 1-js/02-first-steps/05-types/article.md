@@ -69,25 +69,20 @@ n = 12.345;
 ## BigInt [#bigint-type]
 
 <<<<<<< HEAD
-JavaScript-ում թվային (number) տիպը չի կարող ներկայացնել թվային արժեքներ, որոնք մեծ են <code>(2<sup>53</sup>-1)</code>-ից (նույնն է, ինչ `9007199254740991`), կամ փոքր են <code>-(2<sup>53</sup>-1)</code>-ից՝ բացասական թվերի դեպքում։ Այս տեխիկական սահմանափակումը պայմանավորված է թվերի ներքին ներկայացման յուրահատկություններով։
+JavaScript-ում «number» տիպը չի կարող ներկայացնել թվային արժեքներ, որոնք մեծ են <code>(2<sup>53</sup>-1)</code>-ից (նույնն է, ինչ `9007199254740991`), կամ փոքր են <code>-(2<sup>53</sup>-1)</code>-ից՝ բացասական թվերի դեպքում։
 
-Հիմնական դեպքերում սա ավելի քան բավական է, բայց երբեմն մենք կարիք ենք ունենում օգտագործելու իսկապես մեծ թվեր, օրինակ՝ գաղտնագրման կամ ժամանականիշի (timestamp) միկրովարկյաններով ներկայացման դեպքում։
-=======
-In JavaScript, the "number" type cannot safely represent integer values larger than <code>(2<sup>53</sup>-1)</code> (that's `9007199254740991`), or less than <code>-(2<sup>53</sup>-1)</code> for negatives.
+Իսկապես ճշգրիտ լինելու համար, «number» տիպը կարող է պահել ավելի մեծ ամբողջ թվեր (մինչև <code>1.7976931348623157 * 10<sup>308</sup></code>), բայց անվտանգ ամբողջ թվերի միջակայքից դուրս <code>±(2): <sup>53</sup>-1)</code> ճշգրտության սխալ կլինի, քանի որ ոչ բոլոր թվանշաններն են տեղավորվում ֆիքսված 64-բիթանոց պահեստում: Այնպես որ, «մոտավոր» արժեք կարող է պահվել:
 
-To be really precise, the "number" type can store larger integers (up to <code>1.7976931348623157 * 10<sup>308</sup></code>), but outside of the safe integer range <code>±(2<sup>53</sup>-1)</code> there'll be a precision error, because not all digits fit into the fixed 64-bit storage. So an "approximate" value may be stored.
-
-For example, these two numbers (right above the safe range) are the same:
+Օրինակ, այս երկու թվերը (անվտանգ տիրույթից անմիջապես վերև) նույնն են.
 
 ```js
 console.log(9007199254740991 + 1); // 9007199254740992
 console.log(9007199254740991 + 2); // 9007199254740992
 ```
 
-So to say, all odd integers greater than <code>(2<sup>53</sup>-1)</code> can't be stored at all in the "number" type.
+Այսպես ասած՝ <code>(2<sup>53</sup>-1)</code>-ից մեծ բոլոր կենտ ամբողջ թվերն ընդհանրապես չեն կարող պահվել «number» տիպում։
 
-For most purposes <code>±(2<sup>53</sup>-1)</code> range is quite enough, but sometimes we need the entire range of really big integers, e.g. for cryptography or microsecond-precision timestamps.
->>>>>>> 82ed8f11b40bd40797427a5dd1763edbe1fca523
+Շատ նպատակների համար <code>±(2<sup>53</sup>-1)</code> միջակայքը բավական է, բայց երբեմն մեզ անհրաժեշտ է իսկապես մեծ ամբողջ թվերի ամբողջ միջակայքը, օրինակ. գաղտնագրության կամ միկրովայրկյանային ճշգրտությամբ ժամանակի համար:
 
 `BigInt`-ը վերջերս է ավելացվել լեզվում՝ կամայական մեծության թվեր նեկայացնելու նպատակով։
 
