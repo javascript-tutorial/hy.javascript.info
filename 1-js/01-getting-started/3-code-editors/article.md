@@ -31,10 +31,16 @@ IDE-ների և «թեթև խմբագրիչներ»-ի հիմնական տարբ
 
 Հետևյալ խնբագրիչներն արժանի են Ձեր ուշադրությանը.
 
+<<<<<<< HEAD
 - [Atom](https://atom.io/) (հասանելի է տարբեր հարթակների համար, անվճար է).
 - [Sublime Text](http://www.sublimetext.com) (հասանելի է տարբեր հարթակների համար, վճարովի է).
 - [Notepad++](https://notepad-plus-plus.org/) (Windows, անվճար է).
 - [Vim](http://www.vim.org/), [Emacs](https://www.gnu.org/software/emacs/).
+=======
+- [Sublime Text](http://www.sublimetext.com) (cross-platform, shareware).
+- [Notepad++](https://notepad-plus-plus.org/) (Windows, free).
+- [Vim](http://www.vim.org/) and [Emacs](https://www.gnu.org/software/emacs/) are also cool if you know how to use them.
+>>>>>>> 7000ede297bfd688f9a3767e8ca43abd9242f322
 
 ## Այլ խմբագրիչներ
 
