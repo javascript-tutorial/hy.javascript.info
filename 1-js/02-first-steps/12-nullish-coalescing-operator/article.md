@@ -106,7 +106,11 @@ alert(height ?? 100); // 0
 
 ## Նախապատվություն
 
+<<<<<<< HEAD
 `??`֊ի նախապատվությունը նույնն է ինչ `||`֊ինը՝։ [MDN աղյուսակում](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table) երկուսն էլ `4` են։
+=======
+The precedence of the `??` operator is the same as `||`. They both equal `3` in the [MDN table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table).
+>>>>>>> 1edb0a38330b54d2e1916f5193fc043e6fbbea78
 
 Դա նշանակում է, որ ինչպես `||`֊ի դեպքում, null֊ի միավորման օպերատոր `??`֊ը կատարվում է `=` և `?` օպերատորներից առաջ, բայց շատ այլ օպերատորնեից հետո, ինչպիսիք են `+`, `*`։
 
