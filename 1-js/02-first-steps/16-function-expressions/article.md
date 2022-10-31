@@ -359,8 +359,13 @@ welcome(); // այժմ նորմալ է
 ```
 
 
+<<<<<<< HEAD
 ```smart header="Ե՞րբ օգտագործել Ֆունկցիոնալ Հռչակագիր, երբ՝ Ֆունկցիոնալ Արտահայտություն:"
 Որպես հիմնական կանոն, երբ մենք պետք է հայտարարենք ֆունկցիա, առաջին հերթին պետք է հաշվի առնել Ֆունկցիոնալ Հռչակագրի շարահուսությունը: Այն ավելի շատ ազատություն է տալիս այն հարցում, թի ինչպես կազմակերպենք մեր կոդը, քանի որ մենք կարող ենք կանչել այդպիսի ֆունկցիաները նախքան նրանց հռչակումը:
+=======
+```smart header="When to choose Function Declaration versus Function Expression?"
+As a rule of thumb, when we need to declare a function, the first thing to consider is Function Declaration syntax. It gives more freedom in how to organize our code, because we can call such functions before they are declared.
+>>>>>>> 5dff42ba283bce883428c383c080fa9392b71df8
 
 Դա նաև ավելի ընթեռնելի է, քանի որ ավելի հեշտ է փնտրել `function f(…) {…}` կոդում, քան՝ `let f = function(…) {…};`: Ֆունկցիոնալ Հռչակագրերն ավելի «գրավիչ են աչքի համար»:
 
