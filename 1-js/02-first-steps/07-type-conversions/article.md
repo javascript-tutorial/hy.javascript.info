@@ -69,8 +69,13 @@ alert(age); // NaN, փոխարկումը ձախողվել է
 |-------|-------------|
 |`undefined`|`NaN`|
 |`null`|`0`|
+<<<<<<< HEAD
 |<code>true&nbsp;/&nbsp;false</code> | `1` / `0` |
 | `string` | Սկզբում և վերջում եղած բացատները հեռացվում են։ Եթե ստացված տողը դատարկ է, արդյունքը դառնում է `0`։ Հակառակ դեպքում, ոչ դատարկ տողից «կարդացվում է» թիվը. Ձախողման դեպքում արդյունքը դառնում է `NaN`։ |
+=======
+|<code>true&nbsp;and&nbsp;false</code> | `1` and `0` |
+| `string` | Whitespaces (includes spaces, tabs `\t`, newlines `\n` etc.) from the start and end are removed. If the remaining string is empty, the result is `0`. Otherwise, the number is "read" from the string. An error gives `NaN`. |
+>>>>>>> 8d9ecb724c7df59774d1e5ffb5e5167740b7d321
 
 Օրինակներ․
 
@@ -130,7 +135,11 @@ alert( Boolean(" ") ); // բացատը նույնպես true է (ցանկացա�
 |`undefined`|`NaN`|
 |`null`|`0`|
 |<code>true&nbsp;/&nbsp;false</code> | `1 / 0` |
+<<<<<<< HEAD
 | `string` | Եզրերում եղած բացատները անտեսվում են։ Դատարկ տողը դառնում է `0`։ Ձախողման դեպքում ստացվում է `NaN`։ |
+=======
+| `string` | The string is read "as is", whitespaces (includes spaces, tabs `\t`, newlines `\n` etc.) from both sides are ignored. An empty string becomes `0`. An error gives `NaN`. |
+>>>>>>> 8d9ecb724c7df59774d1e5ffb5e5167740b7d321
 
 **`Տրամաբանական փոխարկում`** -- Տեղի է ունենում տրամաբանական գործողություններում։ Կարող է իրականացվել `Boolean(value)`-ի միջոցով։
 

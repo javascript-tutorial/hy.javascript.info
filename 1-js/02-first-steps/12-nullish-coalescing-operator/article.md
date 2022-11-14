@@ -29,7 +29,11 @@ result = (a !== null && a !== undefined) ? a : b;
 ```js run
 let user;
 
+<<<<<<< HEAD
 alert(user ?? "Անանուն"); // Անանուն (user֊ը որոշված չէ)
+=======
+alert(user ?? "Anonymous"); // Anonymous (user is undefined)
+>>>>>>> 8d9ecb724c7df59774d1e5ffb5e5167740b7d321
 ```
 
 Ահա օրինակ, երբ `user`֊ին վերագրված է անուն․
@@ -37,7 +41,11 @@ alert(user ?? "Անանուն"); // Անանուն (user֊ը որոշված չէ
 ```js run
 let user = "Ջոն";
 
+<<<<<<< HEAD
 alert(user ?? "Անանուն"); // Ջոն (user֊ը որոշված է)
+=======
+alert(user ?? "Anonymous"); // John (user is not null/undefined)
+>>>>>>> 8d9ecb724c7df59774d1e5ffb5e5167740b7d321
 ```
 
 Մենք կարող ենք նաև օգտագործել `??`֊ից կազմված շարան, առաջին ոչ `null/undefined` արժեքը վերցնելու համար։
@@ -106,7 +114,11 @@ alert(height ?? 100); // 0
 
 ## Նախապատվություն
 
+<<<<<<< HEAD
 `??`֊ի նախապատվությունը նույնն է ինչ `||`֊ինը՝։ [MDN աղյուսակում](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table) երկուսն էլ `4` են։
+=======
+The precedence of the `??` operator is the same as `||`. They both equal `3` in the [MDN table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table).
+>>>>>>> 8d9ecb724c7df59774d1e5ffb5e5167740b7d321
 
 Դա նշանակում է, որ ինչպես `||`֊ի դեպքում, null֊ի միավորման օպերատոր `??`֊ը կատարվում է `=` և `?` օպերատորներից առաջ, բայց շատ այլ օպերատորնեից հետո, ինչպիսիք են `+`, `*`։
 
