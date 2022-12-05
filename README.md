@@ -1,6 +1,10 @@
 # The Modern JavaScript Tutorial in Armenian
 
+<<<<<<< HEAD
 This repository hosts Armenian translation of the Modern JavaScript Tutorial, published in [https://javascript.info](https://javascript.info).
+=======
+This repository hosts the English content of the Modern JavaScript Tutorial, published at [https://javascript.info](https://javascript.info).
+>>>>>>> 1ce5644a15ee141fbe78c0fb79c8f40d870d7043
 
 
 **That's how you can contribute:**
@@ -21,6 +25,7 @@ If maintainers do not respond, or if you'd like to become a maintainer, write us
 
 🎉 Thank you!
 
+<<<<<<< HEAD
 Your name and the contribution size will appear in the "About project" page when the translation gets published.
 
 P.S. The full list of languages can be found at <https://javascript.info/translate>.
@@ -152,6 +157,19 @@ Please don't translate or remove the `[#...]` part, it's for URL anchors.
 ### Images
 
 Most illustrations use SVG format, the text in there can be replaced with a translated variant.
+=======
+Something's wrong? A topic is missing? Explain it to people, add it as PR 👏
+
+**You can edit the text in any editor.** The tutorial uses an enhanced "markdown" format, easy to grasp. And if you want to see how it looks on-site, there's a server to run the tutorial locally at <https://github.com/javascript-tutorial/server>.
+
+The list of contributors is available at <https://javascript.info/about#contributors>.
+
+## Structure
+
+Every chapter, article, or task has its folder.
+
+The folder is named like `N-url`, where `N` is a number for the sorting purposes and `URL` is the URL part with the title of the material.
+>>>>>>> 1ce5644a15ee141fbe78c0fb79c8f40d870d7043
 
 The translated text is in `images.yml` file in the tutorial root.
 
