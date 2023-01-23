@@ -225,7 +225,11 @@ alert(age); // «undefined»
 
 ## typeof օպերատորը [#type-typeof]
 
+<<<<<<< HEAD
 `typeof` օպերատորը վերադարձնում է իր արգումենտի տիպը։ Այն օգտակար է, երբ մենք ուզում ենք մշակել տարբեր տիպերի արժեքները տարբեր կերպով, կամ պարզեպես արագ ստուգման կարիք կա։
+=======
+The `typeof` operator returns the type of the operand. It's useful when we want to process values of different types differently or just want to do a quick check.
+>>>>>>> ea7738bb7c3616bb51ff14ae3db2a2747d7888ff
 
 `typeof x`-ի կանչը վերադարձնում է տող, որը պարունակում է տիպի անվանումը․
 
