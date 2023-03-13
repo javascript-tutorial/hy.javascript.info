@@ -68,7 +68,11 @@ if (cond) {
 
 ## «else» դրույթը
 
+<<<<<<< HEAD
 `if` դրույթը կարող է պարունակել կամընտրական, ոչ պարտադիր «else» բլոկ: Այն գործարկվում է, երբ պայմանը կեղծ է:
+=======
+The `if` statement may contain an optional `else` block. It executes when the condition is falsy.
+>>>>>>> 9e3fa1351f80cfd6353a778a55b2c86bca9e895f
 
 Օրինակ.
 ```js run
@@ -180,10 +184,17 @@ alert( message );
 
 Սկզբում կարող է դժվար լինել հասկանալը, թե ինչ է կատարվում: Բայց ավելի ուշադիր նայելուց հետո մենք կարող ենք տեսնել, որ դա ընդամենը թեստերի սովորական հաջորդականություն է.
 
+<<<<<<< HEAD
 1. Առաջին հարցական նշանը ստուգում է, թե արդյո՞ք `age < 3`:
 2. Եթե ճիշտ է, այն վերադարձնում է `'Ողջույն փոքրիկ'`: Հակառակ դեպքում, այն շարունակում է `:` կրկնակետից հետո արտահայտությունը՝ ստուգելով `age < 18`:
 3. Եթե դա ճիշտ է, այն վերադարձնում է `'Ողջույն'`: Հակառակ դեպքում, այն շարունակում է հաջորդ `:` կրկնակետից հետո արտահայտությունը՝ ստուգելով `age < 100`:
 4. Եթե դա ճիշտ է, այն վերադարձնում է `'Ողջույններ!'`: Հակառակ դեպքում, այն շարունակում է վերջին `:` կրկնակետից հետո արտահայտությունը՝ վերադարձնելով `'Ի՜նչ անսովոր տարիք է։'`:
+=======
+1. The first question mark checks whether `age < 3`.
+2. If true -- it returns `'Hi, baby!'`. Otherwise, it continues to the expression after the colon ":", checking `age < 18`.
+3. If that's true -- it returns `'Hello!'`. Otherwise, it continues to the expression after the next colon ":", checking `age < 100`.
+4. If that's true -- it returns `'Greetings!'`. Otherwise, it continues to the expression after the last colon ":", returning `'What an unusual age!'`.
+>>>>>>> 9e3fa1351f80cfd6353a778a55b2c86bca9e895f
 
 Ահա, թե ինչպես է սա երևում `if..else`-ի միջոցով.
 
