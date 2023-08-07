@@ -103,6 +103,7 @@ typeof function(){} == "function" // ֆունկցիաները մշակվում �
 
 Մենք բրաուզերն ենք օգտագործում որպես աշխատանքային միջավայր, ուստի UI-ի (օգտատիրոջ ինտերֆեյս) հիմնական ֆունկցիաները կլինեն.
 
+<<<<<<< HEAD
 [`prompt(question, [default])`](mdn:api/Window/prompt)
 : Հարց է տալիս `question`, այնուհետև վերադարձնում է այն, ինչ մուտքագրել է այցելուն կամ `null`, եթե այցելուն սեղմել է «Cancel»:
 
@@ -111,6 +112,16 @@ typeof function(){} == "function" // ֆունկցիաները մշակվում �
 
 [`alert(message)`](mdn:api/Window/alert)
 : Արտատպում է հաղորդագրություն `message`։
+=======
+[`prompt(question, [default])`](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt)
+: Ask a `question`, and return either what the visitor entered or `null` if they clicked "cancel".
+
+[`confirm(question)`](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm)
+: Ask a `question` and suggest to choose between Ok and Cancel. The choice is returned as `true/false`.
+
+[`alert(message)`](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert)
+: Output a `message`.
+>>>>>>> d694e895efe89922a109702085b6ca1efeffea10
 
 Բոլոր այս ֆունկցիաները *modal* են, նրանք դադարեցնում են կոդի գործարկումը և թույլ չեն տալիս այցելուներին փոխազդեցություն ունենալ էջի հետ, մինչև նրանք «չպատասխանեն»։
 
@@ -143,8 +154,13 @@ JavaScript-ը սպասարկում է հետևյալ օպերատորները.
 Վերագրում
 : Կա պարզ վերագրում՝ `a = b`, և համակցված վերագրում՝ `a *= 2`։
 
+<<<<<<< HEAD
 Բիթային
 : Բիթային օպերատորները աշխատում են 32-բիթ ամբողջ թվերի հետ ամենացածր՝ բիթային մակարդակում. տեսեք [դոկումենտացիան](mdn:/JavaScript/Guide/Expressions_and_Operators#bitwise_operators)-ում, երբ դրա կարիքը լինի:
+=======
+Bitwise
+: Bitwise operators work with 32-bit integers at the lowest, bit-level: see the [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#bitwise_operators) when they are needed.
+>>>>>>> d694e895efe89922a109702085b6ca1efeffea10
 
 Պայմանական
 : Միակ օպերատորը երեք պարամետրով՝ `cond ? resultA : resultB`։ Եթե `cond` պայմանը ճշմարիտ է, վերադարձվում է `resultA`, հակառակ դեպքում՝ `resultB`։
