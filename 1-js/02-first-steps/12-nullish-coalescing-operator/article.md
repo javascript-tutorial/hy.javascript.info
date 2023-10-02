@@ -29,7 +29,11 @@ result = (a !== null && a !== undefined) ? a : b;
 ```js run
 let user;
 
+<<<<<<< HEAD
 alert(user ?? "Անանուն"); // Անանուն (user֊ը որոշված չէ)
+=======
+alert(user ?? "Anonymous"); // Anonymous (user is undefined)
+>>>>>>> 285083fc71ee3a7cf55fd8acac9c91ac6f62105c
 ```
 
 Ահա օրինակ, երբ `user`֊ին վերագրված է անուն․
@@ -37,7 +41,11 @@ alert(user ?? "Անանուն"); // Անանուն (user֊ը որոշված չէ
 ```js run
 let user = "Ջոն";
 
+<<<<<<< HEAD
 alert(user ?? "Անանուն"); // Ջոն (user֊ը որոշված է)
+=======
+alert(user ?? "Anonymous"); // John (user is not null/undefined)
+>>>>>>> 285083fc71ee3a7cf55fd8acac9c91ac6f62105c
 ```
 
 Մենք կարող ենք նաև օգտագործել `??`֊ից կազմված շարան, առաջին ոչ `null/undefined` արժեքը վերցնելու համար։
@@ -76,7 +84,11 @@ alert(firstName || lastName || nickName || "Անանուն"); // Սուպերկ�
 */!*
 ```
 
+<<<<<<< HEAD
 ԿԱՄ `||` օպերատորը կար JavaScript֊ի ստեղծման պահից ի վեր, և ծրագրավորողները օգտագործում էին այն այսպիսի դեպքերի համար շատ երկար ժամանակ։
+=======
+Historically, the OR `||` operator was there first. It's been there since the beginning of JavaScript, so developers were using it for such purposes for a long time.
+>>>>>>> 285083fc71ee3a7cf55fd8acac9c91ac6f62105c
 
 Իսկ null֊ի միավորման օպերատորը `??` ավելացվել է JavaScript֊ում վերջերս, և դրա պատճառը այն է, որ ծրագրավորողները այնքան էլ գոհ չէին `||`֊ից։
 
@@ -106,7 +118,11 @@ alert(height ?? 100); // 0
 
 ## Նախապատվություն
 
+<<<<<<< HEAD
 `??`֊ի նախապատվությունը նույնն է ինչ `||`֊ինը՝։ [MDN աղյուսակում](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table) երկուսն էլ `4` են։
+=======
+The precedence of the `??` operator is the same as `||`. They both equal `3` in the [MDN table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table).
+>>>>>>> 285083fc71ee3a7cf55fd8acac9c91ac6f62105c
 
 Դա նշանակում է, որ ինչպես `||`֊ի դեպքում, null֊ի միավորման օպերատոր `??`֊ը կատարվում է `=` և `?` օպերատորներից առաջ, բայց շատ այլ օպերատորնեից հետո, ինչպիսիք են `+`, `*`։
 
