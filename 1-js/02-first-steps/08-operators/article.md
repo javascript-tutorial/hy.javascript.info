@@ -50,8 +50,14 @@
 Օրինակ՝
 
 ```js run
+<<<<<<< HEAD
 alert( 5 % 2 ); // 1, 5-ը բաժանած 2-ի մնացորդը
 alert( 8 % 3 ); // 2, 8-ը բաժանած 3-ի մնացորդը
+=======
+alert( 5 % 2 ); // 1, the remainder of 5 divided by 2
+alert( 8 % 3 ); // 2, the remainder of 8 divided by 3
+alert( 8 % 4 ); // 0, the remainder of 8 divided by 4
+>>>>>>> 285083fc71ee3a7cf55fd8acac9c91ac6f62105c
 ```
 
 ### Աստիճան բարձրացնել  **
@@ -68,7 +74,11 @@ alert( 2 ** 3 ); // 2³ = 8
 alert( 2 ** 4 ); // 2⁴ = 16
 ```
 
+<<<<<<< HEAD
 Ինչպես մաթեմատիկայում, այստեղ նույնպես հետևայալ օպերատորը կարող ենք կիրառել ոչ ամբողջ թվերի դեպքում։
+=======
+Just like in maths, the exponentiation operator is defined for non-integer numbers as well.
+>>>>>>> 285083fc71ee3a7cf55fd8acac9c91ac6f62105c
 
 Օրինակ՝ ½-ի աստիճանը:
 
@@ -80,7 +90,11 @@ alert( 8 ** (1/3) ); // 2 (power of 1/3 is the same as a cubic root)
 
 ## Տողերի միավորումը երկուական +-ով
 
+<<<<<<< HEAD
 Եկեք ծանոթանանք JavaScript-ի հնարավորությունների հետ, որոնք հիմքում ընկած է դպրոցական թվաբանությունը։
+=======
+Let's meet the features of JavaScript operators that are beyond school arithmetics.
+>>>>>>> 285083fc71ee3a7cf55fd8acac9c91ac6f62105c
 
 Սովորաբար, `+` գործողությունը գումարում է թվերը։
 
@@ -194,6 +208,7 @@ alert( +apples + +oranges ); // 5
 | Առաջնահերթություն | Անվանում | Նշան |
 |------------|------|------|
 | ... | ... | ... |
+<<<<<<< HEAD
 | 15 | ունար պլյուս | `+` |
 | 15 | ունար ժխտում | `-` |
 | 14 | աստիճան բարձրացում | `**` |
@@ -201,11 +216,24 @@ alert( +apples + +oranges ); // 5
 | 13 | բաժանում | `/` |
 | 12 | գումարում | `+` |
 | 12 | հանում | `-` |
+=======
+| 14 | unary plus | `+` |
+| 14 | unary negation | `-` |
+| 13 | exponentiation | `**` |
+| 12 | multiplication | `*` |
+| 12 | division | `/` |
+| 11 | addition | `+` |
+| 11 | subtraction | `-` |
+>>>>>>> 285083fc71ee3a7cf55fd8acac9c91ac6f62105c
 | ... | ... | ... |
 | 2 | վերագրում | `=` |
 | ... | ... | ... |
 
+<<<<<<< HEAD
 Կարող ենք տեսնել, "ունար պլյուս"-ը ունի `15` գերակայությունը, որը մեծ է քան `12`-ը "գումարում" (երկուական պլյուս)։ Ահա թե ինչու է `"+apples + +oranges"` արտահայտությունում ունար պլյուսը կատարվում նախքան գումարումը։
+=======
+As we can see, the "unary plus" has a priority of `14` which is higher than the `11` of "addition" (binary plus). That's why, in the expression `"+apples + +oranges"`, unary pluses work before the addition.
+>>>>>>> 285083fc71ee3a7cf55fd8acac9c91ac6f62105c
 
 ## Վերագրում
 
@@ -303,9 +331,13 @@ alert( n ); // 14
 ```js run
 let n = 2;
 
-n *= 3 + 5;
+n *= 3 + 5; // right part evaluated first, same as n *= 8
 
+<<<<<<< HEAD
 alert( n ); // 16  (նախ կատարվում է աջ մասը, նույնն է ինչ n *= 8)
+=======
+alert( n ); // 16
+>>>>>>> 285083fc71ee3a7cf55fd8acac9c91ac6f62105c
 ```
 
 ## Ինկրեմենտ/դեկրեմենտ
