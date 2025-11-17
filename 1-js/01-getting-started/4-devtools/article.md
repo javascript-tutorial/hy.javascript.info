@@ -22,7 +22,7 @@
 
 Դա ունի այսպիսի տեսք։
 
-![chrome](chrome.png)
+![chrome](chrome.webp)
 
 Ծրագրավորման գործիքների տեսքը կախված է Chrome-ի տարբերակից: Այն ժամանակ առ ժամանակ փոխվում է, բայց պետք է հիմնականում նման լինի:
 
@@ -49,7 +49,11 @@
 
 Safari (Mac զննիչ, հասանելի չէ Windows և Linux ՕՀ-երում) այն մի փոքր առանձնահատուկ է: Մենք նախ պետք է միացնենք «ծրագրավորման գործիքները»:
 
+<<<<<<< HEAD
 Բացեք Preferences էջը և գնացեք "Advanced" պատուհան։ Ներքևում checkbox կա ծրագրավորման գործիքների համար։
+=======
+Open Settings and go to the "Advanced" pane. There's a checkbox at the bottom:
+>>>>>>> 5e893cffce8e2346d4e50926d5148c70af172533
 
 ![safari](safari.png)
 
