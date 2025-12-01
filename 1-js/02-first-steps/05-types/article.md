@@ -94,6 +94,7 @@ const bigInt = 1234567890123456789012345678901234567890n;
 
 Քանի որ `BigInt` թվերը հազվադեպ են օգտագործվում, դրանց այստեղ չենք անդրադառնա, այլ կդիտարկենք առանձին՝ <info:bigint> գլխում։ Կարդացե՛ք այն, եթե նման մեծ թվերի օգտագոծման կարիք կունենաք։
 
+<<<<<<< HEAD
 
 ```smart header="Համատեղելիության խնդիրներ"
 Այս պահին `BigInt`-ը համատեղելի է Firefox/Chrome/Edge/Safari զննիչների հետ, բայց ոչ IE-ի։
@@ -102,6 +103,9 @@ const bigInt = 1234567890123456789012345678901234567890n;
 Կարող եք ստուգել [*MDN* BigInt compatibility table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt#Browser_compatibility) հոդվածը, հասկանալու համար, թե զննիչների որ տարբերակների հետ է այն համատեղելի։
 
 ## Տող (String)
+=======
+## String
+>>>>>>> d78b01e9833009fab534462e05c03cffc51bf0e3
 
 JavaScript-ում տողը պետք է շրջապատված լինի չակերտներով։
 
