@@ -209,8 +209,16 @@ alert( undefined == 0 ); // false (3)
 
 ## Ամփոփում
 
+<<<<<<< HEAD
 - Համեմատման գործողությունները վերադարձնում են տրամաբանական արժեք:
 - Տողերը համեմատվում են տառ առ տառ, բառարանային հերթականությամբ:
 - Երբ տարբեր տիպեր ունեցող արժեքները համեմատվում են, դրանք ձևափոխվում են թվերի (բացառությամբ խիստ հավասարության համեմատության):
 - `null` և `undefined` արժեքները հավասար են (`==`) մեկը մյուսին և հավասար չեն որևէ այլ արժեքի:
 - Զգուշացեք օգտագործել այնպիսի համեմատություններ ինչպիսիք են `>`, կամ `<` այն փոփոխականների հետ, որոնք կարող են լինել `null/undefined`։ Լավ գաղափար է `null/undefined`-ը ստուգել առանձին։
+=======
+- Comparison operators return a boolean value.
+- Strings are compared letter-by-letter in the "dictionary" order.
+- When values of different types are compared, they get converted to numbers (with the exclusion of a strict equality check).
+- The values `null` and `undefined` are equal `==` to themselves and each other, but do not equal any other value.
+- Be careful when using comparisons like `>` or `<` with variables that can occasionally be `null/undefined`. Checking for `null/undefined` separately is a good idea.
+>>>>>>> d78b01e9833009fab534462e05c03cffc51bf0e3
