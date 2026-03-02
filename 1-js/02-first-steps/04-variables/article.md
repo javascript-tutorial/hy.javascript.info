@@ -172,7 +172,11 @@ let userName;
 let test123;
 ```
 
+<<<<<<< HEAD
 Երբ փոփոխականի անունը պարունակում է մի քանի բառեր, սովորաբար օգտագործվում է [camelCase](https://en.wikipedia.org/wiki/CamelCase): camelCase-ի օգինակ է հետևյալ անունը՝ `myVeryLongName`:
+=======
+When the name contains multiple words, [camelCase](https://en.wikipedia.org/wiki/CamelCase) is commonly used. That is: words go one after another, with each word except the first starting with a capital letter: `myVeryLongName`.
+>>>>>>> ff804bc19351b72bc5df7766f4b9eb8249a3cb11
 
 Ինչպես նշեցինք `'$'` և `'_'` նշանները ևս կարող են օգտագործվել փոփոխականների անուններում, սակայն դրանք որոշակի հատուկ իմաստ չունեն:
 
