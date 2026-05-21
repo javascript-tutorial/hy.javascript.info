@@ -1,195 +1,225 @@
-# Debugging in the browser
+# Վրիպազերծում (debugging) զննիչում
 
-Before writing more complex code, let's talk about debugging.
+Մինչև ավելի բարդ կոդ գրելը, եկեք խոսենք վրիպազերծման (debugging) մասին։
 
-[Debugging](https://en.wikipedia.org/wiki/Debugging) is the process of finding and fixing errors within a script. All modern browsers and most other environments support debugging tools -- a special UI in developer tools that makes debugging much easier. It also allows to trace the code step by step to see what exactly is going on.
+[Վրիպազերծումը](https://en.wikipedia.org/wiki/Debugging) սկրիպտում սխալները գտնելու և շտկելու գործընթացն է։ Բոլոր ժամանակակից զննիչները և շատ այլ միջավայրեր ունեն ներկառուցված վրիպազերծման գործիքներ (debugging tools)՝ հատուկ UI ծրագրավորման գործիքներում, որոնք զգալիորեն հեշտացնում են սխալների որոնումն ու վերլուծությունը։ Դրանք նաև թույլ են տալիս քայլ առ քայլ հետևել կոդի կատարմանը և հասկանալ, թե իրականում ինչ է տեղի ունենում։
 
-We'll be using Chrome here, because it has enough features, most other browsers have a similar process.
+Այս գլխում օգտագործելու ենք Chrome-ը, քանի որ այն ունի բավականին հարմար և հարուստ գործիքակազմ։ Սակայն մյուս զննիչների մեծ մասում գործընթացը շատ նման է։
 
-## The "Sources" panel
+## «Sources» վահանակը
 
-Your Chrome version may look a little bit different, but it still should be obvious what's there.
+Ձեր Chrome-ի տարբերակի տեսքը կարող է մի փոքր տարբերվել, սակայն հիմնական գաղափարը նույնն է լինելու։
 
-- Open the [example page](debugging/index.html) in Chrome.
-- Turn on developer tools with `key:F12` (Mac: `key:Cmd+Opt+I`).
-- Select the `Sources` panel.
+- Բացեք [օրինակի էջը](debugging/index.html) Chrome-ում։
+- Բացեք ծրագրավորողի գործիքները `key:F12` ստեղնով (Mac՝ `key:Cmd+Opt+I`)։
+- Ընտրեք `Sources` վահանակը։
 
-Here's what you should see if you are doing it for the first time:
+Առաջին անգամ բացելու դեպքում կտեսնեք մոտավորապես այսպիսի պատկեր՝
 
 ![](chrome-open-sources.svg)
 
-The toggler button <span class="devtools" style="background-position:-172px -98px"></span> opens the tab with files.
+Անջատիչի կոճակը <span class="devtools" style="background-position:-172px -98px"></span> բացում է ֆայլերի ցանկը։
 
-Let's click it and select `hello.js` in the tree view. Here's what should show up:
+Այժմ ընտրեք `hello.js` ֆայլը։ Արդյունքում կտեսնեք հետևյալը՝
 
 ![](chrome-tabs.svg)
 
-The Sources panel has 3 parts:
+«Sources» վահանակը բաղկացած է երեք հիմնական հատվածից՝
 
-1. The **File Navigator** pane lists HTML, JavaScript, CSS and other files, including images that are attached to the page. Chrome extensions may appear here too.
-2. The **Code Editor** pane shows the source code.
-3. The **JavaScript Debugging** pane is for debugging, we'll explore it soon.
+1. **Ֆայլերի զննիչը (File Navigator)** ցուցադրում է էջին միացված HTML, JavaScript, CSS և այլ ֆայլերը, ինչպես նաև նկարները։ Chrome-ի extension-ները նույնպես կարող են երևալ այստեղ։
+2. **Խմբագրիչի հատվածը (Editor)** ցույց է տալիս ընտրված ֆայլի ելակետային կոդը (source code)։
+3. **JavaScript-ի վրիպազերծման հատվածը** նախատեսված է կոդի վերլուծության և քայլ առ քայլ կատարման համար։ Շուտով այն մանրամասն կքննարկենք։
 
-Now you could click the same toggler <span class="devtools" style="background-position:-172px -122px"></span> again to hide the resources list and give the code some space.
+Կարող եք կրկին սեղմել նույն անջատիչին <span class="devtools" style="background-position:-172px -122px"></span>, որպեսզի թաքցնեք ֆայլերի ցանկը և ավելի շատ տարածք տրամադրեք կոդին։
 
-## Console
+## Console (բարձակ)
 
-If we press `key:Esc`, then a console opens below. We can type commands there and press `key:Enter` to execute.
+Եթե սեղմենք `key:Esc`, ներքևում կբացվի բարձակը (`console`)։ Այնտեղ կարող ենք գրել հրամաններ և սեղմել `key:Enter`՝ դրանք կատարելու համար։
 
-After a statement is executed, its result is shown below.
+Հրամանի կատարումից հետո արդյունքը կցուցադրվի անմիջապես ներքևում։
 
-For example, here `1+2` results in `3`, while the function call `hello("debugger")` returns nothing, so the result is `undefined`:
+Օրինակ՝ `1 + 2` արտահայտության արդյունքը կլինի `3`, իսկ `hello("debugger")` ֆունկցիայի կանչը ոչինչ չի վերադարձնում, ուստի արդյունքը կլինի `undefined`։
 
 ![](chrome-sources-console.svg)
 
-## Breakpoints
+## Ընդհատման կետեր (breakpoints)
 
-Let's examine what's going on within the code of the [example page](debugging/index.html). In `hello.js`, click at line number `4`. Yes, right on the `4` digit, not on the code.
+Եկեք տեսնենք, թե ինչ է տեղի ունենում [օրինակի էջի](debugging/index.html) կոդում։
 
-Congratulations! You've set a breakpoint. Please also click on the number for line `8`.
+`hello.js` ֆայլում սեղմեք `4`-րդ տողի համարի վրա։ Սեղմեք հենց տողի համարին, ոչ թե կոդին։
 
-It should look like this (blue is where you should click):
+Շնորհավորում ենք․ դուք ստեղծեցիք ընդհատման կետ (breakpoint)։ Նույնը արեք նաև `8`-րդ տողի համար։
+
+Արդյունքը պետք է լինի այսպիսին՝
 
 ![](chrome-sources-breakpoint.svg)
 
-A *breakpoint* is a point of code where the debugger will automatically pause the JavaScript execution.
+**Ընդհատման կետը** կոդի այն հատվածն է, որտեղ debugger-ը ավտոմատ դադարեցնում է JavaScript-ի կատարումը։
 
-While the code is paused, we can examine current variables, execute commands in the console etc. In other words, we can debug it.
+Երբ կատարումը դադարեցված է, մենք կարող ենք՝
 
-We can always find a list of breakpoints in the right panel. That's useful when we have many breakpoints in various files. It allows us to:
-- Quickly jump to the breakpoint in the code (by clicking on it in the right panel).
-- Temporarily disable the breakpoint by unchecking it.
-- Remove the breakpoint by right-clicking and selecting Remove.
-- ...And so on.
+- ուսումնասիրել փոփոխականների արժեքները,
+- կատարել հրամաններ console-ում,
+- քայլ առ քայլ հետևել կոդի կատարմանը,
+- հասկանալ, թե որտեղ է առաջացել խնդիրը։
 
-```smart header="Conditional breakpoints"
-*Right click* on the line number allows to create a *conditional* breakpoint. It only triggers when the given expression, that you should provide when you create it, is truthy.
+Աջ վահանակում միշտ կարելի է տեսնել բոլոր ընդհատման կետերի ցանկը։ Դա հատկապես օգտակար է, երբ նախագծում կան բազմաթիվ breakpoints տարբեր ֆայլերում։ Այդ ցանկը թույլ է տալիս՝
 
-That's handy when we need to stop only for a certain variable value or for certain function parameters.
+- արագ անցնել համապատասխան breakpoint-ի մոտ,
+- ժամանակավորապես անջատել breakpoint-ը,
+- հեռացնել breakpoint-ը (`Remove`),
+- և կատարել այլ գործողություններ։
+
+```smart header="Պայմանական ընդհատման կետեր"
+Տողի համարի վրա *աջ սեղմելով* կարող եք ստեղծել *պայմանական breakpoint*։ Այն կակտիվանա միայն այն դեպքում, երբ նշված պայմանը լինի true։
+
+Սա օգտակար է, երբ ցանկանում ենք կանգնեցնել կատարումը միայն որոշակի փոփոխականի արժեքի կամ որոշակի պարամետրերի դեպքում։
 ```
 
-## The command "debugger"
+## `debugger` հրամանը
 
-We can also pause the code by using the `debugger` command in it, like this:
+Կարող ենք նաև ձեռքով կանգնեցնել կոդի կատարումը `debugger` հրամանով՝
 
 ```js
 function hello(name) {
   let phrase = `Hello, ${name}!`;
 
 *!*
-  debugger;  // <-- the debugger stops here
+  debugger; // debugger-ը կանգ կառնի այստեղ
 */!*
 
   say(phrase);
 }
 ```
 
-Such command works only when the development tools are open, otherwise the browser ignores it.
+Այս հրամանն աշխատում է միայն այն դեպքում, երբ ծրագրավորողի գործիքները բաց են։ Հակառակ դեպքում զննիչը պարզապես անտեսում է այն։
 
-## Pause and look around
+## Դադարեցնել կատարումը և ուսումնասիրել կոդը
 
-In our example, `hello()` is called during the page load, so the easiest way to activate the debugger (after we've set the breakpoints) is to reload the page. So let's press `key:F5` (Windows, Linux) or `key:Cmd+R` (Mac).
+Մեր օրինակում `hello()` ֆունկցիան կանչվում է էջի բեռնման պահին, ուստի debugger-ը ակտիվացնելու ամենահեշտ ձևը էջը թարմացնելն է։
 
-As the breakpoint is set, the execution pauses at the 4th line:
+Սեղմեք `key:F5` (Windows/Linux) կամ `key:Cmd+R` (Mac)։
+
+Քանի որ breakpoint-ը դրված է, կատարումը կդադարի `4`-րդ տողի վրա։
 
 ![](chrome-sources-debugger-pause.svg)
 
-Please open the informational dropdowns to the right (labeled with arrows). They allow you to examine the current code state:
+Այժմ բացեք աջ կողմում գտնվող տեղեկատվական բաժինները (նշված են սլաքներով)։ Դրանք թույլ են տալիս ուսումնասիրել կոդի ընթացիկ վիճակը։
 
-1. **`Watch` -- shows current values for any expressions.**
+### 1. `Watch`
 
-    You can click the plus `+` and input an expression. The debugger will show its value, automatically recalculating it in the process of execution.
+Ցույց է տալիս ընտրված արտահայտությունների ընթացիկ արժեքները։
 
-2. **`Call Stack` -- shows the nested calls chain.**
+Կարող եք սեղմել `+` և ավելացնել ցանկացած արտահայտություն։ Debugger-ը ավտոմատ կվերահաշվի դրա արժեքը կոդի կատարման ընթացքում։
 
-    At the current moment the debugger is inside `hello()` call, called by a script in `index.html` (no function there, so it's called "anonymous").
+### 2. `Call Stack`
 
-    If you click on a stack item (e.g. "anonymous"), the debugger jumps to the corresponding code, and all its variables can be examined as well.
-3. **`Scope` -- current variables.**
+Ցույց է տալիս ֆունկցիաների կանչերի շղթան։
 
-    `Local` shows local function variables. You can also see their values highlighted right over the source.
+Տվյալ պահին debugger-ը գտնվում է `hello()` ֆունկցիայի ներսում, որը կանչվել է `index.html` սկրիպտից։
 
-    `Global` has global variables (out of any functions).
+Եթե սեղմեք stack-ի որևէ տարրի վրա, debugger-ը կանցնի համապատասխան կոդի հատվածին և կցուցադրի դրա փոփոխականները։
 
-    There's also `this` keyword there that we didn't study yet, but we'll do that soon.
+### 3. `Scope`
 
-## Tracing the execution
+Ցույց է տալիս ընթացիկ փոփոխականները։
 
-Now it's time to *trace* the script.
+- `Local` բաժնում ցուցադրվում են լոկալ փոփոխականները։
+- `Global` բաժնում՝ գլոբալ փոփոխականները։
 
-There are buttons for it at the top of the right panel. Let's engage them.
+Այստեղ նաև կտեսնեք `this` keyword-ը, որի մասին դեռ կխոսենք հաջորդ գլուխներում։
+
+## Քայլ առ քայլ կատարում
+
+Այժմ ժամանակն է քայլ առ քայլ հետևելու սկրիպտի կատարմանը։
+
+Վահանակի վերևում կան համապատասխան կոճակներ։ Դիտարկենք դրանցից հիմնականները։
+
 <!-- https://github.com/ChromeDevTools/devtools-frontend/blob/master/front_end/Images/src/largeIcons.svg -->
-<span class="devtools" style="background-position:-146px -168px"></span> -- "Resume": continue the execution, hotkey `key:F8`.
-: Resumes the execution. If there are no additional breakpoints, then the execution just continues and the debugger loses control.
 
-    Here's what we can see after a click on it:
+<span class="devtools" style="background-position:-146px -168px"></span> -- `Resume`, կարճ ստեղն՝ `key:F8`
+: Շարունակում է ծրագրի կատարումը։ Եթե այլ breakpoint չկա, debugger-ը կդադարի վերահսկել կատարումը։
 
     ![](chrome-sources-debugger-trace-1.svg)
 
-    The execution has resumed, reached another breakpoint inside `say()` and paused there. Take a look at the "Call Stack" at the right. It has increased by one more call. We're inside `say()` now.
+    Այստեղ կատարումը հասել է հաջորդ breakpoint-ին՝ `say()` ֆունկցիայի ներսում։ Ուշադրություն դարձրեք `Call Stack` բաժնին․ այնտեղ ավելացել է նոր կանչ։
 
-<span class="devtools" style="background-position:-200px -190px"></span> -- "Step": run the next command, hotkey `key:F9`.
-: Run the next statement. If we click it now, `alert` will be shown.
+<span class="devtools" style="background-position:-200px -190px"></span> -- `Step`, կարճ ստեղն՝ `key:F9`
+: Կատարում է հաջորդ հրահանգը։
 
-    Clicking this again and again will step through all script statements one by one.
+    Եթե սեղմենք այս կոճակը, debugger-ը կանցնի հաջորդ տողին։ Կրկնվող սեղմումներով կարող ենք քայլ առ քայլ անցնել ամբողջ սկրիպտը։
 
-<span class="devtools" style="background-position:-62px -192px"></span> -- "Step over": run the next command, but *don't go into a function*, hotkey `key:F10`.
-: Similar to the previous "Step" command, but behaves differently if the next statement is a function call (not a built-in, like `alert`, but a function of our own).
+<span class="devtools" style="background-position:-62px -192px"></span> -- `Step over`, կարճ ստեղն՝ `key:F10`
+: Կատարում է հաջորդ հրահանգը, սակայն *չի մտնում ֆունկցիայի ներսը*։
 
-    If we compare them, the "Step" command goes into a nested function call and pauses the execution at its first line, while "Step over" executes the nested function call invisibly to us, skipping the function internals.
+    Եթե հաջորդ հրահանգը ֆունկցիայի կանչ է, `Step over`-ը կկատարի այն ամբողջությամբ և կդադարի հաջորդ տողի վրա։
 
-    The execution is then paused immediately after that function call.
+    Սա հարմար է, երբ տվյալ ֆունկցիայի ներքին աշխատանքը մեզ չի հետաքրքրում։
 
-    That's good if we're not interested to see what happens inside the function call.
+<span class="devtools" style="background-position:-4px -194px"></span> -- `Step into`, կարճ ստեղն՝ `key:F11`
+: Նման է `Step` հրամանին, սակայն աշխատում է նաև ասինխրոն կանչերի հետ։
 
-<span class="devtools" style="background-position:-4px -194px"></span> -- "Step into", hotkey `key:F11`.
-: That's similar to "Step", but behaves differently in case of asynchronous function calls. If you're only starting to learn JavaScript, then you can ignore the difference, as we don't have asynchronous calls yet.
+    Եթե դեռ նոր եք սովորում JavaScript, այս տարբերությունը կարող եք անտեսել։
 
-    For the future, just note that "Step" command ignores async actions, such as `setTimeout` (scheduled function call), that execute later. The "Step into" goes into their code, waiting for them if necessary. See [DevTools manual](https://developers.google.com/web/updates/2018/01/devtools#async) for more details.
+    Հետագայում, երբ աշխատեք `setTimeout`-ի կամ այլ ասինխրոն գործողությունների հետ, `Step into`-ը թույլ կտա մտնել նաև դրանց կատարման հոսքի մեջ։
 
-<span class="devtools" style="background-position:-32px -194px"></span> -- "Step out": continue the execution till the end of the current function, hotkey `key:Shift+F11`.
-: Continue the execution and stop it at the very last line of the current function. That's handy when we accidentally entered a nested call using <span class="devtools" style="background-position:-200px -190px"></span>, but it does not interest us, and we want to continue to its end as soon as possible.
+<span class="devtools" style="background-position:-32px -194px"></span> -- `Step out`, կարճ ստեղն՝ `key:Shift+F11`
+: Շարունակում է ընթացիկ ֆունկցիայի կատարումը մինչև դրա ավարտը։
 
-<span class="devtools" style="background-position:-61px -74px"></span> -- enable/disable all breakpoints.
-: That button does not move the execution. Just a mass on/off for breakpoints.
+    Սա օգտակար է, երբ պատահաբար մտել եք որևէ ֆունկցիայի ներս և ցանկանում եք արագ դուրս գալ այնտեղից։
 
-<span class="devtools" style="background-position:-90px -146px"></span> -- enable/disable automatic pause in case of an error.
-: When enabled, if the developer tools is open, an error during the script execution automatically pauses it. Then we can analyze variables in the debugger to see what went wrong. So if our script dies with an error, we can open debugger, enable this option and reload the page to see where it dies and what's the context at that moment.
+<span class="devtools" style="background-position:-61px -74px"></span> -- Միացնել/անջատել բոլոր breakpoint-ները
+: Միացնում կամ անջատում է բոլոր breakpoint-ները՝ առանց դրանք հեռացնելու։
+
+<span class="devtools" style="background-position:-90px -146px"></span> -- Ավտոմատ կանգ սխալի դեպքում
+: Եթե այս տարբերակը միացված է, debugger-ը ավտոմատ կդադարեցնի կատարումը ցանկացած սխալի դեպքում։
+
+    Դա թույլ է տալիս անմիջապես տեսնել սխալի առաջացման վայրը և ուսումնասիրել փոփոխականների արժեքները։
 
 ```smart header="Continue to here"
-Right click on a line of code opens the context menu with a great option called "Continue to here".
+Կոդի որևէ տողի վրա աջ սեղմելով կարող եք ընտրել `Continue to here` տարբերակը։
 
-That's handy when we want to move multiple steps forward to the line, but we're too lazy to set a breakpoint.
+Debugger-ը կշարունակի կատարումը մինչև ընտրված տողը՝ առանց նոր breakpoint ստեղծելու։
 ```
 
-## Logging
+## Լոգավորում
 
-To output something to console from our code, there's `console.log` function.
+Կոդից console տեղեկատվություն արտածելու համար օգտագործվում է `console.log` ֆունկցիան։
 
-For instance, this outputs values from `0` to `4` to console:
+Օրինակ՝
 
 ```js run
-// open console to see
+// արդյունքը տեսնելու համար բացեք console-ը
 for (let i = 0; i < 5; i++) {
-  console.log("value,", i);
+  console.log("value", i);
 }
 ```
 
-Regular users don't see that output, it is in the console. To see it, either open the Console panel of developer tools or press `key:Esc` while in another panel: that opens the console at the bottom.
+Այս կոդը console-ում կտպի `0`-ից մինչև `4` արժեքները։
 
-If we have enough logging in our code, then we can see what's going on from the records, without the debugger.
+Սովորական օգտատերերը չեն տեսնում console-ի արտածած տվյալները։ Դրանք հասանելի են միայն ծրագրավորողի գործիքներում։
 
-## Summary
+Եթե կոդում բավարար logging ավելացնենք, հաճախ հնարավոր կլինի հասկանալ խնդիրը նույնիսկ առանց debugger-ի օգտագործման։
 
-As we can see, there are three main ways to pause a script:
-1. A breakpoint.
-2. The `debugger` statements.
-3. An error (if dev tools are open and the button <span class="devtools" style="background-position:-90px -146px"></span> is "on").
+## Ամփոփում
 
-When paused, we can debug: examine variables and trace the code to see where the execution goes wrong.
+JavaScript-ի կատարումը դադարեցնելու երեք հիմնական եղանակ կա՝
 
-There are many more options in developer tools than covered here. The full manual is at <https://developers.google.com/web/tools/chrome-devtools>.
+1. Breakpoint-ների միջոցով,
+2. `debugger` հրամանով,
+3. Սխալի առաջացման դեպքում (եթե DevTools-ը բաց է և համապատասխան տարբերակը միացված է)։
 
-The information from this chapter is enough to begin debugging, but later, especially if you do a lot of browser stuff, please go there and look through more advanced capabilities of developer tools.
+Երբ կատարումը դադարեցված է, կարող ենք՝
 
-Oh, and also you can click at various places of dev tools and just see what's showing up. That's probably the fastest route to learn dev tools. Don't forget about the right click and context menus!
+- ուսումնասիրել փոփոխականների արժեքները,
+- հետևել կոդի կատարմանը,
+- հասկանալ, թե որտեղ և ինչու է առաջացել խնդիրը։
+
+Chrome DevTools-ը ունի շատ ավելի մեծ հնարավորություններ, քան ներկայացված է այս գլխում։ Լրիվ փաստաթղթավորումը կարող եք գտնել այստեղ՝
+
+<https://developers.google.com/web/tools/chrome-devtools>
+
+Այս գլխի տեղեկատվությունը բավարար է վրիպազերծումը սկսելու համար, սակայն եթե հաճախ եք աշխատում զննիչում, արժե ավելի խորությամբ ուսումնասիրել DevTools-ի հնարավորությունները։
+
+Եվ վերջում՝ մի վախեցեք փորձարկել։ Սեղմեք տարբեր կոճակների վրա, բացեք համատեքստային մենյուները և ուսումնասիրեք DevTools-ի միջերեսը։ Դա այն սովորելու ամենաարագ ճանապարհներից մեկն է։
+
