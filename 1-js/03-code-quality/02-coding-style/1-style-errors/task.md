@@ -2,9 +2,9 @@ importance: 4
 
 ---
 
-# Bad style
+# Վատ ոճ
 
-What's wrong with the code style below?
+Ի՞նչ սխալ կա ստորև բերված կոդի ոճում։
 
 ```js no-beautify
 function pow(x,n)
@@ -25,4 +25,4 @@ else
 }
 ```
 
-Fix it.
+Ուղղեք այն։
