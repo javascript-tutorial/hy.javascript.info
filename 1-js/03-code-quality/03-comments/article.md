@@ -1,14 +1,14 @@
-# Comments
+# Մեկնաբանություններ
 
-As we know from the chapter <info:structure>, comments can be single-line: starting with `//` and multiline: `/* ... */`.
+Ինչպես գիտենք <info:structure> գլխից, մեկնաբանությունները կարող են լինել միատող՝ սկսվող //-ով, և բազմատող՝ /* ... */։
 
-We normally use them to describe how and why the code works.
+Սովորաբար դրանք օգտագործում ենք նկարագրելու համար, թե ինչպես և ինչու է աշխատում կոդը։
 
-At first sight, commenting might be obvious, but novices in programming often use them wrongly.
+Առաջին հայացքից մեկնաբանելը կարող է ակնհայտ թվալ, բայց ծրագրավորման նորեկները հաճախ սխալ են օգտագործում դրանք։
 
-## Bad comments
+## Վատ մեկնաբանություններ
 
-Novices tend to use comments to explain "what is going on in the code". Like this:
+Նորեկները հակված են մեկնաբանություններ օգտագործել բացատրելու «թե ինչ է կատարվում կոդում»։ Այսպես.
 
 ```js
 // This code will do this thing (...) and that thing (...)
@@ -18,13 +18,13 @@ complex;
 code;
 ```
 
-But in good code, the amount of such "explanatory" comments should be minimal. Seriously, the code should be easy to understand without them.
+Բայց լավ կոդում նման «բացատրական» մեկնաբանությունների քանակը պետք է նվազագույն լինի։ Լուրջ, կոդը պետք է հեշտ հասկանալի լինի առանց դրանց։
 
-There's a great rule about that: "if the code is so unclear that it requires a comment, then maybe it should be rewritten instead".
+Այս մասին հիանալի կանոն կա. «եթե կոդն այնքան անհասկանալի է, որ մեկնաբանություն է պահանջում, ապա գուցե այն պետք է վերագրել»։
 
-### Recipe: factor out functions
+## Բաղադրատոմս. առանձնացնել ֆունկցիաները
 
-Sometimes it's beneficial to replace a code piece with a function, like here:
+Երբեմն ձեռնտու է կոդի հատվածը փոխարինել ֆունկցիայով, ինչպես այստեղ.
 
 ```js
 function showPrimes(n) {
@@ -43,7 +43,7 @@ function showPrimes(n) {
 }
 ```
 
-The better variant, with a factored out function `isPrime`:
+Ավելի լավ տարբերակը՝ առանձնացված `isPrime` ֆունկցիայով.
 
 
 ```js
@@ -65,11 +65,11 @@ function isPrime(n) {
 }
 ```
 
-Now we can understand the code easily. The function itself becomes the comment. Such code is called *self-descriptive*.
+Այժմ մենք կարող ենք հեշտությամբ հասկանալ կոդը։ Ֆունկցիան ինքնին դառնում է մեկնաբանություն։ Նման կոդը կոչվում է *ինքնանկարագրող*։
 
-### Recipe: create functions
+### Բաղադրատոմս. ստեղծել ֆունկցիաներ
 
-And if we have a long "code sheet" like this:
+Իսկ եթե ունենք երկար «կոդի թերթ» այսպես.
 
 ```js
 // here we add whiskey
@@ -90,7 +90,7 @@ for(let t = 0; t < 3; t++) {
 // ...
 ```
 
-Then it might be a better variant to refactor it into functions like:
+Ապա գուցե ավելի լավ տարբերակ լինի վերակազմավորել այն ֆունկցիաների այսպես.
 
 ```js
 addWhiskey(glass);
@@ -111,21 +111,21 @@ function addJuice(container) {
 }
 ```
 
-Once again, functions themselves tell what's going on. There's nothing to comment. And also the code structure is better when split. It's clear what every function does, what it takes and what it returns.
+Կրկին, ֆունկցիաներն իրենք են պատմում, թե ինչ է կատարվում։ Մեկնաբանելու բան չկա։ Եվ նաև կոդի կառուցվածքն ավելի լավ է, երբ բաժանված է։ Հասկանալի է, թե ինչ է անում յուրաքանչյուր ֆունկցիա, ինչ է վերցնում և ինչ է վերադարձնում։
 
-In reality, we can't totally avoid "explanatory" comments. There are complex algorithms. And there are smart "tweaks" for purposes of optimization. But generally we should try to keep the code simple and self-descriptive.
+Իրականում մենք չենք կարող ամբողջությամբ խուսափել «բացատրական» մեկնաբանություններից։ Կան բարդ ալգորիթմներ։ Եվ կան խելացի «հնարքներ» օպտիմալացման նպատակով։ Բայց ընդհանուր առմամբ մենք պետք է ձգտենք կոդը պահել պարզ և ինքնանկարագրող։
 
-## Good comments
+## Լավ մեկնաբանություններ 
 
-So, explanatory comments are usually bad. Which comments are good?
+Այսպիսով, բացատրական մեկնաբանությունները սովորաբար վատ են։ Որո՞նք են լավ մեկնաբանությունները։
 
-Describe the architecture
-: Provide a high-level overview of components, how they interact, what's the control flow in various situations... In short -- the bird's eye view of the code. There's a special language [UML](http://wikipedia.org/wiki/Unified_Modeling_Language) to build high-level architecture diagrams explaining the code. Definitely worth studying.
+Նկարագրել ճարտարապետությունը
+: Տրամադրել բարձր մակարդակի ակնարկ բաղադրիչների, թե ինչպես են նրանք փոխազդում, ինչ է կառավարման հոսքը տարբեր իրավիճակներում... Մի խոսքով՝ կոդի «թռչնի հայացք»։ Կա հատուկ լեզու [UML](http://wikipedia.org/wiki/Unified_Modeling_Language) բարձր մակարդակի ճարտարապետության դիագրամներ կառուցելու համար, որոնք բացատրում են կոդը։ Անպայման արժե ուսումնասիրել։
 
-Document function parameters and usage
-: There's a special syntax [JSDoc](http://en.wikipedia.org/wiki/JSDoc) to document a function: usage, parameters, returned value.
+Փաստաթղթավորել ֆունկցիայի պարամետրերը և օգտագործումը
+: Կա հատուկ շարահյուսություն JSDoc](http://en.wikipedia.org/wiki/JSDoc) ֆունկցիան փաստաթղթավորելու համար՝ օգտագործում, պարամետրեր, վերադարձվող արժեք։
 
-For instance:
+Օրինակ.
 ```js
 /**
  * Returns x raised to the n-th power.
@@ -139,42 +139,42 @@ function pow(x, n) {
 }
 ```
 
-Such comments allow us to understand the purpose of the function and use it the right way without looking in its code.
+Նման մեկնաբանությունները թույլ են տալիս հասկանալ ֆունկցիայի նպատակը և ճիշտ օգտագործել այն՝ առանց դրա կոդն ուսումնասիրելու։
 
-By the way, many editors like [WebStorm](https://www.jetbrains.com/webstorm/) can understand them as well and use them to provide autocomplete and some automatic code-checking.
+Ի դեպ, շատ խմբագրիչներ, օրինակ՝ WebStorm, նույնպես կարող են հասկանալ նման մեկնաբանությունները և օգտագործել դրանք՝ ավտոմատ լրացում ու կոդի որոշ ավտոմատ ստուգումներ ապահովելու համար։
 
-Also, there are tools like [JSDoc 3](https://github.com/jsdoc/jsdoc) that can generate HTML-documentation from the comments. You can read more information about JSDoc at <https://jsdoc.app>.
+Կան նաև այնպիսի գործիքներ, ինչպիսին է JSDoc 3-ը, որոնք մեկնաբանություններից կարող են ստեղծել HTML փաստաթղթեր։ JSDoc-ի մասին լրացուցիչ տեղեկություններ կարող եք գտնել այստեղ՝ https://jsdoc.app։
 
-Why is the task solved this way?
-: What's written is important. But what's *not* written may be even more important to understand what's going on. Why is the task solved exactly this way? The code gives no answer.
+Ինչո՞ւ է խնդիրը լուծվել հենց այս եղանակով։
+Գրվածը կարևոր է։ Սակայն չգրվածը կարող է նույնիսկ ավելի կարևոր լինել՝ հասկանալու համար, թե ինչ է կատարվում։ Ինչո՞ւ է խնդիրը լուծվել հենց այս եղանակով։ Կոդն ինքնին այդ հարցի պատասխանը չի տալիս։
 
-    If there are many ways to solve the task, why this one? Especially when it's not the most obvious one.
+    Եթե խնդիրը լուծելու բազմաթիվ եղանակներ կան, ինչո՞ւ է ընտրվել հենց այս մեկը։ Հատկապես այն դեպքում, երբ ընտրված տարբերակն ամենաակնհայտը չէ։
 
-    Without such comments the following situation is possible:
-    1. You (or your colleague) open the code written some time ago, and see that it's "suboptimal".
-    2. You think: "How stupid I was then, and how much smarter I'm now", and rewrite using the "more obvious and correct" variant.
-    3. ...The urge to rewrite was good. But in the process you see that the "more obvious" solution is actually lacking. You even dimly remember why, because you already tried it long ago. You revert to the correct variant, but the time was wasted.
+    Առանց նման մեկնաբանությունների կարող է առաջանալ հետևյալ իրավիճակը․
+    1. Դուք (կամ ձեր գործընկերը) բացում եք որոշ ժամանակ առաջ գրված կոդը և նկատում, որ այն «ոչ այնքան օպտիմալ է»։
+    2. Դուք մտածում եք․ «Ինչքա՜ն անխելք էի այն ժամանակ, իսկ հիմա ինչքա՜ն ավելի խելացի եմ դարձել», և վերաշարադրում եք կոդը՝ օգտագործելով «ավելի ակնհայտ ու ճիշտ» տարբերակը։
+    3. Վերաշարադրելու ցանկությունն ինքնին լավ էր։ Սակայն աշխատանքի ընթացքում պարզվում է, որ «ավելի ակնհայտ» լուծումն իրականում թերություններ ունի։ Դուք նույնիսկ աղոտ հիշում եք պատճառը, քանի որ վաղուց արդեն փորձել եք այդ տարբերակը։ Վերադառնում եք ճիշտ տարբերակին, բայց ժամանակն արդեն վատնված է։
 
-    Comments that explain the solution are very important. They help to continue development the right way.
+    Լուծումը բացատրող մեկնաբանությունները շատ կարևոր են։ Դրանք օգնում են շարունակել մշակումը ճիշտ ուղղությամբ։
 
-Any subtle features of the code? Where they are used?
-: If the code has anything subtle and counter-intuitive, it's definitely worth commenting.
+Կա՞ն կոդի նուրբ կամ ոչ ակնհայտ առանձնահատկություններ։ Որտե՞ղ են դրանք օգտագործվում։
+Եթե կոդում կա որևէ նուրբ կամ ինտուիցիային հակասող առանձնահատկություն, անպայման արժե դրա մասին մեկնաբանություն գրել։
 
-## Summary
+## Ամփոփում
 
-An important sign of a good developer is comments: their presence and even their absence.
+Լավ ծրագրավորողի կարևոր հատկանիշներից մեկը մեկնաբանություններն են՝ ինչպես դրանց առկայությունը, այնպես էլ դրանց բացակայությունը։
 
-Good comments allow us to maintain the code well, come back to it after a delay and use it more effectively.
+Լավ մեկնաբանությունները թույլ են տալիս արդյունավետ պահպանել և զարգացնել կոդը, որոշ ժամանակ անց վերադառնալ դրան և ավելի արդյունավետ օգտագործել այն։
 
-**Comment this:**
+**Մեկնաբանություններ գրեք հետևյալի համար․**
 
-- Overall architecture, high-level view.
-- Function usage.
-- Important solutions, especially when not immediately obvious.
+- Ընդհանուր ճարտարապետություն և համակարգի բարձր մակարդակի կառուցվածք։
+- Ֆունկցիաների օգտագործման եղանակ։
+- Կարևոր լուծումներ, հատկապես երբ դրանց իմաստն անմիջապես ակնհայտ չէ։
 
-**Avoid comments:**
+**Խուսափեք հետևյալ մեկնաբանություններից․:**
 
-- That tell "how code works" and "what it does".
-- Put them in only if it's impossible to make the code so simple and self-descriptive that it doesn't require them.
+- Այն մեկնաբանություններից, որոնք բացատրում են՝ «ինչպես է աշխատում կոդը» և «ինչ է այն անում»։
+- PԴրանք գրեք միայն այն դեպքում, երբ անհնար է կոդն այնքան պարզ և ինքնաբացատրական դարձնել, որ մեկնաբանությունների կարիք չլինի։
 
-Comments are also used for auto-documenting tools like JSDoc3: they read them and generate HTML-docs (or docs in another format).
+Մեկնաբանություններն օգտագործվում են նաև ավտոմատ փաստաթղթավորման գործիքների, օրինակ՝ JSDoc 3-ի կողմից․ դրանք կարդում են մեկնաբանությունները և դրանց հիման վրա ստեղծում HTML փաստաթղթեր (կամ փաստաթղթեր այլ ձևաչափերով)։

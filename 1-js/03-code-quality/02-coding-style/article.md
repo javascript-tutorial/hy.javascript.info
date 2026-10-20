@@ -1,12 +1,12 @@
-# Coding Style
+# Կոդավորման ոճ
 
-Our code must be as clean and easy to read as possible.
+Մեր կոդը պետք է լինի հնարավորինս մաքուր և հեշտ ընթեռնելի։
 
-That is actually the art of programming -- to take a complex task and code it in a way that is both correct and human-readable. A good code style greatly assists in that.  
+Սա իրականում ծրագրավորման արվեստն է. վերցնել բարդ խնդիր և գրել դրա կոդն այնպես, որ այն լինի և ճիշտ, և մարդու համար ընթեռնելի։ Կոդի լավ ոճը մեծապես օգնում է դրան։
 
-## Syntax
+## Շարահյուսություն
 
-Here is a cheat sheet with some suggested rules (see below for more details):
+Ահա մի քանի առաջարկվող կանոններով համառոտ ուղեցույց (մանրամասները տես ստորև)՝
 
 ![](code-style.svg)
 <!--
@@ -34,15 +34,15 @@ if (n < 0) {
 
 -->
 
-Now let's discuss the rules and reasons for them in detail.
+Այժմ մանրամասն քննարկենք կանոնները և դրանց պատճառները։
 
 ```warn header="There are no \"you must\" rules"
-Nothing is set in stone here. These are style preferences, not religious dogmas.
+Այստեղ ոչինչ քարի վրա գրված չէ։ Սրանք ոճային նախասիրություններ են, այլ ոչ թե կրոնական դոգմաներ։
 ```
 
-### Curly Braces
+### Ձևավոր փակագծեր
 
-In most JavaScript projects curly braces are written in "Egyptian" style with the opening brace on the same line as the corresponding keyword -- not on a new line. There should also be a space before the opening bracket, like this:
+JavaScript-ի նախագծերի մեծ մասում ձևավոր փակագծերը գրվում են «եգիպտական» ոճով. բացվող փակագիծը գտնվում է համապատասխան հիմնաբառի հետ նույն տողում, այլ ոչ թե նոր տողում։ Բացվող փակագծից առաջ պետք է լինի նաև բացատ՝ այսպես՝
 
 ```js
 if (condition) {
@@ -52,37 +52,37 @@ if (condition) {
 }
 ```
 
-A single-line construct, such as `if (condition) doSomething()`, is an important edge case. Should we use braces at all?
+Միատող կառուցվածքը, օրինակ՝ `if (condition) doSomething()`, կարևոր սահմանային դեպք է։ Արդյոք ընդհանրապես պե՞տք է օգտագործել փակագծեր։
 
-Here are the annotated variants so you can judge their readability for yourself:
+Ահա մեկնաբանված տարբերակները, որպեսզի կարողանաք ինքնուրույն գնահատել դրանց ընթեռնելիությունը՝
 
-1. 😠 Beginners sometimes do that. Bad! Curly braces are not needed:
+1. 😠 Սկսնակները երբեմն այդպես են անում։ Վատ է։ Ձևավոր փակագծերը պետք չեն՝
     ```js
     if (n < 0) *!*{*/!*alert(`Power ${n} is not supported`);*!*}*/!*
     ```
-2. 😠 Split to a separate line without braces. Never do that, easy to make an error when adding new lines:
+2. 😠 Առանձին տողի բաժանում առանց փակագծերի։ Երբեք այդպես մի արեք, նոր տողեր ավելացնելիս հեշտ է սխալվել՝
     ```js
     if (n < 0)
       alert(`Power ${n} is not supported`);
     ```
-3. 😏 One line without braces - acceptable, if it's short:
+3. 😏 Մեկ տող առանց փակագծերի՝ ընդունելի է, եթե կարճ է՝
     ```js
     if (n < 0) alert(`Power ${n} is not supported`);
     ```
-4. 😃 The best variant:
+4. 😃 Լավագույն տարբերակը՝
     ```js
     if (n < 0) {
       alert(`Power ${n} is not supported`);
     }
     ```
 
-For a very brief code, one line is allowed, e.g. `if (cond) return null`. But a code block (the last variant) is usually more readable.
+Շատ կարճ կոդի համար թույլատրվում է մեկ տողը, օրինակ՝ `if (cond) return null`։ Սակայն կոդի բլոկը (վերջին տարբերակը) սովորաբար ավելի ընթեռնելի է։
 
-### Line Length
+### Տողի երկարությունը
 
-No one likes to read a long horizontal line of code. It's best practice to split them.
+Ոչ ոք չի սիրում կարդալ կոդի երկար հորիզոնական տողեր։ Լավագույն պրակտիկան դրանք բաժանելն է։
 
-For example:
+Օրինակ՝
 ```js
 // backtick quotes ` allow to split the string into multiple lines
 let str = `
@@ -92,7 +92,7 @@ let str = `
 `;
 ```
 
-And, for `if` statements:
+Իսկ `if` հրամանների համար՝
 
 ```js
 if (
@@ -104,19 +104,19 @@ if (
 }
 ```
 
-The maximum line length should be agreed upon at the team-level. It's usually 80 or 120 characters.
+Տողի առավելագույն երկարությունը պետք է համաձայնեցվի թիմի մակարդակով։ Սովորաբար դա 80 կամ 120 նիշ է։
 
-### Indents
+### Ներքաշումներ
 
-There are two types of indents:
+Ներքաշումները երկու տեսակ են՝
 
-- **Horizontal indents: 2 or 4 spaces.**
+- **Հորիզոնական ներքաշումներ՝ 2 կամ 4 բացատ։**
 
-    A horizontal indentation is made using either 2 or 4 spaces or the horizontal tab symbol (key `key:Tab`). Which one to choose is an old holy war. Spaces are more common nowadays.
+    Հորիզոնական ներքաշումը կատարվում է կամ 2 կամ 4 բացատով, կամ հորիզոնական tab նիշով (ստեղն `key:Tab`)։ Թե որն ընտրել՝ հին «սրբազան պատերազմ» է։ Այսօր ավելի տարածված են բացատները։
 
-    One advantage of spaces over tabs is that spaces allow more flexible configurations of indents than the tab symbol.
+    Բացատների մեկ առավելությունը tab-ի նկատմամբ այն է, որ բացատները թույլ են տալիս ներքաշումների ավելի ճկուն կարգավորումներ, քան tab նիշը։
 
-    For instance, we can align the parameters with the opening bracket, like this:
+    Օրինակ՝ պարամետրերը կարող ենք հավասարեցնել բացվող փակագծին՝ այսպես՝
 
     ```js no-beautify
     show(parameters,
@@ -129,9 +129,9 @@ There are two types of indents:
     }
     ```
 
-- **Vertical indents: empty lines for splitting code into logical blocks.**
+- **Ուղղահայաց ներքաշումներ՝ դատարկ տողեր՝ կոդը տրամաբանական բլոկների բաժանելու համար։**
 
-    Even a single function can often be divided into logical blocks. In the example below, the initialization of variables, the main loop and returning the result are split vertically:
+    Նույնիսկ մեկ ֆունկցիան հաճախ կարելի է բաժանել տրամաբանական բլոկների։ Ստորև բերված օրինակում փոփոխականների սկզբնավորումը, հիմնական ցիկլը և արդյունքի վերադարձը բաժանված են ուղղահայաց՝
 
     ```js
     function pow(x, n) {
@@ -145,23 +145,23 @@ There are two types of indents:
     }
     ```
 
-    Insert an extra newline where it helps to make the code more readable. There should not be more than nine lines of code without a vertical indentation.
+   Ավելացրեք լրացուցիչ նոր տող այնտեղ, որտեղ դա օգնում է կոդն ավելի ընթեռնելի դարձնել։ Ուղղահայաց ներքաշում չունեցող կոդի ինը տողից ավել չպետք է լինի։
 
-### Semicolons
+### Կետ-ստորակետեր
 
-A semicolon should be present after each statement, even if it could possibly be skipped.
+Յուրաքանչյուր հրամանից հետո պետք է լինի կետ-ստորակետ, նույնիսկ եթե այն հնարավոր է բաց թողնել։
 
-There are languages where a semicolon is truly optional and it is rarely used. In JavaScript, though, there are cases where a line break is not interpreted as a semicolon, leaving the code vulnerable to errors. See more about that in the chapter <info:structure#semicolon>.
+Կան լեզուներ, որտեղ կետ-ստորակետը իսկապես կամընտրական է և հազվադեպ է օգտագործվում։ Սակայն JavaScript-ում կան դեպքեր, երբ տողադարձը չի մեկնաբանվում որպես կետ-ստորակետ, ինչը կոդը խոցելի է դարձնում սխալների համար։ Այդ մասին ավելին տես <info:structure#semicolon> գլխում։
 
-If you're an experienced JavaScript programmer, you may choose a no-semicolon code style like [StandardJS](https://standardjs.com/). Otherwise, it's best to use semicolons to avoid possible pitfalls. The majority of developers put semicolons.
+Եթե դուք փորձառու JavaScript ծրագրավորող եք, կարող եք ընտրել առանց կետ-ստորակետների կոդի ոճ, ինչպես [StandardJS](https://standardjs.com/)-ը։ Հակառակ դեպքում լավագույնն է օգտագործել կետ-ստորակետեր՝ հնարավոր թակարդներից խուսափելու համար։ Մշակողների մեծամասնությունը դնում է կետ-ստորակետեր։
 
-### Nesting Levels
+### Ներդրման մակարդակներ
 
-Try to avoid nesting code too many levels deep.
+Փորձեք խուսափել կոդի չափազանց խորը ներդրումից։
 
-For example, in the loop, it's sometimes a good idea to use the [`continue`](info:while-for#continue) directive to avoid extra nesting.
+Օրինակ՝ ցիկլում երբեմն լավ միտք է օգտագործել [`continue`](info:while-for#continue) հրահանգը՝ լրացուցիչ ներդրումից խուսափելու համար։
 
-For example, instead of adding a nested `if` conditional like this:
+Օրինակ՝ այսպիսի ներդրված `if` պայման ավելացնելու փոխարեն՝
 
 ```js
 for (let i = 0; i < 10; i++) {
@@ -180,11 +180,11 @@ for (let i = 0; i < 10; i++) {
 }
 ```
 
-A similar thing can be done with `if/else` and `return`.
+Նմանատիպ բան կարելի է անել `if/else`-ի և `return`-ի հետ։
 
-For example, two constructs below are identical.
+Օրինակ՝ ստորև բերված երկու կառուցվածքները նույնական են։
 
-Option 1:
+Տարբերակ 1՝
 
 ```js
 function pow(x, n) {
@@ -202,7 +202,7 @@ function pow(x, n) {
 }
 ```
 
-Option 2:
+Տարբերակ 2:
 
 ```js
 function pow(x, n) {
@@ -221,13 +221,13 @@ function pow(x, n) {
 }
 ```
 
-The second one is more readable because the "special case" of `n < 0` is handled early on. Once the check is done we can move on to the "main" code flow without the need for additional nesting.
+Երկրորդն ավելի ընթեռնելի է, քանի որ `n < 0` «հատուկ դեպքը» մշակվում է հենց սկզբում։ Երբ ստուգումն ավարտվում է, կարող ենք անցնել կոդի «հիմնական» հոսքին՝ առանց լրացուցիչ ներդրման անհրաժեշտության։
 
-## Function Placement
+## Ֆունկցիաների տեղադրումը
 
-If you are writing several "helper" functions and the code that uses them, there are three ways to organize the functions.
+Եթե գրում եք մի քանի «օժանդակ» ֆունկցիա և դրանք օգտագործող կոդը, ֆունկցիաները կազմակերպելու երեք եղանակ կա։
 
-1. Declare the functions *above* the code that uses them:
+1. Ֆունկցիաները հայտարարել դրանք օգտագործող կոդից *վերև*՝
 
     ```js
     // *!*function declarations*/!*
@@ -248,7 +248,7 @@ If you are writing several "helper" functions and the code that uses them, there
     setHandler(elem);
     walkAround();
     ```
-2. Code first, then functions
+2. Սկզբում կոդը, հետո ֆունկցիաները
 
     ```js
     // *!*the code which uses the functions*/!*
@@ -269,21 +269,21 @@ If you are writing several "helper" functions and the code that uses them, there
       ...
     }
     ```
-3. Mixed: a function is declared where it's first used.
+. Խառը՝ ֆունկցիան հայտարարվում է այնտեղ, որտեղ առաջին անգամ օգտագործվում է։
 
-Most of time, the second variant is preferred.
+Շատ դեպքերում նախընտրելի է երկրորդ տարբերակը։
 
-That's because when reading code, we first want to know *what it does*. If the code goes first, then it becomes clear from the start. Then, maybe we won't need to read the functions at all, especially if their names are descriptive of what they actually do.
+Դա այն պատճառով է, որ կոդ կարդալիս մենք նախ ուզում ենք իմանալ՝ *ինչ է այն անում*։ Եթե կոդը գալիս է առաջինը, դա պարզ է դառնում հենց սկզբից։ Այդ դեպքում գուցե ընդհանրապես կարիք չլինի կարդալ ֆունկցիաները, հատկապես եթե դրանց անունները նկարագրում են, թե իրականում ինչ են անում։
 
-## Style Guides
+## Ոճի ուղեցույցներ
 
-A style guide contains general rules about "how to write" code, e.g. which quotes to use, how many spaces to indent, the maximal line length, etc. A lot of minor things.
+Ոճի ուղեցույցը պարունակում է կոդ «ինչպես գրելու» ընդհանուր կանոններ, օրինակ՝ ինչ չակերտներ օգտագործել, քանի բացատով ներքաշել, տողի առավելագույն երկարությունը և այլն։ Շատ մանր բաներ։
 
-When all members of a team use the same style guide, the code looks uniform, regardless of which team member wrote it.
+Երբ թիմի բոլոր անդամները նույն ոճի ուղեցույցն են օգտագործում, կոդը միասնական է երևում՝ անկախ այն բանից, թե թիմի որ անդամն է այն գրել։
 
-Of course, a team can always write their own style guide, but usually there's no need to. There are many existing guides to choose from.
+Իհարկե, թիմը միշտ կարող է գրել սեփական ոճի ուղեցույցը, բայց սովորաբար դրա կարիքը չկա։ Գոյություն ունեն բազմաթիվ ուղեցույցներ, որոնցից կարելի է ընտրել։
 
-Some popular choices:
+Որոշ տարածված ընտրություններ՝
 
 - [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html)
 - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
@@ -291,32 +291,32 @@ Some popular choices:
 - [StandardJS](https://standardjs.com/)
 - (plus many more)
 
-If you're a novice developer, start with the cheat sheet at the beginning of this chapter. Then you can browse other style guides to pick up more ideas and decide which one you like best.
+Եթե դուք սկսնակ մշակող եք, սկսեք այս գլխի սկզբի համառոտ ուղեցույցից։ Հետո կարող եք ուսումնասիրել այլ ոճի ուղեցույցներ՝ ավելի շատ գաղափարներ քաղելու և որոշելու համար, թե որն է ձեզ ամենաշատը դուր գալիս։
 
-## Automated Linters
+## Ավտոմատ լինտերներ
 
-Linters are tools that can automatically check the style of your code and make improving suggestions.
+Լինտերները գործիքներ են, որոնք կարող են ավտոմատ ստուգել ձեր կոդի ոճը և առաջարկել բարելավումներ։
 
-The great thing about them is that style-checking can also find some bugs, like typos in variable or function names. Because of this feature, using a linter is recommended even if you don't want to stick to one particular "code style".
+Դրանց հիանալի կողմն այն է, որ ոճի ստուգումը կարող է նաև գտնել որոշ սխալներ, օրինակ՝ փոփոխականների կամ ֆունկցիաների անուններում տպասխալներ։ Այս հատկության շնորհիվ լինտերի օգտագործումը խորհուրդ է տրվում, նույնիսկ եթե չեք ուզում հետևել որևէ կոնկրետ «կոդի ոճի»։
 
-Here are some well-known linting tools:
+Ահա մի քանի հայտնի լինտինգի գործիքներ՝
 
-- [JSLint](https://www.jslint.com/) -- one of the first linters.
-- [JSHint](https://jshint.com/) -- more settings than JSLint.
-- [ESLint](https://eslint.org/) -- probably the newest one.
+- [JSLint](https://www.jslint.com/) -- առաջին լինտերներից մեկը։
+- [JSHint](https://jshint.com/) -- JSLint-ից ավելի շատ կարգավորումներով։
+- [ESLint](https://eslint.org/) -- հավանաբար ամենանորը։
 
-All of them can do the job. The author uses [ESLint](https://eslint.org/).
+Դրանցից յուրաքանչյուրը կարող է անել գործը։ Հեղինակն օգտագործում է [ESLint](https://eslint.org/)։
 
-Most linters are integrated with many popular editors: just enable the plugin in the editor and configure the style.
+Լինտերների մեծ մասը ինտեգրված է շատ տարածված խմբագրիչների հետ. պարզապես միացրեք խմբագրիչի plugin-ը և կարգավորեք ոճը։
 
-For instance, for ESLint you should do the following:
+Օրինակ՝ ESLint-ի համար պետք է անեք հետևյալը՝
 
-1. Install [Node.js](https://nodejs.org/).
-2. Install ESLint with the command `npm install -g eslint` (npm is a JavaScript package installer).
-3. Create a config file named `.eslintrc` in the root of your JavaScript project (in the folder that contains all your files).
-4. Install/enable the plugin for your editor that integrates with ESLint. The majority of editors have one.
+1. Տեղադրեք [Node.js](https://nodejs.org/)-ը։
+2. Տեղադրեք ESLint-ը `npm install -g eslint` հրամանով (npm-ը JavaScript փաթեթների տեղադրիչ է)։
+3. Ստեղծեք `.eslintrc` անունով կարգավորումների ֆայլ ձեր JavaScript նախագծի արմատում (այն թղթապանակում, որ պարունակում է ձեր բոլոր ֆայլերը)։
+4. Տեղադրեք/միացրեք ձեր խմբագրիչի plugin-ը, որն ինտեգրվում է ESLint-ի հետ։ Խմբագրիչների մեծամասնությունն ունի այն։
 
-Here's an example of an `.eslintrc` file:
+Ահա `.eslintrc` ֆայլի օրինակ՝
 
 ```js
 {
@@ -333,16 +333,16 @@ Here's an example of an `.eslintrc` file:
 }
 ```
 
-Here the directive `"extends"` denotes that the configuration is based on the "eslint:recommended" set of settings. After that, we specify our own.
+Այստեղ `"extends"` հրահանգը նշանակում է, որ կարգավորումը հիմնված է «eslint:recommended» կարգավորումների հավաքածուի վրա։ Դրանից հետո մենք նշում ենք մեր սեփականները։
 
-It is also possible to download style rule sets from the web and extend them instead. See <https://eslint.org/docs/user-guide/getting-started> for more details about installation.
+Հնարավոր է նաև համացանցից ներբեռնել ոճի կանոնների հավաքածուներ և դրանք ընդլայնել։ Տեղադրման մասին ավելի մանրամասն տես <https://eslint.org/docs/user-guide/getting-started>։
 
-Also certain IDEs have built-in linting, which is convenient but not as customizable as ESLint.
+Նաև որոշ IDE-ներ ունեն ներկառուցված լինտինգ, որը հարմար է, բայց ESLint-ի չափ կարգավորելի չէ։
 
-## Summary
+## Ամփոփում
 
-All syntax rules described in this chapter (and in the style guides referenced) aim to increase the readability of your code. All of them are debatable.
+Այս գլխում նկարագրված (և նշված ոճի ուղեցույցներում առկա) բոլոր շարահյուսական կանոնները նպատակ ունեն բարձրացնել ձեր կոդի ընթեռնելիությունը։ Դրանք բոլորը վիճելի են։
 
-When we think about writing "better" code, the questions we should ask ourselves are: "What makes the code more readable and easier to understand?" and "What can help us avoid errors?" These are the main things to keep in mind when choosing and debating code styles.
+Երբ մտածում ենք «ավելի լավ» կոդ գրելու մասին, հարցերը, որ պետք է տանք մեզ, հետևյալն են՝ «Ի՞նչն է կոդն ավելի ընթեռնելի և հեշտ հասկանալի դարձնում» և «Ի՞նչը կարող է օգնել մեզ խուսափել սխալներից»։ Սրանք հիմնական բաներն են, որ պետք է հաշվի առնել կոդի ոճեր ընտրելիս և քննարկելիս։
 
-Reading popular style guides will allow you to keep up to date with the latest ideas about code style trends and best practices.
+Տարածված ոճի ուղեցույցներ կարդալը թույլ կտա ձեզ տեղյակ մնալ կոդի ոճի միտումների և լավագույն պրակտիկաների մասին վերջին գաղափարներին։
